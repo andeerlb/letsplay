@@ -1,5 +1,5 @@
 import React from 'react';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+import { StatusBar, StyleSheet, Text, useColorScheme, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './src/screens/HomeScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
@@ -10,6 +10,16 @@ import ProfileIcon from './assets/profile.svg';
 import HomeIcon from './assets/home.svg';
 
 const Tab = createBottomTabNavigator();
+
+function CustomHeader({ navigation, route, options }) {
+  const title = options.title ?? 'Default Title';
+
+  return (
+    <View style={{ height: 60, backgroundColor: '#eee', justifyContent: 'center', paddingHorizontal: 16 }}>
+      <Text style={{ fontSize: 20, fontWeight: 'bold' }}>🌟 {title}</Text>
+    </View>
+  );
+}
 
 const getTabBarIcon = (routeName: string, color: string, size: number) => {
   if (routeName === 'Home') {
@@ -22,6 +32,8 @@ const getTabBarIcon = (routeName: string, color: string, size: number) => {
   return null;
 };
 
+const customHeader = (props: any) => <CustomHeader {...props} />;
+
 function BottomTabs() {
   return (
     <Tab.Navigator
@@ -30,9 +42,9 @@ function BottomTabs() {
         tabBarShowLabel: true,
       })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Match" component={MatchScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen name="Home" component={HomeScreen} options={{ title: "Inicio", header: customHeader }}/>
+      <Tab.Screen name="Match" component={MatchScreen} options={{ title: "Buscar", header: customHeader }}/>
+      <Tab.Screen name="Profile" component={ProfileScreen} options={{ title: "Conta", header: customHeader }}/>
     </Tab.Navigator>
   );
 }
