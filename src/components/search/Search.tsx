@@ -36,9 +36,10 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     input: {
+        flex: 1,
         height: 50,
         borderRadius: 5,
-        paddingHorizontal: 10,
+        paddingRight: 15,
         color: "#000",
         fontFamily: "sans-serif",
         fontSize: 16,
@@ -53,7 +54,9 @@ const styles = StyleSheet.create({
         backgroundColor: '#f0f0f0',
         borderRadius: 5,
         height: 50,
-        paddingHorizontal: 10,
+        paddingLeft: 15,
+        maxWidth: '100%',
+        overflow: 'hidden',
     },
 });
 
