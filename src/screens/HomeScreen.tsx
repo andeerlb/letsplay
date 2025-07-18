@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   userName: {
-    color: '#a0e4b0',
+    color: '#256b35ff',
   },
 });
 
