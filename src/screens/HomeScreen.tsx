@@ -5,7 +5,7 @@ function HomeScreen() {
 
     return (
         <ScreenWrapper>
-            <Text>Home Screen</Text>
+            <Text>Welcome Anderson</Text>
         </ScreenWrapper>
     );
 }

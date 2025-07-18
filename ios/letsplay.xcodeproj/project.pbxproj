@@ -11,6 +11,14 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		28739311F14B450DBAF78927 /* Armavir01-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D5080C8A78942D091321FF1 /* Armavir01-Bold.ttf */; };
+		5DA88EC42E194A6DBFEF9974 /* Armavir01.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FEEA51F98B664A2D95453AFB /* Armavir01.ttf */; };
+		79C9881F59114EED9EAE53BC /* Armavir02-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73D1906E90C54757AEA718B2 /* Armavir02-Bold.ttf */; };
+		04674406D85649A4A83FDA0F /* Armavir02.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 74071EA20A214BBEAAC7773F /* Armavir02.ttf */; };
+		3F19D60ABCD14F3E9AF10C89 /* Armavir03-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD58C32639AF4B1093299993 /* Armavir03-Bold.ttf */; };
+		5FC942B799F64948946DE77F /* Armavir03.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03358D9D1BC34E109605AD47 /* Armavir03.ttf */; };
+		8E53C5E282C647828360E74A /* ArmavirShadow-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E03137CBC4843FC85DFD4BF /* ArmavirShadow-Bold.ttf */; };
+		FB35BA2505EE499EAC08DAF6 /* ArmavirShadow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8DD639E26CA477FB1C4ED53 /* ArmavirShadow.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +43,14 @@
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = letsplay/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = letsplay/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		2D5080C8A78942D091321FF1 /* Armavir01-Bold.ttf */ = {isa = PBXFileReference; name = "Armavir01-Bold.ttf"; path = "../assets/fonts/Armavir01-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FEEA51F98B664A2D95453AFB /* Armavir01.ttf */ = {isa = PBXFileReference; name = "Armavir01.ttf"; path = "../assets/fonts/Armavir01.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		73D1906E90C54757AEA718B2 /* Armavir02-Bold.ttf */ = {isa = PBXFileReference; name = "Armavir02-Bold.ttf"; path = "../assets/fonts/Armavir02-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		74071EA20A214BBEAAC7773F /* Armavir02.ttf */ = {isa = PBXFileReference; name = "Armavir02.ttf"; path = "../assets/fonts/Armavir02.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CD58C32639AF4B1093299993 /* Armavir03-Bold.ttf */ = {isa = PBXFileReference; name = "Armavir03-Bold.ttf"; path = "../assets/fonts/Armavir03-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		03358D9D1BC34E109605AD47 /* Armavir03.ttf */ = {isa = PBXFileReference; name = "Armavir03.ttf"; path = "../assets/fonts/Armavir03.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4E03137CBC4843FC85DFD4BF /* ArmavirShadow-Bold.ttf */ = {isa = PBXFileReference; name = "ArmavirShadow-Bold.ttf"; path = "../assets/fonts/ArmavirShadow-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E8DD639E26CA477FB1C4ED53 /* ArmavirShadow.ttf */ = {isa = PBXFileReference; name = "ArmavirShadow.ttf"; path = "../assets/fonts/ArmavirShadow.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +109,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				556D4D2B7AAD49F982EA2236 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -115,6 +132,22 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		556D4D2B7AAD49F982EA2236 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				2D5080C8A78942D091321FF1 /* Armavir01-Bold.ttf */,
+				FEEA51F98B664A2D95453AFB /* Armavir01.ttf */,
+				73D1906E90C54757AEA718B2 /* Armavir02-Bold.ttf */,
+				74071EA20A214BBEAAC7773F /* Armavir02.ttf */,
+				CD58C32639AF4B1093299993 /* Armavir03-Bold.ttf */,
+				03358D9D1BC34E109605AD47 /* Armavir03.ttf */,
+				4E03137CBC4843FC85DFD4BF /* ArmavirShadow-Bold.ttf */,
+				E8DD639E26CA477FB1C4ED53 /* ArmavirShadow.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -185,6 +218,14 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				28739311F14B450DBAF78927 /* Armavir01-Bold.ttf in Resources */,
+				5DA88EC42E194A6DBFEF9974 /* Armavir01.ttf in Resources */,
+				79C9881F59114EED9EAE53BC /* Armavir02-Bold.ttf in Resources */,
+				04674406D85649A4A83FDA0F /* Armavir02.ttf in Resources */,
+				3F19D60ABCD14F3E9AF10C89 /* Armavir03-Bold.ttf in Resources */,
+				5FC942B799F64948946DE77F /* Armavir03.ttf in Resources */,
+				8E53C5E282C647828360E74A /* ArmavirShadow-Bold.ttf in Resources */,
+				FB35BA2505EE499EAC08DAF6 /* ArmavirShadow.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
