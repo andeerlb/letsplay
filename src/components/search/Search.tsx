@@ -17,23 +17,28 @@ const Search: React.FC<SearchProps> = ({ onSearch, placeholder }) => {
 
     return (
         <View style={styles.container}>
-            <View style={styles.inputWrapper}>
-                <SearchIcon style={styles.icon} width={24} height={24} color="#000" /> 
-                <TextInput
-                    style={styles.input}
-                    placeholder={placeholder || "Buscar..."}
-                    value={searchText}
-                    onChangeText={handleSearchChange}
-                    placeholderTextColor={"#888"} // Placeholder color
-                />
-            </View>
+            <SearchIcon style={styles.icon} width={24} height={24} color="#000" /> 
+            <TextInput
+                style={styles.input}
+                placeholder={placeholder || "Buscar..."}
+                value={searchText}
+                onChangeText={handleSearchChange}
+                placeholderTextColor={"#888"} // Placeholder color
+            />
         </View>
     );
 };
 
 const styles = StyleSheet.create({
     container: {
-        padding: 10,
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#f0f0f0',
+        borderRadius: 5,
+        height: 50,
+        paddingLeft: 15,
+        maxWidth: '100%',
+        overflow: 'hidden',
     },
     input: {
         flex: 1,
@@ -47,16 +52,6 @@ const styles = StyleSheet.create({
     },
     icon: {
         marginRight: 8,
-    },
-    inputWrapper: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        backgroundColor: '#f0f0f0',
-        borderRadius: 5,
-        height: 50,
-        paddingLeft: 15,
-        maxWidth: '100%',
-        overflow: 'hidden',
     },
 });
 
