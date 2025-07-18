@@ -7,7 +7,7 @@ function TeamScreen() {
     return (
         <ScreenWrapper>
             <Search
-                placeholder="Buscar meus times..."
+                placeholder="Meus times..."
                 onSearch={(query) => {
                     console.log("Searching for:", query);
                 }}
