@@ -24,8 +24,6 @@ const getTabBarIcon = (routeName: string, color: string, size: number) => {
   return null;
 };
 
-const customHeader = (props: any) => <NavigationHeader {...props} />;
-
 export default function BottomTabNavigator() {
   return (
     <Tab.Navigator
@@ -34,10 +32,38 @@ export default function BottomTabNavigator() {
         tabBarShowLabel: true,
       })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} options={{ title: "Inicio", header: customHeader }}/>
-      <Tab.Screen name="Match" component={MatchScreen} options={{ title: "Buscar", header: customHeader }}/>
-      <Tab.Screen name="Team" component={TeamScreen} options={{ title: "Times", header: customHeader }}/>
-      <Tab.Screen name="Profile" component={ProfileScreen} options={{ title: "Conta", header: customHeader }}/>
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          title: "Inicio",
+          header: () => <NavigationHeader title="Inicio" hideSettings={false} />
+        }}
+      />
+      <Tab.Screen
+        name="Match"
+        component={MatchScreen}
+        options={{
+          title: "Buscar",
+          header: () => <NavigationHeader />
+        }}
+      />
+      <Tab.Screen
+        name="Team"
+        component={TeamScreen}
+        options={{
+          title: "Times",
+          header: () => <NavigationHeader />
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{
+          title: "Conta",
+          header: () => <NavigationHeader hideSettings={false} />
+        }}
+      />
     </Tab.Navigator>
   );
 }
