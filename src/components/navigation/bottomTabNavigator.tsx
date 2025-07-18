@@ -45,7 +45,7 @@ export default function BottomTabNavigator() {
         component={MatchScreen}
         options={{
           title: "Buscar",
-          header: () => <NavigationHeader />
+          header: () => <NavigationHeader title='Buscar' />
         }}
       />
       <Tab.Screen
@@ -53,7 +53,7 @@ export default function BottomTabNavigator() {
         component={TeamScreen}
         options={{
           title: "Times",
-          header: () => <NavigationHeader />
+          header: () => <NavigationHeader title='Times' />
         }}
       />
       <Tab.Screen
@@ -61,7 +61,7 @@ export default function BottomTabNavigator() {
         component={ProfileScreen}
         options={{
           title: "Conta",
-          header: () => <NavigationHeader hideSettings={false} />
+          header: () => <NavigationHeader title='Conta' hideSettings={false} />
         }}
       />
     </Tab.Navigator>
