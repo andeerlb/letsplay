@@ -33,7 +33,7 @@ export default function BottomTabNavigator() {
         tabBarActiveTintColor: '#256b35ff',
         tabBarInactiveTintColor: '#888',
         tabBarLabelStyle: {
-          fontWeight: '900',
+          fontWeight: '500',
         },
       })}
     >
