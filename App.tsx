@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import BottomTabNavigator from './src/components/navigation/bottomTabNavigator';
+import BottomTabNavigator from '@components/navigation/bottomTabNavigator';
 
 
 function App() {

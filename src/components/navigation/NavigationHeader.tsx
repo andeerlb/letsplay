@@ -1,5 +1,5 @@
 import { Text, View } from "react-native";
-import SettingIcon from '../../../assets/settings.svg';
+import SettingIcon from '@assets/settings.svg';
 
 export default function NavigationHeader({ navigation, route, options }) {
   const title = options.title ?? 'Default Title';
