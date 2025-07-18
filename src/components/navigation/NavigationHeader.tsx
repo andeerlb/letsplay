@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, Pressable } from "react-native";
+import { View, StyleSheet, Pressable } from "react-native";
 import SettingIcon from '@assets/icons/settings.svg';
 import LetsPlayIcon from '@assets/icons/letsplay.svg';
 
