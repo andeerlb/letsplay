@@ -30,6 +30,11 @@ export default function BottomTabNavigator() {
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, size }) => getTabBarIcon(route.name, color, size),
         tabBarShowLabel: true,
+        tabBarActiveTintColor: '#256b35ff',
+        tabBarInactiveTintColor: '#888',
+        tabBarLabelStyle: {
+          fontWeight: '900',
+        },
       })}
     >
       <Tab.Screen
