@@ -1,9 +1,12 @@
 import { Text } from "react-native";
+import ScreenWrapper from "@src/wrapper/ScreenWrapper";
 
 function ProfileScreen() {
 
     return (
-        <><Text>ProfileScreen Screen</Text></>
+        <ScreenWrapper>
+            <Text>ProfileScreen Screen</Text>
+        </ScreenWrapper>
     );
 }
 

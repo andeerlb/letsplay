@@ -1,6 +1,6 @@
-import SoccerBallIcon from '@assets/soccer_ball.svg';
-import ProfileIcon from '@assets/profile.svg';
-import HomeIcon from '@assets/home.svg';
+import SoccerBallIcon from '@assets/icons/soccer_ball.svg';
+import ProfileIcon from '@assets/icons/profile.svg';
+import HomeIcon from '@assets/icons/home.svg';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '@screens/HomeScreen';
 import ProfileScreen from '@screens/ProfileScreen';

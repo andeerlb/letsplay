@@ -1,9 +1,12 @@
+import ScreenWrapper from "@src/wrapper/ScreenWrapper";
 import { Text } from "react-native";
 
 function HomeScreen() {
 
     return (
-        <><Text>Home Screen</Text></>
+        <ScreenWrapper>
+            <Text>Home Screen</Text>
+        </ScreenWrapper>
     );
 }
 

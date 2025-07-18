@@ -1,9 +1,12 @@
 import { Text } from "react-native";
+import ScreenWrapper from "@src/wrapper/ScreenWrapper";
 
 function MatchScreen() {
 
     return (
-        <><Text>MatchScreen Screen</Text></>
+        <ScreenWrapper>
+            <Text>MatchScreen Screen</Text>
+        </ScreenWrapper>
     );
 }
 
