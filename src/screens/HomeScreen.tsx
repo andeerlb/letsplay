@@ -17,7 +17,7 @@ function HomeScreen() {
 const styles = StyleSheet.create({
   text: {
     fontFamily: 'Armavir01-Bold',
-    fontSize: 30,
+    fontSize: 20,
   },
   userName: {
     color: '#a0e4b0',
