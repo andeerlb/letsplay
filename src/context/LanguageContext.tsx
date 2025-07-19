@@ -18,7 +18,7 @@ const LANGUAGE_MAP: Record<Language, typeof ptMessages | typeof enMessages> = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [locale, setLocale] = useState<string>('pt');
+  const [locale, setLocale] = useState<string>('en');
   const [messages, setMessages] = useState<Record<Language, typeof ptMessages | typeof enMessages>>(LANGUAGE_MAP.pt);
 
   const change = (newLanguage: Language) => {

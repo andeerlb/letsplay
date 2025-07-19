@@ -13,6 +13,7 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+# bottom navigation menu
 msgid "HOME_BOTTOM_MENU"
 msgstr "Home"
 
@@ -25,5 +26,10 @@ msgstr "Teams"
 msgid "PROFILE_BOTTOM_MENU"
 msgstr "Account"
 
+# home screen
 msgid "WELCOME_HOME_SCREEN"
 msgstr "Welcome"
+
+# team screen
+msgid "SEARCH_BAR_PLACEHOLDER"
+msgstr "My teams..."
