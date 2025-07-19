@@ -8,19 +8,20 @@ function HomeScreen() {
   const { theme } = useTheme();
   
     return (
-        <ScreenWrapper>
-            <Text style={[styles.title, { color: theme.primary.text }]}>
-                <Trans>WELCOME_HOME_SCREEN</Trans>,{' '}
-                <Text style={{ color: theme.general.secondary }}>
-                    Anderson
-                </Text>
-            </Text>
-        </ScreenWrapper>
+      <ScreenWrapper>
+          <Text style={[styles.title, { color: theme.primary.text }]}>
+              <Trans>WELCOME_HOME_SCREEN</Trans>,{' '}
+              <Text style={{ color: theme.general.secondary }}>
+                  Anderson
+              </Text>
+          </Text>
+      </ScreenWrapper>
     );
 }
 
 const styles = StyleSheet.create({
   title: {
+    marginTop: 20,
     fontFamily: FontDefinition.logo.bold,
     fontSize: 20,
   }

@@ -37,12 +37,11 @@ export const DarkTheme = {
   primary: {
     background: '#141b22',
     text: '#ffffff',
-    button: '#84a9d3ff',
-    input: '#1e2833'
+    button: '#ccc',
   },
   secondary: {
     background: '#1e2833',
     text: '#ccc',
-    button: '#ccc',
+    button: '#84a9d3ff',
   }
 };
