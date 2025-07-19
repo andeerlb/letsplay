@@ -1,6 +1,6 @@
 import { Trans } from "@lingui/react/macro";
-import { FontDefinition } from "@src/constants/theme";
-import ScreenWrapper from "@src/wrapper/ScreenWrapper";
+import { FontDefinition } from "@constants/theme";
+import ScreenWrapper from "@wrapper/ScreenWrapper";
 import { StyleSheet, Text } from "react-native";
 
 function HomeScreen() {

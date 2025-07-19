@@ -1,7 +1,7 @@
 import { View, StyleSheet, Pressable, Text } from "react-native";
 import SettingIcon from '@assets/icons/settings.svg';
 import LetsPlayIcon from '@assets/icons/letsplay.svg';
-import { FontDefinition } from "@src/constants/theme";
+import { FontDefinition } from "@constants/theme";
 
 type Props = {
   children: React.ReactNode;

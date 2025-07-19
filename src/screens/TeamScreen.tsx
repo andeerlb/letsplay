@@ -1,4 +1,4 @@
-import ScreenWrapper from "@src/wrapper/ScreenWrapper";
+import ScreenWrapper from "@wrapper/ScreenWrapper";
 import Search from "@components/search/Search";
 import { useLingui } from "@lingui/react/macro";
 

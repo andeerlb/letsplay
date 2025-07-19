@@ -9,7 +9,7 @@ type Props = {
 
 export default function ScreenWrapper({ children }: Props) {
   const insets = useSafeAreaInsets();
-  useTheme();
+  const { colors } = useTheme();
 
   return (
     <View

@@ -7,9 +7,9 @@ import HomeScreen from '@screens/HomeScreen';
 import ProfileScreen from '@screens/ProfileScreen';
 import MatchScreen from '@screens/MatchScreen';
 import NavigationHeader from '@components/navigation/NavigationHeader';
-import TeamScreen from '@src/screens/TeamScreen';
+import TeamScreen from '@screens/TeamScreen';
 import { useLingui } from "@lingui/react/macro";
-import { FontDefinition } from '@src/constants/theme';
+import { FontDefinition } from '@constants/theme';
 
 const Tab = createBottomTabNavigator();
 

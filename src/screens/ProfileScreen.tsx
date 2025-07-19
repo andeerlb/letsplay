@@ -1,5 +1,5 @@
 import { Text } from "react-native";
-import ScreenWrapper from "@src/wrapper/ScreenWrapper";
+import ScreenWrapper from "@wrapper/ScreenWrapper";
 
 function ProfileScreen() {
 
