@@ -1,3 +1,4 @@
+import { Trans } from "@lingui/react/macro";
 import ScreenWrapper from "@src/wrapper/ScreenWrapper";
 import { StyleSheet, Text } from "react-native";
 
@@ -5,7 +6,7 @@ function HomeScreen() {
     return (
         <ScreenWrapper>
             <Text style={styles.text}>
-                Welcome,{' '}
+                <Trans>WELCOME</Trans>,{' '}
                 <Text style={[styles.text, styles.userName]}>
                     Anderson
                 </Text>
