@@ -7,6 +7,7 @@ import { i18n } from "@lingui/core";
 import { messages as ptMessages } from '@locales/pt/messages';
 import { messages as enMessages } from '@locales/en/messages';
 import { I18nProvider, TransRenderProps } from '@lingui/react';
+import { useLanguage } from '@context/LocaleContext';
 
 const messagesMap = {
   pt: ptMessages,
@@ -16,18 +17,18 @@ const messagesMap = {
 const DefaultComponent = (props: TransRenderProps) => <Text>{props.children}</Text>;
 
 function App() {
-  const [locale, setLocale] = useState<'pt' | 'en'>('pt');
+  const { language } = useLanguage();
   const isDarkMode = useColorScheme() === 'dark';
 
   useEffect(() => {
     const loadLocale = async () => {
       await i18n.loadAndActivate({
-        locale,
-        messages: messagesMap[locale],
+        locale: language,
+        messages: messagesMap[language],
       });
     };
     loadLocale();
-  }, [locale]);
+  }, [language]);
   
   return (
     <SafeAreaProvider>
