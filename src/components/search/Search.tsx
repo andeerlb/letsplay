@@ -9,7 +9,7 @@ interface SearchProps {
 }
 
 const Search: React.FC<SearchProps> = ({ onSearch, placeholder }) => {
-    const { isDarkMode, theme } = useTheme();
+    const { theme } = useTheme();
     const [searchText, setSearchText] = useState('');
 
     const handleSearchChange = (text: string) => {
@@ -22,7 +22,7 @@ const Search: React.FC<SearchProps> = ({ onSearch, placeholder }) => {
             <SearchIcon style={styles.icon} width={24} height={24} color={theme.primary.text} />
             <TextInput
                 style={[styles.input, { color: theme.primary.text }]}
-                placeholder={placeholder || "Buscar..."}
+                placeholder={placeholder}
                 value={searchText}
                 onChangeText={handleSearchChange}
                 placeholderTextColor={theme.secondary.text}
