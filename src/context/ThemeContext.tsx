@@ -2,15 +2,27 @@ import React, { createContext, useContext } from 'react';
 import { LightTheme, DarkTheme } from '@src/constants/theme';
 import { useColorScheme } from 'react-native';
 
-const ThemeContext = createContext(LightTheme);
+type ThemeContextType = {
+  theme: typeof LightTheme | typeof DarkTheme;
+  isDarkMode: boolean;
+};
+
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const scheme = useColorScheme();
-  const theme = scheme === 'dark' ? DarkTheme : LightTheme;
+  const isDarkMode = scheme === 'dark';
+  const theme = isDarkMode ? DarkTheme : LightTheme;
 
-  return <ThemeContext.Provider value={theme}>
+  return <ThemeContext.Provider value={{ theme, isDarkMode }}>
     {children}
   </ThemeContext.Provider>;
 };
 
-export const useTheme = () => useContext(ThemeContext);
+export const useTheme = () => {
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error('useTheme must be used within a ThemeProvider');
+  }
+  return context;
+};
