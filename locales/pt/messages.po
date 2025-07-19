@@ -25,5 +25,5 @@ msgstr "Times"
 msgid "PROFILE_BOTTOM_MENU"
 msgstr "Conta"
 
-msgid "WELCOME"
+msgid "WELCOME_HOME_SCREEN"
 msgstr "Bem-vindo"

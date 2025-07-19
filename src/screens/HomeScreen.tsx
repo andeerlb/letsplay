@@ -6,7 +6,7 @@ function HomeScreen() {
     return (
         <ScreenWrapper>
             <Text style={styles.text}>
-                <Trans>WELCOME</Trans>,{' '}
+                <Trans>WELCOME_HOME_SCREEN</Trans>,{' '}
                 <Text style={[styles.text, styles.userName]}>
                     Anderson
                 </Text>
