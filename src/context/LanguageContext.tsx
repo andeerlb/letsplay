@@ -31,6 +31,9 @@ const getDeviceLanguage = () => {
       NativeModules.I18nManager?.locale;
   }
   
+  console.log(Platform.OS);
+  console.log('modules ', NativeModules);
+  console.log('Detected device language:', locale);
   if(locale) {
     locale = locale.split(/[-_]/)[0] as Language;
   }
@@ -43,7 +46,7 @@ const getDeviceLanguage = () => {
 };
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [locale, setLocale] = useState<string>(getDeviceLanguage());
+  const [locale, setLocale] = useState<string>('pt');
   const [messages, setMessages] = useState<Record<Language, typeof ptMessages | typeof enMessages>>(LANGUAGE_MAP.pt);
 
   const change = (newLanguage: Language) => {
@@ -52,6 +55,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   };
 
   useEffect(() => {
+    getDeviceLanguage();
     const loadLocale = async () => {
       await i18n.loadAndActivate({
         locale: locale,
