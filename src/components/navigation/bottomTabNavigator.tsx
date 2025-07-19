@@ -7,7 +7,7 @@ import HomeScreen from '@screens/HomeScreen';
 import ProfileScreen from '@screens/ProfileScreen';
 import MatchScreen from '@screens/MatchScreen';
 import NavigationHeader from '@components/navigation/NavigationHeader';
-import TeamScreen from '@screens/TeamScreen';
+import TeamScreen, { TeamScreenHeader } from '@screens/TeamScreen';
 import { useLingui } from "@lingui/react/macro";
 import { FontDefinition } from '@constants/theme';
 import { useTheme } from '@context/ThemeContext';
@@ -73,7 +73,7 @@ export default function BottomTabNavigator() {
         component={TeamScreen}
         options={{
           title: t`TEAM_BOTTOM_MENU`,
-          header: () => <NavigationHeader title={t`TEAM_BOTTOM_MENU`} />
+          header: () => <TeamScreenHeader />
         }}
       />
       <Tab.Screen

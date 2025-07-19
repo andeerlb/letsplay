@@ -12,7 +12,7 @@ type Props = {
   title?: string;
 };
 
-export default function NavigationHeader({ children, onClick, title, hideSettings = true }: Props) {
+export default function NavigationHeader({ children, title, hideSettings = true }: Props) {
   const { theme } = useTheme();
   const insets = useSafeAreaInsets();
   
@@ -26,10 +26,8 @@ export default function NavigationHeader({ children, onClick, title, hideSetting
     }]}>
       <LetsPlayIcon width={50} height={50} />
       {title && <Text style={[styles.title, { color: theme.primary.text }]}>{title}</Text>}
-      <View>
-        {children && <Pressable onPress={onClick}>
-          {children}
-        </Pressable>}
+      <View style={styles.rightButtons}>
+        {children && children}
         {!hideSettings && (
           <Pressable onPress={goToSettingsPage}>
             <SettingIcon width={24} height={24} fill={theme.primary.button} />
@@ -54,5 +52,11 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: FontDefinition.general.regular,
     fontSize: 20,
+  },
+  rightButtons: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: 'center',
+    gap: 15
   }
 });
