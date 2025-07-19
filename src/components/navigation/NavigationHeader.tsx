@@ -1,6 +1,7 @@
 import { View, StyleSheet, Pressable, Text } from "react-native";
 import SettingIcon from '@assets/icons/settings.svg';
 import LetsPlayIcon from '@assets/icons/letsplay.svg';
+import { FontDefinition } from "@src/constants/theme";
 
 type Props = {
   children: React.ReactNode;
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   title: {
-    fontFamily: 'Armavir02-Bold',
+    fontFamily: FontDefinition.general.regular,
     fontSize: 20,
     color: '#000',
   }

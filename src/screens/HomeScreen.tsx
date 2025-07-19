@@ -1,13 +1,14 @@
 import { Trans } from "@lingui/react/macro";
+import { FontDefinition } from "@src/constants/theme";
 import ScreenWrapper from "@src/wrapper/ScreenWrapper";
 import { StyleSheet, Text } from "react-native";
 
 function HomeScreen() {
     return (
         <ScreenWrapper>
-            <Text style={styles.text}>
+            <Text style={styles.title}>
                 <Trans>WELCOME_HOME_SCREEN</Trans>,{' '}
-                <Text style={[styles.text, styles.userName]}>
+                <Text style={[styles.userName]}>
                     Anderson
                 </Text>
             </Text>
@@ -16,8 +17,8 @@ function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
-  text: {
-    fontFamily: 'Armavir01-Bold',
+  title: {
+    fontFamily: FontDefinition.logo.bold,
     fontSize: 20,
   },
   userName: {

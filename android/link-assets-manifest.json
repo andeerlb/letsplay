@@ -6,32 +6,28 @@
       "sha1": "a1e1f169b05c4288b048968b0e7d264e67c3a94e"
     },
     {
-      "path": "assets/fonts/Armavir01.ttf",
+      "path": "assets/fonts/Armavir01-Regular.ttf",
       "sha1": "33cfbf198e3070030de54f21c0e82258c87de65e"
     },
     {
-      "path": "assets/fonts/Armavir02-Bold.ttf",
-      "sha1": "767f2b13b615d2f1b9982041980735c5716008bf"
+      "path": "assets/fonts/Lexend-Bold.ttf",
+      "sha1": "df3c3feab8ac51ab6f8d6a01f3b3a0e19dc88d03"
     },
     {
-      "path": "assets/fonts/Armavir02.ttf",
-      "sha1": "ceba963555a0fe83d7a4fa1f90adc95dd9c366cb"
+      "path": "assets/fonts/Lexend-ExtraBold.ttf",
+      "sha1": "b4eb65e2f16d6614bde3f7d9d0bb09742ff47163"
     },
     {
-      "path": "assets/fonts/Armavir03-Bold.ttf",
-      "sha1": "e8a63e3cf322c9cc467b11ac230a895a1a5646bb"
+      "path": "assets/fonts/Lexend-Medium.ttf",
+      "sha1": "d607ea1e392b925d5229569cd3a8c9bdfcac1eaf"
     },
     {
-      "path": "assets/fonts/Armavir03.ttf",
-      "sha1": "8c088f7585490eb88b2c4da190d77aa9043046ec"
+      "path": "assets/fonts/Lexend-Regular.ttf",
+      "sha1": "dd3cee6e434d8debb7699473bd61918cfb54798d"
     },
     {
-      "path": "assets/fonts/ArmavirShadow-Bold.ttf",
-      "sha1": "e37f1e13bf0cbc0f938ba7a153673c38ce2715e8"
-    },
-    {
-      "path": "assets/fonts/ArmavirShadow.ttf",
-      "sha1": "550996ee31c6c29b3b5cdacd45e7eaa5175f959d"
+      "path": "assets/fonts/Lexend-SemiBold.ttf",
+      "sha1": "2a080dd36278ff2755d5976317cbeeecbcf6cc62"
     }
   ]
 }

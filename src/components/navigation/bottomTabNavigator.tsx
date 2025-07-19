@@ -9,6 +9,7 @@ import MatchScreen from '@screens/MatchScreen';
 import NavigationHeader from '@components/navigation/NavigationHeader';
 import TeamScreen from '@src/screens/TeamScreen';
 import { useLingui } from "@lingui/react/macro";
+import { FontDefinition } from '@src/constants/theme';
 
 const Tab = createBottomTabNavigator();
 
@@ -36,6 +37,8 @@ export default function BottomTabNavigator() {
         tabBarActiveTintColor: '#256b35ff',
         tabBarInactiveTintColor: '#888',
         tabBarLabelStyle: {
+          fontFamily: FontDefinition.general.regular,
+          fontSize: 10,
           fontWeight: '500',
         },
       })}

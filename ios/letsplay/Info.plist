@@ -50,13 +50,12 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Armavir01-Bold.ttf</string>
-		<string>Armavir01.ttf</string>
-		<string>Armavir02-Bold.ttf</string>
-		<string>Armavir02.ttf</string>
-		<string>Armavir03-Bold.ttf</string>
-		<string>Armavir03.ttf</string>
-		<string>ArmavirShadow-Bold.ttf</string>
-		<string>ArmavirShadow.ttf</string>
+		<string>Armavir01-Regular.ttf</string>
+		<string>Lexend-Bold.ttf</string>
+		<string>Lexend-ExtraBold.ttf</string>
+		<string>Lexend-Medium.ttf</string>
+		<string>Lexend-Regular.ttf</string>
+		<string>Lexend-SemiBold.ttf</string>
 	</array>
 </dict>
 </plist>
