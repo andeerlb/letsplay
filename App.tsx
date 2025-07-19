@@ -13,7 +13,6 @@ const messagesMap = {
   en: enMessages,
 };
 
-
 const DefaultComponent = (props: TransRenderProps) => <Text>{props.children}</Text>;
 
 function App() {

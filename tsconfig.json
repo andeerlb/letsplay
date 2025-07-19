@@ -9,6 +9,10 @@
       "@screens/*": ["src/screens/*"],
       "@types/*": ["src/types/*"],
       "@locales/*": ["locales/*"],
+      "@constants/*": ["src/constants/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@utils/*": ["src/utils/*"],
+      "@context/*": ["src/context/*"],
     }
   }
 }
