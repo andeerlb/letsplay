@@ -10,9 +10,10 @@ type Props = {
   onClick?: () => void;
   hideSettings?: boolean;
   title?: string;
+  hideLogo: boolean
 };
 
-export default function NavigationHeader({ children, title, hideSettings = true }: Props) {
+export default function NavigationHeader({ children, title, hideSettings = true, hideLogo = true }: Props) {
   const { theme } = useTheme();
   const insets = useSafeAreaInsets();
   
@@ -24,7 +25,7 @@ export default function NavigationHeader({ children, title, hideSettings = true 
       paddingHorizontal: 15,
       backgroundColor: theme.secondary.background
     }]}>
-      <LetsPlayIcon width={50} height={50} />
+      {hideLogo ? <View /> : <LetsPlayIcon width={50} height={50} />}
       {title && <Text style={[styles.title, { color: theme.primary.text }]}>{title}</Text>}
       <View style={styles.rightButtons}>
         {children && children}
