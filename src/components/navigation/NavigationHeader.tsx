@@ -10,7 +10,7 @@ type Props = {
   onClick?: () => void;
   hideSettings?: boolean;
   title?: string;
-  hideLogo: boolean
+  hideLogo?: boolean
 };
 
 export default function NavigationHeader({ children, title, hideSettings = true, hideLogo = false }: Props) {
