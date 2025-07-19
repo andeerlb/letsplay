@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, ReactNode, useEffect } from
 import { messages as ptMessages } from '@locales/pt/messages';
 import { messages as enMessages } from '@locales/en/messages';
 import { i18n } from '@lingui/core';
+import { Platform, NativeModules } from 'react-native';
 
 export type Language = 'pt' | 'en';
 
@@ -16,9 +17,33 @@ const LANGUAGE_MAP: Record<Language, typeof ptMessages | typeof enMessages> = {
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+const DEFAULT_LANGUAGE: Language = 'pt';
+
+const getDeviceLanguage = () => {
+  let locale: Language = DEFAULT_LANGUAGE;
+
+  if (Platform.OS === 'ios') {
+    locale =
+      NativeModules.SettingsManager?.settings?.AppleLocale ||
+      NativeModules.SettingsManager?.settings?.AppleLanguages?.[0];
+  } else if (Platform.OS === 'android') {
+    locale = NativeModules.I18nManager?.localeIdentifier ||
+      NativeModules.I18nManager?.locale;
+  }
+  
+  if(locale) {
+    locale = locale.split(/[-_]/)[0] as Language;
+  }
+
+  if(locale !== 'pt' && locale !== 'en') {
+    locale = 'en';
+  }
+
+  return locale;
+};
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [locale, setLocale] = useState<string>('en');
+  const [locale, setLocale] = useState<string>(getDeviceLanguage());
   const [messages, setMessages] = useState<Record<Language, typeof ptMessages | typeof enMessages>>(LANGUAGE_MAP.pt);
 
   const change = (newLanguage: Language) => {
