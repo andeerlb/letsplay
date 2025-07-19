@@ -7,7 +7,6 @@ defaultConfig.resolver.assetExts = defaultConfig.resolver.assetExts.filter(ext =
 
 const config = {
   transformer: {
-    // babelTransformerPath: require.resolve("@lingui/metro-transformer/react-native"),
     babelTransformerPath: require.resolve('./metro.transformer.js'),
   },
   resolver: {
