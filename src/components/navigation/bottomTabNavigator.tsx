@@ -8,6 +8,7 @@ import ProfileScreen from '@screens/ProfileScreen';
 import MatchScreen from '@screens/MatchScreen';
 import NavigationHeader from '@components/navigation/NavigationHeader';
 import TeamScreen from '@src/screens/TeamScreen';
+import { useLingui } from "@lingui/react/macro";
 
 const Tab = createBottomTabNavigator();
 
@@ -25,6 +26,8 @@ const getTabBarIcon = (routeName: string, color: string, size: number) => {
 };
 
 export default function BottomTabNavigator() {
+  const { t } = useLingui();
+
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -41,32 +44,32 @@ export default function BottomTabNavigator() {
         name="Home"
         component={HomeScreen}
         options={{
-          title: "Inicio",
-          header: () => <NavigationHeader title="Inicio" hideSettings={false} />
+          title: t`HOME_BOTTOM_MENU`,
+          header: () => <NavigationHeader title={t`HOME_BOTTOM_MENU`} hideSettings={false} />
         }}
       />
       <Tab.Screen
         name="Match"
         component={MatchScreen}
         options={{
-          title: "Buscar",
-          header: () => <NavigationHeader title='Buscar' />
+          title: t`MATCH_BOTTOM_MENU`,
+          header: () => <NavigationHeader title={t`MATCH_BOTTOM_MENU`} />
         }}
       />
       <Tab.Screen
         name="Team"
         component={TeamScreen}
         options={{
-          title: "Times",
-          header: () => <NavigationHeader title='Times' />
+          title: t`TEAM_BOTTOM_MENU`,
+          header: () => <NavigationHeader title={t`TEAM_BOTTOM_MENU`} />
         }}
       />
       <Tab.Screen
         name="Profile"
         component={ProfileScreen}
         options={{
-          title: "Conta",
-          header: () => <NavigationHeader title='Conta' hideSettings={false} />
+          title: t`PROFILE_BOTTOM_MENU`,
+          header: () => <NavigationHeader title={t`PROFILE_BOTTOM_MENU`} hideSettings={false} />
         }}
       />
     </Tab.Navigator>

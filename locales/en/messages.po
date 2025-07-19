@@ -13,6 +13,17 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/screens/Home.tsx:10
+msgid "HOME_BOTTOM_MENU"
+msgstr "Home"
+
+msgid "MATCH_BOTTOM_MENU"
+msgstr "Search"
+
+msgid "TEAM_BOTTOM_MENU"
+msgstr "Teams"
+
+msgid "PROFILE_BOTTOM_MENU"
+msgstr "Account"
+
 msgid "WELCOME"
 msgstr "Welcome"
