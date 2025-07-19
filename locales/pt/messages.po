@@ -13,23 +13,30 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-# bottom navigation menu
+#: src/components/navigation/bottomTabNavigator.tsx:47
+#: src/components/navigation/bottomTabNavigator.tsx:48
 msgid "HOME_BOTTOM_MENU"
 msgstr "Início"
 
+#: src/components/navigation/bottomTabNavigator.tsx:55
+#: src/components/navigation/bottomTabNavigator.tsx:56
 msgid "MATCH_BOTTOM_MENU"
 msgstr "Buscar"
 
-msgid "TEAM_BOTTOM_MENU"
-msgstr "Times"
-
+#: src/components/navigation/bottomTabNavigator.tsx:71
+#: src/components/navigation/bottomTabNavigator.tsx:72
 msgid "PROFILE_BOTTOM_MENU"
 msgstr "Conta"
 
-# home screen
-msgid "WELCOME_HOME_SCREEN"
-msgstr "Bem-vindo"
-
-# team screen
+#: src/screens/TeamScreen.tsx:11
 msgid "SEARCH_BAR_PLACEHOLDER"
 msgstr "Meus times..."
+
+#: src/components/navigation/bottomTabNavigator.tsx:63
+#: src/components/navigation/bottomTabNavigator.tsx:64
+msgid "TEAM_BOTTOM_MENU"
+msgstr "Times"
+
+#: src/screens/HomeScreen.tsx:9
+msgid "WELCOME_HOME_SCREEN"
+msgstr "Bem-vindo"

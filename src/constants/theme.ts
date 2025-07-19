@@ -1,3 +1,17 @@
+export const FontDefinition = {
+    general: {
+        regular: 'Lexend-Regular',
+        medium: 'Lexend-Medium',
+        semiBold: 'Lexend-SemiBold',
+        bold: 'Lexend-Bold',
+        extraBold: 'Lexend-ExtraBold',
+    },
+    logo: {
+        regular: 'Armavir01-Regular',
+        bold: 'Armavir01-Bold',
+    }
+}
+
 export const LightTheme = {
   colors: {
     background: '#ffffff',
