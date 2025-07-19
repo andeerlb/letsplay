@@ -19,7 +19,7 @@ const Search: React.FC<SearchProps> = ({ onSearch, placeholder }) => {
 
     return (
         <View style={[styles.container, { backgroundColor: isDarkMode ? '#2a3848' : '#f0f0f0' }]}>
-            <SearchIcon style={styles.icon} width={24} height={24} />
+            <SearchIcon style={styles.icon} width={24} height={24} color={theme.primary.text} />
             <TextInput
                 style={[styles.input, { color: theme.primary.text }]}
                 placeholder={placeholder || "Buscar..."}
