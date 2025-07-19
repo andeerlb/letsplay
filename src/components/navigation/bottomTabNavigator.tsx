@@ -10,6 +10,7 @@ import NavigationHeader from '@components/navigation/NavigationHeader';
 import TeamScreen from '@screens/TeamScreen';
 import { useLingui } from "@lingui/react/macro";
 import { FontDefinition } from '@constants/theme';
+import { useTheme } from '@context/ThemeContext';
 
 const Tab = createBottomTabNavigator();
 
@@ -28,18 +29,26 @@ const getTabBarIcon = (routeName: string, color: string, size: number) => {
 
 export default function BottomTabNavigator() {
   const { t } = useLingui();
+  const { theme } = useTheme();
 
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, size }) => getTabBarIcon(route.name, color, size),
         tabBarShowLabel: true,
-        tabBarActiveTintColor: '#256b35ff',
-        tabBarInactiveTintColor: '#888',
+        tabBarActiveTintColor: theme.secondary.button,
+        tabBarInactiveTintColor: theme.primary.button,
         tabBarLabelStyle: {
           fontFamily: FontDefinition.general.regular,
           fontSize: 10,
           fontWeight: '500',
+        },
+        tabBarStyle: {
+          paddingTop: 5,
+          height: 90,
+          display: 'flex',
+          flexDirection: 'row',
+          backgroundColor: theme.secondary.background,
         },
       })}
     >

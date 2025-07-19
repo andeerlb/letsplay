@@ -9,13 +9,14 @@ type Props = {
 
 export default function ScreenWrapper({ children }: Props) {
   const insets = useSafeAreaInsets();
-  const { colors } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <View
       style={[
         styles.container,
         {
+          backgroundColor: theme.primary.background,
           paddingTop: insets.top,
           paddingBottom: insets.bottom + 8,
         },
@@ -29,7 +30,6 @@ export default function ScreenWrapper({ children }: Props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     paddingHorizontal: 16,
   }
 });

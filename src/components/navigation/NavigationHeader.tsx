@@ -2,6 +2,7 @@ import { View, StyleSheet, Pressable, Text } from "react-native";
 import SettingIcon from '@assets/icons/settings.svg';
 import LetsPlayIcon from '@assets/icons/letsplay.svg';
 import { FontDefinition } from "@constants/theme";
+import { useTheme } from "@context/ThemeContext";
 
 type Props = {
   children: React.ReactNode;
@@ -11,17 +12,19 @@ type Props = {
 };
 
 export default function NavigationHeader({ children, onClick, title, hideSettings = true }: Props) {
+  const { theme } = useTheme();
+  
   return (
-    <View style={styles.header}>
+    <View style={[styles.header, { backgroundColor: theme.secondary.background }]}>
       <LetsPlayIcon width={50} height={50} />
-      {title && <Text style={styles.title}>{title}</Text>}
+      {title && <Text style={[styles.title, { color: theme.primary.text }]}>{title}</Text>}
       <View>
         {children && <Pressable onPress={onClick}>
           {children}
         </Pressable>}
         {!hideSettings && (
           <Pressable onPress={goToSettingsPage}>
-            <SettingIcon width={24} height={24} />
+            <SettingIcon width={24} height={24} fill={theme.primary.button} />
           </Pressable>
         )}
       </View>
@@ -37,16 +40,14 @@ const styles = StyleSheet.create({
   header: {
     display: 'flex',
     flexDirection: 'row',
-    marginTop: 40,
-    marginBottom: 10,
+    paddingTop: 40,
+    paddingBottom: 10,
     paddingHorizontal: 20,
     alignItems: 'center',
-    height: 60,
     justifyContent: 'space-between',
   },
   title: {
     fontFamily: FontDefinition.general.regular,
     fontSize: 20,
-    color: '#000',
   }
 });

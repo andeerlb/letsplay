@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { TextInput, View, StyleSheet } from 'react-native';
 import SearchIcon from "@assets/icons/search.svg";
+import { useTheme } from '@context/ThemeContext';
 
 interface SearchProps {
     onSearch: (text: string) => void;
@@ -8,6 +9,7 @@ interface SearchProps {
 }
 
 const Search: React.FC<SearchProps> = ({ onSearch, placeholder }) => {
+    const { isDarkMode, theme } = useTheme();
     const [searchText, setSearchText] = useState('');
 
     const handleSearchChange = (text: string) => {
@@ -16,14 +18,14 @@ const Search: React.FC<SearchProps> = ({ onSearch, placeholder }) => {
     };
 
     return (
-        <View style={styles.container}>
-            <SearchIcon style={styles.icon} width={24} height={24} color="#000" /> 
+        <View style={[styles.container, { backgroundColor: isDarkMode ? '#2a3848' : '#f0f0f0' }]}>
+            <SearchIcon style={styles.icon} width={24} height={24} />
             <TextInput
-                style={styles.input}
+                style={[styles.input, { color: theme.primary.text }]}
                 placeholder={placeholder || "Buscar..."}
                 value={searchText}
                 onChangeText={handleSearchChange}
-                placeholderTextColor={"#888"} // Placeholder color
+                placeholderTextColor={theme.secondary.text}
             />
         </View>
     );
@@ -33,7 +35,6 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: '#f0f0f0',
         borderRadius: 5,
         height: 50,
         paddingLeft: 15,
@@ -45,10 +46,8 @@ const styles = StyleSheet.create({
         height: 50,
         borderRadius: 5,
         paddingRight: 15,
-        color: "#000",
         fontFamily: "sans-serif",
         fontSize: 16,
-        backgroundColor: '#f0f0f0',
     },
     icon: {
         marginRight: 8,

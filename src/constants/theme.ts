@@ -13,17 +13,35 @@ export const FontDefinition = {
 }
 
 export const LightTheme = {
-  colors: {
+  general: {
+    primary: '#000',
+    secondary: '#256b35'
+  },
+  primary: {
     background: '#ffffff',
     text: '#000000',
-    primary: '#007AFF',
+    button: '#fff',
   },
+  secondary: {
+    background: '#ffffff',
+    text: '#fff',
+    button: '#ccc',
+  }
 };
 
 export const DarkTheme = {
-  colors: {
-    background: '#000000',
-    text: '#ffffff',
-    primary: '#0A84FF',
+  general: {
+    primary: '#fff',
+    secondary: '#256b35',
   },
+  primary: {
+    background: '#141b22',
+    text: '#ffffff',
+    button: '#8293a8',
+  },
+  secondary: {
+    background: '#1e2833',
+    text: '#ccc',
+    button: '#ccc',
+  }
 };
