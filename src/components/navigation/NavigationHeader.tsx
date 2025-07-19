@@ -21,7 +21,7 @@ export default function NavigationHeader({ children, onClick, title, hideSetting
     <View style={[styles.header, {
       paddingTop: insets.top + 15,
       paddingBottom: 15,
-      paddingHorizontal: 10,
+      paddingHorizontal: 15,
       backgroundColor: theme.secondary.background
     }]}>
       <LetsPlayIcon width={50} height={50} />
