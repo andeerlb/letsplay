@@ -5,8 +5,12 @@ import { Pressable } from "react-native";
 import AddIcon from '@assets/icons/plus.svg';
 import NavigationHeader from "@components/navigation/NavigationHeader";
 import { useTheme } from "@context/ThemeContext";
+import { BottomTabParamList } from "@components/navigation/bottomTabNavigator";
+import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 
-function TeamScreen() {
+type TeamScreenNavigationProp = BottomTabNavigationProp<BottomTabParamList, 'Team'>;
+
+function TeamScreen({ }: { navigation: TeamScreenNavigationProp }) {
     const { t } = useLingui();
 
     return (

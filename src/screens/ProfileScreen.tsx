@@ -1,7 +1,11 @@
 import { Text } from "react-native";
 import ScreenWrapper from "@wrapper/ScreenWrapper";
+import { BottomTabParamList } from "@components/navigation/bottomTabNavigator";
+import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 
-function ProfileScreen() {
+type ProfileScreenNavigationProp = BottomTabNavigationProp<BottomTabParamList, 'Profile'>;
+
+function ProfileScreen({ }: { navigation: ProfileScreenNavigationProp }) {
 
     return (
         <ScreenWrapper>

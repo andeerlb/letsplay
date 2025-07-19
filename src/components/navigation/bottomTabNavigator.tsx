@@ -12,7 +12,14 @@ import { useLingui } from "@lingui/react/macro";
 import { FontDefinition } from '@constants/theme';
 import { useTheme } from '@context/ThemeContext';
 
-const Tab = createBottomTabNavigator();
+export type BottomTabParamList = {
+  Home: undefined;
+  Match: undefined;
+  Team: undefined;
+  Profile: undefined;
+};
+
+const Tab = createBottomTabNavigator<BottomTabParamList>();
 
 const getTabBarIcon = (routeName: string, color: string, size: number) => {
   if (routeName === 'Home') {

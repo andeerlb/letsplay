@@ -3,7 +3,12 @@ import { createStackNavigator } from '@react-navigation/stack';
 import BottomTabNavigator from './bottomTabNavigator';
 import { SettingScreen } from '@screens/SettingScreen';
 
-const Stack = createStackNavigator();
+export type RootStackParamList = {
+  Main: undefined;       // The BottomTabNavigator screen
+  Setting: undefined;    // Your Setting screen
+};
+
+const Stack = createStackNavigator<RootStackParamList>();
 
 const RootStackNavigator = () => (
   <Stack.Navigator>

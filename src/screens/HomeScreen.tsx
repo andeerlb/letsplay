@@ -3,8 +3,12 @@ import { FontDefinition } from "@constants/theme";
 import ScreenWrapper from "@wrapper/ScreenWrapper";
 import { StyleSheet, Text } from "react-native";
 import { useTheme } from "@context/ThemeContext";
+import { BottomTabParamList } from "@components/navigation/bottomTabNavigator";
+import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 
-function HomeScreen() {
+type HomeScreenNavigationProp = BottomTabNavigationProp<BottomTabParamList, 'Home'>;
+
+function HomeScreen({ }: { navigation: HomeScreenNavigationProp }) {
   const { theme } = useTheme();
   
     return (

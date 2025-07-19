@@ -4,6 +4,8 @@ import LetsPlayIcon from '@assets/icons/letsplay.svg';
 import { FontDefinition } from "@constants/theme";
 import { useTheme } from "@context/ThemeContext";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { useNavigation, NavigationProp } from "@react-navigation/native";
+import { RootStackParamList } from "./rootNavigation";
 
 type Props = {
   children: React.ReactNode;
@@ -16,7 +18,12 @@ type Props = {
 export default function NavigationHeader({ children, title, hideSettings = true, hideLogo = false }: Props) {
   const { theme } = useTheme();
   const insets = useSafeAreaInsets();
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   
+  const goToSettingsPage = () => {
+    navigation.navigate('Setting');
+  }
+
   return (
     // eslint-disable-next-line react-native/no-inline-styles
     <View style={[styles.header, {
@@ -36,10 +43,6 @@ export default function NavigationHeader({ children, title, hideSettings = true,
       </View>
     </View>
   );
-}
-
-const goToSettingsPage = () => {
-  console.log("Navigate to settings page");
 }
 
 const styles = StyleSheet.create({
