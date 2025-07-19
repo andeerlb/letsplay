@@ -1,3 +1,4 @@
+import { useTheme } from '@context/ThemeContext';
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -8,6 +9,7 @@ type Props = {
 
 export default function ScreenWrapper({ children }: Props) {
   const insets = useSafeAreaInsets();
+  useTheme();
 
   return (
     <View
