@@ -13,19 +13,18 @@ type Props = {
   hideLogo: boolean
 };
 
-export default function NavigationHeader({ children, title, hideSettings = true, hideLogo = true }: Props) {
+export default function NavigationHeader({ children, title, hideSettings = true, hideLogo = false }: Props) {
   const { theme } = useTheme();
   const insets = useSafeAreaInsets();
   
   return (
     // eslint-disable-next-line react-native/no-inline-styles
     <View style={[styles.header, {
-      paddingTop: insets.top + 15,
-      paddingBottom: 15,
+      paddingTop: insets.top,
       paddingHorizontal: 15,
       backgroundColor: theme.secondary.background
     }]}>
-      {hideLogo ? <View /> : <LetsPlayIcon width={50} height={50} />}
+      {hideLogo ? <View /> : <LetsPlayIcon width={25} height={25} />}
       {title && <Text style={[styles.title, { color: theme.primary.text }]}>{title}</Text>}
       <View style={styles.rightButtons}>
         {children && children}
@@ -46,6 +45,7 @@ const goToSettingsPage = () => {
 const styles = StyleSheet.create({
   header: {
     display: 'flex',
+    height: 90,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
