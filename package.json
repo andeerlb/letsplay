@@ -6,9 +6,13 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
-    "start": "react-native start",
+    "start": "yarn i18n:update && react-native start",
+    "start:no-cache": "yarn i18n:update && npx react-native start --reset-cache",
     "test": "jest",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "i18n:update": "lingui extract && lingui compile",
+    "i18n:extract": "lingui extract",
+    "i18n:compile": "lingui compile"
   },
   "dependencies": {
     "@lingui/core": "^5.3.3",

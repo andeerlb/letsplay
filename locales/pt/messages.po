@@ -23,24 +23,25 @@ msgstr "Início"
 msgid "MATCH_BOTTOM_MENU"
 msgstr "Buscar"
 
-#: src/components/navigation/bottomTabNavigator.tsx:90
-#: src/components/navigation/bottomTabNavigator.tsx:91
+#: src/components/navigation/bottomTabNavigator.tsx:87
+#: src/components/navigation/bottomTabNavigator.tsx:88
 msgid "PROFILE_BOTTOM_MENU"
 msgstr "Conta"
 
-#: src/screens/TeamScreen.tsx:19
+#: src/screens/team/TeamScreen.tsx:22
 msgid "SEARCH_BAR_PLACEHOLDER"
 msgstr "Meus times..."
 
-#: src/components/navigation/rootNavigation.tsx:31
+#: src/components/navigation/rootNavigation.tsx:58
 msgid "SETTING_SCREEN_TITLE"
 msgstr "Configurações"
 
-#: src/screens/TeamScreen.tsx:37
-#: src/components/navigation/bottomTabNavigator.tsx:82
+#: src/screens/team/TeamScreen.tsx:43
+#: src/components/navigation/teamNavigator.tsx:25
+#: src/components/navigation/teamNavigator.tsx:32
 msgid "TEAM_BOTTOM_MENU"
 msgstr "Times"
 
-#: src/screens/HomeScreen.tsx:17
+#: src/screens/home/HomeScreen.tsx:17
 msgid "WELCOME_HOME_SCREEN"
 msgstr "Bem-vindo"
