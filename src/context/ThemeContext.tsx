@@ -2,7 +2,7 @@ import React, { createContext, useContext } from 'react';
 import { LightTheme, DarkTheme } from '@constants/theme';
 import { useColorScheme } from 'react-native';
 
-type ThemeContextType = {
+export type ThemeContextType = {
   theme: typeof LightTheme | typeof DarkTheme;
   isDarkMode: boolean;
 };

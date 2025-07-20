@@ -3,10 +3,13 @@ import Search from "@components/search/Search";
 import { useLingui } from "@lingui/react/macro";
 import { Pressable } from "react-native";
 import AddIcon from '@assets/icons/plus.svg';
-import NavigationHeader from "@components/navigation/NavigationHeader";
+import BottomNavigationHeader from "@components/navigation/NavigationHeader";
 import { useTheme } from "@context/ThemeContext";
 import { BottomTabParamList } from "@components/navigation/bottomTabNavigator";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { useNavigation } from "@react-navigation/native";
+import { TeamStackParamList } from "@components/navigation/teamNavigator";
 
 type TeamScreenNavigationProp = BottomTabNavigationProp<BottomTabParamList, 'Team'>;
 
@@ -25,20 +28,23 @@ function TeamScreen({ }: { navigation: TeamScreenNavigationProp }) {
     );
 }
 
+type TeamMainNavigationProp = NativeStackNavigationProp<TeamStackParamList, 'TeamMain'>;
+
 export function TeamScreenHeader() {
     const { t } = useLingui();
     const { theme } = useTheme();
+    const navigation = useNavigation<TeamMainNavigationProp>();
 
     const onclick = () => {
-        console.log("teste"); 
+        navigation.navigate("addTeam");
     }
 
     return (
-        <NavigationHeader title={t`TEAM_BOTTOM_MENU`}>
+        <BottomNavigationHeader title={t`TEAM_BOTTOM_MENU`}>
             <Pressable onPress={onclick}>
                 <AddIcon width={24} height={24} color={theme.primary.button}/>
             </Pressable>
-        </NavigationHeader>
+        </BottomNavigationHeader>
     )
 }
 

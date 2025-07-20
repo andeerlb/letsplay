@@ -3,14 +3,14 @@ import ProfileIcon from '@assets/icons/profile.svg';
 import HomeIcon from '@assets/icons/home.svg';
 import TeamIcon from '@assets/icons/team.svg';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from '@screens/HomeScreen';
-import ProfileScreen from '@screens/ProfileScreen';
-import MatchScreen from '@screens/MatchScreen';
-import NavigationHeader from '@components/navigation/NavigationHeader';
-import TeamScreen, { TeamScreenHeader } from '@screens/TeamScreen';
+import HomeScreen from '@screens/home/HomeScreen';
+import ProfileScreen from '@screens/profile/ProfileScreen';
+import MatchScreen from '@screens/match/MatchScreen';
+import BottomNavigationHeader from '@components/navigation/NavigationHeader';
 import { useLingui } from "@lingui/react/macro";
 import { FontDefinition } from '@constants/theme';
 import { useTheme } from '@context/ThemeContext';
+import TeamStackNavigator from '@components/navigation/teamNavigator';
 
 export type BottomTabParamList = {
   Home: undefined;
@@ -64,7 +64,7 @@ export default function BottomTabNavigator() {
         component={HomeScreen}
         options={{
           title: t`HOME_BOTTOM_MENU`,
-          header: () => <NavigationHeader title={t`HOME_BOTTOM_MENU`} hideSettings={false} />
+          header: () => <BottomNavigationHeader title={t`HOME_BOTTOM_MENU`} hideSettings={false} />
         }}
       />
       <Tab.Screen
@@ -72,23 +72,20 @@ export default function BottomTabNavigator() {
         component={MatchScreen}
         options={{
           title: t`MATCH_BOTTOM_MENU`,
-          header: () => <NavigationHeader title={t`MATCH_BOTTOM_MENU`} />
+          header: () => <BottomNavigationHeader title={t`MATCH_BOTTOM_MENU`} />
         }}
       />
       <Tab.Screen
         name="Team"
-        component={TeamScreen}
-        options={{
-          title: t`TEAM_BOTTOM_MENU`,
-          header: () => <TeamScreenHeader />
-        }}
+        component={TeamStackNavigator}
+        options={{ headerShown: false }}
       />
       <Tab.Screen
         name="Profile"
         component={ProfileScreen}
         options={{
           title: t`PROFILE_BOTTOM_MENU`,
-          header: () => <NavigationHeader title={t`PROFILE_BOTTOM_MENU`} hideSettings={false} />
+          header: () => <BottomNavigationHeader title={t`PROFILE_BOTTOM_MENU`} hideSettings={false} />
         }}
       />
     </Tab.Navigator>

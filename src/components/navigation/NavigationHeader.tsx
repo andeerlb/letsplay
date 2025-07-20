@@ -6,6 +6,7 @@ import { useTheme } from "@context/ThemeContext";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, NavigationProp } from "@react-navigation/native";
 import { RootStackParamList } from "./rootNavigation";
+import { useLingui } from "@lingui/react";
 
 type Props = {
   children: React.ReactNode;
@@ -15,7 +16,7 @@ type Props = {
   hideLogo?: boolean
 };
 
-export default function NavigationHeader({ children, title, hideSettings = true, hideLogo = false }: Props) {
+export default function BottomNavigationHeader({ children, title, hideSettings = true, hideLogo = false }: Props) {
   const { theme } = useTheme();
   const insets = useSafeAreaInsets();
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();

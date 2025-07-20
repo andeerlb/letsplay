@@ -1,9 +1,9 @@
 import { RootStackParamList } from "@components/navigation/rootNavigation";
-import { StackNavigationProp } from "@react-navigation/stack";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import ScreenWrapper from "@wrapper/ScreenWrapper";
 import { Text, View } from "react-native";
 
-type SettingScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Setting'>;
+type SettingScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Setting'>;
 
 type Props = {
   navigation: SettingScreenNavigationProp;
