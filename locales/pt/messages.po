@@ -13,30 +13,34 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/components/navigation/bottomTabNavigator.tsx:47
-#: src/components/navigation/bottomTabNavigator.tsx:48
+#: src/components/navigation/bottomTabNavigator.tsx:66
+#: src/components/navigation/bottomTabNavigator.tsx:67
 msgid "HOME_BOTTOM_MENU"
 msgstr "Início"
 
-#: src/components/navigation/bottomTabNavigator.tsx:55
-#: src/components/navigation/bottomTabNavigator.tsx:56
+#: src/components/navigation/bottomTabNavigator.tsx:74
+#: src/components/navigation/bottomTabNavigator.tsx:75
 msgid "MATCH_BOTTOM_MENU"
 msgstr "Buscar"
 
-#: src/components/navigation/bottomTabNavigator.tsx:71
-#: src/components/navigation/bottomTabNavigator.tsx:72
+#: src/components/navigation/bottomTabNavigator.tsx:90
+#: src/components/navigation/bottomTabNavigator.tsx:91
 msgid "PROFILE_BOTTOM_MENU"
 msgstr "Conta"
 
-#: src/screens/TeamScreen.tsx:11
+#: src/screens/TeamScreen.tsx:19
 msgid "SEARCH_BAR_PLACEHOLDER"
 msgstr "Meus times..."
 
-#: src/components/navigation/bottomTabNavigator.tsx:63
-#: src/components/navigation/bottomTabNavigator.tsx:64
+#: src/components/navigation/rootNavigation.tsx:31
+msgid "SETTING_SCREEN_TITLE"
+msgstr "Configurações"
+
+#: src/screens/TeamScreen.tsx:37
+#: src/components/navigation/bottomTabNavigator.tsx:82
 msgid "TEAM_BOTTOM_MENU"
 msgstr "Times"
 
-#: src/screens/HomeScreen.tsx:9
+#: src/screens/HomeScreen.tsx:17
 msgid "WELCOME_HOME_SCREEN"
 msgstr "Bem-vindo"
