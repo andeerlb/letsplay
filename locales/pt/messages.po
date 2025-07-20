@@ -13,19 +13,39 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/screens/SettingScreen.tsx:26
+#: src/components/select/Select.tsx:13
+msgid "{label}"
+msgstr "{label}"
+
+#: src/screens/SettingScreen.tsx:28
 msgid "APPEARANCE"
-msgstr "APPEARANCE"
+msgstr "Visual"
+
+#~ msgid "DARK"
+#~ msgstr "Escuro"
+
+#~ msgid "ENGLISH"
+#~ msgstr "Inglês"
 
 #: src/components/navigation/bottomTabNavigator.tsx:66
 #: src/components/navigation/bottomTabNavigator.tsx:67
 msgid "HOME_BOTTOM_MENU"
 msgstr "Início"
 
+#: src/screens/SettingScreen.tsx:38
+msgid "LANGUAGE"
+msgstr "Idioma"
+
+#~ msgid "LIGHT"
+#~ msgstr "Claro"
+
 #: src/components/navigation/bottomTabNavigator.tsx:74
 #: src/components/navigation/bottomTabNavigator.tsx:75
 msgid "MATCH_BOTTOM_MENU"
 msgstr "Buscar"
+
+#~ msgid "PORTUGUESE"
+#~ msgstr "Português"
 
 #: src/components/navigation/bottomTabNavigator.tsx:87
 #: src/components/navigation/bottomTabNavigator.tsx:88
@@ -40,11 +60,18 @@ msgstr "Meus times..."
 msgid "SETTING_SCREEN_TITLE"
 msgstr "Configurações"
 
+#~ msgid "SYSTEM"
+#~ msgstr "Sistema"
+
 #: src/screens/team/TeamScreen.tsx:43
 #: src/components/navigation/teamNavigator.tsx:25
 #: src/components/navigation/teamNavigator.tsx:32
 msgid "TEAM_BOTTOM_MENU"
 msgstr "Times"
+
+#: src/screens/SettingScreen.tsx:32
+msgid "THEME"
+msgstr "Tema"
 
 #: src/screens/home/HomeScreen.tsx:17
 msgid "WELCOME_HOME_SCREEN"

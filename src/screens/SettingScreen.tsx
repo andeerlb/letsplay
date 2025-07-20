@@ -2,7 +2,7 @@ import Toggle from "@components/toggle/Toggle";
 import { RootStackParamList } from "@components/navigation/rootNavigation";
 import { FontDefinition, LANGUAGE_OPTIONS, THEME_OPTIONS } from "@constants/theme";
 import { useTheme } from "@context/ThemeContext";
-import { Trans } from "@lingui/react/macro";
+import { Trans, useLingui } from "@lingui/react/macro";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import ScreenWrapper from "@wrapper/ScreenWrapper";
 import { StyleSheet, Text, View } from "react-native";
@@ -19,6 +19,7 @@ type Props = {
 export function SettingScreen({ }: Props) {
   const { theme, setTheme } = useTheme();
   const { change } = useLanguage();
+  const { t } = useLingui();
 
   return (
     <ScreenWrapper>
@@ -28,13 +29,13 @@ export function SettingScreen({ }: Props) {
         </Text>
         <View style={styles.appearanceContainer}>
           <Select 
-            label='THEME' 
+            label={t`THEME`}
             defaultValue='dark' 
             onChange={setTheme}
             options={THEME_OPTIONS}
           />
           <Select 
-            label='LANGUAGE' 
+            label={t`LANGUAGE`}
             defaultValue='dark' 
             onChange={change}
             options={LANGUAGE_OPTIONS}
