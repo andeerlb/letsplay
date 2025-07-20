@@ -64,8 +64,8 @@ msgstr "Settings"
 #~ msgstr "System"
 
 #: src/screens/team/TeamScreen.tsx:43
-#: src/components/navigation/teamNavigator.tsx:25
-#: src/components/navigation/teamNavigator.tsx:32
+#: src/components/navigation/teamNavigator.tsx:31
+#: src/components/navigation/bottomTabNavigator.tsx:81
 msgid "TEAM_BOTTOM_MENU"
 msgstr "Teams"
 
