@@ -15,9 +15,10 @@ type Props = {
 };
 
 export function SettingScreen({ }: Props) {
-  const { theme } = useTheme();
-  const { change } = useLanguage();
+  const { theme, changeTheme } = useTheme();
+  const { changeLanguage } = useLanguage();
   const { t } = useLingui();
+
 
   return (
     <ScreenWrapper>
@@ -29,13 +30,13 @@ export function SettingScreen({ }: Props) {
           <Select 
             label={t`THEME`}
             defaultValue='system' 
-            onChange={() => {}}
+            onChange={changeTheme}
             options={THEME_OPTIONS}
           />
           <Select 
             label={t`LANGUAGE`}
             defaultValue='pt' 
-            onChange={change}
+            onChange={changeLanguage}
             options={LANGUAGE_OPTIONS}
           />
         </View>

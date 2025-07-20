@@ -1,28 +1,35 @@
-// src/hooks/useTheme.ts
 import { useColorScheme } from 'react-native';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store';
 import { LightTheme, DarkTheme, AppTheme } from '@constants/theme';
-import { Layouts } from '../store/slices/themeSlice';
+import { Layouts, setPreference } from '../store/slices/themeSlice';
+import { useEffect, useState } from 'react';
 
 type UseThemeProps = {
   theme: AppTheme;
   isDarkMode: boolean;
-  preference: Layouts;
+  changeTheme: (theme: Layouts) => void;
 };
 
 export const useTheme = (): UseThemeProps => {
+  const dispatch = useDispatch();
   const scheme = useColorScheme();
   const preference = useSelector((state: RootState) => state.theme.preference);
+  const [theme, setTheme] = useState<AppTheme>(DarkTheme);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
 
-  const isDarkMode =
-    preference === 'dark' || (preference === 'system' && scheme === 'dark');
+  useEffect(() => {    
+    setIsDarkMode(preference === 'dark' || (preference === 'system' && scheme === 'dark'));
+    setTheme(isDarkMode ? DarkTheme : LightTheme)
+  }, [isDarkMode, preference, scheme]);
 
-  const theme: AppTheme = isDarkMode ? DarkTheme : LightTheme;
+  const changeTheme = (layout: Layouts) => {
+    dispatch(setPreference(layout));
+  }
 
   return {
     theme,
     isDarkMode,
-    preference,
+    changeTheme
   };
 };

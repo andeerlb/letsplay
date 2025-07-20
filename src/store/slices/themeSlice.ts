@@ -1,4 +1,3 @@
-// src/store/slices/themeSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export type Layouts = 'light' | 'dark' | 'system';
@@ -8,18 +7,18 @@ type ThemeState = {
 };
 
 const initialState: ThemeState = {
-  preference: 'system',
+  preference: 'dark',
 };
 
 const themeSlice = createSlice({
   name: 'theme',
   initialState,
   reducers: {
-    setThemePreference: (state, action: PayloadAction<Layouts>) => {
+    setPreference: (state, action: PayloadAction<Layouts>) => {
       state.preference = action.payload;
     },
   },
 });
 
-export const { setThemePreference } = themeSlice.actions;
+export const { setPreference } = themeSlice.actions;
 export default themeSlice.reducer;
