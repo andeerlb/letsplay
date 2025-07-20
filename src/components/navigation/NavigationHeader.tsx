@@ -2,7 +2,7 @@ import { View, StyleSheet, Pressable, Text } from "react-native";
 import SettingIcon from '@assets/icons/settings.svg';
 import LetsPlayIcon from '@assets/icons/letsplay.svg';
 import { FontDefinition } from "@constants/theme";
-import { useTheme } from "@context/ThemeContext";
+import { useTheme } from '@hooks/theme';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, NavigationProp } from "@react-navigation/native";
 import { RootStackParamList } from "./rootNavigation";

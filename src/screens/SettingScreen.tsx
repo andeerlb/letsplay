@@ -1,7 +1,7 @@
 import Toggle from "@components/toggle/Toggle";
 import { RootStackParamList } from "@components/navigation/rootNavigation";
 import { FontDefinition, LANGUAGE_OPTIONS, THEME_OPTIONS } from "@constants/theme";
-import { useTheme } from "@context/ThemeContext";
+import { useTheme } from '@hooks/theme';
 import { Trans, useLingui } from "@lingui/react/macro";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import ScreenWrapper from "@wrapper/ScreenWrapper";

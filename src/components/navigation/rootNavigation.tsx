@@ -2,7 +2,6 @@ import React from 'react';
 import BottomTabNavigator from './bottomTabNavigator';
 import { SettingScreen } from '@screens/SettingScreen';
 import { useLingui } from '@lingui/react/macro';
-import { ThemeContextType, useTheme } from '@context/ThemeContext';
 import { Pressable } from 'react-native';
 import BackArrowIcon from '@assets/icons/back-arrow.svg';
 import {
@@ -10,6 +9,8 @@ import {
   NativeStackNavigationOptions,
   NativeStackScreenProps,
 } from '@react-navigation/native-stack';
+import { useTheme } from '@hooks/theme';
+import { AppTheme } from '@constants/theme';
 
 export type RootStackParamList = {
   Main: undefined;
@@ -20,7 +21,7 @@ export function getScreenOptions<
   ParamList extends Record<string, object | undefined>,
   RouteName extends keyof ParamList
 >(
-  theme: ThemeContextType['theme'],
+  theme: AppTheme,
   title: string
 ): (props: NativeStackScreenProps<ParamList, RouteName>) => NativeStackNavigationOptions {
   return ({ navigation }) => ({

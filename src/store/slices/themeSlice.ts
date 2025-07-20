@@ -1,19 +1,25 @@
-import { createSlice } from '@reduxjs/toolkit';
+// src/store/slices/themeSlice.ts
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+export type Layouts = 'light' | 'dark' | 'system';
+
+type ThemeState = {
+  preference: Layouts;
+};
+
+const initialState: ThemeState = {
+  preference: 'system',
+};
 
 const themeSlice = createSlice({
   name: 'theme',
-  initialState: {
-    value: 0,
-  },
+  initialState,
   reducers: {
-    increment: (state) => {
-      state.value += 1;
-    },
-    decrement: (state) => {
-      state.value -= 1;
+    setThemePreference: (state, action: PayloadAction<Layouts>) => {
+      state.preference = action.payload;
     },
   },
 });
 
-export const { increment, decrement } = themeSlice.actions;
+export const { setThemePreference } = themeSlice.actions;
 export default themeSlice.reducer;

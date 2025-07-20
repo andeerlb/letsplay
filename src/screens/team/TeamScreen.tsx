@@ -4,7 +4,7 @@ import { useLingui } from "@lingui/react/macro";
 import { Pressable } from "react-native";
 import AddIcon from '@assets/icons/plus.svg';
 import BottomNavigationHeader from "@components/navigation/NavigationHeader";
-import { useTheme } from "@context/ThemeContext";
+import { useTheme } from '@hooks/theme';
 import { BottomTabParamList } from "@components/navigation/bottomTabNavigator";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";

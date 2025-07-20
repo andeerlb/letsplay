@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { i18n } from "@lingui/core";
 
 import { I18nProvider, TransRenderProps } from '@lingui/react';
-import { useTheme } from '@context/ThemeContext';
+import { useTheme } from '@hooks/theme';
 import { LanguageProvider } from '@context/LanguageContext';
 import RootStackNavigator from '@components/navigation/rootNavigation';
 

@@ -9,7 +9,7 @@ import MatchScreen from '@screens/match/MatchScreen';
 import BottomNavigationHeader from '@components/navigation/NavigationHeader';
 import { useLingui } from "@lingui/react/macro";
 import { FontDefinition } from '@constants/theme';
-import { useTheme } from '@context/ThemeContext';
+import { useTheme } from '@hooks/theme';
 import TeamStackNavigator from '@components/navigation/teamNavigator';
 
 export type BottomTabParamList = {

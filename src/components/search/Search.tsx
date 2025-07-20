@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TextInput, View, StyleSheet } from 'react-native';
 import SearchIcon from "@assets/icons/search.svg";
-import { useTheme } from '@context/ThemeContext';
+import { useTheme } from '@hooks/theme';
 
 interface SearchProps {
     onSearch: (text: string) => void;

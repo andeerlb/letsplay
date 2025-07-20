@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { Trans } from '@lingui/react/macro';
-import { useTheme } from '@context/ThemeContext';
+import { useTheme } from '@hooks/theme';
 import { FontDefinition } from '@constants/theme';
 
 type Option = {
