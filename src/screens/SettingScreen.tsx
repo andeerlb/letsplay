@@ -1,6 +1,6 @@
 import Toggle from "@components/toggle/Toggle";
 import { RootStackParamList } from "@components/navigation/rootNavigation";
-import { FontDefinition, THEME_OPTIONS } from "@constants/theme";
+import { FontDefinition, LANGUAGE_OPTIONS, THEME_OPTIONS } from "@constants/theme";
 import { useTheme } from "@context/ThemeContext";
 import { Trans } from "@lingui/react/macro";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -8,6 +8,7 @@ import ScreenWrapper from "@wrapper/ScreenWrapper";
 import { StyleSheet, Text, View } from "react-native";
 import { useState } from "react";
 import Select from "@components/select/Select";
+import { useLanguage } from "@context/LanguageContext";
 
 type SettingScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Setting'>;
 
@@ -17,6 +18,7 @@ type Props = {
 
 export function SettingScreen({ }: Props) {
   const { theme, setTheme } = useTheme();
+  const { change } = useLanguage();
 
   return (
     <ScreenWrapper>
@@ -30,6 +32,12 @@ export function SettingScreen({ }: Props) {
             defaultValue='dark' 
             onChange={setTheme}
             options={THEME_OPTIONS}
+          />
+          <Select 
+            label='LANGUAGE' 
+            defaultValue='dark' 
+            onChange={change}
+            options={LANGUAGE_OPTIONS}
           />
         </View>
       </View>
@@ -48,6 +56,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   appearanceContainer: {
-    display: "flex"
+    display: "flex",
+    gap: 10
   },
 });

@@ -31,9 +31,6 @@ const getDeviceLanguage = () => {
       NativeModules.I18nManager?.locale;
   }
   
-  console.log(Platform.OS);
-  console.log('modules ', NativeModules);
-  console.log('Detected device language:', locale);
   if(locale) {
     locale = locale.split(/[-_]/)[0] as Language;
   }

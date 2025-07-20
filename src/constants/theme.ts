@@ -47,7 +47,12 @@ export const DarkTheme = {
 };
 
 export const THEME_OPTIONS = [
-    { label: 'Dark', value: 'dark' },
-    { label: 'Light', value: 'light' },
-    { label: 'System', value: 'system' },
+    { label: 'DARK', value: 'dark' },
+    { label: 'LIGHT', value: 'light' },
+    { label: 'SYSTEM', value: 'system' },
+];
+
+export const LANGUAGE_OPTIONS = [
+    { label: 'PORTUGUESE', value: 'pt' },
+    { label: 'ENGLISH', value: 'en' },
 ];
