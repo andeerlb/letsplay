@@ -27,6 +27,7 @@ export function getScreenOptions<
     title,
     headerStyle: { backgroundColor: theme.secondary.background },
     headerTintColor: theme.secondary.text,
+    headerTitleAlign: 'center',
     headerLeft: () =>
       navigation.canGoBack() ? (
         <Pressable
