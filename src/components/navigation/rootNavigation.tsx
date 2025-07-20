@@ -37,7 +37,7 @@ const RootStackNavigator = () => {
             navigation.canGoBack() && <Pressable
               onPress={() => navigation.goBack()}
               style={{
-                marginLeft: 15,
+                paddingHorizontal: 15,
               }}
             >
               <BackArrowIcon width={24} height={24} color={theme.secondary.text} />
