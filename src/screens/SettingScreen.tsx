@@ -22,7 +22,7 @@ export function SettingScreen({ }: Props) {
 
   return (
     <ScreenWrapper>
-      <View>
+      <View style={styles.section}>
         <Text style={[styles.title, { color: theme.primary.text }]}>
           <Trans>APPEARANCE</Trans>
         </Text>
@@ -59,4 +59,7 @@ const styles = StyleSheet.create({
     display: "flex",
     gap: 10
   },
+  section: {
+    gap: 10
+  }
 });
