@@ -12,7 +12,8 @@
       "@hooks/*": ["src/hooks/*"],
       "@utils/*": ["src/utils/*"],
       "@context/*": ["src/context/*"],
-      "@wrapper/*": ["src/wrapper/*"]
+      "@wrapper/*": ["src/wrapper/*"],
+      "@store/*": ["src/store/*"]
     }
   }
 }
