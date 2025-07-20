@@ -22,7 +22,6 @@ function TeamStackNavigator() {
         name="TeamMain"
         component={TeamScreen}
         options={{
-          title: t`TEAM_BOTTOM_MENU`,
           header: () => <TeamScreenHeader />
         }}
       />

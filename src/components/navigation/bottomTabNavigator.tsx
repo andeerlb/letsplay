@@ -78,7 +78,7 @@ export default function BottomTabNavigator() {
       <Tab.Screen
         name="Team"
         component={TeamStackNavigator}
-        options={{ headerShown: false }}
+        options={{ title: t`TEAM_BOTTOM_MENU`, headerShown: false }}
       />
       <Tab.Screen
         name="Profile"
