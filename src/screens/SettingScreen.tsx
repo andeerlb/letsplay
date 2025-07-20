@@ -1,7 +1,13 @@
+import Toggle from "@components/toggle/Toggle";
 import { RootStackParamList } from "@components/navigation/rootNavigation";
+import { FontDefinition } from "@constants/theme";
+import { useTheme } from "@context/ThemeContext";
+import { Trans } from "@lingui/react/macro";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import ScreenWrapper from "@wrapper/ScreenWrapper";
-import { Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import { useState } from "react";
+import Select from "@components/select/Select";
 
 type SettingScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Setting'>;
 
@@ -10,9 +16,34 @@ type Props = {
 };
 
 export function SettingScreen({ }: Props) {
-    return (
-      <ScreenWrapper>
-        <View><Text>SettingScreen</Text></View>
-      </ScreenWrapper>
-    )
+  const { theme } = useTheme();
+  const [, setTheme] = useState('System');
+
+  return (
+    <ScreenWrapper>
+      <View>
+        <Text style={[styles.title, { color: theme.primary.text }]}>
+          <Trans>APPEARANCE</Trans>
+        </Text>
+        <View style={styles.appearanceContainer}>
+          <Select label='THEME' selectedValue='dark' onValueChange={setTheme} />
+        </View>
+      </View>
+    </ScreenWrapper>
+  )
 }
+
+const styles = StyleSheet.create({
+  text: {
+    fontFamily: FontDefinition.general.regular,
+    fontSize: 20,
+  },
+  title: {
+    marginTop: 20,
+    fontFamily: FontDefinition.general.extraBold,
+    fontSize: 20,
+  },
+  appearanceContainer: {
+    display: "flex"
+  },
+});

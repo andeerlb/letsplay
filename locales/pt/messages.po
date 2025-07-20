@@ -13,6 +13,10 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: src/screens/SettingScreen.tsx:26
+msgid "APPEARANCE"
+msgstr "APPEARANCE"
+
 #: src/components/navigation/bottomTabNavigator.tsx:66
 #: src/components/navigation/bottomTabNavigator.tsx:67
 msgid "HOME_BOTTOM_MENU"
@@ -32,7 +36,7 @@ msgstr "Conta"
 msgid "SEARCH_BAR_PLACEHOLDER"
 msgstr "Meus times..."
 
-#: src/components/navigation/rootNavigation.tsx:58
+#: src/components/navigation/rootNavigation.tsx:59
 msgid "SETTING_SCREEN_TITLE"
 msgstr "Configurações"
 

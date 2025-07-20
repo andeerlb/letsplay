@@ -12,11 +12,14 @@
     "postinstall": "patch-package",
     "i18n:update": "lingui extract && lingui compile",
     "i18n:extract": "lingui extract",
-    "i18n:compile": "lingui compile"
+    "i18n:compile": "lingui compile",
+    "android-clean": "rm -rf node_modules android/app/build android/.cxx && yarn cache clean && yarn install && cd android && ./gradlew clean && cd .. && npx react-native run-android",
+    "ios-clean": "rm -rf node_modules ios/Pods ios/Podfile.lock ios/build && yarn cache clean && yarn install && cd ios && pod install --repo-update && cd .. && npx react-native run-ios"
   },
   "dependencies": {
     "@lingui/core": "^5.3.3",
     "@lingui/react": "^5.3.3",
+    "@react-native-picker/picker": "^2.11.1",
     "@react-native/new-app-screen": "0.80.1",
     "@react-navigation/bottom-tabs": "^7.4.2",
     "@react-navigation/native": "^7.1.14",
