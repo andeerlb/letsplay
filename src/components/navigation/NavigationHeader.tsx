@@ -32,7 +32,7 @@ export default function NavigationHeader({ children, title, hideSettings = true,
       backgroundColor: theme.secondary.background
     }]}>
       {hideLogo ? <View /> : <LetsPlayIcon width={25} height={25} />}
-      {title && <Text style={[styles.title, { color: theme.primary.text }]}>{title}</Text>}
+      {title && <Text style={[styles.title, { color: theme.secondary.text }]}>{title}</Text>}
       <View style={styles.rightButtons}>
         {children && children}
         {!hideSettings && (
