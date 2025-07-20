@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 type UseThemeProps = {
   theme: AppTheme;
   isDarkMode: boolean;
+  preference: Layouts,
   changeTheme: (theme: Layouts) => void;
 };
 
@@ -18,18 +19,31 @@ export const useTheme = (): UseThemeProps => {
   const [theme, setTheme] = useState<AppTheme>(DarkTheme);
   const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
 
-  useEffect(() => {    
-    setIsDarkMode(preference === 'dark' || (preference === 'system' && scheme === 'dark'));
-    setTheme(isDarkMode ? DarkTheme : LightTheme)
-  }, [isDarkMode, preference, scheme]);
+  useEffect(() => {
+    if(preference !== 'system') {
+      const isDark = preference === 'dark';
+      setIsDarkMode(isDark);
+      setTheme(isDark ? DarkTheme : LightTheme)
+    }
+  }, [isDarkMode, preference]);
+
+  useEffect(() => {
+    if(preference === 'system') {
+      const isDark = scheme === 'dark';
+      setIsDarkMode(isDark);
+      setTheme(isDark ? DarkTheme : LightTheme)
+    }
+  },[scheme, preference])
 
   const changeTheme = (layout: Layouts) => {
+    console.log(layout);
     dispatch(setPreference(layout));
   }
 
   return {
     theme,
     isDarkMode,
+    preference,
     changeTheme
   };
 };
