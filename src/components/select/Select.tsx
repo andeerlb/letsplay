@@ -5,12 +5,24 @@ import { Trans } from '@lingui/react/macro';
 import { useTheme } from '@context/ThemeContext';
 import { FontDefinition } from '@constants/theme';
 
-export default function Select({ label='', defaultValue, onChange=() => {}, options=[] }) {
+type Option = {
+  label: string;
+  value: string;
+};
+
+type SelectProps = {
+    label?: string,
+    defaultValue?: string,
+    onChange: (value: any) => void,
+    options: Option[]
+}
+
+export default function Select({ label, defaultValue, onChange=() => {}, options=[] }: SelectProps) {
     const { theme } = useTheme();
 
     return (
         <View style={styles.container}>
-            <Text style={[styles.text, { color: theme.primary.text }]}><Trans>{label}</Trans></Text>
+            {label && <Text style={[styles.text, { color: theme.primary.text }]}><Trans>{label}</Trans></Text>}
             <Picker
                 selectedValue={defaultValue}
                 onValueChange={(itemValue) => onChange(itemValue)}

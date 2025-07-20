@@ -30,13 +30,13 @@ export function SettingScreen({ }: Props) {
         <View style={styles.appearanceContainer}>
           <Select 
             label={t`THEME`}
-            defaultValue='dark' 
+            defaultValue='system' 
             onChange={setTheme}
             options={THEME_OPTIONS}
           />
           <Select 
             label={t`LANGUAGE`}
-            defaultValue='dark' 
+            defaultValue='pt' 
             onChange={change}
             options={LANGUAGE_OPTIONS}
           />
