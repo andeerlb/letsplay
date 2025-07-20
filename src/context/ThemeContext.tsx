@@ -2,9 +2,12 @@ import React, { createContext, useContext } from 'react';
 import { LightTheme, DarkTheme } from '@constants/theme';
 import { useColorScheme } from 'react-native';
 
+type Layouts = 'dark' | 'light' | 'system';
+
 export type ThemeContextType = {
   theme: typeof LightTheme | typeof DarkTheme;
   isDarkMode: boolean;
+  setTheme(theme: Layouts): void
 };
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -14,7 +17,11 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const isDarkMode = scheme === 'dark';
   const theme = isDarkMode ? DarkTheme : LightTheme;
 
-  return <ThemeContext.Provider value={{ theme, isDarkMode }}>
+  const setTheme = (theme: Layouts) => {
+
+  }
+
+  return <ThemeContext.Provider value={{ theme, isDarkMode, setTheme }}>
     {children}
   </ThemeContext.Provider>;
 };

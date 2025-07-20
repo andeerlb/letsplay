@@ -1,6 +1,6 @@
 import Toggle from "@components/toggle/Toggle";
 import { RootStackParamList } from "@components/navigation/rootNavigation";
-import { FontDefinition } from "@constants/theme";
+import { FontDefinition, THEME_OPTIONS } from "@constants/theme";
 import { useTheme } from "@context/ThemeContext";
 import { Trans } from "@lingui/react/macro";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -16,8 +16,7 @@ type Props = {
 };
 
 export function SettingScreen({ }: Props) {
-  const { theme } = useTheme();
-  const [, setTheme] = useState('System');
+  const { theme, setTheme } = useTheme();
 
   return (
     <ScreenWrapper>
@@ -26,7 +25,12 @@ export function SettingScreen({ }: Props) {
           <Trans>APPEARANCE</Trans>
         </Text>
         <View style={styles.appearanceContainer}>
-          <Select label='THEME' selectedValue='dark' onValueChange={setTheme} />
+          <Select 
+            label='THEME' 
+            defaultValue='dark' 
+            onChange={setTheme}
+            options={THEME_OPTIONS}
+          />
         </View>
       </View>
     </ScreenWrapper>

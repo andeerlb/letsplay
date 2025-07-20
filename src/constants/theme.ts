@@ -45,3 +45,9 @@ export const DarkTheme = {
     button: '#84a9d3ff',
   }
 };
+
+export const THEME_OPTIONS = [
+    { label: 'Dark', value: 'dark' },
+    { label: 'Light', value: 'light' },
+    { label: 'System', value: 'system' },
+];
