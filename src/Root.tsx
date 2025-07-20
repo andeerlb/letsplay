@@ -5,7 +5,6 @@ import { i18n } from "@lingui/core";
 
 import { I18nProvider, TransRenderProps } from '@lingui/react';
 import { useTheme } from '@hooks/theme';
-import { LanguageProvider } from '@context/LanguageContext';
 import RootStackNavigator from '@components/navigation/rootNavigation';
 
 const DefaultComponent = (props: TransRenderProps) => <Text>{props.children}</Text>;
@@ -17,11 +16,9 @@ function Root() {
     <>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
         <NavigationContainer>
-            <LanguageProvider>
-                <I18nProvider i18n={i18n} defaultComponent={DefaultComponent}>
-                  <RootStackNavigator />
-                </I18nProvider>
-            </LanguageProvider>
+          <I18nProvider i18n={i18n} defaultComponent={DefaultComponent}>
+            <RootStackNavigator />
+          </I18nProvider>
         </NavigationContainer>
     </>
   );

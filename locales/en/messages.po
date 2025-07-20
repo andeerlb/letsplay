@@ -17,7 +17,7 @@ msgstr ""
 msgid "{label}"
 msgstr ""
 
-#: src/screens/SettingScreen.tsx:28
+#: src/screens/SettingScreen.tsx:26
 msgid "APPEARANCE"
 msgstr "Appearance"
 
@@ -32,7 +32,7 @@ msgstr "Appearance"
 msgid "HOME_BOTTOM_MENU"
 msgstr "Home"
 
-#: src/screens/SettingScreen.tsx:38
+#: src/screens/SettingScreen.tsx:36
 msgid "LANGUAGE"
 msgstr "Language"
 
@@ -56,7 +56,7 @@ msgstr "Account"
 msgid "SEARCH_BAR_PLACEHOLDER"
 msgstr "My teams..."
 
-#: src/components/navigation/rootNavigation.tsx:59
+#: src/components/navigation/rootNavigation.tsx:60
 msgid "SETTING_SCREEN_TITLE"
 msgstr "Settings"
 
@@ -69,7 +69,7 @@ msgstr "Settings"
 msgid "TEAM_BOTTOM_MENU"
 msgstr "Teams"
 
-#: src/screens/SettingScreen.tsx:32
+#: src/screens/SettingScreen.tsx:30
 msgid "THEME"
 msgstr "Theme"
 

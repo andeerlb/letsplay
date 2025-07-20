@@ -17,7 +17,7 @@ msgstr ""
 msgid "{label}"
 msgstr "{label}"
 
-#: src/screens/SettingScreen.tsx:28
+#: src/screens/SettingScreen.tsx:26
 msgid "APPEARANCE"
 msgstr "Visual"
 
@@ -32,7 +32,7 @@ msgstr "Visual"
 msgid "HOME_BOTTOM_MENU"
 msgstr "Início"
 
-#: src/screens/SettingScreen.tsx:38
+#: src/screens/SettingScreen.tsx:36
 msgid "LANGUAGE"
 msgstr "Idioma"
 
@@ -56,7 +56,7 @@ msgstr "Conta"
 msgid "SEARCH_BAR_PLACEHOLDER"
 msgstr "Meus times..."
 
-#: src/components/navigation/rootNavigation.tsx:59
+#: src/components/navigation/rootNavigation.tsx:60
 msgid "SETTING_SCREEN_TITLE"
 msgstr "Configurações"
 
@@ -69,7 +69,7 @@ msgstr "Configurações"
 msgid "TEAM_BOTTOM_MENU"
 msgstr "Times"
 
-#: src/screens/SettingScreen.tsx:32
+#: src/screens/SettingScreen.tsx:30
 msgid "THEME"
 msgstr "Tema"
 

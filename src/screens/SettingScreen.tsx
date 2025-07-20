@@ -1,4 +1,3 @@
-import Toggle from "@components/toggle/Toggle";
 import { RootStackParamList } from "@components/navigation/rootNavigation";
 import { FontDefinition, LANGUAGE_OPTIONS, THEME_OPTIONS } from "@constants/theme";
 import { useTheme } from '@hooks/theme';
@@ -6,9 +5,8 @@ import { Trans, useLingui } from "@lingui/react/macro";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import ScreenWrapper from "@wrapper/ScreenWrapper";
 import { StyleSheet, Text, View } from "react-native";
-import { useState } from "react";
 import Select from "@components/select/Select";
-import { useLanguage } from "@context/LanguageContext";
+import { useLanguage } from "@hooks/useLanguage";
 
 type SettingScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Setting'>;
 
@@ -17,7 +15,7 @@ type Props = {
 };
 
 export function SettingScreen({ }: Props) {
-  const { theme, setTheme } = useTheme();
+  const { theme } = useTheme();
   const { change } = useLanguage();
   const { t } = useLingui();
 
@@ -31,7 +29,7 @@ export function SettingScreen({ }: Props) {
           <Select 
             label={t`THEME`}
             defaultValue='system' 
-            onChange={setTheme}
+            onChange={() => {}}
             options={THEME_OPTIONS}
           />
           <Select 
