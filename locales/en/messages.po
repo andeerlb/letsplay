@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/components/select/Select.tsx:13
+#: src/components/select/Select.tsx:25
 msgid "{label}"
 msgstr ""
 
