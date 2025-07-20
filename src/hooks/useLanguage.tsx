@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store';
 import { Language, setLocale } from '@store/slices/languageSlice';
@@ -35,6 +35,7 @@ const getDeviceLanguage = (): Language => {
 export const useLanguage = () => {
   const dispatch = useDispatch();
   const locale = useSelector((state: RootState) => state.language.locale);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const activate = async () => {
@@ -42,7 +43,9 @@ export const useLanguage = () => {
         locale,
         messages: LANGUAGE_MAP[locale],
       });
+      setReady(true);
     };
+    setReady(false);
     activate();
   }, [locale]);
 
@@ -54,5 +57,6 @@ export const useLanguage = () => {
     locale,
     change,
     setDeviceDefault: () => dispatch(setLocale(getDeviceLanguage())),
+    ready,
   };
 };

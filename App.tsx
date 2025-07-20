@@ -5,11 +5,13 @@ import { Provider } from 'react-redux';
 import { store } from '@store/index';
 
 function App() {
-  
+
+  console.log("aqui dois");
+
   return (
     <SafeAreaProvider>
       <Provider store={store}>
-          <Root />
+        <Root />
       </Provider>
     </SafeAreaProvider>
   );
