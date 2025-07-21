@@ -1,4 +1,14 @@
 export function seeds(server) {
-  server.create("user", { id: 1, name: "Alice" });
-  server.create("user", { id: 2, name: "Bob" });
+  server.create("user", {
+    id: 1,
+    name: "Anderson",
+    lastName: "Babinski",
+    age: "29",
+  });
+
+  server.create("setting", {
+    id: 1,
+    theme: "dark",
+    language: "en"
+  });
 }

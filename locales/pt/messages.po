@@ -73,6 +73,6 @@ msgstr "Times"
 msgid "THEME"
 msgstr "Tema"
 
-#: src/screens/home/HomeScreen.tsx:17
+#: src/screens/home/HomeScreen.tsx:25
 msgid "WELCOME_HOME_SCREEN"
 msgstr "Bem-vindo"
