@@ -63,7 +63,7 @@ msgstr "Configurações"
 #~ msgid "SYSTEM"
 #~ msgstr "Sistema"
 
-#: src/screens/team/TeamScreen.tsx:43
+#: src/screens/team/TeamScreen.tsx:42
 #: src/components/navigation/teamNavigator.tsx:31
 #: src/components/navigation/bottomTabNavigator.tsx:81
 msgid "TEAM_BOTTOM_MENU"

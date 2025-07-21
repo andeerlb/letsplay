@@ -5,11 +5,8 @@ import { Provider } from 'react-redux';
 import { store } from '@store/index';
 import Config from 'react-native-config';
 
-console.log(Config);
-console.log(Config.ENABLE_MIRAGE);
-
-
 if (Config.ENABLE_MIRAGE) {
+  console.log("Mirage was enabled");
   const { makeServer } = require('./mirage/server');
   makeServer();
 }
