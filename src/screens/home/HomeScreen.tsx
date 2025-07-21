@@ -5,19 +5,11 @@ import { StyleSheet, Text } from "react-native";
 import { useTheme } from '@hooks/theme';
 import { BottomTabParamList } from "@components/navigation/bottomTabNavigator";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
-import { useEffect } from "react";
 
 type HomeScreenNavigationProp = BottomTabNavigationProp<BottomTabParamList, 'Home'>;
 
 function HomeScreen({ }: { navigation: HomeScreenNavigationProp }) {
   const { theme } = useTheme();
-
-  useEffect(() => {
-    fetch('/api/settings')
-      .then(res => res.json())
-      .then(data => console.log(data))
-      .catch(err => console.log(err));
-  },[]);
 
   return (
     <ScreenWrapper>
