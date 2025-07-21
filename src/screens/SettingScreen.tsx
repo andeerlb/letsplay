@@ -19,7 +19,6 @@ export function SettingScreen({ }: Props) {
   const { changeLanguage, locale } = useLanguage();
   const { t } = useLingui();
 
-
   return (
     <ScreenWrapper>
       <View style={styles.section}>

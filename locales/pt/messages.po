@@ -17,7 +17,7 @@ msgstr ""
 msgid "{label}"
 msgstr "{label}"
 
-#: src/screens/SettingScreen.tsx:27
+#: src/screens/SettingScreen.tsx:26
 msgid "APPEARANCE"
 msgstr "Visual"
 
@@ -32,7 +32,7 @@ msgstr "Visual"
 msgid "HOME_BOTTOM_MENU"
 msgstr "Início"
 
-#: src/screens/SettingScreen.tsx:37
+#: src/screens/SettingScreen.tsx:36
 msgid "LANGUAGE"
 msgstr "Idioma"
 
@@ -69,10 +69,10 @@ msgstr "Configurações"
 msgid "TEAM_BOTTOM_MENU"
 msgstr "Times"
 
-#: src/screens/SettingScreen.tsx:31
+#: src/screens/SettingScreen.tsx:30
 msgid "THEME"
 msgstr "Tema"
 
-#: src/screens/home/HomeScreen.tsx:25
+#: src/screens/home/HomeScreen.tsx:17
 msgid "WELCOME_HOME_SCREEN"
 msgstr "Bem-vindo"

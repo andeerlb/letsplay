@@ -17,7 +17,9 @@ module.exports = {
           '@utils': './src/utils',
           '@context': './src/context',
           '@wrapper': './src/wrapper',
-          '@store': './src/store'
+          '@store': './src/store',
+          '@fetch': './src/api/fetch',
+          '@query': './src/api/query'
         },
       },
     ],

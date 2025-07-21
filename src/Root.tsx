@@ -1,19 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StatusBar, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { useTheme } from '@hooks/theme';
 import RootStackNavigator from '@components/navigation/rootNavigation';
-import { useLanguage } from '@hooks/useLanguage';
+import { LANGUAGE_MAP } from '@hooks/useLanguage';
 import { I18nProvider, TransRenderProps } from '@lingui/react';
 import { i18n } from '@lingui/core';
+import { useSetting } from '@query/settings';
 
 const DefaultComponent = (props: TransRenderProps) => <Text>{props.children}</Text>;
 
 function Root() {
   const { isDarkMode } = useTheme();
-  const { ready } = useLanguage();
+  const { data, isLoading } = useSetting();
 
-  if (!ready) {
+  useEffect(() => {
+    if(isLoading || !data) return;
+    i18n.loadAndActivate({
+      locale: data.language,
+      messages: LANGUAGE_MAP[data.language],
+    });
+  }, [data, isLoading]);
+
+  if (isLoading) {
     return null;
   }
   

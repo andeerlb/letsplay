@@ -3,6 +3,6 @@ export default function settingRoutes() {
   this.timing = 0;
 
   this.get('/settings', (schema) => {
-    return schema.settings.find(1);
+    return schema.settings.find(1).attrs;
   });
 }
