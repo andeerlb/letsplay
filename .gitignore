@@ -76,4 +76,6 @@ yarn-error.log
 
 # i18n
 # Ignore Lingui generated files
+# react-native-config codegen
+ios/tmp.xcconfig
 locales/*/*.js

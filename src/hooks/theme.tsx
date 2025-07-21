@@ -36,7 +36,6 @@ export const useTheme = (): UseThemeProps => {
   },[scheme, preference])
 
   const changeTheme = (layout: Layouts) => {
-    console.log(layout);
     dispatch(setPreference(layout));
   }
 

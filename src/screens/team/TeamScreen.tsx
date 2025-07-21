@@ -21,7 +21,6 @@ function TeamScreen({ }: { navigation: TeamScreenNavigationProp }) {
             <Search
                 placeholder={t`SEARCH_BAR_PLACEHOLDER`}
                 onSearch={(query) => {
-                    console.log("Searching for:", query);
                 }}
             />
         </ScreenWrapper>
