@@ -26,7 +26,7 @@ export function SettingScreen({ }: Props) {
 
   const translatedLanguageOptions = LANGUAGE_OPTIONS.map(opt => ({
     label: i18n._(opt.label),
-    value: opt.value, 
+    value: opt.value,
   }));
 
   return (
@@ -36,13 +36,13 @@ export function SettingScreen({ }: Props) {
           <Trans>screen.setting.appearance</Trans>
         </Text>
         <View style={styles.appearanceContainer}>
-          <Select 
+          <Select
             label={t`screen.setting.theme`}
             defaultValue={layout}
             onChange={changeTheme}
             options={translatedThemeOptions}
           />
-          <Select 
+          <Select
             label={t`screen.setting.language`}
             defaultValue={language}
             onChange={changeLanguage}

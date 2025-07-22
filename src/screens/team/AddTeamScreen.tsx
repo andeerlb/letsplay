@@ -1,12 +1,16 @@
 import { TeamStackParamList } from "@components/navigation/teamNavigator";
-import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import ScreenWrapper from "@wrapper/ScreenWrapper";
 import React from "react";
 import { Text } from "react-native";
 
-type AddScreenNavigationProps = BottomTabNavigationProp<TeamStackParamList, 'Main'>;
+type AddScreenNavigationProps = NativeStackNavigationProp<TeamStackParamList, 'Add'>;
 
-export default function AddTeamScreen({ }: AddScreenNavigationProps) {
+type Props = {
+    navigation: AddScreenNavigationProps;
+};
+
+export default function AddTeamScreen({ }: Props) {
     return (
         <ScreenWrapper>
             <Text>add team screen</Text>

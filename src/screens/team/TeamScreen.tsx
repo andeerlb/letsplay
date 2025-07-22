@@ -1,10 +1,10 @@
 import ScreenWrapper from "@wrapper/ScreenWrapper";
 import Search from "@components/search/Search";
 import { useLingui } from "@lingui/react/macro";
-import { BottomTabParamList } from "@components/navigation/bottomTabNavigator";
-import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { TeamStackParamList } from "@components/navigation/teamNavigator";
 
-type TeamScreenNavigationProps = BottomTabNavigationProp<BottomTabParamList, 'Team'>;
+type TeamScreenNavigationProps = NativeStackNavigationProp<TeamStackParamList, 'Main'>;
 
 export default function TeamScreen({ }: { navigation: TeamScreenNavigationProps }) {
     const { t } = useLingui();

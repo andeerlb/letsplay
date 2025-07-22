@@ -1,18 +1,14 @@
-import SoccerBallIcon from '@assets/icons/soccer_ball.svg';
-import ProfileIcon from '@assets/icons/profile.svg';
-import HomeIcon from '@assets/icons/home.svg';
-import TeamIcon from '@assets/icons/team.svg';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '@screens/home/HomeScreen';
 import ProfileScreen from '@screens/profile/ProfileScreen';
 import MatchScreen from '@screens/match/MatchScreen';
 import { useLingui } from "@lingui/react/macro";
-import { FontDefinition } from '@constants/theme';
 import { useTheme } from '@hooks/theme';
-import TeamStackNavigator from '@components/navigation/teamNavigator';
 import HomeScreenHeader from '@screens/home/HomeScreenHeader';
 import MatchScreenHeader from '@screens/match/MatchScreenHeader';
 import ProfileScreenHeader from '@screens/profile/ProfileScreenHeader';
+import TeamStackNavigator from './teamNavigator';
+import { getTabBarStyle } from '@utils/theme';
 
 export type BottomTabParamList = {
   Home: undefined;
@@ -23,44 +19,12 @@ export type BottomTabParamList = {
 
 const Tab = createBottomTabNavigator<BottomTabParamList>();
 
-const getTabBarIcon = (routeName: string, color: string, size: number) => {
-  if (routeName === 'Home') {
-    return <HomeIcon width={size} height={size} fill={color} />;
-  } else if (routeName === 'Profile') {
-    return <ProfileIcon width={size} height={size} fill={color} />;
-  } else if (routeName === 'Match') {
-    return <SoccerBallIcon width={size} height={size} fill={color} />;
-  } else if (routeName === 'Team') {
-    return <TeamIcon width={size} height={size} fill={color} />;
-  }
-  return null;
-};
-
 export default function BottomTabNavigator() {
   const { t } = useLingui();
   const { theme } = useTheme();
 
   return (
-    <Tab.Navigator
-      screenOptions={({ route }) => ({
-        tabBarIcon: ({ color, size }) => getTabBarIcon(route.name, color, size),
-        tabBarShowLabel: true,
-        tabBarActiveTintColor: theme.secondary.button,
-        tabBarInactiveTintColor: theme.primary.button,
-        tabBarLabelStyle: {
-          fontFamily: FontDefinition.general.regular,
-          fontSize: 10,
-          fontWeight: '500',
-        },
-        tabBarStyle: {
-          paddingTop: 5,
-          height: 90,
-          display: 'flex',
-          flexDirection: 'row',
-          backgroundColor: theme.secondary.background,
-        },
-      })}
-    >
+    <Tab.Navigator screenOptions={({ route }) => getTabBarStyle(route, theme)}>
       <Tab.Screen
         name="Home"
         component={HomeScreen}
@@ -80,7 +44,10 @@ export default function BottomTabNavigator() {
       <Tab.Screen
         name="Team"
         component={TeamStackNavigator}
-        options={{ title: t`screen.team.title`, headerShown: false }}
+        options={{
+          title: t`screen.profile.title`,
+          headerShown: false
+        }}
       />
       <Tab.Screen
         name="Profile"
