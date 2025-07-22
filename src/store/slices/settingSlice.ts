@@ -1,5 +1,4 @@
 import { LANGUAGE_OPTIONS } from '@constants/theme';
-import { Theme } from '@react-navigation/native';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { NativeModules, Platform } from 'react-native';
 
@@ -7,9 +6,8 @@ export type Layout = 'light' | 'dark' | 'system';
 export type Language = 'pt' | 'en';
 
 export type SettingState = {
-  layout: Layout
+  layout: Layout;
   language: Language;
-  theme?: Theme
 };
 
 const getDeviceLanguage = (): Language => {
@@ -30,7 +28,6 @@ const getDeviceLanguage = (): Language => {
   }
 
   const supportedLanguages = LANGUAGE_OPTIONS.map(opt => opt.value);
-
   return supportedLanguages.includes(locale)
     ? (locale as Language)
     : 'pt';
@@ -41,15 +38,12 @@ const initialState: SettingState = {
   layout: 'system',
 };
 
-const setttingSlice = createSlice({
-  name: 'language',
+const settingSlice = createSlice({
+  name: 'setting',
   initialState,
   reducers: {
     setLanguage: (state, action: PayloadAction<Language>) => {
       state.language = action.payload;
-    },
-    setTheme: (state, action: PayloadAction<Theme>) => {
-      state.theme = action.payload;
     },
     setLayout: (state, action: PayloadAction<Layout>) => {
       state.layout = action.payload;
@@ -57,5 +51,5 @@ const setttingSlice = createSlice({
   },
 });
 
-export const { setLanguage, setTheme, setLayout } = setttingSlice.actions;
-export default setttingSlice.reducer;
+export const { setLanguage, setLayout } = settingSlice.actions;
+export default settingSlice.reducer;

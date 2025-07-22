@@ -1,49 +1,29 @@
-import { Appearance, useColorScheme } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store';
-import { LightTheme, DarkTheme, Theme } from '@constants/theme';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useContext } from 'react';
 import { Layout, setLayout } from '@store/slices/settingSlice';
+import { Theme } from '@constants/theme';
+import { ThemeContext } from '@context/ThemeProvider';
 
 type UseThemeProps = {
   theme: Theme;
-  isDarkMode: boolean;
   layout: Layout,
   changeTheme: (layout: Layout) => void;
 };
 
 export const useTheme = (): UseThemeProps => {
+  const { setScheme, theme } = useContext(ThemeContext);
   const dispatch = useDispatch();
-  const scheme = useColorScheme();
+
   const layout = useSelector((state: RootState) => state.setting.layout);
-  const [theme, setTheme] = useState<Theme>(DarkTheme);
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
-
-  useEffect(() => {
-    if (layout !== 'system') {
-      const isDark = layout === 'dark';
-      setIsDarkMode(isDark);
-      setTheme(isDark ? DarkTheme : LightTheme);
-      Appearance.setColorScheme(layout);
-    }
-  }, [isDarkMode, layout]);
-
-  useEffect(() => {
-    if (layout === 'system') {
-      const isDark = scheme === 'dark';
-      setIsDarkMode(isDark);
-      setTheme(isDark ? DarkTheme : LightTheme)
-      Appearance.setColorScheme(scheme);
-    }
-  }, [scheme, layout])
 
   const changeTheme = useCallback((layoutParam: Layout) => {
     dispatch(setLayout(layoutParam));
-  }, [dispatch]);
+    setScheme(layoutParam);
+  }, [dispatch, setScheme]);
 
   return {
     theme,
-    isDarkMode,
     layout,
     changeTheme
   };
