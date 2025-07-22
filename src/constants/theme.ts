@@ -46,7 +46,7 @@ export const DarkTheme = {
   }
 };
 
-export type AppTheme = typeof LightTheme | typeof DarkTheme;
+export type Theme = typeof LightTheme | typeof DarkTheme;
 
 export const THEME_OPTIONS = [
     { label: 'DARK', value: 'dark' },

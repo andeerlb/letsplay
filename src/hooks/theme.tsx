@@ -1,48 +1,48 @@
 import { useColorScheme } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store';
-import { LightTheme, DarkTheme, AppTheme } from '@constants/theme';
-import { Layouts, setPreference } from '../store/slices/themeSlice';
-import { useEffect, useState } from 'react';
+import { LightTheme, DarkTheme, Theme } from '@constants/theme';
+import { useCallback, useEffect, useState } from 'react';
+import { Layout, setLayout } from '@store/slices/settingSlice';
 
 type UseThemeProps = {
-  theme: AppTheme;
+  theme: Theme;
   isDarkMode: boolean;
-  preference: Layouts,
-  changeTheme: (theme: Layouts) => void;
+  layout: Layout,
+  changeTheme: (theme: Layout) => void;
 };
 
 export const useTheme = (): UseThemeProps => {
   const dispatch = useDispatch();
   const scheme = useColorScheme();
-  const preference = useSelector((state: RootState) => state.theme.preference);
-  const [theme, setTheme] = useState<AppTheme>(DarkTheme);
+  const layout = useSelector((state: RootState) => state.setting.layout);
+  const [theme, setTheme] = useState<Theme>(DarkTheme);
   const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
 
   useEffect(() => {
-    if(preference !== 'system') {
-      const isDark = preference === 'dark';
+    if(layout !== 'system') {
+      const isDark = layout === 'dark';
       setIsDarkMode(isDark);
       setTheme(isDark ? DarkTheme : LightTheme)
     }
-  }, [isDarkMode, preference]);
+  }, [isDarkMode, layout]);
 
   useEffect(() => {
-    if(preference === 'system') {
+    if(layout === 'system') {
       const isDark = scheme === 'dark';
       setIsDarkMode(isDark);
       setTheme(isDark ? DarkTheme : LightTheme)
     }
-  },[scheme, preference])
+  },[scheme, layout])
 
-  const changeTheme = (layout: Layouts) => {
-    dispatch(setPreference(layout));
-  }
+  const changeTheme = useCallback((layoutParam: Layout) => {
+    dispatch(setLayout(layoutParam));
+  }, [dispatch]);
 
   return {
     theme,
     isDarkMode,
-    preference,
+    layout,
     changeTheme
   };
 };

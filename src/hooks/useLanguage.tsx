@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store';
-import { Language, setLocale } from '@store/slices/languageSlice';
 import { messages as ptMessages } from '@locales/pt/messages';
 import { messages as enMessages } from '@locales/en/messages';
 import { i18n, Messages } from '@lingui/core';
+import { Language, setLanguage } from '@store/slices/settingSlice';
+import { useCallback } from 'react';
 
 export const LANGUAGE_MAP: Record<Language, Messages> = {
   pt: ptMessages,
@@ -12,18 +13,20 @@ export const LANGUAGE_MAP: Record<Language, Messages> = {
 
 export const useLanguage = () => {
   const dispatch = useDispatch();
-  const locale = useSelector((state: RootState) => state.language.locale);
+  const language = useSelector((state: RootState) => state.setting.language);
 
-  const changeLanguage = (language: Language) => {
-    dispatch(setLocale(language));
+  const changeLanguage = useCallback((languageParam: Language) => {
+    console.log(language);
+    
+    dispatch(setLanguage(languageParam));
     i18n.loadAndActivate({
       locale: language,
-      messages: LANGUAGE_MAP[language],
+      messages: LANGUAGE_MAP[languageParam],
     });
-  };
+  }, [dispatch, language]);
 
   return {
-    locale,
+    language,
     changeLanguage,
   };
 };

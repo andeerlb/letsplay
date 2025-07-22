@@ -1,11 +1,14 @@
-import { LANGUAGE_OPTIONS } from '@constants/theme';
+import { AppTheme, LANGUAGE_OPTIONS } from '@constants/theme';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { NativeModules, Platform } from 'react-native';
 
+export type Layout = 'light' | 'dark' | 'system';
 export type Language = 'pt' | 'en';
 
-export type LanguageState = {
-  locale: Language;
+export type SettingState = {
+    layout: Layout
+    language: Language;
+    theme?: AppTheme
 };
 
 const getDeviceLanguage = (): Language => {
@@ -32,19 +35,26 @@ const getDeviceLanguage = (): Language => {
     : 'pt';
 };
 
-const initialState: LanguageState = {
-  locale: getDeviceLanguage(),
+const initialState: SettingState = {
+  language: getDeviceLanguage(),
+  layout: 'system',
 };
 
-const languageSlice = createSlice({
+const setttingSlice = createSlice({
   name: 'language',
   initialState,
   reducers: {
-    setLocale: (state, action: PayloadAction<Language>) => {
-      state.locale = action.payload;
+    setLanguage: (state, action: PayloadAction<Language>) => {
+      state.language = action.payload;
+    },
+    setTheme: (state, action: PayloadAction<AppTheme>) => {
+      state.theme = action.payload;
+    },
+    setLayout: (state, action: PayloadAction<Layout>) => {
+      state.layout = action.payload;
     },
   },
 });
 
-export const { setLocale } = languageSlice.actions;
-export default languageSlice.reducer;
+export const { setLanguage, setTheme, setLayout } = setttingSlice.actions;
+export default setttingSlice.reducer;

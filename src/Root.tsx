@@ -3,7 +3,7 @@ import { StatusBar, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { useTheme } from '@hooks/theme';
 import RootStackNavigator from '@components/navigation/rootNavigation';
-import { LANGUAGE_MAP } from '@hooks/useLanguage';
+import { useLanguage } from '@hooks/useLanguage';
 import { I18nProvider, TransRenderProps } from '@lingui/react';
 import { i18n } from '@lingui/core';
 import { useSetting } from '@query/settings';
@@ -13,13 +13,15 @@ const DefaultComponent = (props: TransRenderProps) => <Text>{props.children}</Te
 function Root() {
   const { isDarkMode } = useTheme();
   const { data, isLoading } = useSetting();
+  const { changeTheme } = useTheme();
+  const { changeLanguage } = useLanguage();
+  
 
   useEffect(() => {
     if(isLoading || !data) return;
-    i18n.loadAndActivate({
-      locale: data.language,
-      messages: LANGUAGE_MAP[data.language],
-    });
+    changeLanguage(data.language);
+    changeTheme(data.theme);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, isLoading]);
 
   if (isLoading) {

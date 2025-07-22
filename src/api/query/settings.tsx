@@ -1,10 +1,9 @@
 import { useQuery, UseQueryResult } from '@tanstack/react-query';
 import { fetchSettings } from '@fetch/settings';
-import { Layouts } from '@store/slices/themeSlice';
-import { Language } from '@store/slices/languageSlice';
+import { Language, Layout } from '@store/slices/settingSlice';
 
 type Settings = {
-  theme: Layouts;
+  theme: Layout;
   language: Language;
 };
 
