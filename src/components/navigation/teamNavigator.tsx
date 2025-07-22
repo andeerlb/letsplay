@@ -5,30 +5,30 @@ import TeamScreen from "@screens/team/TeamScreen";
 import TeamScreenHeader from "@screens/team/TeamScreenHeader";
 
 export type TeamStackParamList = {
-  TeamMain: undefined;
+  Main: undefined;
   addTeam: undefined;
 };
 
-const TeamStack = createNativeStackNavigator<TeamStackParamList>();
+const Stack = createNativeStackNavigator<TeamStackParamList>();
 
 function TeamStackNavigator() {
   return (
-    <TeamStack.Navigator>
-      <TeamStack.Screen
-        name="TeamMain"
+    <Stack.Navigator >
+      <Stack.Screen
+        name="Main"
         component={TeamScreen}
         options={{
           header: TeamScreenHeader
         }}
       />
-      <TeamStack.Screen
+      <Stack.Screen
         name="addTeam"
         component={AddTeamScreen}
         options={{
-          header: AddTeamHeader
+          header: AddTeamHeader,
         }}
       />
-    </TeamStack.Navigator>
+    </Stack.Navigator>
   );
 }
 

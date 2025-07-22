@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/screens/home/HomeScreenHeader.tsx:8
-#: src/components/navigation/bottomTabNavigator.tsx:68
+#: src/components/navigation/bottomTabNavigator.tsx:69
 msgid "screen.home.title"
 msgstr "Home"
 
@@ -23,20 +23,20 @@ msgid "screen.home.welcome"
 msgstr "Welcome"
 
 #: src/screens/match/MatchScreenHeader.tsx:9
-#: src/components/navigation/bottomTabNavigator.tsx:76
+#: src/components/navigation/bottomTabNavigator.tsx:77
 msgid "screen.match.title"
 msgstr "Search"
 
 #: src/screens/profile/ProfileScreenHeader.tsx:8
-#: src/components/navigation/bottomTabNavigator.tsx:89
+#: src/components/navigation/bottomTabNavigator.tsx:93
 msgid "screen.profile.title"
 msgstr "Account"
 
-#: src/screens/setting/SettingScreen.tsx:38
+#: src/screens/setting/SettingScreen.tsx:36
 msgid "screen.setting.appearance"
 msgstr "Appearance"
 
-#: src/screens/setting/SettingScreen.tsx:48
+#: src/screens/setting/SettingScreen.tsx:46
 msgid "screen.setting.language"
 msgstr "Language"
 
@@ -48,7 +48,7 @@ msgstr "English"
 msgid "screen.setting.language.portuguese"
 msgstr "Portuguese"
 
-#: src/screens/setting/SettingScreen.tsx:42
+#: src/screens/setting/SettingScreen.tsx:40
 msgid "screen.setting.theme"
 msgstr "Theme"
 
@@ -77,6 +77,6 @@ msgid "screen.team.search-placeholder"
 msgstr "My teams..."
 
 #: src/screens/team/TeamScreenHeader.tsx:13
-#: src/components/navigation/bottomTabNavigator.tsx:83
+#: src/components/navigation/bottomTabNavigator.tsx:85
 msgid "screen.team.title"
 msgstr "Teams"

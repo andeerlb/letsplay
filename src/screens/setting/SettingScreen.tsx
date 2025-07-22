@@ -1,4 +1,3 @@
-import { RootStackParamList } from "@components/navigation/rootNavigation";
 import { FontDefinition, LANGUAGE_OPTIONS, THEME_OPTIONS } from "@constants/theme";
 import { useTheme } from '@hooks/theme';
 import { Trans, useLingui } from "@lingui/react/macro";
@@ -7,8 +6,9 @@ import ScreenWrapper from "@wrapper/ScreenWrapper";
 import { StyleSheet, Text, View } from "react-native";
 import Select from "@components/select/Select";
 import { useLanguage } from "@hooks/useLanguage";
+import { AuthStackParamList } from "@components/navigation/authNavigator";
 
-type SettingScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Setting'>;
+type SettingScreenNavigationProp = NativeStackNavigationProp<AuthStackParamList, 'Setting'>;
 
 type Props = {
   navigation: SettingScreenNavigationProp;

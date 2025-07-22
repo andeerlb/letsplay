@@ -5,7 +5,7 @@ import { FontDefinition } from "@constants/theme";
 import { useTheme } from '@hooks/theme';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, NavigationProp } from "@react-navigation/native";
-import { RootStackParamList } from "./rootNavigation";
+import { AuthStackParamList } from "./authNavigator";
 
 type Props = {
   children?: React.ReactNode;
@@ -17,8 +17,8 @@ type Props = {
 const MainPageNavigationHeader = function ({ children, title, hideSettings = true }: Props) {
   const { theme } = useTheme();
   const insets = useSafeAreaInsets();
-  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
-  
+  const navigation = useNavigation<NavigationProp<AuthStackParamList>>();
+
   const goToSettingsPage = () => {
     navigation.navigate('Setting');
   }

@@ -4,9 +4,9 @@ import { useLingui } from "@lingui/react/macro";
 import { BottomTabParamList } from "@components/navigation/bottomTabNavigator";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 
-type TeamScreenNavigationProp = BottomTabNavigationProp<BottomTabParamList, 'Team'>;
+type TeamScreenNavigationProps = BottomTabNavigationProp<BottomTabParamList, 'Team'>;
 
-export default function TeamScreen({ }: { navigation: TeamScreenNavigationProp }) {
+export default function TeamScreen({ }: { navigation: TeamScreenNavigationProps }) {
     const { t } = useLingui();
 
     return (
