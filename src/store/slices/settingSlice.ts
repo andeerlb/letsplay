@@ -1,4 +1,5 @@
-import { AppTheme, LANGUAGE_OPTIONS } from '@constants/theme';
+import { LANGUAGE_OPTIONS } from '@constants/theme';
+import { Theme } from '@react-navigation/native';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { NativeModules, Platform } from 'react-native';
 
@@ -8,7 +9,7 @@ export type Language = 'pt' | 'en';
 export type SettingState = {
     layout: Layout
     language: Language;
-    theme?: AppTheme
+    theme?: Theme
 };
 
 const getDeviceLanguage = (): Language => {
@@ -47,7 +48,7 @@ const setttingSlice = createSlice({
     setLanguage: (state, action: PayloadAction<Language>) => {
       state.language = action.payload;
     },
-    setTheme: (state, action: PayloadAction<AppTheme>) => {
+    setTheme: (state, action: PayloadAction<Theme>) => {
       state.theme = action.payload;
     },
     setLayout: (state, action: PayloadAction<Layout>) => {
