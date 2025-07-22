@@ -1,7 +1,6 @@
 import { View, StyleSheet, Pressable, Text } from "react-native";
 import SettingIcon from '@assets/icons/settings.svg';
 import LetsPlayIcon from '@assets/icons/letsplay.svg';
-import { FontDefinition } from "@constants/theme";
 import { useTheme } from '@hooks/theme';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, NavigationProp } from "@react-navigation/native";
@@ -29,15 +28,15 @@ const MainPageNavigationHeader = function ({ children, title, hideSettings = tru
       paddingTop: insets.top + 20,
       paddingBottom: insets.bottom,
       paddingHorizontal: 15,
-      backgroundColor: theme.secondary.background
+      backgroundColor: theme.colors.background
     }]}>
       <LetsPlayIcon width={25} height={25} />
-      {title && <Text style={[styles.title, { color: theme.secondary.text }]}>{title}</Text>}
+      {title && <Text style={[styles.title, { color: theme.colors.text, fontFamily: theme.fonts.regular.fontFamily }]}>{title}</Text>}
       <View style={styles.rightButtons}>
         {children && children}
         {!hideSettings && (
           <Pressable onPress={goToSettingsPage}>
-            <SettingIcon width={24} height={24} fill={theme.primary.button} />
+            <SettingIcon width={24} height={24} fill={theme.colors.button} />
           </Pressable>
         )}
       </View >
@@ -54,7 +53,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   title: {
-    fontFamily: FontDefinition.general.regular,
     fontSize: 20,
   },
   rightButtons: {

@@ -7,9 +7,9 @@ export type Layout = 'light' | 'dark' | 'system';
 export type Language = 'pt' | 'en';
 
 export type SettingState = {
-    layout: Layout
-    language: Language;
-    theme?: Theme
+  layout: Layout
+  language: Language;
+  theme?: Theme
 };
 
 const getDeviceLanguage = (): Language => {

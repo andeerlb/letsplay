@@ -20,10 +20,14 @@ export default function AddTeamScreen({ navigation }: Props) {
         tabNav?.setOptions({
             tabBarStyle: { display: 'none' },
         });
+
         return () => {
-            tabNav?.setOptions({ tabBarStyle: getTabBarStyle(theme) });
+            tabNav?.setOptions({
+                tabBarStyle: getTabBarStyle(theme)
+            });
         };
     }, [navigation, theme]);
+
 
     return (
         <ScreenWrapper>

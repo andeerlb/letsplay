@@ -1,4 +1,4 @@
-import { useColorScheme } from 'react-native';
+import { Appearance, useColorScheme } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store';
 import { LightTheme, DarkTheme, Theme } from '@constants/theme';
@@ -9,7 +9,7 @@ type UseThemeProps = {
   theme: Theme;
   isDarkMode: boolean;
   layout: Layout,
-  changeTheme: (theme: Layout) => void;
+  changeTheme: (layout: Layout) => void;
 };
 
 export const useTheme = (): UseThemeProps => {
@@ -20,20 +20,22 @@ export const useTheme = (): UseThemeProps => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
 
   useEffect(() => {
-    if(layout !== 'system') {
+    if (layout !== 'system') {
       const isDark = layout === 'dark';
       setIsDarkMode(isDark);
-      setTheme(isDark ? DarkTheme : LightTheme)
+      setTheme(isDark ? DarkTheme : LightTheme);
+      Appearance.setColorScheme(layout);
     }
   }, [isDarkMode, layout]);
 
   useEffect(() => {
-    if(layout === 'system') {
+    if (layout === 'system') {
       const isDark = scheme === 'dark';
       setIsDarkMode(isDark);
       setTheme(isDark ? DarkTheme : LightTheme)
+      Appearance.setColorScheme(scheme);
     }
-  },[scheme, layout])
+  }, [scheme, layout])
 
   const changeTheme = useCallback((layoutParam: Layout) => {
     dispatch(setLayout(layoutParam));

@@ -1,5 +1,4 @@
 import { Trans } from "@lingui/react/macro";
-import { FontDefinition } from "@constants/theme";
 import ScreenWrapper from "@wrapper/ScreenWrapper";
 import { StyleSheet, Text } from "react-native";
 import { useTheme } from '@hooks/theme';
@@ -14,12 +13,12 @@ function HomeScreen({ }: { navigation: HomeScreenNavigationProp }) {
 
   return (
     <ScreenWrapper>
-        <Text style={[styles.title, { color: theme.primary.text }]}>
-            <Trans>screen.home.welcome</Trans>,{' '}
-            <Text style={{ color: theme.general.secondary }}>
-                Anderson
-            </Text>
+      <Text style={[styles.title, { color: theme.colors.text }]}>
+        <Trans>screen.home.welcome</Trans>,{' '}
+        <Text style={{ color: theme.colors.secondary, fontFamily: theme.fonts.bold.fontFamily }}>
+          Anderson
         </Text>
+      </Text>
     </ScreenWrapper>
   );
 }
@@ -27,7 +26,6 @@ function HomeScreen({ }: { navigation: HomeScreenNavigationProp }) {
 const styles = StyleSheet.create({
   title: {
     marginTop: 20,
-    fontFamily: FontDefinition.logo.bold,
     fontSize: 20,
   }
 });

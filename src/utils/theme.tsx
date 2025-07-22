@@ -1,4 +1,4 @@
-import { FontDefinition, Theme } from "@constants/theme";
+import { Theme } from "@constants/theme";
 import { BottomTabNavigationOptions } from "@react-navigation/bottom-tabs";
 import SoccerBallIcon from '@assets/icons/soccer_ball.svg';
 import ProfileIcon from '@assets/icons/profile.svg';
@@ -20,27 +20,31 @@ const getTabBarIcon = (routeName: keyof BottomTabParamList, color: string, size:
     return null;
 };
 
-export const getBottomNavigatorBarStyle = (routeName: keyof BottomTabParamList, theme: Theme): BottomTabNavigationOptions => {
-    return {
-        tabBarIcon: ({ color, size }) => getTabBarIcon(routeName, color, size),
-        tabBarShowLabel: true,
-        tabBarActiveTintColor: theme.secondary.button,
-        tabBarInactiveTintColor: theme.primary.button,
-        tabBarLabelStyle: {
-            fontFamily: FontDefinition.general.regular,
-            fontSize: 10,
-            fontWeight: '500',
-        },
-        tabBarStyle: getTabBarStyle(theme)
-    };
-}
+export const getBottomNavigatorBarStyle = (
+    routeName: keyof BottomTabParamList,
+    theme: Theme,
+    animatedStyle?: StyleProp<ViewStyle>
+): BottomTabNavigationOptions => ({
+    tabBarIcon: ({ color, size }) => getTabBarIcon(routeName, color, size),
+    tabBarShowLabel: true,
+    tabBarActiveTintColor: theme.colors.button,
+    tabBarInactiveTintColor: theme.colors.button,
+    tabBarLabelStyle: {
+        fontFamily: theme.fonts.regular.fontFamily,
+        fontSize: 10,
+        fontWeight: theme.fonts.regular.fontWeight,
+    },
+    tabBarStyle: getTabBarStyle(theme, animatedStyle),
+});
 
-export const getTabBarStyle = (theme: Theme): StyleProp<ViewStyle> => {
-    return {
-        paddingTop: 5,
-        height: 90,
-        display: 'flex',
-        flexDirection: 'row',
-        backgroundColor: theme.secondary.background,
-    };
-}
+export const getTabBarStyle = (
+    theme: Theme,
+    animatedStyle?: StyleProp<ViewStyle>
+): StyleProp<ViewStyle> => ({
+    paddingTop: 5,
+    height: 90,
+    display: 'flex',
+    flexDirection: 'row',
+    backgroundColor: theme.colors.background,
+    ...((animatedStyle as object) || {}),
+});

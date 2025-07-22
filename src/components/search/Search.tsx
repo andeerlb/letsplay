@@ -18,14 +18,14 @@ const Search: React.FC<SearchProps> = ({ onSearch, placeholder }) => {
     };
 
     return (
-        <View style={[styles.container, { backgroundColor: theme.secondary.background }]}>
-            <SearchIcon style={styles.icon} width={24} height={24} color={theme.primary.text} />
+        <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
+            <SearchIcon style={styles.icon} width={24} height={24} color={theme.colors.text} />
             <TextInput
-                style={[styles.input, { color: theme.primary.text }]}
+                style={[styles.input, { color: theme.colors.text }]}
                 placeholder={placeholder}
                 value={searchText}
                 onChangeText={handleSearchChange}
-                placeholderTextColor={theme.secondary.text}
+                placeholderTextColor={theme.colors.text}
             />
         </View>
     );

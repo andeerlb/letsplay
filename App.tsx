@@ -1,10 +1,11 @@
 import React from 'react';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Root from './src/Root';
 import { Provider } from 'react-redux';
 import { store } from '@store/index';
 import Config from 'react-native-config';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ThemeProvider } from '@react-navigation/native';
+import { DarkTheme } from '@constants/theme';
 
 if (Config.ENABLE_MIRAGE) {
   console.log("Mirage was enabled");
@@ -16,13 +17,13 @@ const queryClient = new QueryClient();
 
 function App() {
   return (
-    <SafeAreaProvider>
-      <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider value={DarkTheme}>
         <Provider store={store}>
           <Root />
         </Provider>
-      </QueryClientProvider>
-    </SafeAreaProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
   );
 }
 

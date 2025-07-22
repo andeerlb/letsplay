@@ -12,7 +12,7 @@ export default function ScreenWrapper({ children }: Props) {
   return (
     <View
       style={[
-        styles.container, {backgroundColor: theme.primary.background},
+        styles.container, { backgroundColor: theme.colors.background },
       ]}
     >
       {children}

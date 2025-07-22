@@ -15,7 +15,7 @@ const TeamScreenHeader = ({ navigation }: NativeStackHeaderProps) => {
         console.log("click");
         navigation.getParent()?.navigate('Team', { screen: 'Add' });
       }}>
-        <AddIcon width={24} height={24} color={theme.primary.button} />
+        <AddIcon width={24} height={24} color={theme.colors.button} />
       </Pressable>
     </MainPageNavigationHeader>
   );

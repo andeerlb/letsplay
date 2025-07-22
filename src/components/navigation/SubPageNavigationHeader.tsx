@@ -1,5 +1,4 @@
 import { View, StyleSheet, Text, Pressable } from "react-native";
-import { FontDefinition } from "@constants/theme";
 import { useTheme } from '@hooks/theme';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { NativeStackHeaderProps } from "@react-navigation/native-stack";
@@ -19,16 +18,16 @@ export const SubPageNavigationHeader = function ({ navigation, title }: SubPageN
       paddingTop: insets.top + 20,
       paddingBottom: insets.bottom,
       paddingHorizontal: 15,
-      backgroundColor: theme.secondary.background
+      backgroundColor: theme.colors.background
     }]}>
       {navigation && navigation.canGoBack() ? (
         <Pressable
           onPress={() => navigation.goBack()}
         >
-          <BackArrowIcon width={24} height={24} color={theme.secondary.text} />
+          <BackArrowIcon width={24} height={24} color={theme.colors.text} />
         </Pressable>
       ) : null}
-      <Text style={[styles.title, { color: theme.secondary.text }]}>{title}</Text>
+      <Text style={[styles.title, { color: theme.colors.text, fontFamily: theme.fonts.regular.fontFamily }]}>{title}</Text>
       <View />
     </View>
   );
@@ -43,7 +42,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   title: {
-    fontFamily: FontDefinition.general.regular,
     fontSize: 20,
   },
 });

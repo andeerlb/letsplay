@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/screens/home/HomeScreenHeader.tsx:8
-#: src/components/navigation/bottomTabNavigator.tsx:69
+#: src/components/navigation/bottomTabNavigator.tsx:32
 msgid "screen.home.title"
 msgstr "Início"
 
@@ -23,12 +23,13 @@ msgid "screen.home.welcome"
 msgstr "Bem-vindo"
 
 #: src/screens/match/MatchScreenHeader.tsx:9
-#: src/components/navigation/bottomTabNavigator.tsx:77
+#: src/components/navigation/bottomTabNavigator.tsx:40
 msgid "screen.match.title"
 msgstr "Buscar"
 
 #: src/screens/profile/ProfileScreenHeader.tsx:8
-#: src/components/navigation/bottomTabNavigator.tsx:93
+#: src/components/navigation/bottomTabNavigator.tsx:48
+#: src/components/navigation/bottomTabNavigator.tsx:56
 msgid "screen.profile.title"
 msgstr "Conta"
 
@@ -40,11 +41,11 @@ msgstr "Visual"
 msgid "screen.setting.language"
 msgstr "Idioma"
 
-#: src/constants/theme.ts:61
+#: src/constants/theme.ts:134
 msgid "screen.setting.language.english"
 msgstr "Inglês"
 
-#: src/constants/theme.ts:60
+#: src/constants/theme.ts:133
 msgid "screen.setting.language.portuguese"
 msgstr "Português"
 
@@ -52,15 +53,15 @@ msgstr "Português"
 msgid "screen.setting.theme"
 msgstr "Tema"
 
-#: src/constants/theme.ts:54
+#: src/constants/theme.ts:127
 msgid "screen.setting.theme.dark"
 msgstr "Escuro"
 
-#: src/constants/theme.ts:55
+#: src/constants/theme.ts:128
 msgid "screen.setting.theme.light"
 msgstr "Claro"
 
-#: src/constants/theme.ts:56
+#: src/constants/theme.ts:129
 msgid "screen.setting.theme.system"
 msgstr "Sistema"
 
@@ -77,6 +78,5 @@ msgid "screen.team.search-placeholder"
 msgstr "Meus times..."
 
 #: src/screens/team/TeamScreenHeader.tsx:13
-#: src/components/navigation/bottomTabNavigator.tsx:85
 msgid "screen.team.title"
 msgstr "Times"

@@ -1,4 +1,3 @@
-import { FontDefinition } from '@constants/theme';
 import { useTheme } from '@hooks/theme';
 import React, { useState } from 'react';
 import { View, Text, Switch, StyleSheet } from 'react-native';
@@ -11,7 +10,7 @@ export default function Toggle({ label }) {
 
   return (
     <View style={styles.container}>
-      <Text style={[styles.text, {color: theme.primary.text }]}>{label}</Text>
+      <Text style={[styles.text, { color: theme.colors.text, fontFamily: theme.fonts.regular.fontFamily }]}>{label}</Text>
       <Switch
         value={isEnabled}
         onValueChange={toggleSwitch}
@@ -24,7 +23,6 @@ export default function Toggle({ label }) {
 
 const styles = StyleSheet.create({
   text: {
-    fontFamily: FontDefinition.general.regular,
     fontSize: 20,
   },
   container: {

@@ -1,4 +1,4 @@
-import { FontDefinition, LANGUAGE_OPTIONS, THEME_OPTIONS } from "@constants/theme";
+import { LANGUAGE_OPTIONS, THEME_OPTIONS } from "@constants/theme";
 import { useTheme } from '@hooks/theme';
 import { Trans, useLingui } from "@lingui/react/macro";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -32,7 +32,7 @@ export function SettingScreen({ }: Props) {
   return (
     <ScreenWrapper>
       <View style={styles.section}>
-        <Text style={[styles.title, { color: theme.primary.text }]}>
+        <Text style={[styles.title, { color: theme.colors.text, fontFamily: theme.fonts.heavy.fontFamily }]}>
           <Trans>screen.setting.appearance</Trans>
         </Text>
         <View style={styles.appearanceContainer}>
@@ -56,12 +56,10 @@ export function SettingScreen({ }: Props) {
 
 const styles = StyleSheet.create({
   text: {
-    fontFamily: FontDefinition.general.regular,
     fontSize: 20,
   },
   title: {
     marginTop: 20,
-    fontFamily: FontDefinition.general.extraBold,
     fontSize: 20,
   },
   appearanceContainer: {
