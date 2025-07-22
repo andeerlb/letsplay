@@ -9,4 +9,10 @@ export const HomeScreenHeader = ({}: BottomTabHeaderProps) => {
   )
 };
 
+const HomeScreenHeaderWrapper = (props: BottomTabHeaderProps) => {
+  return (
+    <HomeScreenHeaderWrapper {...props} />
+  )
+}
+
 export default HomeScreenHeader;

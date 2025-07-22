@@ -12,7 +12,7 @@ import { useTheme } from '@hooks/theme';
 import TeamStackNavigator from '@components/navigation/teamNavigator';
 import HomeScreenHeader from '@screens/home/HomeScreenHeader';
 import MatchScreenHeader from '@screens/match/MatchScreenHeader';
-import { ProfileScreenHeader } from '@screens/profile/ProfileScreenHeader';
+import ProfileScreenHeader from '@screens/profile/ProfileScreenHeader';
 
 export type BottomTabParamList = {
   Home: undefined;

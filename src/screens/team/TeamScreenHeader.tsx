@@ -18,4 +18,10 @@ const TeamScreenHeader = ({ navigation }: NativeStackHeaderProps) => {
   );
 }
 
-export default TeamScreenHeader;
+const TeamScreenHeaderWrapper = (props: NativeStackHeaderProps) => {
+  return (
+    <TeamScreenHeader {...props} />
+  )
+}
+
+export default TeamScreenHeaderWrapper;

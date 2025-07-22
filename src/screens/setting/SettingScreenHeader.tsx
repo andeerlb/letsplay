@@ -7,4 +7,10 @@ export const SettingScreenHeader = (props: NativeStackHeaderProps) => {
   return <SubPageNavigationHeader {...props} title={t`SETTING_SCREEN_TITLE`} />;
 }
 
-export default SettingScreenHeader;
+const SettingScreenHeaderWrapper = (props: NativeStackHeaderProps) => {
+  return (
+    <SettingScreenHeader {...props} />
+  )
+}
+
+export default SettingScreenHeaderWrapper;

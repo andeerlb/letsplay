@@ -22,11 +22,11 @@ msgstr "{label}"
 #~ msgid "{title}"
 #~ msgstr "{title}"
 
-#: src/screens/team/AddTeamScreen.tsx:18
+#: src/screens/team/AddTeamScreenHeader.tsx:7
 msgid "ADD_TEAM_TITLE"
 msgstr "Adicionar time"
 
-#: src/screens/SettingScreen.tsx:26
+#: src/screens/setting/SettingScreen.tsx:26
 msgid "APPEARANCE"
 msgstr "Visual"
 
@@ -36,51 +36,51 @@ msgstr "Visual"
 #~ msgid "ENGLISH"
 #~ msgstr "Inglês"
 
-#: src/screens/home/HomeScreen.tsx:39
-#: src/components/navigation/bottomTabNavigator.tsx:66
+#: src/screens/home/HomeScreenHeader.tsx:8
+#: src/components/navigation/bottomTabNavigator.tsx:68
 msgid "HOME_BOTTOM_MENU"
 msgstr "Início"
 
-#: src/screens/SettingScreen.tsx:36
+#: src/screens/setting/SettingScreen.tsx:36
 msgid "LANGUAGE"
 msgstr "Idioma"
 
 #~ msgid "LIGHT"
 #~ msgstr "Claro"
 
-#: src/screens/match/MatchScreen.tsx:22
-#: src/components/navigation/bottomTabNavigator.tsx:74
+#: src/screens/match/MatchScreenHeader.tsx:9
+#: src/components/navigation/bottomTabNavigator.tsx:76
 msgid "MATCH_BOTTOM_MENU"
 msgstr "Buscar"
 
 #~ msgid "PORTUGUESE"
 #~ msgstr "Português"
 
-#: src/screens/profile/ProfileScreen.tsx:23
-#: src/components/navigation/bottomTabNavigator.tsx:87
+#: src/screens/profile/ProfileScreenHeader.tsx:8
+#: src/components/navigation/bottomTabNavigator.tsx:89
 msgid "PROFILE_BOTTOM_MENU"
 msgstr "Conta"
 
-#: src/screens/team/TeamScreen.tsx:20
+#: src/screens/team/TeamScreen.tsx:15
 msgid "SEARCH_BAR_PLACEHOLDER"
 msgstr "Meus times..."
 
-#: src/components/navigation/rootNavigation.tsx:33
+#: src/screens/setting/SettingScreenHeader.tsx:7
 msgid "SETTING_SCREEN_TITLE"
 msgstr "Configurações"
 
 #~ msgid "SYSTEM"
 #~ msgstr "Sistema"
 
-#: src/screens/team/TeamScreen.tsx:33
-#: src/components/navigation/bottomTabNavigator.tsx:81
+#: src/screens/team/TeamScreenHeader.tsx:13
+#: src/components/navigation/bottomTabNavigator.tsx:83
 msgid "TEAM_BOTTOM_MENU"
 msgstr "Times"
 
-#: src/screens/SettingScreen.tsx:30
+#: src/screens/setting/SettingScreen.tsx:30
 msgid "THEME"
 msgstr "Tema"
 
-#: src/screens/home/HomeScreen.tsx:19
+#: src/screens/home/HomeScreen.tsx:18
 msgid "WELCOME_HOME_SCREEN"
 msgstr "Bem-vindo"

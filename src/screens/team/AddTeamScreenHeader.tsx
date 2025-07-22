@@ -7,4 +7,10 @@ export const AddTeamHeader = (props: NativeStackHeaderProps) => {
   return <SubPageNavigationHeader {...props} title={t`ADD_TEAM_TITLE`} />;
 }
 
-export default AddTeamHeader;
+const AddTeamHeaderWrapper = (props: NativeStackHeaderProps) => {
+  return (
+    <AddTeamHeader {...props} />
+  )
+}
+
+export default AddTeamHeaderWrapper;

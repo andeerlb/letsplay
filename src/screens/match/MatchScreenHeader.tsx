@@ -10,4 +10,10 @@ export const MatchScreenHeader = ({}: BottomTabHeaderProps) => {
     )
 }
 
-export default MatchScreenHeader;
+const MatchScreenHeaderWrapper = (props: BottomTabHeaderProps) => {
+  return (
+    <MatchScreenHeader {...props} />
+  )
+}
+
+export default MatchScreenHeaderWrapper;
