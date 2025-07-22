@@ -5,7 +5,6 @@ import { useLingui } from '@lingui/react/macro';
 import {
   createNativeStackNavigator,
 } from '@react-navigation/native-stack';
-import SubPageNavigationHeader from '@components/navigation/SubPageNavigationHeader';
 import SettingScreenHeader from '@screens/setting/SettingScreenHeader';
 
 export type RootStackParamList = {
@@ -16,8 +15,6 @@ export type RootStackParamList = {
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const RootStackNavigator = () => {
-  const { t } = useLingui();
-
   return (
     <Stack.Navigator>
       <Stack.Screen
