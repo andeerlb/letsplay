@@ -17,7 +17,19 @@ type Props = {
 export function SettingScreen({ }: Props) {
   const { theme, layout, changeTheme } = useTheme();
   const { changeLanguage, language } = useLanguage();
-  const { t } = useLingui();
+  const { i18n, t } = useLingui();
+
+  const translatedThemeOptions = THEME_OPTIONS.map(opt => ({
+    label: i18n._(opt.label),
+    value: opt.value,
+  }));
+
+  const translatedLanguageOptions = LANGUAGE_OPTIONS.map(opt => ({
+    label: i18n._(opt.label),
+    value: opt.value, 
+  }));
+
+  console.log(translatedLanguageOptions, translatedThemeOptions);
 
   return (
     <ScreenWrapper>
@@ -30,13 +42,13 @@ export function SettingScreen({ }: Props) {
             label={t`THEME`}
             defaultValue={layout}
             onChange={changeTheme}
-            options={THEME_OPTIONS}
+            options={translatedThemeOptions}
           />
           <Select 
             label={t`LANGUAGE`}
             defaultValue={language}
             onChange={changeLanguage}
-            options={LANGUAGE_OPTIONS}
+            options={translatedLanguageOptions}
           />
         </View>
       </View>

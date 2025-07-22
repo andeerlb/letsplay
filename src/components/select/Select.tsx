@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
-import { Trans } from '@lingui/react/macro';
 import { useTheme } from '@hooks/theme';
 import { FontDefinition } from '@constants/theme';
 
@@ -22,7 +21,7 @@ export default function Select({ label, defaultValue, onChange=() => {}, options
 
     return (
         <View style={styles.container}>
-            {label && <Text style={[styles.text, { color: theme.primary.text }]}><Trans>{label}</Trans></Text>}
+            {label && <Text style={[styles.text, { color: theme.primary.text }]}>{label}</Text>}
             <Picker
                 selectedValue={defaultValue}
                 onValueChange={(itemValue) => onChange(itemValue)}

@@ -13,48 +13,43 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/components/select/Select.tsx:25
-msgid "{label}"
-msgstr "{label}"
-
-#: src/components/navigation/SubPageNavigationHeader.tsx:32
-#: src/components/navigation/MainPageNavigationHeader.tsx:36
-#~ msgid "{title}"
-#~ msgstr "{title}"
-
 #: src/screens/team/AddTeamScreenHeader.tsx:7
 msgid "ADD_TEAM_TITLE"
 msgstr "Adicionar time"
 
-#: src/screens/setting/SettingScreen.tsx:26
+#: src/screens/setting/SettingScreen.tsx:38
 msgid "APPEARANCE"
 msgstr "Visual"
 
-#~ msgid "DARK"
-#~ msgstr "Escuro"
+#: src/i18n.dynamic/lingui-static-messages.ts:8
+msgid "DARK"
+msgstr "Escuro"
 
-#~ msgid "ENGLISH"
-#~ msgstr "Inglês"
+#: src/i18n.dynamic/lingui-static-messages.ts:9
+msgid "ENGLISH"
+msgstr "Inglês"
 
 #: src/screens/home/HomeScreenHeader.tsx:8
 #: src/components/navigation/bottomTabNavigator.tsx:68
 msgid "HOME_BOTTOM_MENU"
 msgstr "Início"
 
-#: src/screens/setting/SettingScreen.tsx:36
+#: src/screens/setting/SettingScreen.tsx:48
 msgid "LANGUAGE"
 msgstr "Idioma"
 
-#~ msgid "LIGHT"
-#~ msgstr "Claro"
+#: src/i18n.dynamic/lingui-static-messages.ts:12
+msgid "LIGHT"
+msgstr "Claro"
 
 #: src/screens/match/MatchScreenHeader.tsx:9
 #: src/components/navigation/bottomTabNavigator.tsx:76
 msgid "MATCH_BOTTOM_MENU"
 msgstr "Buscar"
 
-#~ msgid "PORTUGUESE"
-#~ msgstr "Português"
+#: src/i18n.dynamic/lingui-static-messages.ts:11
+msgid "PORTUGUESE"
+msgstr "Português"
 
 #: src/screens/profile/ProfileScreenHeader.tsx:8
 #: src/components/navigation/bottomTabNavigator.tsx:89
@@ -69,15 +64,16 @@ msgstr "Meus times..."
 msgid "SETTING_SCREEN_TITLE"
 msgstr "Configurações"
 
-#~ msgid "SYSTEM"
-#~ msgstr "Sistema"
+#: src/i18n.dynamic/lingui-static-messages.ts:10
+msgid "SYSTEM"
+msgstr "Sistema"
 
 #: src/screens/team/TeamScreenHeader.tsx:13
 #: src/components/navigation/bottomTabNavigator.tsx:83
 msgid "TEAM_BOTTOM_MENU"
 msgstr "Times"
 
-#: src/screens/setting/SettingScreen.tsx:30
+#: src/screens/setting/SettingScreen.tsx:42
 msgid "THEME"
 msgstr "Tema"
 

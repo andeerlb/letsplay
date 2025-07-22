@@ -13,48 +13,43 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/components/select/Select.tsx:25
-msgid "{label}"
-msgstr ""
-
-#: src/components/navigation/SubPageNavigationHeader.tsx:32
-#: src/components/navigation/MainPageNavigationHeader.tsx:36
-#~ msgid "{title}"
-#~ msgstr ""
-
 #: src/screens/team/AddTeamScreenHeader.tsx:7
 msgid "ADD_TEAM_TITLE"
 msgstr "Add team"
 
-#: src/screens/setting/SettingScreen.tsx:26
+#: src/screens/setting/SettingScreen.tsx:38
 msgid "APPEARANCE"
 msgstr "Appearance"
 
-#~ msgid "DARK"
-#~ msgstr "Dark"
+#: src/i18n.dynamic/lingui-static-messages.ts:8
+msgid "DARK"
+msgstr "Dark"
 
-#~ msgid "ENGLISH"
-#~ msgstr "English"
+#: src/i18n.dynamic/lingui-static-messages.ts:9
+msgid "ENGLISH"
+msgstr "English"
 
 #: src/screens/home/HomeScreenHeader.tsx:8
 #: src/components/navigation/bottomTabNavigator.tsx:68
 msgid "HOME_BOTTOM_MENU"
 msgstr "Home"
 
-#: src/screens/setting/SettingScreen.tsx:36
+#: src/screens/setting/SettingScreen.tsx:48
 msgid "LANGUAGE"
 msgstr "Language"
 
-#~ msgid "LIGHT"
-#~ msgstr "Light"
+#: src/i18n.dynamic/lingui-static-messages.ts:12
+msgid "LIGHT"
+msgstr "Light"
 
 #: src/screens/match/MatchScreenHeader.tsx:9
 #: src/components/navigation/bottomTabNavigator.tsx:76
 msgid "MATCH_BOTTOM_MENU"
 msgstr "Search"
 
-#~ msgid "PORTUGUESE"
-#~ msgstr "Portuguese"
+#: src/i18n.dynamic/lingui-static-messages.ts:11
+msgid "PORTUGUESE"
+msgstr "Portuguese"
 
 #: src/screens/profile/ProfileScreenHeader.tsx:8
 #: src/components/navigation/bottomTabNavigator.tsx:89
@@ -69,15 +64,16 @@ msgstr "My teams..."
 msgid "SETTING_SCREEN_TITLE"
 msgstr "Settings"
 
-#~ msgid "SYSTEM"
-#~ msgstr "System"
+#: src/i18n.dynamic/lingui-static-messages.ts:10
+msgid "SYSTEM"
+msgstr "System"
 
 #: src/screens/team/TeamScreenHeader.tsx:13
 #: src/components/navigation/bottomTabNavigator.tsx:83
 msgid "TEAM_BOTTOM_MENU"
 msgstr "Teams"
 
-#: src/screens/setting/SettingScreen.tsx:30
+#: src/screens/setting/SettingScreen.tsx:42
 msgid "THEME"
 msgstr "Theme"
 
