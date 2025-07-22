@@ -12,10 +12,9 @@ type Props = {
   onClick?: () => void;
   hideSettings?: boolean;
   title?: string;
-  hideLogo?: boolean
 };
 
-export default function MainPageNavigationHeader({ children, title, hideSettings = true, hideLogo = false }: Props) {
+export default function MainPageNavigationHeader({ children, title, hideSettings = true }: Props) {
   const { theme } = useTheme();
   const insets = useSafeAreaInsets();
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
@@ -32,7 +31,7 @@ export default function MainPageNavigationHeader({ children, title, hideSettings
       paddingHorizontal: 15,
       backgroundColor: theme.secondary.background
     }]}>
-      {hideLogo ? <View /> : <LetsPlayIcon width={25} height={25} />}
+      <LetsPlayIcon width={25} height={25} />
       {title && <Text style={[styles.title, { color: theme.secondary.text }]}>{title}</Text>}
       <View style={styles.rightButtons}>
         {children && children}
@@ -41,7 +40,7 @@ export default function MainPageNavigationHeader({ children, title, hideSettings
             <SettingIcon width={24} height={24} fill={theme.primary.button} />
           </Pressable>
         )}
-      </View>
+      </View >
     </View>
   );
 }
@@ -62,6 +61,8 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: 'center',
+    height: 24,
+    width: 24,
     gap: 15
   }
 });
