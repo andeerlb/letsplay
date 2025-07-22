@@ -11,7 +11,7 @@ interface SubPageNavigationHeaderProps extends NativeStackHeaderProps {
 
 export default function SubPageNavigationHeader({ navigation, title }: SubPageNavigationHeaderProps) {
   const { theme } = useTheme();
-  const insets = useSafeAreaInsets();  
+  const insets = useSafeAreaInsets();
 
   return (
     // eslint-disable-next-line react-native/no-inline-styles

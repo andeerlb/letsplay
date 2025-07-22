@@ -1,10 +1,11 @@
-import { Trans } from "@lingui/react/macro";
+import { Trans, useLingui } from "@lingui/react/macro";
 import { FontDefinition } from "@constants/theme";
 import ScreenWrapper from "@wrapper/ScreenWrapper";
 import { StyleSheet, Text } from "react-native";
 import { useTheme } from '@hooks/theme';
 import { BottomTabParamList } from "@components/navigation/bottomTabNavigator";
-import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
+import { BottomTabHeaderProps, BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
+import MainPageNavigationHeader from "@components/navigation/MainPageNavigationHeader";
 
 type HomeScreenNavigationProp = BottomTabNavigationProp<BottomTabParamList, 'Home'>;
 
@@ -30,5 +31,12 @@ const styles = StyleSheet.create({
     fontSize: 20,
   }
 });
+
+export function HomeScreenHeader({}: BottomTabHeaderProps) {
+  const { t } = useLingui();
+  return (
+    <MainPageNavigationHeader title={t`HOME_BOTTOM_MENU`} hideSettings={false} />
+  )
+}
 
 export default HomeScreen;

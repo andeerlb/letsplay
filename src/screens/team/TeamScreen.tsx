@@ -7,9 +7,7 @@ import MainPageNavigationHeader from "@components/navigation/MainPageNavigationH
 import { useTheme } from '@hooks/theme';
 import { BottomTabParamList } from "@components/navigation/bottomTabNavigator";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { useNavigation } from "@react-navigation/native";
-import { TeamStackParamList } from "@components/navigation/teamNavigator";
+import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 
 type TeamScreenNavigationProp = BottomTabNavigationProp<BottomTabParamList, 'Team'>;
 
@@ -27,20 +25,12 @@ function TeamScreen({ }: { navigation: TeamScreenNavigationProp }) {
     );
 }
 
-type TeamMainNavigationProp = NativeStackNavigationProp<TeamStackParamList, 'TeamMain'>;
-
-export function TeamScreenHeader() {
-    const { t } = useLingui();
+export function TeamScreenHeader({ navigation }: NativeStackHeaderProps) {
     const { theme } = useTheme();
-    const navigation = useNavigation<TeamMainNavigationProp>();
-
-    const onclick = () => {
-        navigation.navigate("addTeam");
-    }
-
+    const { t } = useLingui();
     return (
         <MainPageNavigationHeader title={t`TEAM_BOTTOM_MENU`}>
-            <Pressable onPress={onclick}>
+            <Pressable onPress={() => navigation.navigate("addTeam")}>
                 <AddIcon width={24} height={24} color={theme.primary.button}/>
             </Pressable>
         </MainPageNavigationHeader>
