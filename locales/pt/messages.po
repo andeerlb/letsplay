@@ -22,7 +22,7 @@ msgstr "{label}"
 #~ msgid "{title}"
 #~ msgstr "{title}"
 
-#: src/screens/team/AddTeamScreen.tsx:17
+#: src/screens/team/AddTeamScreen.tsx:18
 msgid "ADD_TEAM_TITLE"
 msgstr "Adicionar time"
 
@@ -36,7 +36,7 @@ msgstr "Visual"
 #~ msgid "ENGLISH"
 #~ msgstr "Inglês"
 
-#: src/screens/home/HomeScreen.tsx:38
+#: src/screens/home/HomeScreen.tsx:39
 #: src/components/navigation/bottomTabNavigator.tsx:66
 msgid "HOME_BOTTOM_MENU"
 msgstr "Início"
@@ -48,7 +48,7 @@ msgstr "Idioma"
 #~ msgid "LIGHT"
 #~ msgstr "Claro"
 
-#: src/screens/match/MatchScreen.tsx:21
+#: src/screens/match/MatchScreen.tsx:22
 #: src/components/navigation/bottomTabNavigator.tsx:74
 msgid "MATCH_BOTTOM_MENU"
 msgstr "Buscar"
@@ -56,7 +56,7 @@ msgstr "Buscar"
 #~ msgid "PORTUGUESE"
 #~ msgstr "Português"
 
-#: src/screens/profile/ProfileScreen.tsx:22
+#: src/screens/profile/ProfileScreen.tsx:23
 #: src/components/navigation/bottomTabNavigator.tsx:87
 msgid "PROFILE_BOTTOM_MENU"
 msgstr "Conta"
@@ -72,7 +72,7 @@ msgstr "Configurações"
 #~ msgid "SYSTEM"
 #~ msgstr "Sistema"
 
-#: src/screens/team/TeamScreen.tsx:32
+#: src/screens/team/TeamScreen.tsx:33
 #: src/components/navigation/bottomTabNavigator.tsx:81
 msgid "TEAM_BOTTOM_MENU"
 msgstr "Times"
@@ -81,6 +81,6 @@ msgstr "Times"
 msgid "THEME"
 msgstr "Tema"
 
-#: src/screens/home/HomeScreen.tsx:18
+#: src/screens/home/HomeScreen.tsx:19
 msgid "WELCOME_HOME_SCREEN"
 msgstr "Bem-vindo"

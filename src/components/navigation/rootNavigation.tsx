@@ -1,12 +1,12 @@
 import React from 'react';
 import BottomTabNavigator from './bottomTabNavigator';
-import { SettingScreen } from '@screens/SettingScreen';
+import { SettingScreen } from '@screens/setting/SettingScreen';
 import { useLingui } from '@lingui/react/macro';
 import {
   createNativeStackNavigator,
-  NativeStackHeaderProps,
 } from '@react-navigation/native-stack';
 import SubPageNavigationHeader from '@components/navigation/SubPageNavigationHeader';
+import SettingScreenHeader from '@screens/setting/SettingScreenHeader';
 
 export type RootStackParamList = {
   Main: undefined;
@@ -29,8 +29,7 @@ const RootStackNavigator = () => {
         name="Setting"
         component={SettingScreen}
         options={{
-          // eslint-disable-next-line react/no-unstable-nested-components
-          header: (props) => <SubPageNavigationHeader {...props} title={t`SETTING_SCREEN_TITLE`}/>
+          header: SettingScreenHeader
         }}
       />
     </Stack.Navigator>

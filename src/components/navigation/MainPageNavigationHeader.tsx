@@ -14,7 +14,7 @@ type Props = {
   title?: string;
 };
 
-export default function MainPageNavigationHeader({ children, title, hideSettings = true }: Props) {
+const MainPageNavigationHeader = function ({ children, title, hideSettings = true }: Props) {
   const { theme } = useTheme();
   const insets = useSafeAreaInsets();
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
@@ -66,3 +66,5 @@ const styles = StyleSheet.create({
     gap: 15
   }
 });
+
+export default MainPageNavigationHeader;

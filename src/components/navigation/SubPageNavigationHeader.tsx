@@ -9,7 +9,7 @@ interface SubPageNavigationHeaderProps extends NativeStackHeaderProps {
   title: string;
 }
 
-export default function SubPageNavigationHeader({ navigation, title }: SubPageNavigationHeaderProps) {
+export const SubPageNavigationHeader = function ({ navigation, title }: SubPageNavigationHeaderProps) {
   const { theme } = useTheme();
   const insets = useSafeAreaInsets();
 
@@ -47,3 +47,5 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
 });
+
+export default SubPageNavigationHeader;

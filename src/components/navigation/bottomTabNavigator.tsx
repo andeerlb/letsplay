@@ -3,14 +3,16 @@ import ProfileIcon from '@assets/icons/profile.svg';
 import HomeIcon from '@assets/icons/home.svg';
 import TeamIcon from '@assets/icons/team.svg';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen, { HomeScreenHeader } from '@screens/home/HomeScreen';
-import ProfileScreen, { ProfileScreenHeader } from '@screens/profile/ProfileScreen';
-import MatchScreen, { MatchScreenHeader } from '@screens/match/MatchScreen';
-import MainPageNavigationHeader from '@components/navigation/MainPageNavigationHeader';
+import HomeScreen from '@screens/home/HomeScreen';
+import ProfileScreen from '@screens/profile/ProfileScreen';
+import MatchScreen from '@screens/match/MatchScreen';
 import { useLingui } from "@lingui/react/macro";
 import { FontDefinition } from '@constants/theme';
 import { useTheme } from '@hooks/theme';
 import TeamStackNavigator from '@components/navigation/teamNavigator';
+import HomeScreenHeader from '@screens/home/HomeScreenHeader';
+import MatchScreenHeader from '@screens/match/MatchScreenHeader';
+import { ProfileScreenHeader } from '@screens/profile/ProfileScreenHeader';
 
 export type BottomTabParamList = {
   Home: undefined;

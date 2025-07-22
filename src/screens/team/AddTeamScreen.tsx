@@ -1,7 +1,5 @@
-import SubPageNavigationHeader from "@components/navigation/SubPageNavigationHeader";
-import { useLingui } from "@lingui/react/macro";
-import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import ScreenWrapper from "@wrapper/ScreenWrapper";
+import React from "react";
 import { Text } from "react-native";
 
 export default function AddTeamScreen() {
@@ -10,9 +8,4 @@ export default function AddTeamScreen() {
             <Text>add team screen</Text>
         </ScreenWrapper>
     )
-}
-
-export function AddTeamHeader(props: NativeStackHeaderProps) {
-    const { t } = useLingui();
-    return <SubPageNavigationHeader {...props} title={t`ADD_TEAM_TITLE`} />;
 }

@@ -15,9 +15,7 @@ export const useLanguage = () => {
   const dispatch = useDispatch();
   const language = useSelector((state: RootState) => state.setting.language);
 
-  const changeLanguage = useCallback((languageParam: Language) => {
-    console.log(language);
-    
+  const changeLanguage = useCallback((languageParam: Language) => {    
     dispatch(setLanguage(languageParam));
     i18n.loadAndActivate({
       locale: language,

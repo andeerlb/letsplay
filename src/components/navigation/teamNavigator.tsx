@@ -1,7 +1,8 @@
-import { useLingui } from "@lingui/react/macro";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import AddTeamScreen, { AddTeamHeader } from "@screens/team/AddTeamScreen";
-import TeamScreen, { TeamScreenHeader } from "@screens/team/TeamScreen";
+import AddTeamScreen from "@screens/team/AddTeamScreen";
+import AddTeamHeader from "@screens/team/AddTeamScreenHeader";
+import TeamScreen from "@screens/team/TeamScreen";
+import TeamScreenHeader from "@screens/team/TeamScreenHeader";
 
 export type TeamStackParamList = {
   TeamMain: undefined;
