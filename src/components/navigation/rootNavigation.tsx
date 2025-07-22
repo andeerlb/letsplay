@@ -1,34 +1,31 @@
 import React from 'react';
-import BottomTabNavigator from './bottomTabNavigator';
-import { SettingScreen } from '@screens/setting/SettingScreen';
-import { useLingui } from '@lingui/react/macro';
 import {
   createNativeStackNavigator,
 } from '@react-navigation/native-stack';
-import SettingScreenHeader from '@screens/setting/SettingScreenHeader';
+import AuthStackNavigator from '@components/navigation/authNavigator';
+import NoAuthStackNavigator from './noAuthNavigator';
 
 export type RootStackParamList = {
-  Main: undefined;
-  Setting: undefined;
+  Auth: undefined;
+  NoAuth: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const RootStackNavigator = () => {
+  const isSignIn = false;
+
   return (
     <Stack.Navigator>
-      <Stack.Screen
-        name="Main"
-        component={BottomTabNavigator}
+      {isSignIn ? <Stack.Screen
+        name="NoAuth"
+        component={NoAuthStackNavigator}
         options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Setting"
-        component={SettingScreen}
-        options={{
-          header: SettingScreenHeader
-        }}
-      />
+      /> : <Stack.Screen
+        name="Auth"
+        component={AuthStackNavigator}
+        options={{ headerShown: false }}
+      />}
     </Stack.Navigator>
   );
 }
