@@ -8,7 +8,7 @@ import HomeScreenHeader from '@screens/home/HomeScreenHeader';
 import MatchScreenHeader from '@screens/match/MatchScreenHeader';
 import ProfileScreenHeader from '@screens/profile/ProfileScreenHeader';
 import TeamStackNavigator from './teamNavigator';
-import { getTabBarStyle } from '@utils/theme';
+import { getBottomNavigatorBarStyle } from '@utils/theme';
 
 export type BottomTabParamList = {
   Home: undefined;
@@ -24,7 +24,7 @@ export default function BottomTabNavigator() {
   const { theme } = useTheme();
 
   return (
-    <Tab.Navigator screenOptions={({ route }) => getTabBarStyle(route, theme)}>
+    <Tab.Navigator screenOptions={({ route }) => getBottomNavigatorBarStyle(route.name, theme)}>
       <Tab.Screen
         name="Home"
         component={HomeScreen}
