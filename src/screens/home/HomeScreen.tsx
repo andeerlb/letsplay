@@ -15,7 +15,7 @@ function HomeScreen({ }: { navigation: HomeScreenNavigationProp }) {
   return (
     <ScreenWrapper>
         <Text style={[styles.title, { color: theme.primary.text }]}>
-            <Trans>WELCOME_HOME_SCREEN</Trans>,{' '}
+            <Trans>screen.home.welcome</Trans>,{' '}
             <Text style={{ color: theme.general.secondary }}>
                 Anderson
             </Text>

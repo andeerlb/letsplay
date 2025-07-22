@@ -5,7 +5,7 @@ import MainPageNavigationHeader from "@components/navigation/MainPageNavigationH
 export const HomeScreenHeader = ({}: BottomTabHeaderProps) => {
   const { t } = useLingui();
   return (
-    <MainPageNavigationHeader title={t`HOME_BOTTOM_MENU`} hideSettings={false} />
+    <MainPageNavigationHeader title={t`screen.home.title`} hideSettings={false} />
   )
 };
 

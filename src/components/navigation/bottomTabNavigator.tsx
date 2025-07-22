@@ -65,7 +65,7 @@ export default function BottomTabNavigator() {
         name="Home"
         component={HomeScreen}
         options={{
-          title: t`HOME_BOTTOM_MENU`,
+          title: t`screen.home.title`,
           header: HomeScreenHeader
         }}
       />
@@ -73,20 +73,20 @@ export default function BottomTabNavigator() {
         name="Match"
         component={MatchScreen}
         options={{
-          title: t`MATCH_BOTTOM_MENU`,
+          title: t`screen.match.title`,
           header: MatchScreenHeader
         }}
       />
       <Tab.Screen
         name="Team"
         component={TeamStackNavigator}
-        options={{ title: t`TEAM_BOTTOM_MENU`, headerShown: false }}
+        options={{ title: t`screen.team.title`, headerShown: false }}
       />
       <Tab.Screen
         name="Profile"
         component={ProfileScreen}
         options={{
-          title: t`PROFILE_BOTTOM_MENU`,
+          title: t`screen.profile.title`,
           header: ProfileScreenHeader
         }}
       />

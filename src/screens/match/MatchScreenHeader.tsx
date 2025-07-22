@@ -6,7 +6,7 @@ import React from "react";
 export const MatchScreenHeader = ({}: BottomTabHeaderProps) => {
     const { t } = useLingui();
     return (
-      <MainPageNavigationHeader title={t`MATCH_BOTTOM_MENU`} />
+      <MainPageNavigationHeader title={t`screen.match.title`} />
     )
 }
 

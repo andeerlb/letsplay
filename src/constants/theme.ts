@@ -51,12 +51,12 @@ export const DarkTheme = {
 export type Theme = typeof LightTheme | typeof DarkTheme;
 
 export const THEME_OPTIONS = [
-    { label: msg`DARK`, value: 'dark' },
-    { label: msg`LIGHT`, value: 'light' },
-    { label: msg`SYSTEM`, value: 'system' },
+    { label: msg`screen.setting.theme.dark`, value: 'dark' },
+    { label: msg`screen.setting.theme.light`, value: 'light' },
+    { label: msg`screen.setting.theme.system`, value: 'system' },
 ];
 
 export const LANGUAGE_OPTIONS = [
-    { label: msg`PORTUGUESE`, value: 'pt' },
-    { label: msg`ENGLISH`, value: 'en' },
+    { label: msg`screen.setting.language.portuguese`, value: 'pt' },
+    { label: msg`screen.setting.language.english`, value: 'en' },
 ];

@@ -35,17 +35,17 @@ export function SettingScreen({ }: Props) {
     <ScreenWrapper>
       <View style={styles.section}>
         <Text style={[styles.title, { color: theme.primary.text }]}>
-          <Trans>APPEARANCE</Trans>
+          <Trans>screen.setting.appearance</Trans>
         </Text>
         <View style={styles.appearanceContainer}>
           <Select 
-            label={t`THEME`}
+            label={t`screen.setting.theme`}
             defaultValue={layout}
             onChange={changeTheme}
             options={translatedThemeOptions}
           />
           <Select 
-            label={t`LANGUAGE`}
+            label={t`screen.setting.language`}
             defaultValue={language}
             onChange={changeLanguage}
             options={translatedLanguageOptions}

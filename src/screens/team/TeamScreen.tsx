@@ -12,7 +12,7 @@ export default function TeamScreen({ }: { navigation: TeamScreenNavigationProp }
     return (
         <ScreenWrapper>
             <Search
-                placeholder={t`SEARCH_BAR_PLACEHOLDER`}
+                placeholder={t`screen.team.search-placeholder`}
                 onSearch={(query) => {
                 }}
             />

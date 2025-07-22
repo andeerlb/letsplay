@@ -5,7 +5,7 @@ import { BottomTabHeaderProps } from "@react-navigation/bottom-tabs";
 const ProfileScreenHeader = ({}: BottomTabHeaderProps) => {
     const { t } = useLingui();
     return (
-      <MainPageNavigationHeader title={t`PROFILE_BOTTOM_MENU`} />
+      <MainPageNavigationHeader title={t`screen.profile.title`} />
     )
 };
 

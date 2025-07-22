@@ -4,7 +4,7 @@ import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 
 export const AddTeamHeader = (props: NativeStackHeaderProps) => {
   const { t } = useLingui();
-  return <SubPageNavigationHeader {...props} title={t`ADD_TEAM_TITLE`} />;
+  return <SubPageNavigationHeader {...props} title={t`screen.team.add`} />;
 }
 
 const AddTeamHeaderWrapper = (props: NativeStackHeaderProps) => {

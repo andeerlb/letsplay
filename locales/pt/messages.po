@@ -14,69 +14,69 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/screens/team/AddTeamScreenHeader.tsx:7
-msgid "ADD_TEAM_TITLE"
+msgid "screen.team.add"
 msgstr "Adicionar time"
 
 #: src/screens/setting/SettingScreen.tsx:38
-msgid "APPEARANCE"
+msgid "screen.setting.appearance"
 msgstr "Visual"
 
 #: src/constants/theme.ts:54
-msgid "DARK"
+msgid "screen.setting.theme.dark"
 msgstr "Escuro"
 
 #: src/constants/theme.ts:61
-msgid "ENGLISH"
+msgid "screen.setting.language.english"
 msgstr "Inglês"
 
 #: src/screens/home/HomeScreenHeader.tsx:8
 #: src/components/navigation/bottomTabNavigator.tsx:68
-msgid "HOME_BOTTOM_MENU"
+msgid "screen.home.title"
 msgstr "Início"
 
 #: src/screens/setting/SettingScreen.tsx:48
-msgid "LANGUAGE"
+msgid "screen.setting.language"
 msgstr "Idioma"
 
 #: src/constants/theme.ts:55
-msgid "LIGHT"
+msgid "screen.setting.theme.light"
 msgstr "Claro"
 
 #: src/screens/match/MatchScreenHeader.tsx:9
 #: src/components/navigation/bottomTabNavigator.tsx:76
-msgid "MATCH_BOTTOM_MENU"
+msgid "screen.match.title"
 msgstr "Buscar"
 
 #: src/constants/theme.ts:60
-msgid "PORTUGUESE"
+msgid "screen.setting.language.portuguese"
 msgstr "Português"
 
 #: src/screens/profile/ProfileScreenHeader.tsx:8
 #: src/components/navigation/bottomTabNavigator.tsx:89
-msgid "PROFILE_BOTTOM_MENU"
+msgid "screen.profile.title"
 msgstr "Conta"
 
 #: src/screens/team/TeamScreen.tsx:15
-msgid "SEARCH_BAR_PLACEHOLDER"
+msgid "screen.team.search-placeholder"
 msgstr "Meus times..."
 
 #: src/screens/setting/SettingScreenHeader.tsx:7
-msgid "SETTING_SCREEN_TITLE"
+msgid "screen.setting.title"
 msgstr "Configurações"
 
 #: src/constants/theme.ts:56
-msgid "SYSTEM"
+msgid "screen.setting.theme.system"
 msgstr "Sistema"
 
 #: src/screens/team/TeamScreenHeader.tsx:13
 #: src/components/navigation/bottomTabNavigator.tsx:83
-msgid "TEAM_BOTTOM_MENU"
+msgid "screen.team.title"
 msgstr "Times"
 
 #: src/screens/setting/SettingScreen.tsx:42
-msgid "THEME"
+msgid "screen.setting.theme"
 msgstr "Tema"
 
 #: src/screens/home/HomeScreen.tsx:18
-msgid "WELCOME_HOME_SCREEN"
+msgid "screen.home.welcome"
 msgstr "Bem-vindo"
