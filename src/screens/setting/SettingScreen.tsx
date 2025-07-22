@@ -29,8 +29,6 @@ export function SettingScreen({ }: Props) {
     value: opt.value, 
   }));
 
-  console.log(translatedLanguageOptions, translatedThemeOptions);
-
   return (
     <ScreenWrapper>
       <View style={styles.section}>

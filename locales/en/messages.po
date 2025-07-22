@@ -13,70 +13,70 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/screens/team/AddTeamScreenHeader.tsx:7
-msgid "screen.team.add"
-msgstr "Add team"
-
-#: src/screens/setting/SettingScreen.tsx:38
-msgid "screen.setting.appearance"
-msgstr "Appearance"
-
-#: src/constants/theme.ts:54
-msgid "screen.setting.theme.dark"
-msgstr "Dark"
-
-#: src/constants/theme.ts:61
-msgid "screen.setting.language.english"
-msgstr "English"
-
 #: src/screens/home/HomeScreenHeader.tsx:8
 #: src/components/navigation/bottomTabNavigator.tsx:68
 msgid "screen.home.title"
 msgstr "Home"
 
-#: src/screens/setting/SettingScreen.tsx:48
-msgid "screen.setting.language"
-msgstr "Language"
-
-#: src/constants/theme.ts:55
-msgid "screen.setting.theme.light"
-msgstr "Light"
+#: src/screens/home/HomeScreen.tsx:18
+msgid "screen.home.welcome"
+msgstr "Welcome"
 
 #: src/screens/match/MatchScreenHeader.tsx:9
 #: src/components/navigation/bottomTabNavigator.tsx:76
 msgid "screen.match.title"
 msgstr "Search"
 
-#: src/constants/theme.ts:60
-msgid "screen.setting.language.portuguese"
-msgstr "Portuguese"
-
 #: src/screens/profile/ProfileScreenHeader.tsx:8
 #: src/components/navigation/bottomTabNavigator.tsx:89
 msgid "screen.profile.title"
 msgstr "Account"
 
-#: src/screens/team/TeamScreen.tsx:15
-msgid "screen.team.search-placeholder"
-msgstr "My teams..."
+#: src/screens/setting/SettingScreen.tsx:38
+msgid "screen.setting.appearance"
+msgstr "Appearance"
 
-#: src/screens/setting/SettingScreenHeader.tsx:7
-msgid "screen.setting.title"
-msgstr "Settings"
+#: src/screens/setting/SettingScreen.tsx:48
+msgid "screen.setting.language"
+msgstr "Language"
 
-#: src/constants/theme.ts:56
-msgid "screen.setting.theme.system"
-msgstr "System"
+#: src/constants/theme.ts:61
+msgid "screen.setting.language.english"
+msgstr "English"
 
-#: src/screens/team/TeamScreenHeader.tsx:13
-#: src/components/navigation/bottomTabNavigator.tsx:83
-msgid "screen.team.title"
-msgstr "Teams"
+#: src/constants/theme.ts:60
+msgid "screen.setting.language.portuguese"
+msgstr "Portuguese"
 
 #: src/screens/setting/SettingScreen.tsx:42
 msgid "screen.setting.theme"
 msgstr "Theme"
 
-#: src/screens/home/HomeScreen.tsx:18
-msgid "screen.home.welcome"
-msgstr "Welcome"
+#: src/constants/theme.ts:54
+msgid "screen.setting.theme.dark"
+msgstr "Dark"
+
+#: src/constants/theme.ts:55
+msgid "screen.setting.theme.light"
+msgstr "Light"
+
+#: src/constants/theme.ts:56
+msgid "screen.setting.theme.system"
+msgstr "System"
+
+#: src/screens/setting/SettingScreenHeader.tsx:7
+msgid "screen.setting.title"
+msgstr "Settings"
+
+#: src/screens/team/AddTeamScreenHeader.tsx:7
+msgid "screen.team.add"
+msgstr "Add team"
+
+#: src/screens/team/TeamScreen.tsx:15
+msgid "screen.team.search-placeholder"
+msgstr "My teams..."
+
+#: src/screens/team/TeamScreenHeader.tsx:13
+#: src/components/navigation/bottomTabNavigator.tsx:83
+msgid "screen.team.title"
+msgstr "Teams"
