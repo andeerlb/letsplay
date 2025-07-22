@@ -21,11 +21,11 @@ msgstr "Add team"
 msgid "APPEARANCE"
 msgstr "Appearance"
 
-#: src/i18n.dynamic/lingui-static-messages.ts:8
+#: src/constants/theme.ts:54
 msgid "DARK"
 msgstr "Dark"
 
-#: src/i18n.dynamic/lingui-static-messages.ts:9
+#: src/constants/theme.ts:61
 msgid "ENGLISH"
 msgstr "English"
 
@@ -38,7 +38,7 @@ msgstr "Home"
 msgid "LANGUAGE"
 msgstr "Language"
 
-#: src/i18n.dynamic/lingui-static-messages.ts:12
+#: src/constants/theme.ts:55
 msgid "LIGHT"
 msgstr "Light"
 
@@ -47,7 +47,7 @@ msgstr "Light"
 msgid "MATCH_BOTTOM_MENU"
 msgstr "Search"
 
-#: src/i18n.dynamic/lingui-static-messages.ts:11
+#: src/constants/theme.ts:60
 msgid "PORTUGUESE"
 msgstr "Portuguese"
 
@@ -64,7 +64,7 @@ msgstr "My teams..."
 msgid "SETTING_SCREEN_TITLE"
 msgstr "Settings"
 
-#: src/i18n.dynamic/lingui-static-messages.ts:10
+#: src/constants/theme.ts:56
 msgid "SYSTEM"
 msgstr "System"
 

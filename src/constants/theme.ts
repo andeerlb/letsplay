@@ -1,3 +1,5 @@
+import { msg } from "@lingui/core/macro";
+
 export const FontDefinition = {
     general: {
         regular: 'Lexend-Regular',
@@ -49,12 +51,12 @@ export const DarkTheme = {
 export type Theme = typeof LightTheme | typeof DarkTheme;
 
 export const THEME_OPTIONS = [
-    { label: 'DARK', value: 'dark' },
-    { label: 'LIGHT', value: 'light' },
-    { label: 'SYSTEM', value: 'system' },
+    { label: msg`DARK`, value: 'dark' },
+    { label: msg`LIGHT`, value: 'light' },
+    { label: msg`SYSTEM`, value: 'system' },
 ];
 
 export const LANGUAGE_OPTIONS = [
-    { label: 'PORTUGUESE', value: 'pt' },
-    { label: 'ENGLISH', value: 'en' },
+    { label: msg`PORTUGUESE`, value: 'pt' },
+    { label: msg`ENGLISH`, value: 'en' },
 ];

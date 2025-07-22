@@ -21,11 +21,11 @@ msgstr "Adicionar time"
 msgid "APPEARANCE"
 msgstr "Visual"
 
-#: src/i18n.dynamic/lingui-static-messages.ts:8
+#: src/constants/theme.ts:54
 msgid "DARK"
 msgstr "Escuro"
 
-#: src/i18n.dynamic/lingui-static-messages.ts:9
+#: src/constants/theme.ts:61
 msgid "ENGLISH"
 msgstr "Inglês"
 
@@ -38,7 +38,7 @@ msgstr "Início"
 msgid "LANGUAGE"
 msgstr "Idioma"
 
-#: src/i18n.dynamic/lingui-static-messages.ts:12
+#: src/constants/theme.ts:55
 msgid "LIGHT"
 msgstr "Claro"
 
@@ -47,7 +47,7 @@ msgstr "Claro"
 msgid "MATCH_BOTTOM_MENU"
 msgstr "Buscar"
 
-#: src/i18n.dynamic/lingui-static-messages.ts:11
+#: src/constants/theme.ts:60
 msgid "PORTUGUESE"
 msgstr "Português"
 
@@ -64,7 +64,7 @@ msgstr "Meus times..."
 msgid "SETTING_SCREEN_TITLE"
 msgstr "Configurações"
 
-#: src/i18n.dynamic/lingui-static-messages.ts:10
+#: src/constants/theme.ts:56
 msgid "SYSTEM"
 msgstr "Sistema"
 
