@@ -23,6 +23,6 @@ class MainActivity : ReactActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(null)
-    setTheme(R.style.AppTheme)
+    setTheme(R.style.Theme)
   }
 }

@@ -3,7 +3,7 @@ import Search from "@components/search/Search";
 import { useLingui } from "@lingui/react/macro";
 import { Pressable } from "react-native";
 import AddIcon from '@assets/icons/plus.svg';
-import BottomNavigationHeader from "@components/navigation/NavigationHeader";
+import MainPageNavigationHeader from "@components/navigation/MainPageNavigationHeader";
 import { useTheme } from '@hooks/theme';
 import { BottomTabParamList } from "@components/navigation/bottomTabNavigator";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
@@ -39,11 +39,11 @@ export function TeamScreenHeader() {
     }
 
     return (
-        <BottomNavigationHeader title={t`TEAM_BOTTOM_MENU`}>
+        <MainPageNavigationHeader title={t`TEAM_BOTTOM_MENU`}>
             <Pressable onPress={onclick}>
                 <AddIcon width={24} height={24} color={theme.primary.button}/>
             </Pressable>
-        </BottomNavigationHeader>
+        </MainPageNavigationHeader>
     )
 }
 

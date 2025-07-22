@@ -3,7 +3,7 @@ import { useLingui } from "@lingui/react/macro";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AddTeamScreen from "@screens/team/AddTeamScreen";
 import TeamScreen, { TeamScreenHeader } from "@screens/team/TeamScreen";
-import { getScreenOptions } from "@components/navigation/rootNavigation";
+import SubPageNavigationHeader from '@components/navigation/SubPageNavigationHeader';
 
 export type TeamStackParamList = {
   TeamMain: undefined;
@@ -28,7 +28,10 @@ function TeamStackNavigator() {
       <TeamStack.Screen
         name="addTeam"
         component={AddTeamScreen}
-        options={getScreenOptions(theme, t`TEAM_BOTTOM_MENU`)}
+        options={{
+          // eslint-disable-next-line react/no-unstable-nested-components
+          header: (props) => <SubPageNavigationHeader {...props} title={t`SETTING_SCREEN_TITLE`}/>
+        }}
       />
     </TeamStack.Navigator>
   );

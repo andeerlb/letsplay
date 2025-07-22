@@ -6,7 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '@screens/home/HomeScreen';
 import ProfileScreen from '@screens/profile/ProfileScreen';
 import MatchScreen from '@screens/match/MatchScreen';
-import BottomNavigationHeader from '@components/navigation/NavigationHeader';
+import MainPageNavigationHeader from '@components/navigation/MainPageNavigationHeader';
 import { useLingui } from "@lingui/react/macro";
 import { FontDefinition } from '@constants/theme';
 import { useTheme } from '@hooks/theme';
@@ -64,7 +64,7 @@ export default function BottomTabNavigator() {
         component={HomeScreen}
         options={{
           title: t`HOME_BOTTOM_MENU`,
-          header: () => <BottomNavigationHeader title={t`HOME_BOTTOM_MENU`} hideSettings={false} />
+          header: () => <MainPageNavigationHeader title={t`HOME_BOTTOM_MENU`} hideSettings={false} />
         }}
       />
       <Tab.Screen
@@ -72,7 +72,7 @@ export default function BottomTabNavigator() {
         component={MatchScreen}
         options={{
           title: t`MATCH_BOTTOM_MENU`,
-          header: () => <BottomNavigationHeader title={t`MATCH_BOTTOM_MENU`} />
+          header: () => <MainPageNavigationHeader title={t`MATCH_BOTTOM_MENU`} />
         }}
       />
       <Tab.Screen
@@ -85,7 +85,7 @@ export default function BottomTabNavigator() {
         component={ProfileScreen}
         options={{
           title: t`PROFILE_BOTTOM_MENU`,
-          header: () => <BottomNavigationHeader title={t`PROFILE_BOTTOM_MENU`} hideSettings={false} />
+          header: () => <MainPageNavigationHeader title={t`PROFILE_BOTTOM_MENU`} hideSettings={false} />
         }}
       />
     </Tab.Navigator>

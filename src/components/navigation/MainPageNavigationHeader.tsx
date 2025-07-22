@@ -6,17 +6,16 @@ import { useTheme } from '@hooks/theme';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useNavigation, NavigationProp } from "@react-navigation/native";
 import { RootStackParamList } from "./rootNavigation";
-import { useLingui } from "@lingui/react";
 
 type Props = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   onClick?: () => void;
   hideSettings?: boolean;
   title?: string;
   hideLogo?: boolean
 };
 
-export default function BottomNavigationHeader({ children, title, hideSettings = true, hideLogo = false }: Props) {
+export default function MainPageNavigationHeader({ children, title, hideSettings = true, hideLogo = false }: Props) {
   const { theme } = useTheme();
   const insets = useSafeAreaInsets();
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
@@ -28,7 +27,8 @@ export default function BottomNavigationHeader({ children, title, hideSettings =
   return (
     // eslint-disable-next-line react-native/no-inline-styles
     <View style={[styles.header, {
-      paddingTop: insets.top,
+      paddingTop: insets.top + 20,
+      paddingBottom: insets.bottom,
       paddingHorizontal: 15,
       backgroundColor: theme.secondary.background
     }]}>
@@ -49,8 +49,8 @@ export default function BottomNavigationHeader({ children, title, hideSettings =
 const styles = StyleSheet.create({
   header: {
     display: 'flex',
-    height: 90,
     flexDirection: 'row',
+    flexWrap: 'nowrap',
     alignItems: 'center',
     justifyContent: 'space-between',
   },

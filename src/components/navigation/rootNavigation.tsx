@@ -2,50 +2,21 @@ import React from 'react';
 import BottomTabNavigator from './bottomTabNavigator';
 import { SettingScreen } from '@screens/SettingScreen';
 import { useLingui } from '@lingui/react/macro';
-import { Pressable } from 'react-native';
-import BackArrowIcon from '@assets/icons/back-arrow.svg';
 import {
   createNativeStackNavigator,
-  NativeStackNavigationOptions,
-  NativeStackScreenProps,
+  NativeStackHeaderProps,
 } from '@react-navigation/native-stack';
-import { useTheme } from '@hooks/theme';
-import { AppTheme } from '@constants/theme';
+import SubPageNavigationHeader from '@components/navigation/SubPageNavigationHeader';
 
 export type RootStackParamList = {
   Main: undefined;
   Setting: undefined;
 };
 
-export function getScreenOptions<
-  ParamList extends Record<string, object | undefined>,
-  RouteName extends keyof ParamList
->(
-  theme: AppTheme,
-  title: string
-): (props: NativeStackScreenProps<ParamList, RouteName>) => NativeStackNavigationOptions {
-  return ({ navigation }) => ({
-    title,
-    headerStyle: { backgroundColor: theme.secondary.background },
-    headerTintColor: theme.secondary.text,
-    headerTitleAlign: 'center',
-    headerLeft: () =>
-      navigation.canGoBack() ? (
-        <Pressable
-          onPress={() => navigation.goBack()}
-          style={{ paddingHorizontal: 15 }}
-        >
-          <BackArrowIcon width={24} height={24} color={theme.secondary.text} />
-        </Pressable>
-      ) : null,
-  });
-}
-
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const RootStackNavigator = () => {
   const { t } = useLingui();
-  const { theme } = useTheme();
 
   return (
     <Stack.Navigator>
@@ -57,7 +28,10 @@ const RootStackNavigator = () => {
       <Stack.Screen
         name="Setting"
         component={SettingScreen}
-        options={getScreenOptions(theme, t`SETTING_SCREEN_TITLE`)}
+        options={{
+          // eslint-disable-next-line react/no-unstable-nested-components
+          header: (props) => <SubPageNavigationHeader {...props} title={t`SETTING_SCREEN_TITLE`}/>
+        }}
       />
     </Stack.Navigator>
   );
