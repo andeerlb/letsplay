@@ -18,7 +18,7 @@ export const SubPageNavigationHeader = function ({ navigation, title }: SubPageN
       paddingTop: insets.top + 20,
       paddingBottom: insets.bottom,
       paddingHorizontal: 15,
-      backgroundColor: theme.colors.background
+      backgroundColor: theme.secondaryColors.background
     }]}>
       {navigation && navigation.canGoBack() ? (
         <Pressable

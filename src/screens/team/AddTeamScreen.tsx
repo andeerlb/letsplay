@@ -1,5 +1,4 @@
 import { TeamStackParamList } from "@components/navigation/teamNavigator";
-import { useHideTabBar } from "@hooks/hideTabBar";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import ScreenWrapper from "@wrapper/ScreenWrapper";
 import React from "react";

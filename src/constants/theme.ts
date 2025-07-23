@@ -22,6 +22,13 @@ type ThemeDefinition = {
     border: string;
     notification: string;
   };
+  secondaryColors: {
+    background: string;
+    card: string;
+    text: string;
+    button: string;
+    border: string;
+  },
   fonts: {
     regular: FontDefinition;
     medium: FontDefinition;
@@ -70,11 +77,18 @@ export const LightTheme: ThemeDefinition = {
     primary: '#646F7B',
     secondary: '#256b35',
     background: '#ffffff',
-    card: '#84a9d3ff',
+    card: '#ffffff',
     text: '#000000',
     button: '#646F7B',
     border: 'rgb(199, 199, 204)',
     notification: '#256b35',
+  },
+  secondaryColors: {
+    background: '#EAEDF0',
+    card: '#84a9d3ff',
+    text: '#646F7B',
+    button: '#1A1B1D',
+    border: 'rgb(199, 199, 204)',
   },
   fonts: FONTS,
 };
@@ -84,12 +98,19 @@ export const DarkTheme: ThemeDefinition = {
   colors: {
     primary: '#fff',
     secondary: '#256b35',
+    background: '#141b22',
+    card: '#84a9d3ff',
+    text: '#ffffff',
+    button: '#ccc',
+    border: 'rgb(199, 199, 204)',
+    notification: '#256b35',
+  },
+  secondaryColors: {
     background: '#1e2833',
     card: '#84a9d3ff',
     text: '#ccc',
     button: '#84a9d3ff',
     border: 'rgb(199, 199, 204)',
-    notification: '#256b35',
   },
   fonts: FONTS
 };

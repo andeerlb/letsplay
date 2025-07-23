@@ -28,7 +28,7 @@ const MainPageNavigationHeader = function ({ children, title, hideSettings = tru
       paddingTop: insets.top + 20,
       paddingBottom: insets.bottom,
       paddingHorizontal: 15,
-      backgroundColor: theme.colors.background
+      backgroundColor: theme.secondaryColors.background
     }]}>
       <LetsPlayIcon width={25} height={25} />
       {title && <Text style={[styles.title, { color: theme.colors.text, fontFamily: theme.fonts.regular.fontFamily }]}>{title}</Text>}
