@@ -31,7 +31,7 @@ const MainPageNavigationHeader = function ({ children, title, hideSettings = tru
       backgroundColor: theme.secondaryColors.background
     }]}>
       <LetsPlayIcon width={25} height={25} />
-      {title && <Text style={[styles.title, { color: theme.colors.text, fontFamily: theme.fonts.regular.fontFamily }]}>{title}</Text>}
+      {title && <Text style={[styles.title, { color: theme.colors.text, fontFamily: theme.fonts.regular.fontFamily }]}>{title.toLocaleUpperCase()}</Text>}
       <View style={styles.rightButtons}>
         {children && children}
         {!hideSettings && (
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   title: {
-    fontSize: 20,
+    fontSize: 15,
   },
   rightButtons: {
     display: "flex",

@@ -27,7 +27,7 @@ export const SubPageNavigationHeader = function ({ navigation, title }: SubPageN
           <BackArrowIcon width={24} height={24} color={theme.colors.text} />
         </Pressable>
       ) : null}
-      <Text style={[styles.title, { color: theme.colors.text, fontFamily: theme.fonts.regular.fontFamily }]}>{title}</Text>
+      <Text style={[styles.title, { color: theme.colors.text, fontFamily: theme.fonts.regular.fontFamily }]}>{title.toUpperCase()}</Text>
       <View />
     </View>
   );
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   title: {
-    fontSize: 20,
+    fontSize: 15,
   },
 });
 
