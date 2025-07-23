@@ -9,6 +9,7 @@ import ProfileScreenHeader from '@screens/profile/ProfileScreenHeader';
 import TeamStackNavigator from './teamNavigator';
 import { getBottomNavigatorBarStyle } from '@utils/theme';
 import { useTheme } from '@context/ThemeProvider';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export type BottomTabParamList = {
   Home: undefined;
@@ -22,9 +23,10 @@ const Tab = createBottomTabNavigator<BottomTabParamList>();
 export default function BottomTabNavigator() {
   const { t } = useLingui();
   const { theme } = useTheme();
+  const safeAreaInsets = useSafeAreaInsets();
 
   return (
-    <Tab.Navigator screenOptions={({ route }) => getBottomNavigatorBarStyle(route.name, theme)}>
+    <Tab.Navigator screenOptions={({ route }) => getBottomNavigatorBarStyle(route.name, theme, safeAreaInsets)}>
       <Tab.Screen
         name="Home"
         component={HomeScreen}

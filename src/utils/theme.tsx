@@ -6,6 +6,7 @@ import HomeIcon from '@assets/icons/home.svg';
 import TeamIcon from '@assets/icons/team.svg';
 import { BottomTabParamList } from "@components/navigation/bottomTabNavigator";
 import { StyleProp, ViewStyle } from "react-native";
+import { EdgeInsets } from "react-native-safe-area-context";
 
 const getTabBarIcon = (routeName: keyof BottomTabParamList, color: string, size: number) => {
     if (routeName === 'Home') {
@@ -23,6 +24,7 @@ const getTabBarIcon = (routeName: keyof BottomTabParamList, color: string, size:
 export const getBottomNavigatorBarStyle = (
     routeName: keyof BottomTabParamList,
     theme: Theme,
+    safeAreaInsets: EdgeInsets,
     animatedStyle?: StyleProp<ViewStyle>
 ): BottomTabNavigationOptions => ({
     tabBarIcon: ({ color, size }) => getTabBarIcon(routeName, color, size),
@@ -34,17 +36,16 @@ export const getBottomNavigatorBarStyle = (
         fontSize: 10,
         fontWeight: theme.fonts.regular.fontWeight,
     },
-    tabBarStyle: getTabBarStyle(theme, animatedStyle),
+    tabBarStyle: getTabBarStyle(theme, safeAreaInsets, animatedStyle),
 });
 
 export const getTabBarStyle = (
     theme: Theme,
+    safeAreaInsets: EdgeInsets,
     animatedStyle?: StyleProp<ViewStyle>
 ): StyleProp<ViewStyle> => ({
     paddingTop: 5,
-    height: 90,
-    display: 'flex',
-    flexDirection: 'row',
+    height: 60 + safeAreaInsets.bottom,
     backgroundColor: theme.colors.background,
     ...((animatedStyle as object) || {}),
 });

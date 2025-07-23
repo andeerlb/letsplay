@@ -18,7 +18,7 @@ msgstr ""
 msgid "screen.home.title"
 msgstr "Home"
 
-#: src/screens/home/HomeScreen.tsx:17
+#: src/screens/home/HomeScreen.tsx:21
 msgid "screen.home.welcome"
 msgstr "Welcome"
 
@@ -27,19 +27,19 @@ msgstr "Welcome"
 msgid "screen.match.title"
 msgstr "Search"
 
-#: src/screens/profile/ProfileScreen.tsx:20
+#: src/screens/profile/ProfileScreen.tsx:23
 msgid "screen.profile.email"
 msgstr "E-mail"
 
-#: src/screens/profile/ProfileScreen.tsx:17
+#: src/screens/profile/ProfileScreen.tsx:20
 msgid "screen.profile.given-name"
 msgstr "Given name"
 
-#: src/screens/profile/ProfileScreen.tsx:19
+#: src/screens/profile/ProfileScreen.tsx:22
 msgid "screen.profile.nickname"
 msgstr "Nickname"
 
-#: src/screens/profile/ProfileScreen.tsx:18
+#: src/screens/profile/ProfileScreen.tsx:21
 msgid "screen.profile.surname"
 msgstr "Surname"
 

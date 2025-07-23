@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android:dev": "ENVFILE=.env.dev react-native run-android",
+    "android:dev": "cross-env ENVFILE=.env.dev react-native run-android",
     "android:demo": "ENVFILE=.env.demo react-native run-android",
     "ios:dev": "ENVFILE=.env.dev react-native run-ios",
     "ios:demo": "ENVFILE=.env.demo react-native run-ios",
@@ -55,6 +55,7 @@
     "@types/react": "^19.1.0",
     "@types/react-test-renderer": "^19.1.0",
     "babel-plugin-module-resolver": "^5.0.2",
+    "cross-env": "^7.0.3",
     "eslint": "^8.19.0",
     "jest": "^29.6.3",
     "miragejs": "^0.1.48",

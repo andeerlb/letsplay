@@ -25,8 +25,8 @@ const MainPageNavigationHeader = function ({ children, title, hideSettings = tru
   return (
     // eslint-disable-next-line react-native/no-inline-styles
     <View style={[styles.header, {
-      paddingTop: insets.top + 20,
-      paddingBottom: insets.bottom,
+      paddingTop: insets.top + 15,
+      paddingBottom: 15,
       paddingHorizontal: 15,
       backgroundColor: theme.secondaryColors.background
     }]}>
