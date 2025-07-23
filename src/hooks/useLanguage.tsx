@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../store';
+import { RootState } from '@store/index';
 import { messages as ptMessages } from '@locales/pt/messages';
 import { messages as enMessages } from '@locales/en/messages';
 import { i18n, Messages } from '@lingui/core';

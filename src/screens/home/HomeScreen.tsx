@@ -5,18 +5,22 @@ import { useTheme } from "@context/ThemeProvider";
 import { BottomTabParamList } from "@components/navigation/bottomTabNavigator";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import React from "react";
+import { RootState } from "@store/index";
+import { useSelector } from "react-redux";
 
 type HomeScreenNavigationProp = BottomTabNavigationProp<BottomTabParamList, 'Home'>;
 
 function HomeScreen({ }: { navigation: HomeScreenNavigationProp }) {
   const { theme } = useTheme();
+  const user = useSelector((state: RootState) => state.user);
 
+  console.log('froomhome', user);
   return (
     <ScreenWrapper>
       <Text style={[styles.title, { color: theme.colors.text, fontFamily: theme.fonts.logoBold.fontFamily }]}>
         <Trans>screen.home.welcome</Trans>,{' '}
         <Text style={{ color: theme.colors.secondary, fontFamily: theme.fonts.logoBold.fontFamily }}>
-          Anderson
+          {user.givenName}
         </Text>
       </Text>
     </ScreenWrapper>

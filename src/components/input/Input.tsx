@@ -3,20 +3,21 @@ import React, { useState } from 'react';
 import { View, TextInput, StyleSheet, Text } from 'react-native';
 
 type InputProps = {
-    label?: string
-    placeholder?: string
+    label?: string;
+    placeholder?: string;
+    value?: string;
 }
 
-const Input = ({ placeholder = '', label }: InputProps) => {
+const Input = (props: InputProps) => {
     const { theme } = useTheme();
-    const [text, setText] = useState('');
+    const [text, setText] = useState(props.value);
 
     return (
         <View style={styles.container}>
-            {label && <Text style={[styles.label, {
+            {props.label && <Text style={[styles.label, {
                 color: theme.colors.text,
                 fontFamily: theme.fonts.regular.fontFamily
-            }]}>{label}</Text>}
+            }]}>{props.label}</Text>}
             <TextInput
                 style={[styles.input, {
                     backgroundColor: theme.secondaryColors.background,
@@ -24,7 +25,7 @@ const Input = ({ placeholder = '', label }: InputProps) => {
                     color: theme.colors.text,
                     fontFamily: theme.fonts.regular.fontFamily
                 }]}
-                placeholder={placeholder}
+                placeholder={props.placeholder}
                 value={text}
                 onChangeText={setText}
                 placeholderTextColor={theme.secondaryColors.text}

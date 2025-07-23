@@ -1,9 +1,10 @@
 export function seeds(server) {
   server.create("user", {
     id: 1,
-    name: "Anderson",
-    lastName: "Babinski",
-    age: "29",
+    givenName: "ExampleName",
+    surname: "ExampleSurname",
+    nickname: "example",
+    email: "anderson@example.com",
   });
 
   server.create("setting", {

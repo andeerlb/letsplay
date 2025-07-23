@@ -3,6 +3,6 @@ export default function userRoutes() {
   this.timing = 0;
 
   this.get('/user', (schema) => {
-    return schema.users.find(1);
+    return schema.users.find(1).attrs;
   });
 }

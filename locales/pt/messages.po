@@ -27,7 +27,7 @@ msgstr "Bem-vindo"
 msgid "screen.match.title"
 msgstr "Buscar"
 
-#: src/screens/profile/ProfileScreen.tsx:21
+#: src/screens/profile/ProfileScreen.tsx:20
 msgid "screen.profile.email"
 msgstr "E-mail"
 
@@ -36,7 +36,6 @@ msgid "screen.profile.given-name"
 msgstr "Nome"
 
 #: src/screens/profile/ProfileScreen.tsx:19
-#: src/screens/profile/ProfileScreen.tsx:20
 msgid "screen.profile.nickname"
 msgstr "Apelido"
 
