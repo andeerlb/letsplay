@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, Platform } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { useTheme } from "@context/ThemeProvider";
+import { Theme } from '@constants/theme';
 
 type Option = {
     label: string;
@@ -9,44 +10,48 @@ type Option = {
 };
 
 type SelectProps = {
-    label?: string,
-    defaultValue?: string,
+    value: string,
     onChange: (value: any) => void,
     options: Option[],
+    label?: string,
     mode?: 'dialog' | 'dropdown'
 }
 
-export default function Select({ label, defaultValue, onChange = () => { }, options = [], mode = 'dropdown' }: SelectProps) {
+function android(theme: Theme, value: string, onChange: (value: any) => void, options: Option[], mode?: 'dialog' | 'dropdown', label?: string) {
+    return <View style={styles.container}>
+        {label && <Text style={[{
+            color: theme.colors.text,
+            fontFamily: theme.fonts.regular.fontFamily
+        }]}>{label}</Text>}
+        <View style={[styles.pickerWrapper, {
+            borderColor: theme.colors.border,
+            backgroundColor: theme.secondaryColors.background
+        }]}>
+            <Picker
+                selectedValue={value}
+                onValueChange={(itemValue) => onChange(itemValue)}
+                style={[styles.picker, {
+                    color: theme.colors.text,
+                }]}
+                mode={mode}
+            >
+                {options.map(({ label, value }) => (
+                    <Picker.Item style={{
+                        color: theme.colors.text,
+                        backgroundColor: theme.secondaryColors.background,
+                    }} key={value} label={label} value={value} />
+                ))}
+            </Picker>
+        </View>
+    </View>;
+}
+
+export default function Select({ label, value, onChange = () => { }, options = [], mode = 'dropdown' }: SelectProps) {
     const { theme } = useTheme();
 
-    return (
-        <View style={styles.container}>
-            {label && <Text style={[{
-                color: theme.colors.text,
-                fontFamily: theme.fonts.regular.fontFamily
-            }]}>{label}</Text>}
-            <View style={[styles.pickerWrapper, {
-                borderColor: theme.colors.border,
-                backgroundColor: theme.secondaryColors.background
-            }]}>
-                <Picker
-                    selectedValue={defaultValue}
-                    onValueChange={(itemValue) => onChange(itemValue)}
-                    style={[styles.picker, {
-                        color: theme.colors.text,
-                    }]}
-                    mode={mode}
-                >
-                    {options.map(({ label, value }) => (
-                        <Picker.Item style={{
-                            color: theme.colors.text,
-                            backgroundColor: theme.secondaryColors.background,
-                        }} key={value} label={label} value={value} />
-                    ))}
-                </Picker>
-            </View>
-        </View>
-    );
+    if (Platform.OS === 'android') {
+        return android(theme, value, onChange, options, mode, label);
+    }
 }
 
 const styles = StyleSheet.create({
@@ -58,7 +63,7 @@ const styles = StyleSheet.create({
     },
     picker: {
         height: 50,
-        width: 200,
+        width: 150,
         marginLeft: 10,
     },
     pickerWrapper: {
@@ -66,3 +71,4 @@ const styles = StyleSheet.create({
         borderWidth: 1
     }
 });
+

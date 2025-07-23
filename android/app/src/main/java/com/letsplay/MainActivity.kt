@@ -22,7 +22,7 @@ class MainActivity : ReactActivity() {
       DefaultReactActivityDelegate(this, mainComponentName, fabricEnabled)
 
   override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(null)
     setTheme(R.style.Theme)
+    super.onCreate(null)
   }
 }

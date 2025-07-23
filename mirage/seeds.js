@@ -9,7 +9,7 @@ export function seeds(server) {
 
   server.create("setting", {
     id: 1,
-    theme: "system",
+    theme: "dark",
     language: "en"
   });
 }

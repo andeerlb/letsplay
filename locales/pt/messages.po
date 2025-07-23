@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/screens/home/HomeScreenHeader.tsx:8
-#: src/components/navigation/bottomTabNavigator.tsx:32
+#: src/components/navigation/bottomTabNavigator.tsx:34
 msgid "screen.home.title"
 msgstr "Início"
 
@@ -23,7 +23,7 @@ msgid "screen.home.welcome"
 msgstr "Bem-vindo"
 
 #: src/screens/match/MatchScreenHeader.tsx:9
-#: src/components/navigation/bottomTabNavigator.tsx:40
+#: src/components/navigation/bottomTabNavigator.tsx:42
 msgid "screen.match.title"
 msgstr "Buscar"
 
@@ -44,8 +44,8 @@ msgid "screen.profile.surname"
 msgstr "Sobrenome"
 
 #: src/screens/profile/ProfileScreenHeader.tsx:8
-#: src/components/navigation/bottomTabNavigator.tsx:48
-#: src/components/navigation/bottomTabNavigator.tsx:56
+#: src/components/navigation/bottomTabNavigator.tsx:50
+#: src/components/navigation/bottomTabNavigator.tsx:58
 msgid "screen.profile.title"
 msgstr "Conta"
 

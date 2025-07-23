@@ -31,12 +31,12 @@ function Root() {
   }, [settingQuery.data, settingQuery.isLoading]);
 
   if (settingQuery.isLoading || userQuery.isLoading) {
-    return null;
+    return;
   }
 
   return (
     <>
-      <StatusBar barStyle={theme.dark ? 'light-content' : 'dark-content'} />
+      <StatusBar barStyle={theme.dark ? 'light-content' : 'dark-content'} backgroundColor={theme.secondaryColors.background} />
       <NavigationContainer theme={theme}>
         <I18nProvider i18n={i18n} defaultComponent={DefaultComponent}>
           <SafeAreaProvider>
