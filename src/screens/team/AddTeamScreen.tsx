@@ -11,9 +11,7 @@ type Props = {
     navigation: AddScreenNavigationProps;
 };
 
-export default function AddTeamScreen({ navigation }: Props) {
-    useHideTabBar(navigation);
-
+export default function AddTeamScreen({ }: Props) {
     return (
         <ScreenWrapper>
             <Text>add team screen</Text>

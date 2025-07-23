@@ -38,6 +38,8 @@ export function useHideTabBar(navigation: NavigationProp<any>) {
             const tabNav = findBottomTabNavigator(navigation);
             if (!tabNav) return;
 
+            console.log(tabNav.getState());
+            console.log(tabNav.getId());
             tabNav.setOptions({
                 tabBarStyle: { display: 'none' },
             });
