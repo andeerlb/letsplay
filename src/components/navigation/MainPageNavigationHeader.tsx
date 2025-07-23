@@ -31,7 +31,7 @@ const MainPageNavigationHeader = function ({ children, title, hideSettings = tru
       backgroundColor: theme.secondaryColors.background
     }]}>
       <LetsPlayIcon width={25} height={25} />
-      {title && <Text style={[styles.title, { color: theme.colors.text, fontFamily: theme.fonts.regular.fontFamily }]}>{title.toLocaleUpperCase()}</Text>}
+      {title && <Text style={[styles.title, { color: theme.colors.text, fontFamily: theme.fonts.logoBold.fontFamily }]}>{title.toLocaleUpperCase()}</Text>}
       <View style={styles.rightButtons}>
         {children && children}
         {!hideSettings && (
