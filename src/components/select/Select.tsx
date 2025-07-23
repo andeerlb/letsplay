@@ -12,10 +12,11 @@ type SelectProps = {
     label?: string,
     defaultValue?: string,
     onChange: (value: any) => void,
-    options: Option[]
+    options: Option[],
+    mode?: 'dialog' | 'dropdown'
 }
 
-export default function Select({ label, defaultValue, onChange = () => { }, options = [] }: SelectProps) {
+export default function Select({ label, defaultValue, onChange = () => { }, options = [], mode = 'dropdown' }: SelectProps) {
     const { theme } = useTheme();
 
     return (
@@ -24,11 +25,11 @@ export default function Select({ label, defaultValue, onChange = () => { }, opti
             <Picker
                 selectedValue={defaultValue}
                 onValueChange={(itemValue) => onChange(itemValue)}
-                style={[styles.picker, { color: theme.colors.text, backgroundColor: theme.colors.background }]}
-                mode="dropdown"
+                style={[styles.picker, { color: theme.colors.text, backgroundColor: theme.secondaryColors.background }]}
+                mode={mode}
             >
                 {options.map(({ label, value }) => (
-                    <Picker.Item style={{ color: theme.colors.text, backgroundColor: theme.colors.background }} key={value} label={label} value={value} />
+                    <Picker.Item style={{ color: theme.colors.text, backgroundColor: theme.secondaryColors.background }} key={value} label={label} value={value} />
                 ))}
             </Picker>
         </View>
