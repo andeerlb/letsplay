@@ -21,17 +21,30 @@ export default function Select({ label, defaultValue, onChange = () => { }, opti
 
     return (
         <View style={styles.container}>
-            {label && <Text style={[{ color: theme.colors.text, fontFamily: theme.fonts.regular.fontFamily }]}>{label}</Text>}
-            <Picker
-                selectedValue={defaultValue}
-                onValueChange={(itemValue) => onChange(itemValue)}
-                style={[styles.picker, { color: theme.colors.text, backgroundColor: theme.secondaryColors.background }]}
-                mode={mode}
-            >
-                {options.map(({ label, value }) => (
-                    <Picker.Item style={{ color: theme.colors.text, backgroundColor: theme.secondaryColors.background }} key={value} label={label} value={value} />
-                ))}
-            </Picker>
+            {label && <Text style={[{
+                color: theme.colors.text,
+                fontFamily: theme.fonts.regular.fontFamily
+            }]}>{label}</Text>}
+            <View style={[styles.pickerWrapper, {
+                borderColor: theme.colors.border,
+                backgroundColor: theme.secondaryColors.background
+            }]}>
+                <Picker
+                    selectedValue={defaultValue}
+                    onValueChange={(itemValue) => onChange(itemValue)}
+                    style={[styles.picker, {
+                        color: theme.colors.text,
+                    }]}
+                    mode={mode}
+                >
+                    {options.map(({ label, value }) => (
+                        <Picker.Item style={{
+                            color: theme.colors.text,
+                            backgroundColor: theme.secondaryColors.background,
+                        }} key={value} label={label} value={value} />
+                    ))}
+                </Picker>
+            </View>
         </View>
     );
 }
@@ -41,10 +54,15 @@ const styles = StyleSheet.create({
         display: "flex",
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
     },
     picker: {
         height: 50,
         width: 200,
+        marginLeft: 10,
     },
+    pickerWrapper: {
+        borderRadius: 5,
+        borderWidth: 1
+    }
 });

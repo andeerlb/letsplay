@@ -27,6 +27,23 @@ msgstr "Bem-vindo"
 msgid "screen.match.title"
 msgstr "Buscar"
 
+#: src/screens/profile/ProfileScreen.tsx:21
+msgid "screen.profile.email"
+msgstr "E-mail"
+
+#: src/screens/profile/ProfileScreen.tsx:17
+msgid "screen.profile.given-name"
+msgstr "Nome"
+
+#: src/screens/profile/ProfileScreen.tsx:19
+#: src/screens/profile/ProfileScreen.tsx:20
+msgid "screen.profile.nickname"
+msgstr "Apelido"
+
+#: src/screens/profile/ProfileScreen.tsx:18
+msgid "screen.profile.surname"
+msgstr "Sobrenome"
+
 #: src/screens/profile/ProfileScreenHeader.tsx:8
 #: src/components/navigation/bottomTabNavigator.tsx:48
 #: src/components/navigation/bottomTabNavigator.tsx:56
@@ -41,11 +58,11 @@ msgstr "Visual"
 msgid "screen.setting.language"
 msgstr "Idioma"
 
-#: src/constants/theme.ts:107
+#: src/constants/theme.ts:128
 msgid "screen.setting.language.english"
 msgstr "Inglês"
 
-#: src/constants/theme.ts:106
+#: src/constants/theme.ts:127
 msgid "screen.setting.language.portuguese"
 msgstr "Português"
 
@@ -53,15 +70,15 @@ msgstr "Português"
 msgid "screen.setting.theme"
 msgstr "Tema"
 
-#: src/constants/theme.ts:100
+#: src/constants/theme.ts:121
 msgid "screen.setting.theme.dark"
 msgstr "Escuro"
 
-#: src/constants/theme.ts:101
+#: src/constants/theme.ts:122
 msgid "screen.setting.theme.light"
 msgstr "Claro"
 
-#: src/constants/theme.ts:102
+#: src/constants/theme.ts:123
 msgid "screen.setting.theme.system"
 msgstr "Sistema"
 

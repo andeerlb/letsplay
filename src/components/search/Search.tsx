@@ -18,7 +18,10 @@ const Search: React.FC<SearchProps> = ({ onSearch, placeholder }) => {
     };
 
     return (
-        <View style={[styles.container, { backgroundColor: theme.secondaryColors.background }]}>
+        <View style={[styles.container, {
+            backgroundColor: theme.secondaryColors.background,
+            borderColor: theme.colors.border
+        }]}>
             <SearchIcon style={styles.icon} width={24} height={24} color={theme.secondaryColors.text} />
             <TextInput
                 style={[styles.input, { color: theme.colors.text }]}
@@ -35,19 +38,19 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         alignItems: 'center',
+        borderWidth: 1,
         borderRadius: 5,
         height: 50,
-        paddingLeft: 15,
+        paddingLeft: 10,
         maxWidth: '100%',
         overflow: 'hidden',
     },
     input: {
         flex: 1,
         height: 50,
-        borderRadius: 5,
         paddingRight: 15,
         fontFamily: "sans-serif",
-        fontSize: 16,
+        fontSize: 15,
     },
     icon: {
         marginRight: 8,

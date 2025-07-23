@@ -88,7 +88,7 @@ export const LightTheme: ThemeDefinition = {
     card: '#84a9d3ff',
     text: '#646F7B',
     button: '#1A1B1D',
-    border: 'rgb(199, 199, 204)',
+    border: '#D3DCE9',
   },
   fonts: FONTS,
 };
@@ -102,7 +102,7 @@ export const DarkTheme: ThemeDefinition = {
     card: '#84a9d3ff',
     text: '#ffffff',
     button: '#ccc',
-    border: 'rgb(199, 199, 204)',
+    border: '#3B4C67',
     notification: '#256b35',
   },
   secondaryColors: {
