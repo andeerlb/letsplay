@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
-import { useTheme } from '@hooks/theme';
+import { useTheme } from "@context/ThemeProvider";
 
 type Option = {
     label: string;

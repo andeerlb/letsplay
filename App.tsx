@@ -17,11 +17,11 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider>
-        <Provider store={store}>
+      <Provider store={store}>
+        <ThemeProvider>
           <Root />
-        </Provider>
-      </ThemeProvider>
+        </ThemeProvider>
+      </Provider>
     </QueryClientProvider>
   );
 }

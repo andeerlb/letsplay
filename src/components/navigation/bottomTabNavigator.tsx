@@ -3,12 +3,12 @@ import HomeScreen from '@screens/home/HomeScreen';
 import ProfileScreen from '@screens/profile/ProfileScreen';
 import MatchScreen from '@screens/match/MatchScreen';
 import { useLingui } from "@lingui/react/macro";
-import { useTheme } from '@hooks/theme';
 import HomeScreenHeader from '@screens/home/HomeScreenHeader';
 import MatchScreenHeader from '@screens/match/MatchScreenHeader';
 import ProfileScreenHeader from '@screens/profile/ProfileScreenHeader';
 import TeamStackNavigator from './teamNavigator';
 import { getBottomNavigatorBarStyle } from '@utils/theme';
+import { useTheme } from '@context/ThemeProvider';
 
 export type BottomTabParamList = {
   Home: undefined;

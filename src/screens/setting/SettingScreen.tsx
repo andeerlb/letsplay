@@ -1,5 +1,5 @@
 import { LANGUAGE_OPTIONS, THEME_OPTIONS } from "@constants/theme";
-import { useTheme } from '@hooks/theme';
+import { useTheme } from "@context/ThemeProvider";
 import { Trans, useLingui } from "@lingui/react/macro";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import ScreenWrapper from "@wrapper/ScreenWrapper";

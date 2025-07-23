@@ -7,7 +7,7 @@ import { I18nProvider, TransRenderProps } from '@lingui/react';
 import { i18n } from '@lingui/core';
 import { useSetting } from '@query/settings';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { useTheme } from '@hooks/theme';
+import { useTheme } from '@context/ThemeProvider';
 
 const DefaultComponent = (props: TransRenderProps) => <Text>{props.children}</Text>;
 

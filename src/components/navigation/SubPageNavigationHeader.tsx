@@ -1,5 +1,5 @@
 import { View, StyleSheet, Text, Pressable } from "react-native";
-import { useTheme } from '@hooks/theme';
+import { useTheme } from "@context/ThemeProvider";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import BackArrowIcon from '@assets/icons/back-arrow.svg';

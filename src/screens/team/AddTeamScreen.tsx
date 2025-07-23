@@ -1,5 +1,5 @@
 import { TeamStackParamList } from "@components/navigation/teamNavigator";
-import { useTheme } from "@hooks/theme";
+import { useTheme } from "@context/ThemeProvider";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { getTabBarStyle } from "@utils/theme";
 import ScreenWrapper from "@wrapper/ScreenWrapper";
@@ -16,6 +16,8 @@ export default function AddTeamScreen({ navigation }: Props) {
     const { theme } = useTheme();
 
     useEffect(() => {
+        console.log(theme);
+
         const tabNav = navigation.getParent();
         tabNav?.setOptions({
             tabBarStyle: { display: 'none' },

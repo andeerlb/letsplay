@@ -1,7 +1,7 @@
 import { Trans } from "@lingui/react/macro";
 import ScreenWrapper from "@wrapper/ScreenWrapper";
 import { StyleSheet, Text } from "react-native";
-import { useTheme } from '@hooks/theme';
+import { useTheme } from "@context/ThemeProvider";
 import { BottomTabParamList } from "@components/navigation/bottomTabNavigator";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import React from "react";
@@ -13,9 +13,9 @@ function HomeScreen({ }: { navigation: HomeScreenNavigationProp }) {
 
   return (
     <ScreenWrapper>
-      <Text style={[styles.title, { color: theme.colors.text }]}>
+      <Text style={[styles.title, { color: theme.colors.text, fontFamily: theme.fonts.logoBold.fontFamily }]}>
         <Trans>screen.home.welcome</Trans>,{' '}
-        <Text style={{ color: theme.colors.secondary, fontFamily: theme.fonts.bold.fontFamily }}>
+        <Text style={{ color: theme.colors.secondary, fontFamily: theme.fonts.logoBold.fontFamily }}>
           Anderson
         </Text>
       </Text>

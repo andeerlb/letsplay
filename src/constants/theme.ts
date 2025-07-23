@@ -1,36 +1,68 @@
 import { msg } from "@lingui/core/macro";
+import * as ReactNavigation from '@react-navigation/native';
+
+type FontWeight =
+  | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900"
+  | "normal"
+  | "bold";
 
 type FontDefinition = {
-  fontFamily: string,
-  fontWeight: string
+  fontFamily: string;
+  fontWeight: FontWeight;
 };
 
 type ThemeDefinition = {
   colors: {
+    primary: string;
     secondary: string;
-    button: string
-  },
+    background: string;
+    card: string;
+    text: string;
+    button: string;
+    border: string;
+    notification: string;
+  };
   fonts: {
+    regular: FontDefinition;
+    medium: FontDefinition;
     semiBold: FontDefinition;
-  }
+    bold: FontDefinition;
+    heavy: FontDefinition;
+    logoRegular: FontDefinition;
+    logoBold: FontDefinition;
+  };
 } & ReactNavigation.Theme;
 
-// export const LightTheme = {
-//   general: {
-//     primary: '#646F7B',
-//     secondary: '#256b35'
-//   },
-//   primary: {
-//     background: '#ffffff',
-//     text: '#000000',
-//     button: '#646F7B',
-//   },
-//   secondary: {
-//     background: '#EAEDF0',
-//     text: '#646F7B',
-//     button: '#1A1B1D',
-//   }
-// };
+const FONTS: ThemeDefinition["fonts"] = {
+  regular: {
+    fontFamily: 'Lexend-Regular',
+    fontWeight: '400',
+  },
+  medium: {
+    fontFamily: 'Lexend-Medium',
+    fontWeight: '500',
+  },
+  semiBold: {
+    fontFamily: 'Lexend-SemiBold',
+    fontWeight: '600',
+  },
+  bold: {
+    fontFamily: 'Lexend-Bold',
+    fontWeight: '600',
+  },
+  heavy: {
+    fontFamily: 'Lexend-Bold',
+    fontWeight: '700',
+  },
+  logoBold: {
+    fontFamily: "Armavir01-Bold",
+    fontWeight: '900',
+  },
+  logoRegular: {
+    fontFamily: 'Armavir01',
+    fontWeight: '500',
+  },
+};
 
 export const LightTheme: ThemeDefinition = {
   dark: false,
@@ -44,46 +76,8 @@ export const LightTheme: ThemeDefinition = {
     border: 'rgb(199, 199, 204)',
     notification: '#256b35',
   },
-  fonts: {
-    regular: {
-      fontFamily: 'Lexend-Regular',
-      fontWeight: '400',
-    },
-    medium: {
-      fontFamily: 'Lexend-Medium',
-      fontWeight: '500',
-    },
-    semiBold: {
-      fontFamily: 'Lexend-SemiBold',
-      fontWeight: '600',
-    },
-    bold: {
-      fontFamily: 'Lexend-Bold',
-      fontWeight: '600',
-    },
-    heavy: {
-      fontFamily: 'Lexend-Bold',
-      fontWeight: '700',
-    },
-  }
+  fonts: FONTS,
 };
-
-// export const DarkTheme ={
-//   general: {
-//     primary: '#fff',
-//     secondary: '#256b35',
-//   },
-//   primary: {
-//     background: '#141b22',
-//     text: '#ffffff',
-//     button: '#ccc',
-//   },
-//   secondary: {
-//     background: '#1e2833',
-//     text: '#ccc',
-//     button: '#84a9d3ff',
-//   }
-// };
 
 export const DarkTheme: ThemeDefinition = {
   dark: true,
@@ -97,28 +91,7 @@ export const DarkTheme: ThemeDefinition = {
     border: 'rgb(199, 199, 204)',
     notification: '#256b35',
   },
-  fonts: {
-    regular: {
-      fontFamily: 'Lexend-Regular',
-      fontWeight: '400',
-    },
-    medium: {
-      fontFamily: 'Lexend-Medium',
-      fontWeight: '500',
-    },
-    semiBold: {
-      fontFamily: 'Lexend-SemiBold',
-      fontWeight: '600',
-    },
-    bold: {
-      fontFamily: 'Lexend-Bold',
-      fontWeight: '600',
-    },
-    heavy: {
-      fontFamily: 'Lexend-Bold',
-      fontWeight: '700',
-    },
-  }
+  fonts: FONTS
 };
 
 export type Theme = typeof LightTheme | typeof DarkTheme;
