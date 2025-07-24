@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { NoAuthStackParamList } from "@components/navigation/noAuthNavigator";
@@ -33,7 +33,7 @@ export default function WelcomeScreen({ }: { navigation: WelcomeScreenNavigation
             </Svg>
 
             {/* Conteúdo da tela */}
-            <View style={styles.wrapper}>
+            <ScrollView contentContainerStyle={styles.wrapper}>
                 <View style={styles.container}>
                     <View style={styles.containerHeader}>
                         <View style={styles.containerTitle}>
@@ -89,16 +89,17 @@ export default function WelcomeScreen({ }: { navigation: WelcomeScreenNavigation
                         <Button label='Já tenho uma conta' style={styles.buttonHasAccount} />
                     </View>
                 </View>
-            </View>
+            </ScrollView>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     wrapper: {
-        flex: 1,
+        flexGrow: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        paddingVertical: 30,
     },
     container: {
         width: '90%',
