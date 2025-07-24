@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useRef } from 'react';
+import { StyleSheet, Text, View, TextInput } from 'react-native'; // ← TextInput importa aqui
 import ScreenWrapper from '@wrapper/ScreenWrapper';
 import { useTheme } from '@context/ThemeProvider';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -23,10 +23,12 @@ const schema = yup.object({
 
 type PersonScreenNavigationProp = NativeStackNavigationProp<SignUpStackParamList, 'Person'>;
 
-
 export default function PersonScreen({ navigation }: { navigation: PersonScreenNavigationProp }) {
     const { theme } = useTheme();
     const safeAreaInsets = useSafeAreaInsets();
+
+    const surnameRef = useRef<TextInput>(null);
+    const birthdateRef = useRef<TextInput>(null);
 
     const {
         control,
@@ -80,6 +82,8 @@ export default function PersonScreen({ navigation }: { navigation: PersonScreenN
                                 onChangeText={onChange}
                                 onBlur={onBlur}
                                 error={errors.givenName?.message}
+                                returnKeyType="next"
+                                onSubmitEditing={() => surnameRef.current?.focus()}
                             />
                         )}
                     />
@@ -89,12 +93,16 @@ export default function PersonScreen({ navigation }: { navigation: PersonScreenN
                         defaultValue=""
                         render={({ field: { onChange, onBlur, value } }) => (
                             <Input
+                                ref={surnameRef}
                                 label={String(t`screen.signup.surname`)}
                                 value={value}
                                 onChangeText={onChange}
                                 onBlur={onBlur}
                                 error={errors.surname?.message}
+                                returnKeyType="next"
+                                onSubmitEditing={() => birthdateRef.current?.focus?.()}
                             />
+
                         )}
                     />
                     <Controller
@@ -103,10 +111,13 @@ export default function PersonScreen({ navigation }: { navigation: PersonScreenN
                         defaultValue=""
                         render={({ field: { onChange, value }, fieldState: { error } }) => (
                             <Birthdate
+                                ref={birthdateRef}
                                 label={t`screen.signup.birthday`}
                                 value={value}
                                 onChangeText={onChange}
                                 error={error?.message}
+                                returnKeyType="done"
+                                onSubmitEditing={() => handleSubmit(onSubmit)()}
                             />
                         )}
                     />

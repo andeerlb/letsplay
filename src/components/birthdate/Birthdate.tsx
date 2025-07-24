@@ -1,25 +1,40 @@
 import { useTheme } from '@context/ThemeProvider';
 import { t } from '@lingui/core/macro';
-import React, { useRef, useState, useEffect } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React, {
+    useRef,
+    useState,
+    useEffect,
+    forwardRef,
+    useImperativeHandle
+} from 'react';
+import { View, Text, StyleSheet, TextInput, TextInputProps } from 'react-native';
 import { TextInputMask } from 'react-native-masked-text';
+import type { TextInputMask as TextInputMaskClass } from 'react-native-masked-text';
 
-type Props = {
+type Props = TextInputProps & {
     label?: string;
     value: string;
     onChangeText: (text: string) => void;
     error?: string | null;
 };
 
-const Birthdate: React.FC<Props> = ({
+interface TextInputMaskWithGetElement extends TextInputMask {
+    getElement: () => TextInput;
+}
+
+const Birthdate = forwardRef<TextInput, Props>(({
     label,
     value,
     onChangeText,
     error,
-}) => {
+    ...rest
+}, ref) => {
     const { theme } = useTheme();
     const lastValidDate = useRef<string>(value);
     const [localError, setLocalError] = useState<string | null>(null);
+    const inputRef = useRef<TextInputMaskWithGetElement>(null);
+
+    useImperativeHandle(ref, () => inputRef.current?.getElement() as TextInput ?? null);
 
     const handleChange = (formatted: string, extracted?: string) => {
         if (extracted && extracted.length === 8) {
@@ -28,7 +43,6 @@ const Birthdate: React.FC<Props> = ({
             const year = parseInt(extracted.slice(4, 8), 10);
 
             const date = new Date(year, month - 1, day);
-
             const now = new Date();
 
             if (
@@ -58,14 +72,20 @@ const Birthdate: React.FC<Props> = ({
     return (
         <View style={styles.container}>
             {label && (
-                <Text style={[styles.label, {
-                    color: theme.colors.text,
-                    fontFamily: theme.fonts.regular.fontFamily,
-                }]}>
+                <Text
+                    style={[
+                        styles.label,
+                        {
+                            color: theme.colors.text,
+                            fontFamily: theme.fonts.regular.fontFamily,
+                        },
+                    ]}
+                >
                     {label}
                 </Text>
             )}
             <TextInputMask
+                ref={inputRef}
                 type={'datetime'}
                 options={{ format: 'DD/MM/YYYY' }}
                 value={value}
@@ -84,10 +104,11 @@ const Birthdate: React.FC<Props> = ({
                     },
                 ]}
                 maxLength={10}
+                {...rest}
             />
         </View>
     );
-};
+});
 
 const styles = StyleSheet.create({
     container: {
@@ -102,7 +123,7 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         paddingHorizontal: 10,
         fontSize: 15,
-    }
+    },
 });
 
 export default Birthdate;

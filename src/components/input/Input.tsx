@@ -1,18 +1,13 @@
 import { useTheme } from '@context/ThemeProvider';
-import React from 'react';
-import { View, TextInput, StyleSheet, Text } from 'react-native';
+import React, { forwardRef } from 'react';
+import { View, TextInput, StyleSheet, Text, TextInputProps } from 'react-native';
 
-type InputProps = {
+type InputProps = TextInputProps & {
     label?: string;
-    placeholder?: string;
-    value?: string;
-    onChangeText?: (text: string) => void;
-    onBlur?: () => void;
-    secureTextEntry?: boolean;
     error?: string | null;
-}
+};
 
-const Input = (props: InputProps) => {
+const Input = forwardRef<TextInput, InputProps>((props, ref) => {
     const { theme } = useTheme();
 
     return (
@@ -29,9 +24,9 @@ const Input = (props: InputProps) => {
                 >
                     {props.label}
                 </Text>
-            )
-            }
+            )}
             <TextInput
+                ref={ref}
                 style={[
                     styles.input,
                     {
@@ -47,10 +42,13 @@ const Input = (props: InputProps) => {
                 onChangeText={props.onChangeText}
                 onBlur={props.onBlur}
                 secureTextEntry={props.secureTextEntry ?? false}
+                returnKeyType={props.returnKeyType}
+                onSubmitEditing={props.onSubmitEditing}
+                blurOnSubmit={props.blurOnSubmit}
             />
-        </View >
+        </View>
     );
-};
+});
 
 const styles = StyleSheet.create({
     container: {
