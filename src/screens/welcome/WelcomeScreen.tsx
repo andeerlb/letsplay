@@ -9,6 +9,7 @@ import StatsIcon from '@assets/icons/stats.svg';
 import TeamIcon from '@assets/icons/team.svg';
 import CalendarIcon from '@assets/icons/calendar.svg';
 import TrophyIcon from '@assets/icons/trophy.svg';
+import Button from "@components/button/Button";
 
 type WelcomeScreenNavigationProp = NativeStackNavigationProp<NoAuthStackParamList, 'SignIn'>;
 
@@ -16,8 +17,7 @@ export default function WelcomeScreen({ }: { navigation: WelcomeScreenNavigation
     const { theme } = useTheme();
 
     return (
-        <View style={styles.screenWrapper}>
-            {/* SVG fundo gradiente */}
+        <View style={{ flex: 1 }}>
             <Svg style={StyleSheet.absoluteFill}>
                 <Defs>
                     <LinearGradient id="grad" x1="0" y1="0" x2="0.8" y2="1">
@@ -49,7 +49,7 @@ export default function WelcomeScreen({ }: { navigation: WelcomeScreenNavigation
                             styles.subTitle,
                             { fontFamily: theme.fonts.regular.fontFamily }
                         ]}>
-                            Gerencie seu time, acompanhe partidas e conquiste vitórias. Sua gestão esportiva na palma da mão.
+                            Gerencie seu time, acompanhe partidas e conquiste vitórias.
                         </Text>
                     </View>
                     <View style={styles.containerStats}>
@@ -84,6 +84,10 @@ export default function WelcomeScreen({ }: { navigation: WelcomeScreenNavigation
                             </Text>
                         </View>
                     </View>
+                    <View style={{ gap: 10 }}>
+                        <Button label='Começar agora' style={styles.buttonStart} />
+                        <Button label='Já tenho uma conta' style={styles.buttonHasAccount} />
+                    </View>
                 </View>
             </View>
         </View>
@@ -91,10 +95,6 @@ export default function WelcomeScreen({ }: { navigation: WelcomeScreenNavigation
 }
 
 const styles = StyleSheet.create({
-    screenWrapper: {
-        flex: 1,
-        position: 'relative',
-    },
     wrapper: {
         flex: 1,
         justifyContent: 'center',
@@ -106,8 +106,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#1f4227ff',
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        alignItems: 'center',
         padding: 30,
+        gap: 40
     },
     containerHeader: {
         alignItems: 'center',
@@ -132,7 +132,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: 'center',
-        marginTop: 20,
         gap: 10,
     },
     statsItem: {
@@ -142,12 +141,12 @@ const styles = StyleSheet.create({
         paddingVertical: 20,
         paddingHorizontal: 10,
         color: "#ffffff",
-        backgroundColor: '#256b35',
+        backgroundColor: 'rgba(37, 107, 53, .4)',
         borderRadius: 8,
         textAlign: 'center',
         marginVertical: 5,
         borderWidth: 1,
-        borderColor: '#98c4a2ff',
+        borderColor: '#256b35',
         boxSizing: 'border-box',
         gap: 10
     },
@@ -158,5 +157,17 @@ const styles = StyleSheet.create({
     statsItemDesc: {
         color: "#EAEDF0",
         textAlign: "center"
+    },
+    buttonStart: {
+        borderRadius: 10,
+        backgroundColor: '#256b35',
+        borderWidth: .2,
+        borderColor: "#fff"
+    },
+    buttonHasAccount: {
+        borderRadius: 10,
+        backgroundColor: 'rgba(0,0,0,.3)',
+        borderWidth: .2,
+        borderColor: "#fff"
     }
 });
