@@ -4,7 +4,7 @@ import {
 } from '@react-navigation/native-stack';
 import SignInScreen from '@screens/signin/SignInScreen';
 import WelcomeScreen from '@screens/welcome/WelcomeScreen';
-import RegisterInScreen from '@screens/register/RegisterScreen';
+import SignUpStackNavigator from './signUpNavigator';
 
 export type NoAuthStackParamList = {
   SignIn: undefined;
@@ -24,7 +24,7 @@ const NoAuthStackNavigator = () => {
       />
       <Stack.Screen
         name="SignUp"
-        component={RegisterInScreen}
+        component={SignUpStackNavigator}
         options={{ headerShown: false }}
       />
       <Stack.Screen
