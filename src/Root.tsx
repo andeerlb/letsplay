@@ -46,7 +46,6 @@ function Root() {
 
   return (
     <>
-      <StatusBar barStyle={theme.dark ? 'light-content' : 'dark-content'} backgroundColor={theme.secondaryColors.background} />
       <SafeAreaProvider>
         <NavigationContainer theme={theme}>
           <I18nProvider i18n={i18n} defaultComponent={DefaultComponent}>

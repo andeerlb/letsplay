@@ -28,10 +28,6 @@ export default function WelcomeScreen({ navigation }: { navigation: WelcomeScree
 
     return (
         <View style={{ flex: 1 }}>
-            <StatusBar
-                barStyle='light-content'
-                backgroundColor='#193f22'
-            />
             <Svg style={StyleSheet.absoluteFill}>
                 <Defs>
                     <LinearGradient id="grad" x1="0" y1="0" x2="0.8" y2="1">
