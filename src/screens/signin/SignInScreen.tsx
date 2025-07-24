@@ -5,11 +5,13 @@ import { NoAuthStackParamList } from "@components/navigation/noAuthNavigator";
 import { useTheme } from "@context/ThemeProvider";
 import Input from "@components/input/Input";
 import Button from "@components/button/Button";
+import { Trans, useLingui } from "@lingui/react/macro";
 
 type SignInScreenNavigationProp = NativeStackNavigationProp<NoAuthStackParamList, 'SignIn'>;
 
 export default function SignInScreen({ navigation }: { navigation: SignInScreenNavigationProp }) {
     const { theme } = useTheme();
+    const { t } = useLingui();
 
     const goToSignUp = () => {
         navigation.navigate('SignUp');
@@ -22,11 +24,11 @@ export default function SignInScreen({ navigation }: { navigation: SignInScreenN
                     <Text style={[styles.title, {
                         fontFamily: theme.fonts.logoBold.fontFamily,
                         color: theme.colors.text
-                    }]}>Bem-vindo</Text>
+                    }]}><Trans>screen.signin.welcome</Trans></Text>
                     <Text style={[styles.description, {
                         fontFamily: theme.fonts.regular.fontFamily,
                         color: theme.secondaryColors.text
-                    }]}>Entre na sua conta para continuar</Text>
+                    }]}><Trans>screen.signin.description</Trans></Text>
                 </View>
                 <View style={[styles.container,
                 {
@@ -34,27 +36,27 @@ export default function SignInScreen({ navigation }: { navigation: SignInScreenN
                     borderColor: theme.colors.border
                 }
                 ]}>
-                    <Input label="Usuário" />
-                    <Input label="Senha" />
+                    <Input label={t`screen.signin.user`} />
+                    <Input label={t`screen.signin.password`} />
                     <View style={{ gap: 10 }}>
                         <Text style={{
                             textAlign: 'right',
                             color: theme.colors.secondary,
                             fontFamily: theme.fonts.regular.fontFamily
 
-                        }}>Esqueceu a senha?</Text>
-                        <Button label="Entrar" />
+                        }}><Trans>screen.signin.forgot</Trans></Text>
+                        <Button label={t`screen.signin.btn-sigin`} />
                     </View>
                 </View>
                 <View style={{ flexDirection: 'row', gap: 10 }}>
                     <Text style={[styles.signup, {
                         fontFamily: theme.fonts.regular.fontFamily,
                         color: theme.secondaryColors.text
-                    }]}>Não tem uma conta?</Text>
+                    }]}><Trans>screen.signin.noaccount</Trans></Text>
                     <Text onPress={goToSignUp} style={[styles.signupUrl, {
                         fontFamily: theme.fonts.bold.fontFamily,
                         color: theme.colors.secondary
-                    }]}>Criar conta</Text>
+                    }]}><Trans>screen.signin.signup</Trans></Text>
                 </View>
             </View>
         </View>

@@ -85,6 +85,38 @@ msgstr "System"
 msgid "screen.setting.title"
 msgstr "Settings"
 
+#: src/screens/signin/SignInScreen.tsx:48
+msgid "screen.signin.btn-sigin"
+msgstr "LogIn"
+
+#: src/screens/signin/SignInScreen.tsx:31
+msgid "screen.signin.description"
+msgstr "Log in to your account to continue"
+
+#: src/screens/signin/SignInScreen.tsx:47
+msgid "screen.signin.forgot"
+msgstr "Forgot your password?"
+
+#: src/screens/signin/SignInScreen.tsx:55
+msgid "screen.signin.noaccount"
+msgstr "Don't have an account?"
+
+#: src/screens/signin/SignInScreen.tsx:40
+msgid "screen.signin.password"
+msgstr "Password"
+
+#: src/screens/signin/SignInScreen.tsx:59
+msgid "screen.signin.signup"
+msgstr "Create account"
+
+#: src/screens/signin/SignInScreen.tsx:39
+msgid "screen.signin.user"
+msgstr "User"
+
+#: src/screens/signin/SignInScreen.tsx:27
+msgid "screen.signin.welcome"
+msgstr "Welcome"
+
 #: src/screens/team/AddTeamScreenHeader.tsx:7
 msgid "screen.team.add"
 msgstr "Add team"
