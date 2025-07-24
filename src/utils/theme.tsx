@@ -46,6 +46,6 @@ export const getTabBarStyle = (
 ): StyleProp<ViewStyle> => ({
     paddingTop: 5,
     height: 60 + safeAreaInsets.bottom,
-    backgroundColor: theme.colors.background,
+    backgroundColor: theme.secondaryColors.background,
     ...((animatedStyle as object) || {}),
 });

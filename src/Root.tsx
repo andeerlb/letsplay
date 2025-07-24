@@ -21,13 +21,13 @@ function Root() {
   return (
     <>
       <StatusBar barStyle={theme.dark ? 'light-content' : 'dark-content'} backgroundColor={theme.secondaryColors.background} />
-      <NavigationContainer theme={theme}>
-        <I18nProvider i18n={i18n} defaultComponent={DefaultComponent}>
-          <SafeAreaProvider>
+      <SafeAreaProvider>
+        <NavigationContainer theme={theme}>
+          <I18nProvider i18n={i18n} defaultComponent={DefaultComponent}>
             <RootStackNavigator />
-          </SafeAreaProvider>
-        </I18nProvider>
-      </NavigationContainer>
+          </I18nProvider>
+        </NavigationContainer>
+      </SafeAreaProvider>
     </>
   );
 }

@@ -1,7 +1,10 @@
 package com.letsplay
 
 import android.app.ActivityManager
+import android.content.res.Configuration
+import android.os.Build
 import android.os.Bundle;
+import android.view.WindowManager
 import androidx.core.content.ContextCompat
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
@@ -26,6 +29,7 @@ class MainActivity : ReactActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     setTheme(R.style.Theme)
     super.onCreate(null)
+
     val color = ContextCompat.getColor(this, R.color.task_description_color)
     val taskDesc = ActivityManager.TaskDescription(
       getString(R.string.app_name),

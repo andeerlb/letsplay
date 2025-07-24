@@ -3,4 +3,5 @@
     <color name="status_bar_color">#141b22</color>
     <color name="ic_launcher_background">#141b22</color>
     <color name="task_description_color">#141b22</color>
+    <color name="nav_bar_color">#1e2833</color>
 </resources>
