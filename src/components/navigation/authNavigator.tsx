@@ -31,7 +31,6 @@ const AuthStackNavigator = () => {
     changeLanguage(settingQuery.data.language);
     changeTheme(settingQuery.data.theme);
     dispatch(setUser(userQuery.data));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [settingQuery.data, settingQuery.isLoading]);
 
   if (settingQuery.isLoading || userQuery.isLoading) {

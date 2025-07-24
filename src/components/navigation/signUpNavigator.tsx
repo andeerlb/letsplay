@@ -16,18 +16,17 @@ function SignUpStackNavigator() {
   const { theme } = useTheme();
 
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{
+      headerShown: true,
+      headerShadowVisible: false,
+      headerTitle: '',
+      headerStyle: {
+        backgroundColor: theme.colors.background,
+      },
+    }}>
       <Stack.Screen
         name="Person"
         component={PersonScreen}
-        options={{
-          headerShown: true,
-          headerShadowVisible: false,
-          headerTitle: '',
-          headerStyle: {
-            backgroundColor: theme.colors.background
-          }
-        }}
       />
       <Stack.Screen
         name="Sport"
