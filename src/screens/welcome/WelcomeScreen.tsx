@@ -10,6 +10,8 @@ import TeamIcon from '@assets/icons/team.svg';
 import CalendarIcon from '@assets/icons/calendar.svg';
 import TrophyIcon from '@assets/icons/trophy.svg';
 import Button from "@components/button/Button";
+import { Trans } from "@lingui/react/macro";
+import { t } from "@lingui/core/macro";
 
 type WelcomeScreenNavigationProp = NativeStackNavigationProp<NoAuthStackParamList, 'Welcome'>;
 
@@ -61,44 +63,44 @@ export default function WelcomeScreen({ navigation }: { navigation: WelcomeScree
                             styles.subTitle,
                             { fontFamily: theme.fonts.regular.fontFamily }
                         ]}>
-                            Gerencie seu time, acompanhe partidas e conquiste vitórias.
+                            <Trans>screen.welcome.description</Trans>
                         </Text>
                     </View>
                     <View style={styles.containerStats}>
                         <View style={styles.statsItem}>
+                            <StatsIcon height={30} width={30} color='#ffffff' />
+                            <Text style={[styles.statsItemTitle,
+                            { fontFamily: theme.fonts.bold.fontFamily }
+                            ]}><Trans>screen.welcome.manage.title</Trans></Text>
+                            <Text style={styles.statsItemDesc}><Trans>screen.welcome.manage.desc</Trans></Text>
+                        </View>
+                        <View style={styles.statsItem}>
                             <TeamIcon height={30} width={30} color='#ffffff' />
                             <Text style={[styles.statsItemTitle,
                             { fontFamily: theme.fonts.bold.fontFamily }
-                            ]}>Gerir Equipe</Text>
-                            <Text style={styles.statsItemDesc}>Organize jogadores e posições</Text>
+                            ]}><Trans>screen.welcome.team.title</Trans></Text>
+                            <Text style={styles.statsItemDesc}><Trans>screen.welcome.team.desc</Trans></Text>
                         </View>
                         <View style={styles.statsItem}>
                             <StatsIcon height={30} width={30} color='#ffffff' />
                             <Text style={[styles.statsItemTitle,
                             { fontFamily: theme.fonts.bold.fontFamily }
-                            ]}>Resultados</Text>
-                            <Text style={styles.statsItemDesc}>Marque treinos e jogos</Text>
-                        </View>
-                        <View style={styles.statsItem}>
-                            <StatsIcon height={30} width={30} color='#ffffff' />
-                            <Text style={[styles.statsItemTitle,
-                            { fontFamily: theme.fonts.bold.fontFamily }
-                            ]}>Estatísticas</Text>
-                            <Text style={styles.statsItemDesc}>Acompanhe estatísticas</Text>
+                            ]}><Trans>screen.welcome.stats.title</Trans></Text>
+                            <Text style={styles.statsItemDesc}><Trans>screen.welcome.stats.desc</Trans></Text>
                         </View>
                         <View style={styles.statsItem}>
                             <CalendarIcon height={30} width={30} color='#ffffff' />
                             <Text style={[styles.statsItemTitle,
                             { fontFamily: theme.fonts.bold.fontFamily }
-                            ]}>Agendar</Text>
+                            ]}><Trans>welcome.screen.schedule.title</Trans></Text>
                             <Text style={styles.statsItemDesc}>
-                                Marque treinos e jogos
+                                <Trans>welcome.screen.schedule.desc</Trans>
                             </Text>
                         </View>
                     </View>
                     <View style={{ gap: 10 }}>
-                        <Button label='Começar agora' style={styles.buttonStart} onPress={goToRegister} />
-                        <Button label='Já tenho uma conta' style={styles.buttonHasAccount} onPress={goToSignIn} />
+                        <Button label={t`welcome.screen.signup`} style={styles.buttonStart} onPress={goToRegister} />
+                        <Button label={t`welcome.screen.signin`} style={styles.buttonHasAccount} onPress={goToSignIn} />
                     </View>
                 </View>
             </ScrollView>
