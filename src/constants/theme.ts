@@ -80,7 +80,7 @@ export const LightTheme: ThemeDefinition = {
     card: '#ffffff',
     text: '#000000',
     button: '#646F7B',
-    border: 'rgb(199, 199, 204)',
+    border: '#c7c7ccff',
     notification: '#256b35',
   },
   secondaryColors: {

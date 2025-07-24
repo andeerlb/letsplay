@@ -18,7 +18,7 @@ msgstr ""
 msgid "screen.home.title"
 msgstr "Início"
 
-#: src/screens/home/HomeScreen.tsx:21
+#: src/screens/home/HomeScreen.tsx:20
 msgid "screen.home.welcome"
 msgstr "Bem-vindo"
 

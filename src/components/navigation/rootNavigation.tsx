@@ -13,7 +13,7 @@ export type RootStackParamList = {
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const RootStackNavigator = () => {
-  const isSignIn = false;
+  const isSignIn = true;
 
   return (
     <Stack.Navigator>
