@@ -3,6 +3,7 @@ import { useCallback } from 'react';
 import { useTheme } from '@context/ThemeProvider';
 import { getTabBarStyle } from '@utils/theme';
 import { BottomTabParamList } from '@components/navigation/bottomTabNavigator';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const expectedTabs = Object.keys({
     Home: null,
@@ -32,21 +33,20 @@ function findBottomTabNavigator(
 
 export function useHideTabBar(navigation: NavigationProp<any>) {
     const { theme } = useTheme();
+    const safeAreaInsets = useSafeAreaInsets();
 
     useFocusEffect(
         useCallback(() => {
             const tabNav = findBottomTabNavigator(navigation);
             if (!tabNav) return;
 
-            console.log(tabNav.getState());
-            console.log(tabNav.getId());
             tabNav.setOptions({
                 tabBarStyle: { display: 'none' },
             });
 
             return () => {
                 tabNav.setOptions({
-                    tabBarStyle: getTabBarStyle(theme),
+                    tabBarStyle: getTabBarStyle(theme, safeAreaInsets),
                 });
             };
         }, [navigation, theme])

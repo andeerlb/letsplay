@@ -14,7 +14,6 @@ function HomeScreen({ }: { navigation: HomeScreenNavigationProp }) {
   const { theme } = useTheme();
   const user = useSelector((state: RootState) => state.user);
 
-  console.log('froomhome', user);
   return (
     <ScreenWrapper>
       <Text style={[styles.title, { color: theme.colors.text, fontFamily: theme.fonts.logoBold.fontFamily }]}>
