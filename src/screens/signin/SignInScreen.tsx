@@ -1,34 +1,62 @@
-import { ScrollView, StatusBar, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { NoAuthStackParamList } from "@components/navigation/noAuthNavigator";
-import LetsplayIcon from '@assets/icons/letsplay-round.svg';
 import { useTheme } from "@context/ThemeProvider";
-import Svg, { Defs, LinearGradient, Stop, Rect } from 'react-native-svg';
-import StatsIcon from '@assets/icons/stats.svg';
-import TeamIcon from '@assets/icons/team.svg';
-import CalendarIcon from '@assets/icons/calendar.svg';
-import TrophyIcon from '@assets/icons/trophy.svg';
+import Input from "@components/input/Input";
 import Button from "@components/button/Button";
-import { Trans } from "@lingui/react/macro";
-import { t } from "@lingui/core/macro";
 
 type SignInScreenNavigationProp = NativeStackNavigationProp<NoAuthStackParamList, 'SignIn'>;
 
 export default function SignInScreen({ navigation }: { navigation: SignInScreenNavigationProp }) {
     const { theme } = useTheme();
 
+    const goToSignUp = () => {
+        navigation.navigate('SignUp');
+    }
+
     return (
         <View style={{ flex: 1 }}>
-            <ScrollView contentContainerStyle={styles.wrapper}>
+            <View style={styles.wrapper}>
+                <View style={{ gap: 5 }}>
+                    <Text style={[styles.title, {
+                        fontFamily: theme.fonts.logoBold.fontFamily,
+                        color: theme.colors.text
+                    }]}>Bem-vindo</Text>
+                    <Text style={[styles.description, {
+                        fontFamily: theme.fonts.regular.fontFamily,
+                        color: theme.secondaryColors.text
+                    }]}>Entre na sua conta para continuar</Text>
+                </View>
                 <View style={[styles.container,
                 {
                     backgroundColor: theme.secondaryColors.background,
                     borderColor: theme.colors.border
                 }
                 ]}>
+                    <Input label="Usuário" />
+                    <Input label="Senha" />
+                    <View style={{ gap: 10 }}>
+                        <Text style={{
+                            textAlign: 'right',
+                            color: theme.colors.secondary,
+                            fontFamily: theme.fonts.regular.fontFamily
+
+                        }}>Esqueceu a senha?</Text>
+                        <Button label="Entrar" />
+                    </View>
                 </View>
-            </ScrollView>
+                <View style={{ flexDirection: 'row', gap: 10 }}>
+                    <Text style={[styles.signup, {
+                        fontFamily: theme.fonts.regular.fontFamily,
+                        color: theme.secondaryColors.text
+                    }]}>Não tem uma conta?</Text>
+                    <Text onPress={goToSignUp} style={[styles.signupUrl, {
+                        fontFamily: theme.fonts.bold.fontFamily,
+                        color: theme.colors.secondary
+                    }]}>Criar conta</Text>
+                </View>
+            </View>
         </View>
     );
 }
@@ -39,12 +67,27 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         paddingVertical: 30,
+        gap: 40
     },
     container: {
         width: '90%',
         borderRadius: 10,
         borderWidth: 1,
         padding: 30,
-        gap: 40
+        gap: 20
     },
+    title: {
+        textAlign: 'center',
+        fontSize: 30
+    },
+    description: {
+        textAlign: 'center',
+        fontSize: 15
+    },
+    signup: {
+        fontSize: 15
+    },
+    signupUrl: {
+        fontSize: 15
+    }
 });
