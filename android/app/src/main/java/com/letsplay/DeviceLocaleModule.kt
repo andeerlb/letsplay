@@ -16,10 +16,10 @@ class DeviceLocaleModule(reactContext: ReactApplicationContext) :
     @ReactMethod
     fun getLanguage(promise: Promise) {
         try {
-            val language = Locale.getDefault().language // ex: "pt", "en"
+            val language = Locale.getDefault().language
             promise.resolve(language)
         } catch (e: Exception) {
-            promise.reject("ERROR_GETTING_LANGUAGE", "Not was possible to received informations", e)
+            promise.resolve("pt");
         }
     }
 }
