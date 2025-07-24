@@ -6,6 +6,7 @@ type InputProps = {
     label?: string;
     placeholder?: string;
     value?: string;
+    secureTextEntry?: boolean;
 }
 
 const Input = (props: InputProps) => {
@@ -29,6 +30,7 @@ const Input = (props: InputProps) => {
                 value={text}
                 onChangeText={setText}
                 placeholderTextColor={theme.secondaryColors.text}
+                secureTextEntry={props.secureTextEntry ?? false}
             />
         </View>
     );

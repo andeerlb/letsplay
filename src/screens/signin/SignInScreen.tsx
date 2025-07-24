@@ -6,6 +6,8 @@ import { useTheme } from "@context/ThemeProvider";
 import Input from "@components/input/Input";
 import Button from "@components/button/Button";
 import { Trans, useLingui } from "@lingui/react/macro";
+import InputEmail from "@components/input/inputEmail";
+import InputPassword from "@components/input/inputPassword";
 
 type SignInScreenNavigationProp = NativeStackNavigationProp<NoAuthStackParamList, 'SignIn'>;
 
@@ -36,8 +38,8 @@ export default function SignInScreen({ navigation }: { navigation: SignInScreenN
                     borderColor: theme.colors.border
                 }
                 ]}>
-                    <Input label={t`screen.signin.user`} />
-                    <Input label={t`screen.signin.password`} />
+                    <InputEmail label={t`screen.signin.user`} />
+                    <InputPassword label={t`screen.signin.password`} />
                     <View style={{ gap: 10 }}>
                         <Text style={{
                             textAlign: 'right',
