@@ -8,6 +8,7 @@ import { useTheme } from "@context/ThemeProvider";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Input from "@components/input/Input";
 import { t } from "@lingui/core/macro";
+import Birthdate from "@components/birthdate/Birthdate";
 
 type PersonScreenScreenNavigationProp = NativeStackNavigationProp<SignUpStackParamList, 'Person'>;
 
@@ -39,6 +40,7 @@ export default function PersonScreen({ }: { navigation: PersonScreenScreenNaviga
                 <View style={styles.content}>
                     <Input label={t`screen.signup.given-name`} />
                     <Input label={t`screen.signup.surname`} />
+                    <Birthdate />
                 </View>
             </View>
         </ScreenWrapper>

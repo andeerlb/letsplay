@@ -121,6 +121,18 @@ msgstr "Usuário"
 msgid "screen.signin.welcome"
 msgstr "Bem-vindo"
 
+#: src/screens/signup/PersonScreen.tsx:41
+msgid "screen.signup.given-name"
+msgstr "screen.signup.given-name"
+
+#: src/screens/signup/PersonScreen.tsx:31
+msgid "screen.signup.person.title"
+msgstr "screen.signup.person.title"
+
+#: src/screens/signup/PersonScreen.tsx:42
+msgid "screen.signup.surname"
+msgstr "screen.signup.surname"
+
 #: src/screens/team/AddTeamScreenHeader.tsx:7
 msgid "screen.team.add"
 msgstr "Adicionar time"
@@ -160,6 +172,10 @@ msgstr "Marque treinos e jogos"
 #: src/screens/welcome/WelcomeScreen.tsx:77
 msgid "screen.welcome.team.title"
 msgstr "Gerir equipe"
+
+#: src/screens/signup/PersonScreen.tsx:37
+msgid "screens.signup.person.description"
+msgstr "screens.signup.person.description"
 
 #: src/screens/welcome/WelcomeScreen.tsx:93
 msgid "welcome.screen.schedule.desc"
