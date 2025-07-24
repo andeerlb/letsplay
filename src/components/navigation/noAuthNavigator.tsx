@@ -9,7 +9,7 @@ import RegisterInScreen from '@screens/register/RegisterScreen';
 export type NoAuthStackParamList = {
   SignIn: undefined;
   Welcome: undefined;
-  Register: undefined;
+  SignUp: undefined;
 };
 
 const Stack = createNativeStackNavigator<NoAuthStackParamList>();
@@ -23,7 +23,7 @@ const NoAuthStackNavigator = () => {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Register"
+        name="SignUp"
         component={RegisterInScreen}
         options={{ headerShown: false }}
       />

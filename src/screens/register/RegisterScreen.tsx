@@ -4,13 +4,13 @@ import React from "react";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { NoAuthStackParamList } from "@components/navigation/noAuthNavigator";
 
-type RegisterScreenNavigationProp = NativeStackNavigationProp<NoAuthStackParamList, 'Register'>;
+type SignUpScreenNavigationProp = NativeStackNavigationProp<NoAuthStackParamList, 'SignUp'>;
 
-export default function RegisterInScreen({ }: { navigation: RegisterScreenNavigationProp }) {
+export default function SignUpScreen({ }: { navigation: SignUpScreenNavigationProp }) {
 
     return (
         <ScreenWrapper>
-            <Text>Register Screen</Text>
+            <Text>SignUpScreen Screen</Text>
         </ScreenWrapper>
     );
 }

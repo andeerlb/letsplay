@@ -22,8 +22,8 @@ export default function WelcomeScreen({ navigation }: { navigation: WelcomeScree
         navigation.navigate('SignIn');
     }
 
-    const goToRegister = () => {
-        navigation.navigate('Register');
+    const goToSignUp = () => {
+        navigation.navigate('SignUp');
     }
 
     return (
@@ -99,7 +99,7 @@ export default function WelcomeScreen({ navigation }: { navigation: WelcomeScree
                         </View>
                     </View>
                     <View style={{ gap: 10 }}>
-                        <Button label={t`welcome.screen.signup`} style={styles.buttonStart} onPress={goToRegister} />
+                        <Button label={t`welcome.screen.signup`} style={styles.buttonStart} onPress={goToSignUp} />
                         <Button label={t`welcome.screen.signin`} style={styles.buttonHasAccount} onPress={goToSignIn} />
                     </View>
                 </View>
