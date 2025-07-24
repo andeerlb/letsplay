@@ -11,10 +11,18 @@ import CalendarIcon from '@assets/icons/calendar.svg';
 import TrophyIcon from '@assets/icons/trophy.svg';
 import Button from "@components/button/Button";
 
-type WelcomeScreenNavigationProp = NativeStackNavigationProp<NoAuthStackParamList, 'SignIn'>;
+type WelcomeScreenNavigationProp = NativeStackNavigationProp<NoAuthStackParamList, 'Welcome'>;
 
-export default function WelcomeScreen({ }: { navigation: WelcomeScreenNavigationProp }) {
+export default function WelcomeScreen({ navigation }: { navigation: WelcomeScreenNavigationProp }) {
     const { theme } = useTheme();
+
+    const goToSignIn = () => {
+        navigation.navigate('SignIn');
+    }
+
+    const goToRegister = () => {
+        navigation.navigate('Register');
+    }
 
     return (
         <View style={{ flex: 1 }}>
@@ -89,8 +97,8 @@ export default function WelcomeScreen({ }: { navigation: WelcomeScreenNavigation
                         </View>
                     </View>
                     <View style={{ gap: 10 }}>
-                        <Button label='Começar agora' style={styles.buttonStart} />
-                        <Button label='Já tenho uma conta' style={styles.buttonHasAccount} />
+                        <Button label='Começar agora' style={styles.buttonStart} onPress={goToRegister} />
+                        <Button label='Já tenho uma conta' style={styles.buttonHasAccount} onPress={goToSignIn} />
                     </View>
                 </View>
             </ScrollView>
@@ -135,7 +143,6 @@ const styles = StyleSheet.create({
     },
     containerStats: {
         flexDirection: 'row',
-        flexWrap: 'wrap',
         justifyContent: 'center',
         gap: 10,
     },

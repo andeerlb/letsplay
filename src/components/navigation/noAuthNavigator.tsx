@@ -4,10 +4,12 @@ import {
 } from '@react-navigation/native-stack';
 import SignInScreen from '@screens/signin/SignInScreen';
 import WelcomeScreen from '@screens/welcome/WelcomeScreen';
+import RegisterInScreen from '@screens/register/RegisterScreen';
 
 export type NoAuthStackParamList = {
   SignIn: undefined;
   Welcome: undefined;
+  Register: undefined;
 };
 
 const Stack = createNativeStackNavigator<NoAuthStackParamList>();
@@ -18,6 +20,11 @@ const NoAuthStackNavigator = () => {
       <Stack.Screen
         name="Welcome"
         component={WelcomeScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Register"
+        component={RegisterInScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
