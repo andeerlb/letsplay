@@ -36,10 +36,8 @@ const InputPassword = ({ label, placeholder, value, onChangeText }: InputProps) 
                     textContentType="password"
                 />
                 <TouchableOpacity onPress={() => setShowPassword(!showPassword)} style={styles.iconContainer}>
-                    <Text style={{ color: theme.colors.text, fontSize: 16 }}>
-                        {showPassword ? <EyeOpen color={theme.secondaryColors.text} height={20} width={20} /> :
-                            <EyeClosed color={theme.secondaryColors.text} height={20} width={20} />}
-                    </Text>
+                    {showPassword ? <EyeOpen color={theme.secondaryColors.text} height={20} width={20} /> :
+                        <EyeClosed color={theme.secondaryColors.text} height={20} width={20} />}
                 </TouchableOpacity>
             </View>
         </View>
