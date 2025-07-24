@@ -61,11 +61,11 @@ msgstr "Appearance"
 msgid "screen.setting.language"
 msgstr "Language"
 
-#: src/constants/theme.ts:128
+#: src/constants/theme.ts:131
 msgid "screen.setting.language.english"
 msgstr "English"
 
-#: src/constants/theme.ts:127
+#: src/constants/theme.ts:130
 msgid "screen.setting.language.portuguese"
 msgstr "Portuguese"
 
@@ -73,15 +73,15 @@ msgstr "Portuguese"
 msgid "screen.setting.theme"
 msgstr "Theme"
 
-#: src/constants/theme.ts:121
+#: src/constants/theme.ts:124
 msgid "screen.setting.theme.dark"
 msgstr "Dark"
 
-#: src/constants/theme.ts:122
+#: src/constants/theme.ts:125
 msgid "screen.setting.theme.light"
 msgstr "Light"
 
-#: src/constants/theme.ts:123
+#: src/constants/theme.ts:126
 msgid "screen.setting.theme.system"
 msgstr "System"
 
@@ -121,15 +121,19 @@ msgstr "User"
 msgid "screen.signin.welcome"
 msgstr "Welcome"
 
-#: src/screens/signup/PersonScreen.tsx:41
+#: src/screens/signup/PersonScreen.tsx:102
+msgid "screen.signup.birthday"
+msgstr ""
+
+#: src/screens/signup/PersonScreen.tsx:72
 msgid "screen.signup.given-name"
 msgstr ""
 
-#: src/screens/signup/PersonScreen.tsx:31
+#: src/screens/signup/PersonScreen.tsx:53
 msgid "screen.signup.person.title"
 msgstr ""
 
-#: src/screens/signup/PersonScreen.tsx:42
+#: src/screens/signup/PersonScreen.tsx:87
 msgid "screen.signup.surname"
 msgstr ""
 
@@ -173,7 +177,7 @@ msgstr "Schedule training and matches"
 msgid "screen.welcome.team.title"
 msgstr "Manage your team"
 
-#: src/screens/signup/PersonScreen.tsx:37
+#: src/screens/signup/PersonScreen.tsx:61
 msgid "screens.signup.person.description"
 msgstr ""
 

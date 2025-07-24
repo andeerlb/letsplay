@@ -21,6 +21,7 @@ type ThemeDefinition = {
     button: string;
     border: string;
     notification: string;
+    formError: string;
   };
   secondaryColors: {
     background: string;
@@ -82,6 +83,7 @@ export const LightTheme: ThemeDefinition = {
     button: '#646F7B',
     border: '#c7c7ccff',
     notification: '#256b35',
+    formError: 'red'
   },
   secondaryColors: {
     background: '#EAEDF0',
@@ -104,6 +106,7 @@ export const DarkTheme: ThemeDefinition = {
     button: '#ccc',
     border: '#3B4C67',
     notification: '#256b35',
+    formError: '#db1818ff'
   },
   secondaryColors: {
     background: '#1e2833',

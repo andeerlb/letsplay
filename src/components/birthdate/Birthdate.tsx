@@ -1,28 +1,26 @@
-import React, { useState, useRef } from 'react';
+import { useTheme } from '@context/ThemeProvider';
+import React, { useRef, useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { TextInputMask } from 'react-native-masked-text';
 
 type Props = {
-    onChange: (date: Date | null) => void;
-    initialDate?: Date;
     label?: string;
+    value: string;
+    onChangeText: (text: string) => void;
+    error?: string | null;
 };
 
-const BirthdateComponent: React.FC<Props> = ({
-    onChange = () => { },
-    initialDate,
-    label = 'Data de nascimento',
+const Birthdate: React.FC<Props> = ({
+    label,
+    value,
+    onChangeText,
+    error,
 }) => {
-    const [text, setText] = useState(
-        initialDate
-            ? `${('0' + initialDate.getDate()).slice(-2)}/${('0' + (initialDate.getMonth() + 1)).slice(-2)}/${initialDate.getFullYear()}`
-            : ''
-    );
-    const lastValidDate = useRef<Date | null>(initialDate || null);
+    const { theme } = useTheme();
+    const lastValidDate = useRef<string>(value);
+    const [localError, setLocalError] = useState<string | null>(null);
 
     const handleChange = (formatted: string, extracted?: string) => {
-        setText(formatted);
-
         if (extracted && extracted.length === 8) {
             const day = parseInt(extracted.slice(0, 2), 10);
             const month = parseInt(extracted.slice(2, 4), 10);
@@ -30,69 +28,87 @@ const BirthdateComponent: React.FC<Props> = ({
 
             const date = new Date(year, month - 1, day);
 
-            // Validação rigorosa:
+            const now = new Date();
+
             if (
                 !isNaN(date.getTime()) &&
                 date.getDate() === day &&
                 date.getMonth() === month - 1 &&
-                date.getFullYear() === year
+                date.getFullYear() === year &&
+                date <= now
             ) {
-                lastValidDate.current = date;
-                onChange(date);
+                lastValidDate.current = formatted;
+                setLocalError(null);
+                onChangeText(formatted);
             } else {
-                // Data inválida: restaura o último valor válido no input
-                if (lastValidDate.current) {
-                    const d = lastValidDate.current;
-                    const validText = `${('0' + d.getDate()).slice(-2)}/${('0' + (d.getMonth() + 1)).slice(-2)}/${d.getFullYear()}`;
-                    setText(validText);
-                } else {
-                    // Nenhum valor válido ainda, limpa
-                    setText('');
-                    onChange(null);
-                }
+                setLocalError('Data inválida');
+                onChangeText(lastValidDate.current);
             }
         } else {
-            // Data incompleta (menos de 8 dígitos), você pode resetar onChange se quiser
-            onChange(null);
+            setLocalError(null);
+            onChangeText(formatted);
         }
     };
 
+    useEffect(() => {
+        lastValidDate.current = value;
+    }, [value]);
+
     return (
         <View style={styles.container}>
-            <Text style={styles.label}>{label}</Text>
+            {label && (
+                <Text style={[styles.label, { color: theme.colors.text }]}>
+                    {label}
+                </Text>
+            )}
             <TextInputMask
                 type={'datetime'}
-                options={{
-                    format: 'DD/MM/YYYY',
-                }}
-                value={text}
+                options={{ format: 'DD/MM/YYYY' }}
+                value={value}
                 onChangeText={handleChange}
                 placeholder="DD/MM/AAAA"
                 keyboardType="numeric"
-                style={styles.input}
+                style={[
+                    styles.input,
+                    {
+                        color: theme.colors.text,
+                        backgroundColor: theme.secondaryColors.background,
+                        borderColor:
+                            error || localError
+                                ? theme.colors.formError
+                                : theme.colors.border,
+                    },
+                ]}
                 maxLength={10}
             />
+            {(error || localError) && (
+                <Text style={[styles.errorText, { color: theme.colors.formError }]}>
+                    {error || localError}
+                </Text>
+            )}
         </View>
     );
 };
 
-export default BirthdateComponent;
-
 const styles = StyleSheet.create({
     container: {
-        marginVertical: 12,
+        gap: 10,
     },
     label: {
         fontSize: 16,
         fontWeight: '500',
-        marginBottom: 6,
     },
     input: {
+        height: 50,
         borderWidth: 1,
-        borderColor: '#ccc',
         borderRadius: 8,
-        padding: 12,
-        fontSize: 16,
-        backgroundColor: '#fff',
+        paddingHorizontal: 10,
+        fontSize: 15,
+    },
+    errorText: {
+        marginTop: 4,
+        fontSize: 13,
     },
 });
+
+export default Birthdate;

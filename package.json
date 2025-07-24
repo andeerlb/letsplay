@@ -19,6 +19,7 @@
     "ios-clean": "rm -rf node_modules ios/Pods ios/Podfile.lock ios/build && yarn cache clean && yarn install && cd ios && pod install --repo-update && cd .. && npx react-native run-ios"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.1.1",
     "@lingui/core": "^5.3.3",
     "@lingui/react": "^5.3.3",
     "@react-native-picker/picker": "^2.11.1",
@@ -29,14 +30,17 @@
     "@reduxjs/toolkit": "^2.8.2",
     "@tanstack/react-query": "^5.83.0",
     "react": "19.1.0",
+    "react-hook-form": "^7.61.1",
     "react-native": "0.80.1",
     "react-native-config": "^1.5.5",
     "react-native-gesture-handler": "^2.27.1",
+    "react-native-mask-text": "^0.15.0",
     "react-native-masked-text": "^1.13.0",
     "react-native-safe-area-context": "^5.5.2",
     "react-native-screens": "^4.13.0",
     "react-native-svg": "^15.12.0",
-    "react-redux": "^9.2.0"
+    "react-redux": "^9.2.0",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

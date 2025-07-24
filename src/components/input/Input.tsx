@@ -1,47 +1,63 @@
 import { useTheme } from '@context/ThemeProvider';
-import React, { useState } from 'react';
+import React from 'react';
 import { View, TextInput, StyleSheet, Text } from 'react-native';
 
 type InputProps = {
     label?: string;
     placeholder?: string;
     value?: string;
+    onChangeText?: (text: string) => void;
+    onBlur?: () => void;
     secureTextEntry?: boolean;
+    error?: string | null;
 }
 
 const Input = (props: InputProps) => {
     const { theme } = useTheme();
-    const [text, setText] = useState(props.value);
 
     return (
         <View style={styles.container}>
-            {props.label && <Text style={[styles.label, {
-                color: theme.colors.text,
-                fontFamily: theme.fonts.regular.fontFamily
-            }]}>{props.label}</Text>}
+            {props.label && (
+                <Text
+                    style={[
+                        styles.label,
+                        {
+                            color: theme.colors.text,
+                            fontFamily: theme.fonts.regular.fontFamily,
+                        },
+                    ]}
+                >
+                    {props.label}
+                </Text>
+            )
+            }
             <TextInput
-                style={[styles.input, {
-                    backgroundColor: theme.secondaryColors.background,
-                    borderColor: theme.colors.border,
-                    color: theme.colors.text,
-                    fontFamily: theme.fonts.regular.fontFamily
-                }]}
+                style={[
+                    styles.input,
+                    {
+                        backgroundColor: theme.secondaryColors.background,
+                        borderColor: props.error ? theme.colors.formError : theme.colors.border,
+                        color: theme.colors.text,
+                        fontFamily: theme.fonts.regular.fontFamily,
+                    },
+                ]}
                 placeholder={props.placeholder}
-                value={text}
-                onChangeText={setText}
                 placeholderTextColor={theme.secondaryColors.text}
+                value={props.value}
+                onChangeText={props.onChangeText}
+                onBlur={props.onBlur}
                 secureTextEntry={props.secureTextEntry ?? false}
             />
-        </View>
+        </View >
     );
 };
 
 const styles = StyleSheet.create({
     container: {
-        gap: 10
+        gap: 10,
     },
     label: {
-        fontSize: 15
+        fontSize: 15,
     },
     input: {
         height: 50,

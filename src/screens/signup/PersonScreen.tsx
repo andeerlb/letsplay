@@ -1,47 +1,117 @@
-import { StyleSheet, Text, View } from "react-native";
-import ScreenWrapper from "@wrapper/ScreenWrapper";
-import React from "react";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { SignUpStackParamList } from "@components/navigation/signUpNavigator";
-import { Trans } from "@lingui/react/macro";
-import { useTheme } from "@context/ThemeProvider";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
-import Input from "@components/input/Input";
-import { t } from "@lingui/core/macro";
-import Birthdate from "@components/birthdate/Birthdate";
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import ScreenWrapper from '@wrapper/ScreenWrapper';
+import { useTheme } from '@context/ThemeProvider';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useForm, Controller } from 'react-hook-form';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 
-type PersonScreenScreenNavigationProp = NativeStackNavigationProp<SignUpStackParamList, 'Person'>;
+import Input from '@components/input/Input';
+import { Trans } from '@lingui/react/macro';
+import { t } from '@lingui/core/macro';
+import Birthdate from '@components/birthdate/Birthdate';
+import Button from '@components/button/Button';
+import { SignUpStackParamList } from '@components/navigation/signUpNavigator';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-export default function PersonScreen({ }: { navigation: PersonScreenScreenNavigationProp }) {
+const schema = yup.object({
+    givenName: yup.string().required('Nome é obrigatório'),
+    surname: yup.string().required('Sobrenome é obrigatório'),
+    birthdate: yup.string().required('Data de nascimento é obrigatória'),
+});
+
+type PersonScreenNavigationProp = NativeStackNavigationProp<SignUpStackParamList, 'Person'>;
+
+
+export default function PersonScreen({ navigation }: { navigation: PersonScreenNavigationProp }) {
     const { theme } = useTheme();
     const safeAreaInsets = useSafeAreaInsets();
 
+    const {
+        control,
+        handleSubmit,
+        formState: { errors },
+    } = useForm({
+        resolver: yupResolver(schema),
+    });
+
+    const onSubmit = (data: any) => {
+        navigation.navigate('Sport');
+    };
+
     return (
         <ScreenWrapper>
-            <View style={{
-                paddingTop: safeAreaInsets.top,
-                paddingBottom: safeAreaInsets.bottom,
-                gap: 60
-            }}>
+            <View
+                style={{
+                    paddingTop: 10,
+                    paddingBottom: safeAreaInsets.bottom,
+                    gap: 60,
+                    paddingHorizontal: 16,
+                }}
+            >
                 <View style={styles.header}>
-                    <Text style={[styles.title, {
-                        color: theme.colors.text,
-                        fontFamily: theme.fonts.regular.fontFamily
-                    }]}>
+                    <Text
+                        style={[
+                            styles.title,
+                            { color: theme.colors.text, fontFamily: theme.fonts.regular.fontFamily },
+                        ]}
+                    >
                         <Trans>screen.signup.person.title</Trans>
                     </Text>
-                    <Text style={[styles.description, {
-                        color: theme.secondaryColors.text,
-                        fontFamily: theme.fonts.regular.fontFamily
-                    }]}>
+                    <Text
+                        style={[
+                            styles.description,
+                            { color: theme.secondaryColors.text, fontFamily: theme.fonts.regular.fontFamily },
+                        ]}
+                    >
                         <Trans>screens.signup.person.description</Trans>
                     </Text>
                 </View>
                 <View style={styles.content}>
-                    <Input label={t`screen.signup.given-name`} />
-                    <Input label={t`screen.signup.surname`} />
-                    <Birthdate />
+                    <Controller
+                        name="givenName"
+                        control={control}
+                        defaultValue=""
+                        render={({ field: { onChange, onBlur, value } }) => (
+                            <Input
+                                label={String(t`screen.signup.given-name`)}
+                                value={value}
+                                onChangeText={onChange}
+                                onBlur={onBlur}
+                                error={errors.givenName?.message}
+                            />
+                        )}
+                    />
+                    <Controller
+                        name="surname"
+                        control={control}
+                        defaultValue=""
+                        render={({ field: { onChange, onBlur, value } }) => (
+                            <Input
+                                label={String(t`screen.signup.surname`)}
+                                value={value}
+                                onChangeText={onChange}
+                                onBlur={onBlur}
+                                error={errors.surname?.message}
+                            />
+                        )}
+                    />
+                    <Controller
+                        name="birthdate"
+                        control={control}
+                        defaultValue=""
+                        render={({ field: { onChange, value }, fieldState: { error } }) => (
+                            <Birthdate
+                                label={t`screen.signup.birthday`}
+                                value={value}
+                                onChangeText={onChange}
+                                error={error?.message}
+                            />
+                        )}
+                    />
                 </View>
+                <Button label={t`screen.signup.next`} onPress={handleSubmit(onSubmit)} />
             </View>
         </ScreenWrapper>
     );
@@ -50,7 +120,6 @@ export default function PersonScreen({ }: { navigation: PersonScreenScreenNaviga
 const styles = StyleSheet.create({
     header: {
         gap: 10,
-        paddingTop: 30
     },
     title: {
         textAlign: 'center',
@@ -60,6 +129,6 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     content: {
-        gap: 20
-    }
-})
+        gap: 20,
+    },
+});

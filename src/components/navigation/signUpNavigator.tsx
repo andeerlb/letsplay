@@ -1,3 +1,4 @@
+import { useTheme } from "@context/ThemeProvider";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import CredentialsScreen from "@screens/signup/CredentialsScreen";
 import PersonScreen from "@screens/signup/PersonScreen";
@@ -12,12 +13,21 @@ export type SignUpStackParamList = {
 const Stack = createNativeStackNavigator<SignUpStackParamList>();
 
 function SignUpStackNavigator() {
+  const { theme } = useTheme();
+
   return (
     <Stack.Navigator>
       <Stack.Screen
         name="Person"
         component={PersonScreen}
-        options={{ headerShown: false }}
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: '',
+          headerStyle: {
+            backgroundColor: theme.colors.background
+          }
+        }}
       />
       <Stack.Screen
         name="Sport"
