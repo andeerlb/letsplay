@@ -1,4 +1,5 @@
 import { useTheme } from '@context/ThemeProvider';
+import { t } from '@lingui/core/macro';
 import React, { useState } from 'react';
 import { View, TextInput, StyleSheet, Text } from 'react-native';
 
@@ -36,7 +37,7 @@ const InputEmail = (props: InputProps) => {
                         fontFamily: theme.fonts.regular.fontFamily,
                     },
                 ]}
-                placeholder="email@example.com"
+                placeholder={t`component.input-email.placeholder`}
                 value={text}
                 onChangeText={setText}
                 placeholderTextColor={theme.secondaryColors.text}

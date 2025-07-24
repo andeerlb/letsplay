@@ -13,6 +13,10 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: src/components/input/inputEmail.tsx:40
+msgid "component.input-email.placeholder"
+msgstr "exemplo@email.com"
+
 #: src/screens/home/HomeScreenHeader.tsx:8
 #: src/components/navigation/bottomTabNavigator.tsx:34
 msgid "screen.home.title"
@@ -85,35 +89,35 @@ msgstr "Sistema"
 msgid "screen.setting.title"
 msgstr "Configurações"
 
-#: src/screens/signin/SignInScreen.tsx:48
+#: src/screens/signin/SignInScreen.tsx:50
 msgid "screen.signin.btn-sigin"
 msgstr "Entrar"
 
-#: src/screens/signin/SignInScreen.tsx:31
+#: src/screens/signin/SignInScreen.tsx:33
 msgid "screen.signin.description"
 msgstr "Entre na sua conta para continuar"
 
-#: src/screens/signin/SignInScreen.tsx:47
+#: src/screens/signin/SignInScreen.tsx:49
 msgid "screen.signin.forgot"
 msgstr "Esqueceu a senha?"
 
-#: src/screens/signin/SignInScreen.tsx:55
+#: src/screens/signin/SignInScreen.tsx:57
 msgid "screen.signin.noaccount"
 msgstr "Não tem uma conta?"
 
-#: src/screens/signin/SignInScreen.tsx:40
+#: src/screens/signin/SignInScreen.tsx:42
 msgid "screen.signin.password"
 msgstr "Senha"
 
-#: src/screens/signin/SignInScreen.tsx:59
+#: src/screens/signin/SignInScreen.tsx:61
 msgid "screen.signin.signup"
 msgstr "Criar conta"
 
-#: src/screens/signin/SignInScreen.tsx:39
+#: src/screens/signin/SignInScreen.tsx:41
 msgid "screen.signin.user"
 msgstr "Usuário"
 
-#: src/screens/signin/SignInScreen.tsx:27
+#: src/screens/signin/SignInScreen.tsx:29
 msgid "screen.signin.welcome"
 msgstr "Bem-vindo"
 
@@ -129,46 +133,46 @@ msgstr "Meus times..."
 msgid "screen.team.title"
 msgstr "Times"
 
-#: src/screens/welcome/WelcomeScreen.tsx:66
+#: src/screens/welcome/WelcomeScreen.tsx:62
 msgid "screen.welcome.description"
 msgstr "Gerencie seu time, acompanhe partidas e conquiste vitórias."
 
-#: src/screens/welcome/WelcomeScreen.tsx:75
+#: src/screens/welcome/WelcomeScreen.tsx:71
 msgid "screen.welcome.manage.desc"
 msgstr "Organize jogadores e posições"
 
-#: src/screens/welcome/WelcomeScreen.tsx:74
+#: src/screens/welcome/WelcomeScreen.tsx:70
 msgid "screen.welcome.manage.title"
 msgstr "Gerir Equipe"
 
-#: src/screens/welcome/WelcomeScreen.tsx:89
+#: src/screens/welcome/WelcomeScreen.tsx:85
 msgid "screen.welcome.stats.desc"
 msgstr "Acompanhe estatísticas"
 
-#: src/screens/welcome/WelcomeScreen.tsx:88
+#: src/screens/welcome/WelcomeScreen.tsx:84
 msgid "screen.welcome.stats.title"
 msgstr "Estatísticas"
 
-#: src/screens/welcome/WelcomeScreen.tsx:82
+#: src/screens/welcome/WelcomeScreen.tsx:78
 msgid "screen.welcome.team.desc"
 msgstr "Marque treinos e jogos"
 
-#: src/screens/welcome/WelcomeScreen.tsx:81
+#: src/screens/welcome/WelcomeScreen.tsx:77
 msgid "screen.welcome.team.title"
 msgstr "Gerir equipe"
 
-#: src/screens/welcome/WelcomeScreen.tsx:97
+#: src/screens/welcome/WelcomeScreen.tsx:93
 msgid "welcome.screen.schedule.desc"
 msgstr "Marque treinos e jogos"
 
-#: src/screens/welcome/WelcomeScreen.tsx:95
+#: src/screens/welcome/WelcomeScreen.tsx:91
 msgid "welcome.screen.schedule.title"
 msgstr "Agendar"
 
-#: src/screens/welcome/WelcomeScreen.tsx:103
+#: src/screens/welcome/WelcomeScreen.tsx:99
 msgid "welcome.screen.signin"
 msgstr "Já tenho uma conta"
 
-#: src/screens/welcome/WelcomeScreen.tsx:102
+#: src/screens/welcome/WelcomeScreen.tsx:98
 msgid "welcome.screen.signup"
 msgstr "Começar agora"
