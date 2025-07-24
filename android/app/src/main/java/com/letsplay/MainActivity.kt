@@ -1,6 +1,8 @@
 package com.letsplay
 
+import android.app.ActivityManager
 import android.os.Bundle;
+import androidx.core.content.ContextCompat
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
@@ -24,5 +26,12 @@ class MainActivity : ReactActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     setTheme(R.style.Theme)
     super.onCreate(null)
+    val color = ContextCompat.getColor(this, R.color.task_description_color)
+    val taskDesc = ActivityManager.TaskDescription(
+      getString(R.string.app_name),
+      null,
+      color
+    )
+    setTaskDescription(taskDesc)
   }
 }

@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StatusBar, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { NoAuthStackParamList } from "@components/navigation/noAuthNavigator";
@@ -18,13 +18,17 @@ export default function WelcomeScreen({ }: { navigation: WelcomeScreenNavigation
 
     return (
         <View style={{ flex: 1 }}>
+            <StatusBar
+                barStyle='light-content'
+                backgroundColor='#193f22'
+            />
             <Svg style={StyleSheet.absoluteFill}>
                 <Defs>
                     <LinearGradient id="grad" x1="0" y1="0" x2="0.8" y2="1">
-                        <Stop offset="0" stopColor="#141b22" />
-                        <Stop offset="0.2" stopColor="#15351cff" />
+                        <Stop offset="0" stopColor="#193f22" />
+                        <Stop offset="0.2" stopColor="#193f22" />
                         <Stop offset="0.4" stopColor="#0e2714ff" />
-                        <Stop offset="0.6" stopColor="#193f22" />
+                        <Stop offset="0.6" stopColor="#141b22" />
                         <Stop offset="0.8" stopColor="#15351cff" />
                         <Stop offset="1" stopColor="#141b22" />
                     </LinearGradient>
