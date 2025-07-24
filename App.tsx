@@ -7,7 +7,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ThemeProvider } from '@context/ThemeProvider';
 
 if (Config.ENABLE_MIRAGE) {
-  console.log("Mirage was enabled");
+  console.warn("Mirage was enabled");
   const { makeServer } = require('./mirage/server');
   makeServer();
 }
