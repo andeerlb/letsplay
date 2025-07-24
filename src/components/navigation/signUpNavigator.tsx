@@ -17,6 +17,7 @@ function SignUpStackNavigator() {
       <Stack.Screen
         name="Person"
         component={PersonScreen}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="Sport"
