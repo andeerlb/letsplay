@@ -1,4 +1,5 @@
 import { useTheme } from '@context/ThemeProvider';
+import { t } from '@lingui/core/macro';
 import React, { useRef, useState, useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { TextInputMask } from 'react-native-masked-text';
@@ -41,7 +42,7 @@ const Birthdate: React.FC<Props> = ({
                 setLocalError(null);
                 onChangeText(formatted);
             } else {
-                setLocalError('Data inválida');
+                setLocalError(t`component.birthday.invalid.date`);
                 onChangeText(lastValidDate.current);
             }
         } else {
@@ -57,7 +58,10 @@ const Birthdate: React.FC<Props> = ({
     return (
         <View style={styles.container}>
             {label && (
-                <Text style={[styles.label, { color: theme.colors.text }]}>
+                <Text style={[styles.label, {
+                    color: theme.colors.text,
+                    fontFamily: theme.fonts.regular.fontFamily,
+                }]}>
                     {label}
                 </Text>
             )}
@@ -81,11 +85,6 @@ const Birthdate: React.FC<Props> = ({
                 ]}
                 maxLength={10}
             />
-            {(error || localError) && (
-                <Text style={[styles.errorText, { color: theme.colors.formError }]}>
-                    {error || localError}
-                </Text>
-            )}
         </View>
     );
 };
@@ -95,8 +94,7 @@ const styles = StyleSheet.create({
         gap: 10,
     },
     label: {
-        fontSize: 16,
-        fontWeight: '500',
+        fontSize: 15,
     },
     input: {
         height: 50,
@@ -104,11 +102,7 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         paddingHorizontal: 10,
         fontSize: 15,
-    },
-    errorText: {
-        marginTop: 4,
-        fontSize: 13,
-    },
+    }
 });
 
 export default Birthdate;

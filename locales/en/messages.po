@@ -13,6 +13,10 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: src/components/birthdate/Birthdate.tsx:45
+msgid "component.birthday.invalid.date"
+msgstr "Invalid date"
+
 #: src/components/input/inputEmail.tsx:40
 msgid "component.input-email.placeholder"
 msgstr "example@email.com"
