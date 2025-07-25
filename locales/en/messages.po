@@ -197,8 +197,6 @@ msgstr "Attacks quickly and crosses from the right side."
 msgid "component.input-email.placeholder"
 msgstr "example@email.com"
 
-# The rest of the file (already correct entries) remains unchanged
-
 #: src/constants/playerPosition.ts:11
 msgid "player.position.attacking-midfielder"
 msgstr "Attacking Midfielder"
