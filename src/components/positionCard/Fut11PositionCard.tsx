@@ -2,7 +2,7 @@ import React from "react";
 import { BasePositionCard } from "./BasePositionCard";
 import { msg } from "@lingui/core/macro";
 
-const FUT11_POSITIONS = {
+export const FUT11_POSITIONS = {
     goalkeeper: {
         title: msg`component.fut11-position-card.goalkeeper`,
         description: msg`component.fut11-position-card.goalkeeper.description`,

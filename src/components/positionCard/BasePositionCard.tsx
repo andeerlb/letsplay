@@ -52,7 +52,7 @@ export function BasePositionCard<T extends PositionDetails, K extends keyof T>({
                     styles.description,
                     {
                         color: theme.colors.text,
-                        fontFamily: theme.fonts.medium.fontFamily,
+                        fontFamily: theme.fonts.regular.fontFamily,
                     },
                 ]}
             >
@@ -65,10 +65,10 @@ export function BasePositionCard<T extends PositionDetails, K extends keyof T>({
 const styles = StyleSheet.create({
     card: {
         alignSelf: "center",
-        borderRadius: 15,
-        borderWidth: 1,
+        borderRadius: 5,
+        borderWidth: .5,
         paddingHorizontal: 20,
-        paddingVertical: 60,
+        paddingVertical: 40,
         gap: 10,
         justifyContent: "center",
         alignItems: "center",

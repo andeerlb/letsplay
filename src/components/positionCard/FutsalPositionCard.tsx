@@ -2,7 +2,7 @@ import React from "react";
 import { BasePositionCard } from "./BasePositionCard";
 import { msg } from "@lingui/core/macro";
 
-const FUTSAL_POSITIONS = {
+export const FUTSAL_POSITIONS = {
     goalkeeper: {
         title: msg`component.futsal-position-card.goalkeeper`,
         description: msg`component.futsal-position-card.goalkeeper.description`,

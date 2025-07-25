@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     StyleSheet,
     Text,
@@ -18,7 +18,8 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { MessageDescriptor } from '@lingui/core';
 import { Animation } from '@components/animation/Animation';
 import Animations from '@constants/animations';
-import { Fut7PositionCard } from '@components/positionCard/Fut7PositionCard';
+import { FUT7_POSITIONS, Fut7PositionCard } from '@components/positionCard/Fut7PositionCard';
+import Select from '@components/select/Select';
 
 const schema = yup.object({
     givenName: yup.string().required('Nome é obrigatório'),
@@ -40,12 +41,21 @@ export default function SportScreen({ navigation }: { navigation: SportScreenNav
     const { i18n } = useLingui();
     const safeAreaInsets = useSafeAreaInsets();
     const description = i18n._(getPlayerExperience(30));
-
     const {
         control,
         handleSubmit,
         formState: { errors },
     } = useForm({ resolver: yupResolver(schema) });
+    const [positions, setPositions] = useState<{ label: string; value: string }[]>([]);
+    const [selectedPosition, setSelectedPosition] = useState('');
+
+    useEffect(() => {
+        const options = Object.entries(FUT7_POSITIONS).map(([key, value]) => ({
+            label: i18n._(value.title),
+            value: key,
+        }));
+        setPositions(options);
+    }, [i18n]);
 
     const onSubmit = (data: any) => {
         navigation.navigate('Sport');
@@ -57,8 +67,7 @@ export default function SportScreen({ navigation }: { navigation: SportScreenNav
             <View
                 style={{
                     paddingBottom: safeAreaInsets.bottom,
-                    gap: 60,
-                    paddingHorizontal: 16,
+                    gap: 40,
                 }}
             >
                 <View style={styles.header}>
@@ -74,11 +83,15 @@ export default function SportScreen({ navigation }: { navigation: SportScreenNav
                         {description}
                     </Text>
                 </View>
-
-                <View style={styles.carouselWrapper}>
-                    <Fut7PositionCard position='goalkeeper' />
+                <View style={styles.content}>
+                    <Select
+                        label='Qual posição você joga?'
+                        options={positions}
+                        onChange={value => setSelectedPosition(value)}
+                        value={selectedPosition}
+                    />
+                    {selectedPosition && <Fut7PositionCard position={selectedPosition} />}
                 </View>
-
                 <Button label={t`screen.signup.next`} onPress={handleSubmit(onSubmit)} />
             </View>
         </ScreenWrapper>
@@ -87,7 +100,6 @@ export default function SportScreen({ navigation }: { navigation: SportScreenNav
 
 const styles = StyleSheet.create({
     header: {
-        gap: 10,
     },
     title: {
         textAlign: 'center',
@@ -96,27 +108,7 @@ const styles = StyleSheet.create({
     description: {
         textAlign: 'center',
     },
-    carouselWrapper: {
-        height: 220,
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'row',
-    },
-    arrowLeft: {
-        position: 'absolute',
-        left: 0,
-        zIndex: 1,
-        padding: 10,
-    },
-    arrowRight: {
-        position: 'absolute',
-        right: 0,
-        zIndex: 1,
-        padding: 10,
-    },
-    arrowText: {
-        fontSize: 32,
-        fontWeight: 'bold',
-        color: '#114926ff',
-    },
+    content: {
+        gap: 10,
+    }
 });
