@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { forwardRef, useEffect, useImperativeHandle, useState } from 'react';
 import {
     StyleSheet,
     Text,
@@ -12,7 +12,6 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useLingui } from '@lingui/react/macro';
 import { msg, t } from '@lingui/core/macro';
-import Button from '@components/button/Button';
 import { SignUpStackParamList } from '@components/navigation/signUpNavigator';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { MessageDescriptor } from '@lingui/core';
@@ -21,11 +20,7 @@ import Animations from '@constants/animations';
 import { FUT7_POSITIONS, Fut7PositionCard } from '@components/positionCard/Fut7PositionCard';
 import Select from '@components/select/Select';
 
-const schema = yup.object({
-    givenName: yup.string().required(),
-    surname: yup.string().required(),
-    birthdate: yup.string().required(),
-});
+const schema = yup.object({});
 
 const getPlayerExperience = (age: number): MessageDescriptor => {
     if (age <= 25) return msg`screen.signup.sport.description.beginner`;
@@ -36,67 +31,76 @@ const getPlayerExperience = (age: number): MessageDescriptor => {
 
 type SportScreenNavigationProp = NativeStackNavigationProp<SignUpStackParamList, 'Sport'>;
 
-export default function SportScreen({ navigation }: { navigation: SportScreenNavigationProp }) {
-    const { theme } = useTheme();
-    const { i18n } = useLingui();
-    const safeAreaInsets = useSafeAreaInsets();
-    const description = i18n._(getPlayerExperience(30));
-    const {
-        control,
-        handleSubmit,
-        formState: { errors },
-    } = useForm({ resolver: yupResolver(schema) });
-    const [positions, setPositions] = useState<{ label: string; value: string }[]>([]);
-    const [selectedPosition, setSelectedPosition] = useState('');
+export type SportScreenRef = {
+    submitForm: () => void;
+};
 
-    useEffect(() => {
-        const options = Object.entries(FUT7_POSITIONS).map(([key, value]) => ({
-            label: i18n._(value.title),
-            value: key,
+const SportScreen = forwardRef<SportScreenRef, { navigation: SportScreenNavigationProp }>(
+    ({ navigation }, ref) => {
+        const { theme } = useTheme();
+        const { i18n } = useLingui();
+        const safeAreaInsets = useSafeAreaInsets();
+        const description = i18n._(getPlayerExperience(30));
+        const {
+            control,
+            handleSubmit,
+            formState: { errors },
+        } = useForm({ resolver: yupResolver(schema) });
+        const [positions, setPositions] = useState<{ label: string; value: string }[]>([]);
+        const [selectedPosition, setSelectedPosition] = useState('');
+
+        useEffect(() => {
+            const options = Object.entries(FUT7_POSITIONS).map(([key, value]) => ({
+                label: i18n._(value.title),
+                value: key,
+            }));
+            setPositions(options);
+        }, [i18n]);
+
+        useImperativeHandle(ref, () => ({
+            submitForm: () => {
+                handleSubmit((data) => {
+                    navigation.navigate('Credentials');
+                })();
+            },
         }));
-        setPositions(options);
-    }, [i18n]);
 
-    const onSubmit = (data: any) => {
-        navigation.navigate('Sport');
-    };
-
-    return (
-        <ScreenWrapper>
-            <Animation source={Animations.SPORT_SPLASH} />
-            <View
-                style={{
-                    paddingBottom: safeAreaInsets.bottom,
-                    gap: 40,
-                }}
-            >
-                <View style={styles.header}>
-                    <Text
-                        style={[
-                            styles.description,
-                            {
-                                color: theme.colors.text,
-                                fontFamily: theme.fonts.regular.fontFamily,
-                            },
-                        ]}
-                    >
-                        {description}
-                    </Text>
+        return (
+            <ScreenWrapper>
+                <Animation source={Animations.SPORT_SPLASH} />
+                <View
+                    style={{
+                        paddingBottom: safeAreaInsets.bottom,
+                        gap: 40,
+                    }}
+                >
+                    <View style={styles.header}>
+                        <Text
+                            style={[
+                                styles.description,
+                                {
+                                    color: theme.colors.text,
+                                    fontFamily: theme.fonts.regular.fontFamily,
+                                },
+                            ]}
+                        >
+                            {description}
+                        </Text>
+                    </View>
+                    <View style={styles.content}>
+                        <Select
+                            label='Qual posição você joga?'
+                            options={positions}
+                            onChange={value => setSelectedPosition(value)}
+                            value={selectedPosition}
+                        />
+                        {selectedPosition && <Fut7PositionCard position={selectedPosition} />}
+                    </View>
                 </View>
-                <View style={styles.content}>
-                    <Select
-                        label='Qual posição você joga?'
-                        options={positions}
-                        onChange={value => setSelectedPosition(value)}
-                        value={selectedPosition}
-                    />
-                    {selectedPosition && <Fut7PositionCard position={selectedPosition} />}
-                </View>
-                <Button label={t`screen.signup.next`} onPress={handleSubmit(onSubmit)} />
-            </View>
-        </ScreenWrapper>
-    );
-}
+            </ScreenWrapper>
+        );
+    }
+);
 
 const styles = StyleSheet.create({
     header: {
@@ -112,3 +116,5 @@ const styles = StyleSheet.create({
         gap: 10,
     }
 });
+
+export default SportScreen;

@@ -3,17 +3,19 @@ import { useTheme } from "@context/ThemeProvider";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import BackArrowIcon from '@assets/icons/back-arrow.svg';
+import { JSX } from "react";
 
 interface SubPageNavigationHeaderProps extends NativeStackHeaderProps {
   title: string;
+  RightAction?: () => JSX.Element;
+  rightIconAction?: () => void;
 }
 
-export const SubPageNavigationHeader = function ({ navigation, title }: SubPageNavigationHeaderProps) {
+export const SubPageNavigationHeader = function ({ navigation, title, RightAction, rightIconAction }: SubPageNavigationHeaderProps) {
   const { theme } = useTheme();
   const insets = useSafeAreaInsets();
 
   return (
-    // eslint-disable-next-line react-native/no-inline-styles
     <View style={[styles.header, {
       paddingTop: insets.top + 15,
       paddingBottom: 15,
@@ -28,7 +30,13 @@ export const SubPageNavigationHeader = function ({ navigation, title }: SubPageN
         </Pressable>
       ) : null}
       <Text style={[styles.title, { color: theme.colors.text, fontFamily: theme.fonts.logoBold.fontFamily }]}>{title.toUpperCase()}</Text>
-      <View />
+      {RightAction ? (
+        <Pressable
+          onPress={rightIconAction ? rightIconAction : () => { }}
+        >
+          <RightAction />
+        </Pressable>
+      ) : null}
     </View>
   );
 }
