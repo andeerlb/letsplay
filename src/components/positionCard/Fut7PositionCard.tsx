@@ -5,32 +5,32 @@ import { msg } from "@lingui/core/macro";
 export const FUT7_POSITIONS = {
     goalkeeper: {
         title: msg`component.fut7-position-card.goalkeeper`,
-        description: "Defende o gol e organiza a defesa. Reflexos rápidos e liderança.",
+        description: msg`component.fut7-position-card.goalkeeper.description`,
         background: "#1E90FF22",
     },
     fixo: {
         title: msg`component.fut7-position-card.fixo`,
-        description: "Responsável por proteger a defesa e iniciar as jogadas. Forte na marcação e no posicionamento.",
+        description: msg`component.fut7-position-card.fixo.description`,
         background: "#FFD70022",
     },
     "right-wing": {
         title: msg`component.fut7-position-card.right-wing`,
-        description: "Velocidade e apoio ofensivo pela direita. Crucial para cruzamentos e recomposição defensiva.",
+        description: msg`component.fut7-position-card.right-wing.description`,
         background: "#32CD3222",
     },
     "left-wing": {
         title: msg`component.fut7-position-card.left-wing`,
-        description: "Atua pela esquerda com dribles e criatividade. Importante no ataque e na marcação lateral.",
+        description: msg`component.fut7-position-card.left-wing.description`,
         background: "#FF69B422",
     },
     midfielder: {
         title: msg`component.fut7-position-card.midfielder`,
-        description: "Controla o ritmo do jogo, distribui passes e apoia tanto o ataque quanto a defesa.",
+        description: msg`component.fut7-position-card.midfielder.description`,
         background: "#FF8C0022",
     },
     pivot: {
         title: msg`component.fut7-position-card.pivot`,
-        description: "Referência no ataque. Recebe de costas para o gol, protege a bola e finaliza com precisão.",
+        description: msg`component.fut7-position-card.pivot.description`,
         background: "#8A2BE222",
     },
 } as const;

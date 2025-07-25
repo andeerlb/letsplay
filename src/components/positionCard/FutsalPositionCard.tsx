@@ -5,27 +5,27 @@ import { msg } from "@lingui/core/macro";
 const FUTSAL_POSITIONS = {
     goalkeeper: {
         title: msg`component.futsal-position-card.goalkeeper`,
-        description: "Defende o gol e comanda a linha defensiva. Usa muito os pés no jogo.",
+        description: msg`component.futsal-position-card.goalkeeper.description`,
         background: "#1E90FF22",
     },
     fixo: {
         title: msg`component.futsal-position-card.fixo`,
-        description: "Último homem da defesa, organiza o time e inicia a saída de bola.",
+        description: msg`component.futsal-position-card.fixo.description`,
         background: "#FFD70022",
     },
     right_wing: {
         title: msg`component.futsal-position-card.right_wing`,
-        description: "Rápido e habilidoso, atua pelo lado direito em ataque e defesa.",
+        description: msg`component.futsal-position-card.right_wing.description`,
         background: "#32CD3222",
     },
     left_wing: {
         title: msg`component.futsal-position-card.left_wing`,
-        description: "Driblador e criativo, cria jogadas pela esquerda com intensidade.",
+        description: msg`component.futsal-position-card.left_wing.description`,
         background: "#FF69B422",
     },
     pivot: {
         title: msg`component.futsal-position-card.pivot`,
-        description: "Referência ofensiva, joga de costas para o gol e finaliza com precisão.",
+        description: msg`component.futsal-position-card.pivot.description`,
         background: "#8A2BE222",
     },
 } as const;

@@ -17,93 +17,181 @@ msgstr ""
 msgid "component.birthday.invalid.date"
 msgstr "Data inválida"
 
-#: src/components/positionCard/Fut11PositionCard.tsx:7
-msgid "component.fut11-position-card.goalkeeper"
-msgstr "Goleiro"
+#: src/components/positionCard/Fut11PositionCard.tsx:37
+msgid "component.fut11-position-card.attacking_midfielder"
+msgstr "Meio-Campo Ofensivo"
 
-#: src/components/positionCard/Fut11PositionCard.tsx:12
-msgid "component.fut11-position-card.right_back"
-msgstr "Lateral Direito"
-
-#: src/components/positionCard/Fut11PositionCard.tsx:17
-msgid "component.fut11-position-card.left_back"
-msgstr "Lateral Esquerdo"
+#: src/components/positionCard/Fut11PositionCard.tsx:38
+msgid "component.fut11-position-card.attacking_midfielder.description"
+msgstr "Cria jogadas e chega ao ataque com criatividade."
 
 #: src/components/positionCard/Fut11PositionCard.tsx:22
 msgid "component.fut11-position-card.center_back"
 msgstr "Zagueiro Central"
 
-#: src/components/positionCard/Fut11PositionCard.tsx:27
-msgid "component.fut11-position-card.defensive_midfielder"
-msgstr "Volante"
-
-#: src/components/positionCard/Fut11PositionCard.tsx:32
-msgid "component.fut11-position-card.central_midfielder"
-msgstr "Meio-Campo Central"
-
-#: src/components/positionCard/Fut11PositionCard.tsx:37
-msgid "component.fut11-position-card.attacking_midfielder"
-msgstr "Meio-Campo Ofensivo"
-
-#: src/components/positionCard/Fut11PositionCard.tsx:42
-msgid "component.fut11-position-card.right_winger"
-msgstr "Ponta Direita"
-
-#: src/components/positionCard/Fut11PositionCard.tsx:47
-msgid "component.fut11-position-card.left_winger"
-msgstr "Ponta Esquerda"
-
-#: src/components/positionCard/Fut11PositionCard.tsx:52
-msgid "component.fut11-position-card.striker"
-msgstr "Atacante"
+#: src/components/positionCard/Fut11PositionCard.tsx:23
+msgid "component.fut11-position-card.center_back.description"
+msgstr "Defende com força e posicionamento. Pilar da defesa."
 
 #: src/components/positionCard/Fut11PositionCard.tsx:57
 msgid "component.fut11-position-card.center_forward"
 msgstr "Centroavante"
 
-#: src/components/positionCard/Fut7PositionCard.tsx:7
-msgid "component.fut7-position-card.goalkeeper"
+#: src/components/positionCard/Fut11PositionCard.tsx:58
+msgid "component.fut11-position-card.center_forward.description"
+msgstr "Referência ofensiva, joga de costas para o gol e finaliza."
+
+#: src/components/positionCard/Fut11PositionCard.tsx:32
+msgid "component.fut11-position-card.central_midfielder"
+msgstr "Meio-Campo Central"
+
+#: src/components/positionCard/Fut11PositionCard.tsx:33
+msgid "component.fut11-position-card.central_midfielder.description"
+msgstr "Controla o meio campo, organiza o jogo e dá ritmo."
+
+#: src/components/positionCard/Fut11PositionCard.tsx:27
+msgid "component.fut11-position-card.defensive_midfielder"
+msgstr "Volante"
+
+#: src/components/positionCard/Fut11PositionCard.tsx:28
+msgid "component.fut11-position-card.defensive_midfielder.description"
+msgstr "Protege a defesa e distribui o jogo com inteligência."
+
+#: src/components/positionCard/Fut11PositionCard.tsx:7
+msgid "component.fut11-position-card.goalkeeper"
 msgstr "Goleiro"
+
+#: src/components/positionCard/Fut11PositionCard.tsx:8
+msgid "component.fut11-position-card.goalkeeper.description"
+msgstr "Guarda o gol com reflexos rápidos e liderança defensiva."
+
+#: src/components/positionCard/Fut11PositionCard.tsx:17
+msgid "component.fut11-position-card.left_back"
+msgstr "Lateral Esquerdo"
+
+#: src/components/positionCard/Fut11PositionCard.tsx:18
+msgid "component.fut11-position-card.left_back.description"
+msgstr "Avança com velocidade pela esquerda e marca com firmeza."
+
+#: src/components/positionCard/Fut11PositionCard.tsx:47
+msgid "component.fut11-position-card.left_winger"
+msgstr "Ponta Esquerda"
+
+#: src/components/positionCard/Fut11PositionCard.tsx:48
+msgid "component.fut11-position-card.left_winger.description"
+msgstr "Dribla e finaliza cortando da esquerda."
+
+#: src/components/positionCard/Fut11PositionCard.tsx:12
+msgid "component.fut11-position-card.right_back"
+msgstr "Lateral Direito"
+
+#: src/components/positionCard/Fut11PositionCard.tsx:13
+msgid "component.fut11-position-card.right_back.description"
+msgstr "Apoia o ataque e recompõe na defesa pelo lado direito."
+
+#: src/components/positionCard/Fut11PositionCard.tsx:42
+msgid "component.fut11-position-card.right_winger"
+msgstr "Ponta Direita"
+
+#: src/components/positionCard/Fut11PositionCard.tsx:43
+msgid "component.fut11-position-card.right_winger.description"
+msgstr "Ataca com velocidade e cruza bolas perigosas."
+
+#: src/components/positionCard/Fut11PositionCard.tsx:52
+msgid "component.fut11-position-card.striker"
+msgstr "Atacante"
+
+#: src/components/positionCard/Fut11PositionCard.tsx:53
+msgid "component.fut11-position-card.striker.description"
+msgstr "Finaliza com precisão e posicionamento cirúrgico."
 
 #: src/components/positionCard/Fut7PositionCard.tsx:12
 msgid "component.fut7-position-card.fixo"
 msgstr "Fixo"
 
-#: src/components/positionCard/Fut7PositionCard.tsx:17
-msgid "component.fut7-position-card.right-wing"
-msgstr "Ala Direita"
+#: src/components/positionCard/Fut7PositionCard.tsx:13
+msgid "component.fut7-position-card.fixo.description"
+msgstr "Responsável por proteger a defesa e iniciar as jogadas. Forte na marcação e no posicionamento."
+
+#: src/components/positionCard/Fut7PositionCard.tsx:7
+msgid "component.fut7-position-card.goalkeeper"
+msgstr "Goleiro"
+
+#: src/components/positionCard/Fut7PositionCard.tsx:8
+msgid "component.fut7-position-card.goalkeeper.description"
+msgstr "Defende o gol e organiza a defesa. Reflexos rápidos e liderança."
 
 #: src/components/positionCard/Fut7PositionCard.tsx:22
 msgid "component.fut7-position-card.left-wing"
 msgstr "Ala Esquerda"
 
+#: src/components/positionCard/Fut7PositionCard.tsx:23
+msgid "component.fut7-position-card.left-wing.description"
+msgstr "Atua pela esquerda com dribles e criatividade. Importante no ataque e na marcação lateral."
+
 #: src/components/positionCard/Fut7PositionCard.tsx:27
 msgid "component.fut7-position-card.midfielder"
 msgstr "Meio-Campo"
+
+#: src/components/positionCard/Fut7PositionCard.tsx:28
+msgid "component.fut7-position-card.midfielder.description"
+msgstr "Controla o ritmo do jogo, distribui passes e apoia tanto o ataque quanto a defesa."
 
 #: src/components/positionCard/Fut7PositionCard.tsx:32
 msgid "component.fut7-position-card.pivot"
 msgstr "Pivô"
 
-#: src/components/positionCard/FutsalPositionCard.tsx:7
-msgid "component.futsal-position-card.goalkeeper"
-msgstr "Goleiro"
+#: src/components/positionCard/Fut7PositionCard.tsx:33
+msgid "component.fut7-position-card.pivot.description"
+msgstr "Referência no ataque. Recebe de costas para o gol, protege a bola e finaliza com precisão."
+
+#: src/components/positionCard/Fut7PositionCard.tsx:17
+msgid "component.fut7-position-card.right-wing"
+msgstr "Ala Direita"
+
+#: src/components/positionCard/Fut7PositionCard.tsx:18
+msgid "component.fut7-position-card.right-wing.description"
+msgstr "Velocidade e apoio ofensivo pela direita. Crucial para cruzamentos e recomposição defensiva."
 
 #: src/components/positionCard/FutsalPositionCard.tsx:12
 msgid "component.futsal-position-card.fixo"
 msgstr "Fixo"
 
-#: src/components/positionCard/FutsalPositionCard.tsx:17
-msgid "component.futsal-position-card.right_wing"
-msgstr "Ala Direita"
+#: src/components/positionCard/FutsalPositionCard.tsx:13
+msgid "component.futsal-position-card.fixo.description"
+msgstr "Último homem da defesa, organiza o time e inicia a saída de bola."
+
+#: src/components/positionCard/FutsalPositionCard.tsx:7
+msgid "component.futsal-position-card.goalkeeper"
+msgstr "Goleiro"
+
+#: src/components/positionCard/FutsalPositionCard.tsx:8
+msgid "component.futsal-position-card.goalkeeper.description"
+msgstr "Defende o gol e comanda a linha defensiva. Usa muito os pés no jogo."
 
 #: src/components/positionCard/FutsalPositionCard.tsx:22
 msgid "component.futsal-position-card.left_wing"
 msgstr "Ala Esquerda"
 
+#: src/components/positionCard/FutsalPositionCard.tsx:23
+msgid "component.futsal-position-card.left_wing.description"
+msgstr "Driblador e criativo, cria jogadas pela esquerda com intensidade."
+
 #: src/components/positionCard/FutsalPositionCard.tsx:27
 msgid "component.futsal-position-card.pivot"
 msgstr "Pivô"
+
+#: src/components/positionCard/FutsalPositionCard.tsx:28
+msgid "component.futsal-position-card.pivot.description"
+msgstr "Referência ofensiva, joga de costas para o gol e finaliza com precisão."
+
+#: src/components/positionCard/FutsalPositionCard.tsx:17
+msgid "component.futsal-position-card.right_wing"
+msgstr "Ala Direita"
+
+#: src/components/positionCard/FutsalPositionCard.tsx:18
+msgid "component.futsal-position-card.right_wing.description"
+msgstr "Rápido e habilidoso, atua pelo lado direito em ataque e defesa."
 
 #: src/components/input/inputEmail.tsx:40
 msgid "component.input-email.placeholder"
