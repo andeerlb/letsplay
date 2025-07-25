@@ -8,7 +8,7 @@ type PositionDetails = Record<
     string,
     {
         title: MessageDescriptor;
-        description: string;
+        description: MessageDescriptor;
         background: string;
     }
 >;
@@ -56,7 +56,7 @@ export function BasePositionCard<T extends PositionDetails, K extends keyof T>({
                     },
                 ]}
             >
-                {detail.description}
+                {i18n._(detail.description)}
             </Text>
         </View>
     );
