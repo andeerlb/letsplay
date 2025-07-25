@@ -1,5 +1,4 @@
-import React, { useRef } from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native'; // ← TextInput importa aqui
+import { StyleSheet, Text, View } from 'react-native'; // ← TextInput importa aqui
 import ScreenWrapper from '@wrapper/ScreenWrapper';
 import { useTheme } from '@context/ThemeProvider';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -13,6 +12,8 @@ import Button from '@components/button/Button';
 import { SignUpStackParamList } from '@components/navigation/signUpNavigator';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { MessageDescriptor } from '@lingui/core';
+import { Animation } from '@components/animation/Animation';
+import Animations from '@constants/animations';
 
 const schema = yup.object({
     givenName: yup.string().required('Nome é obrigatório'),
@@ -54,9 +55,9 @@ export default function SportScreen({ navigation }: { navigation: SportScreenNav
 
     return (
         <ScreenWrapper>
+            <Animation source={Animations.SPORT_SPLASH} />
             <View
                 style={{
-                    paddingTop: 10,
                     paddingBottom: safeAreaInsets.bottom,
                     gap: 60,
                     paddingHorizontal: 16,
@@ -65,22 +66,16 @@ export default function SportScreen({ navigation }: { navigation: SportScreenNav
                 <View style={styles.header}>
                     <Text
                         style={[
-                            styles.title,
-                            { color: theme.colors.text, fontFamily: theme.fonts.regular.fontFamily },
-                        ]}
-                    >
-                        <Trans>screen.signup.sport.title</Trans>
-                    </Text>
-                    <Text
-                        style={[
                             styles.description,
-                            { color: theme.secondaryColors.text, fontFamily: theme.fonts.regular.fontFamily },
+                            { color: theme.colors.text, fontFamily: theme.fonts.regular.fontFamily },
                         ]}
                     >
                         {description}
                     </Text>
                 </View>
                 <View style={styles.content}>
+                    <View style={styles.container}>
+                    </View>
                 </View>
                 <Button label={t`screen.signup.next`} onPress={handleSubmit(onSubmit)} />
             </View>
@@ -102,4 +97,6 @@ const styles = StyleSheet.create({
     content: {
         gap: 20,
     },
+    container: { flex: 1, backgroundColor: '#111' },
+    list: { paddingVertical: 20 }
 });

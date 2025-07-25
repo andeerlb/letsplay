@@ -39,12 +39,14 @@ msgstr "Volante"
 
 #: src/constants/playerPosition.ts:20
 #: src/constants/playerPosition.ts:29
+#: src/constants/playerPosition.ts:38
 msgid "player.position.fixo"
 msgstr "Fixo"
 
 #: src/constants/playerPosition.ts:5
 #: src/constants/playerPosition.ts:19
 #: src/constants/playerPosition.ts:28
+#: src/constants/playerPosition.ts:37
 msgid "player.position.goalkeeper"
 msgstr "Goleiro"
 
@@ -54,6 +56,7 @@ msgstr "Lateral Esquerdo"
 
 #: src/constants/playerPosition.ts:22
 #: src/constants/playerPosition.ts:31
+#: src/constants/playerPosition.ts:40
 msgid "player.position.left-wing"
 msgstr "Ponta Esquerda"
 
@@ -63,11 +66,13 @@ msgstr "Ponta Esquerda"
 
 #: src/constants/playerPosition.ts:23
 #: src/constants/playerPosition.ts:32
+#: src/constants/playerPosition.ts:41
 msgid "player.position.midfielder"
 msgstr "Meia"
 
 #: src/constants/playerPosition.ts:24
 #: src/constants/playerPosition.ts:33
+#: src/constants/playerPosition.ts:42
 msgid "player.position.pivot"
 msgstr "Pivô"
 
@@ -77,6 +82,7 @@ msgstr "Lateral Direito"
 
 #: src/constants/playerPosition.ts:21
 #: src/constants/playerPosition.ts:30
+#: src/constants/playerPosition.ts:39
 msgid "player.position.right-wing"
 msgstr "Ponta Direita"
 
@@ -204,7 +210,7 @@ msgstr "Data de nascimento"
 msgid "screen.signup.given-name"
 msgstr "Nome"
 
-#: src/screens/signup/SportScreen.tsx:95
+#: src/screens/signup/SportScreen.tsx:102
 #: src/screens/signup/PersonScreen.tsx:125
 msgid "screen.signup.next"
 msgstr "Continuar"
@@ -213,23 +219,23 @@ msgstr "Continuar"
 msgid "screen.signup.person.title"
 msgstr "Queremos te conhecer"
 
-#: src/screens/signup/SportScreen.tsx:31
+#: src/screens/signup/SportScreen.tsx:27
 msgid "screen.signup.sport.description.beginner"
 msgstr "Começando agora, mas já tentando fazer bonito — mesmo que a bola escape às vezes!"
 
-#: src/screens/signup/SportScreen.tsx:33
+#: src/screens/signup/SportScreen.tsx:29
 msgid "screen.signup.sport.description.intermediate"
 msgstr "Na pista há um tempo, com a técnica afiada e vontade de chegar no próximo nível."
 
-#: src/screens/signup/SportScreen.tsx:35
+#: src/screens/signup/SportScreen.tsx:31
 msgid "screen.signup.sport.description.intermediate-advanced"
 msgstr "Entre a raça de sempre e a sabedoria de quem já viveu muita bola."
 
-#: src/screens/signup/SportScreen.tsx:37
+#: src/screens/signup/SportScreen.tsx:33
 msgid "screen.signup.sport.description.veteran"
 msgstr "Talvez mais lento… mas cada passo é pensado. Tipo vinho: só melhora."
 
-#: src/screens/signup/SportScreen.tsx:81
+#: src/screens/signup/SportScreen.tsx:74
 msgid "screen.signup.sport.title"
 msgstr "Uau!"
 

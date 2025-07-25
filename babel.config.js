@@ -20,9 +20,9 @@ module.exports = {
           '@store': './src/store',
           '@fetch': './src/api/fetch',
           '@query': './src/api/query'
-        },
-      },
+        }
+      }
     ],
-  ],
+    'react-native-worklets/plugin'
+  ]
 };
-

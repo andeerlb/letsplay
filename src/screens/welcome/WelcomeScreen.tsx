@@ -23,7 +23,7 @@ export default function WelcomeScreen({ navigation }: { navigation: WelcomeScree
     }
 
     const goToSignUp = () => {
-        navigation.navigate('SignUp');
+        navigation.navigate('SignUp', { screen: 'Sport' });
     }
 
     return (
