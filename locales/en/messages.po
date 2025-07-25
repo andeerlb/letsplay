@@ -17,6 +17,94 @@ msgstr ""
 msgid "component.birthday.invalid.date"
 msgstr "Invalid date"
 
+#: src/components/positionCard/Fut11PositionCard.tsx:7
+msgid "component.fut11-position-card.goalkeeper"
+msgstr "Goalkeeper"
+
+#: src/components/positionCard/Fut11PositionCard.tsx:12
+msgid "component.fut11-position-card.right_back"
+msgstr "Right Back"
+
+#: src/components/positionCard/Fut11PositionCard.tsx:17
+msgid "component.fut11-position-card.left_back"
+msgstr "Left Back"
+
+#: src/components/positionCard/Fut11PositionCard.tsx:22
+msgid "component.fut11-position-card.center_back"
+msgstr "Center Back"
+
+#: src/components/positionCard/Fut11PositionCard.tsx:27
+msgid "component.fut11-position-card.defensive_midfielder"
+msgstr "Defensive Midfielder"
+
+#: src/components/positionCard/Fut11PositionCard.tsx:32
+msgid "component.fut11-position-card.central_midfielder"
+msgstr "Central Midfielder"
+
+#: src/components/positionCard/Fut11PositionCard.tsx:37
+msgid "component.fut11-position-card.attacking_midfielder"
+msgstr "Attacking Midfielder"
+
+#: src/components/positionCard/Fut11PositionCard.tsx:42
+msgid "component.fut11-position-card.right_winger"
+msgstr "Right Winger"
+
+#: src/components/positionCard/Fut11PositionCard.tsx:47
+msgid "component.fut11-position-card.left_winger"
+msgstr "Left Winger"
+
+#: src/components/positionCard/Fut11PositionCard.tsx:52
+msgid "component.fut11-position-card.striker"
+msgstr "Striker"
+
+#: src/components/positionCard/Fut11PositionCard.tsx:57
+msgid "component.fut11-position-card.center_forward"
+msgstr "Center Forward"
+
+#: src/components/positionCard/Fut7PositionCard.tsx:7
+msgid "component.fut7-position-card.goalkeeper"
+msgstr "Goalkeeper"
+
+#: src/components/positionCard/Fut7PositionCard.tsx:12
+msgid "component.fut7-position-card.fixo"
+msgstr "Fix"
+
+#: src/components/positionCard/Fut7PositionCard.tsx:17
+msgid "component.fut7-position-card.right-wing"
+msgstr "Right Wing"
+
+#: src/components/positionCard/Fut7PositionCard.tsx:22
+msgid "component.fut7-position-card.left-wing"
+msgstr "Left Wing"
+
+#: src/components/positionCard/Fut7PositionCard.tsx:27
+msgid "component.fut7-position-card.midfielder"
+msgstr "Midfielder"
+
+#: src/components/positionCard/Fut7PositionCard.tsx:32
+msgid "component.fut7-position-card.pivot"
+msgstr "Pivot"
+
+#: src/components/positionCard/FutsalPositionCard.tsx:7
+msgid "component.futsal-position-card.goalkeeper"
+msgstr "Goalkeeper"
+
+#: src/components/positionCard/FutsalPositionCard.tsx:12
+msgid "component.futsal-position-card.fixo"
+msgstr "Fix"
+
+#: src/components/positionCard/FutsalPositionCard.tsx:17
+msgid "component.futsal-position-card.right_wing"
+msgstr "Right Wing"
+
+#: src/components/positionCard/FutsalPositionCard.tsx:22
+msgid "component.futsal-position-card.left_wing"
+msgstr "Left Wing"
+
+#: src/components/positionCard/FutsalPositionCard.tsx:27
+msgid "component.futsal-position-card.pivot"
+msgstr "Pivot"
+
 #: src/components/input/inputEmail.tsx:40
 msgid "component.input-email.placeholder"
 msgstr "example@email.com"
@@ -39,14 +127,12 @@ msgstr "Defensive Midfielder"
 
 #: src/constants/playerPosition.ts:20
 #: src/constants/playerPosition.ts:29
-#: src/constants/playerPosition.ts:38
 msgid "player.position.fixo"
 msgstr "Fixo"
 
 #: src/constants/playerPosition.ts:5
 #: src/constants/playerPosition.ts:19
 #: src/constants/playerPosition.ts:28
-#: src/constants/playerPosition.ts:37
 msgid "player.position.goalkeeper"
 msgstr "Goalkeeper"
 
@@ -56,7 +142,6 @@ msgstr "Left Back"
 
 #: src/constants/playerPosition.ts:22
 #: src/constants/playerPosition.ts:31
-#: src/constants/playerPosition.ts:40
 msgid "player.position.left-wing"
 msgstr "Left Wing"
 
@@ -66,13 +151,11 @@ msgstr "Left Winger"
 
 #: src/constants/playerPosition.ts:23
 #: src/constants/playerPosition.ts:32
-#: src/constants/playerPosition.ts:41
 msgid "player.position.midfielder"
 msgstr "Midfielder"
 
 #: src/constants/playerPosition.ts:24
 #: src/constants/playerPosition.ts:33
-#: src/constants/playerPosition.ts:42
 msgid "player.position.pivot"
 msgstr "Pivot"
 
@@ -82,7 +165,6 @@ msgstr "Right Back"
 
 #: src/constants/playerPosition.ts:21
 #: src/constants/playerPosition.ts:30
-#: src/constants/playerPosition.ts:39
 msgid "player.position.right-wing"
 msgstr "Right Wing"
 
@@ -210,7 +292,7 @@ msgstr "Birthdate"
 msgid "screen.signup.given-name"
 msgstr "First Name"
 
-#: src/screens/signup/SportScreen.tsx:102
+#: src/screens/signup/SportScreen.tsx:82
 #: src/screens/signup/PersonScreen.tsx:125
 msgid "screen.signup.next"
 msgstr "Next"
@@ -219,25 +301,21 @@ msgstr "Next"
 msgid "screen.signup.person.title"
 msgstr "We want to know you"
 
-#: src/screens/signup/SportScreen.tsx:27
+#: src/screens/signup/SportScreen.tsx:30
 msgid "screen.signup.sport.description.beginner"
 msgstr "Just starting out, trying to look good — even when the ball gets away!"
 
-#: src/screens/signup/SportScreen.tsx:29
+#: src/screens/signup/SportScreen.tsx:31
 msgid "screen.signup.sport.description.intermediate"
 msgstr "Been in the game for a while, with sharp skills and hungry for the next level."
 
-#: src/screens/signup/SportScreen.tsx:31
+#: src/screens/signup/SportScreen.tsx:32
 msgid "screen.signup.sport.description.intermediate-advanced"
 msgstr "Somewhere between hustle and wisdom — I've seen some ball!"
 
 #: src/screens/signup/SportScreen.tsx:33
 msgid "screen.signup.sport.description.veteran"
 msgstr "Maybe slower... but every move counts. Like fine wine — only better with time."
-
-#: src/screens/signup/SportScreen.tsx:74
-msgid "screen.signup.sport.title"
-msgstr "Wow!"
 
 #: src/screens/signup/PersonScreen.tsx:97
 msgid "screen.signup.surname"

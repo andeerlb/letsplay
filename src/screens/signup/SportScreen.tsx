@@ -1,12 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native'; // ← TextInput importa aqui
+import React from 'react';
+import {
+    StyleSheet,
+    Text,
+    View,
+} from 'react-native';
 import ScreenWrapper from '@wrapper/ScreenWrapper';
 import { useTheme } from '@context/ThemeProvider';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-
-import { Trans, useLingui } from '@lingui/react/macro';
+import { useLingui } from '@lingui/react/macro';
 import { msg, t } from '@lingui/core/macro';
 import Button from '@components/button/Button';
 import { SignUpStackParamList } from '@components/navigation/signUpNavigator';
@@ -14,6 +18,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { MessageDescriptor } from '@lingui/core';
 import { Animation } from '@components/animation/Animation';
 import Animations from '@constants/animations';
+import { Fut7PositionCard } from '@components/positionCard/Fut7PositionCard';
 
 const schema = yup.object({
     givenName: yup.string().required('Nome é obrigatório'),
@@ -22,15 +27,10 @@ const schema = yup.object({
 });
 
 const getPlayerExperience = (age: number): MessageDescriptor => {
-    if (age <= 25) {
-        return msg`screen.signup.sport.description.beginner`;
-    } else if (age >= 26 && age <= 29) {
-        return msg`screen.signup.sport.description.intermediate`;
-    } else if (age >= 30 && age <= 35) {
-        return msg`screen.signup.sport.description.intermediate-advanced`;
-    } else {
-        return msg`screen.signup.sport.description.veteran`;
-    }
+    if (age <= 25) return msg`screen.signup.sport.description.beginner`;
+    if (age <= 29) return msg`screen.signup.sport.description.intermediate`;
+    if (age <= 35) return msg`screen.signup.sport.description.intermediate-advanced`;
+    return msg`screen.signup.sport.description.veteran`;
 }
 
 type SportScreenNavigationProp = NativeStackNavigationProp<SignUpStackParamList, 'Sport'>;
@@ -45,9 +45,7 @@ export default function SportScreen({ navigation }: { navigation: SportScreenNav
         control,
         handleSubmit,
         formState: { errors },
-    } = useForm({
-        resolver: yupResolver(schema),
-    });
+    } = useForm({ resolver: yupResolver(schema) });
 
     const onSubmit = (data: any) => {
         navigation.navigate('Sport');
@@ -67,16 +65,20 @@ export default function SportScreen({ navigation }: { navigation: SportScreenNav
                     <Text
                         style={[
                             styles.description,
-                            { color: theme.colors.text, fontFamily: theme.fonts.regular.fontFamily },
+                            {
+                                color: theme.colors.text,
+                                fontFamily: theme.fonts.regular.fontFamily,
+                            },
                         ]}
                     >
                         {description}
                     </Text>
                 </View>
-                <View style={styles.content}>
-                    <View style={styles.container}>
-                    </View>
+
+                <View style={styles.carouselWrapper}>
+                    <Fut7PositionCard position='goalkeeper' />
                 </View>
+
                 <Button label={t`screen.signup.next`} onPress={handleSubmit(onSubmit)} />
             </View>
         </ScreenWrapper>
@@ -94,9 +96,27 @@ const styles = StyleSheet.create({
     description: {
         textAlign: 'center',
     },
-    content: {
-        gap: 20,
+    carouselWrapper: {
+        height: 220,
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row',
     },
-    container: { flex: 1, backgroundColor: '#111' },
-    list: { paddingVertical: 20 }
+    arrowLeft: {
+        position: 'absolute',
+        left: 0,
+        zIndex: 1,
+        padding: 10,
+    },
+    arrowRight: {
+        position: 'absolute',
+        right: 0,
+        zIndex: 1,
+        padding: 10,
+    },
+    arrowText: {
+        fontSize: 32,
+        fontWeight: 'bold',
+        color: '#114926ff',
+    },
 });
