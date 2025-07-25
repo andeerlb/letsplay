@@ -22,7 +22,6 @@ module.exports = {
           '@query': './src/api/query'
         }
       }
-    ],
-    'react-native-worklets/plugin'
+    ]
   ]
 };
