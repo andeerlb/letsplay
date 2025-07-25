@@ -193,7 +193,7 @@ msgstr "Ala Direita"
 msgid "component.futsal-position-card.right_wing.description"
 msgstr "Rápido e habilidoso, atua pelo lado direito em ataque e defesa."
 
-#: src/components/input/inputEmail.tsx:40
+#: src/components/input/inputEmail.tsx:50
 msgid "component.input-email.placeholder"
 msgstr "exemplo@email.com"
 
@@ -340,35 +340,35 @@ msgstr "Sistema"
 msgid "screen.setting.title"
 msgstr "Configurações"
 
-#: src/screens/signin/SignInScreen.tsx:50
+#: src/screens/signin/SignInScreen.tsx:97
 msgid "screen.signin.btn-sigin"
 msgstr "Entrar"
 
-#: src/screens/signin/SignInScreen.tsx:33
+#: src/screens/signin/SignInScreen.tsx:56
 msgid "screen.signin.description"
 msgstr "Entre na sua conta para continuar"
 
-#: src/screens/signin/SignInScreen.tsx:49
+#: src/screens/signin/SignInScreen.tsx:95
 msgid "screen.signin.forgot"
 msgstr "Esqueceu a senha?"
 
-#: src/screens/signin/SignInScreen.tsx:57
+#: src/screens/signin/SignInScreen.tsx:103
 msgid "screen.signin.noaccount"
 msgstr "Não tem uma conta?"
 
-#: src/screens/signin/SignInScreen.tsx:42
+#: src/screens/signin/SignInScreen.tsx:81
 msgid "screen.signin.password"
 msgstr "Senha"
 
-#: src/screens/signin/SignInScreen.tsx:61
+#: src/screens/signin/SignInScreen.tsx:106
 msgid "screen.signin.signup"
 msgstr "Criar conta"
 
-#: src/screens/signin/SignInScreen.tsx:41
+#: src/screens/signin/SignInScreen.tsx:66
 msgid "screen.signin.user"
 msgstr "Usuário"
 
-#: src/screens/signin/SignInScreen.tsx:29
+#: src/screens/signin/SignInScreen.tsx:53
 msgid "screen.signin.welcome"
 msgstr "Bem-vindo"
 
@@ -380,7 +380,7 @@ msgstr "Data de nascimento"
 msgid "screen.signup.given-name"
 msgstr "Nome"
 
-#: src/screens/signup/SportScreen.tsx:82
+#: src/screens/signup/SportScreen.tsx:95
 #: src/screens/signup/PersonScreen.tsx:125
 msgid "screen.signup.next"
 msgstr "Continuar"
@@ -389,19 +389,19 @@ msgstr "Continuar"
 msgid "screen.signup.person.title"
 msgstr "Queremos te conhecer"
 
-#: src/screens/signup/SportScreen.tsx:30
+#: src/screens/signup/SportScreen.tsx:31
 msgid "screen.signup.sport.description.beginner"
 msgstr "Começando agora, mas já tentando fazer bonito — mesmo que a bola escape às vezes!"
 
-#: src/screens/signup/SportScreen.tsx:31
+#: src/screens/signup/SportScreen.tsx:32
 msgid "screen.signup.sport.description.intermediate"
 msgstr "Na pista há um tempo, com a técnica afiada e vontade de chegar no próximo nível."
 
-#: src/screens/signup/SportScreen.tsx:32
+#: src/screens/signup/SportScreen.tsx:33
 msgid "screen.signup.sport.description.intermediate-advanced"
 msgstr "Entre a raça de sempre e a sabedoria de quem já viveu muita bola."
 
-#: src/screens/signup/SportScreen.tsx:33
+#: src/screens/signup/SportScreen.tsx:34
 msgid "screen.signup.sport.description.veteran"
 msgstr "Talvez mais lento… mas cada passo é pensado. Tipo vinho: só melhora."
 
@@ -452,6 +452,18 @@ msgstr "Gerir equipe"
 #: src/screens/signup/PersonScreen.tsx:70
 msgid "screens.signup.person.description"
 msgstr "Que bom que você chegou aqui, queremos te conhecer, saber qual posição joga, qual seu nome de jogador e outras coisas, vamos lá?"
+
+#: src/screens/signin/SignInScreen.tsx:19
+msgid "validation.email.invalid"
+msgstr "validation.email.invalid"
+
+#: src/screens/signin/SignInScreen.tsx:19
+msgid "validation.email.required"
+msgstr "validation.email.required"
+
+#: src/screens/signin/SignInScreen.tsx:20
+msgid "validation.password.required"
+msgstr "validation.password.required"
 
 #: src/screens/welcome/WelcomeScreen.tsx:93
 msgid "welcome.screen.schedule.desc"

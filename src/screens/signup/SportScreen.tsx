@@ -22,9 +22,9 @@ import { FUT7_POSITIONS, Fut7PositionCard } from '@components/positionCard/Fut7P
 import Select from '@components/select/Select';
 
 const schema = yup.object({
-    givenName: yup.string().required('Nome é obrigatório'),
-    surname: yup.string().required('Sobrenome é obrigatório'),
-    birthdate: yup.string().required('Data de nascimento é obrigatória'),
+    givenName: yup.string().required(),
+    surname: yup.string().required(),
+    birthdate: yup.string().required(),
 });
 
 const getPlayerExperience = (age: number): MessageDescriptor => {

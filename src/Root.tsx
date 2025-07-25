@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { NativeModules, Platform, StatusBar, Text } from 'react-native';
+import { NativeModules, Platform, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import RootStackNavigator from '@components/navigation/rootNavigation';
 import { useLanguage } from '@hooks/useLanguage';

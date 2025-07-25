@@ -16,10 +16,36 @@ import { SignUpStackParamList } from '@components/navigation/signUpNavigator';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 const schema = yup.object({
-    givenName: yup.string().required('Nome é obrigatório'),
-    surname: yup.string().required('Sobrenome é obrigatório'),
-    birthdate: yup.string().required('Data de nascimento é obrigatória'),
+    givenName: yup.string().required(),
+    surname: yup.string().required(),
+    birthdate: yup
+        .string()
+        .required(t`component.birthday.invalid.date`)
+        .test('is-valid-date', t`component.birthday.invalid.date`, (value) => {
+            if (!value) return false;
+
+            const [day, month, year] = value.split('/');
+            if (!day || !month || !year) return false;
+
+            const birthYear = Number(year);
+            const birthMonth = Number(month) - 1;
+            const birthDay = Number(day);
+            const birthDate = new Date(birthYear, birthMonth, birthDay);
+            const now = new Date();
+
+            const yearMin = now.getFullYear() - 120;
+
+            return (
+                !isNaN(birthDate.getTime()) &&
+                birthDate.getDate() === birthDay &&
+                birthDate.getMonth() === birthMonth &&
+                birthDate.getFullYear() === birthYear &&
+                birthDate <= now &&
+                birthYear >= yearMin
+            );
+        }),
 });
+
 
 type PersonScreenNavigationProp = NativeStackNavigationProp<SignUpStackParamList, 'Person'>;
 

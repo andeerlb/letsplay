@@ -1,20 +1,29 @@
 import { useTheme } from '@context/ThemeProvider';
 import { t } from '@lingui/core/macro';
-import React, { useState } from 'react';
-import { View, TextInput, StyleSheet, Text } from 'react-native';
+import React, { forwardRef } from 'react';
+import { View, TextInput, StyleSheet, Text, TextInputProps } from 'react-native';
 
-type InputProps = {
+type InputEmailProps = TextInputProps & {
     label?: string;
-    value?: string;
+    error?: string;
 };
 
-const InputEmail = (props: InputProps) => {
+const InputEmail = forwardRef<TextInput, InputEmailProps>(({
+    label,
+    value,
+    onChangeText,
+    onBlur,
+    error,
+    placeholder,
+    returnKeyType,
+    onSubmitEditing,
+    blurOnSubmit,
+}, ref) => {
     const { theme } = useTheme();
-    const [text, setText] = useState(props.value);
 
     return (
         <View style={styles.container}>
-            {props.label && (
+            {label && (
                 <Text
                     style={[
                         styles.label,
@@ -24,31 +33,36 @@ const InputEmail = (props: InputProps) => {
                         },
                     ]}
                 >
-                    {props.label}
+                    {label}
                 </Text>
             )}
             <TextInput
+                ref={ref}
                 style={[
                     styles.input,
                     {
                         backgroundColor: theme.secondaryColors.background,
-                        borderColor: theme.colors.border,
+                        borderColor: error ? theme.colors.formError : theme.colors.border,
                         color: theme.colors.text,
                         fontFamily: theme.fonts.regular.fontFamily,
                     },
                 ]}
-                placeholder={t`component.input-email.placeholder`}
-                value={text}
-                onChangeText={setText}
+                placeholder={placeholder || t`component.input-email.placeholder`}
                 placeholderTextColor={theme.secondaryColors.text}
+                value={value}
+                onChangeText={onChangeText}
+                onBlur={onBlur}
                 keyboardType="email-address"
                 autoCapitalize="none"
                 autoComplete="email"
                 textContentType="emailAddress"
+                returnKeyType={returnKeyType}
+                onSubmitEditing={onSubmitEditing}
+                blurOnSubmit={blurOnSubmit}
             />
         </View>
     );
-};
+});
 
 const styles = StyleSheet.create({
     container: {

@@ -16,6 +16,7 @@ export const useLanguage = () => {
   const language = useSelector((state: RootState) => state.setting.language);
 
   useEffect(() => {
+    if (!language) return;
     i18n.loadAndActivate({
       locale: language,
       messages: LANGUAGE_MAP[language],
