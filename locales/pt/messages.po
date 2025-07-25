@@ -21,6 +21,77 @@ msgstr "Data inválida"
 msgid "component.input-email.placeholder"
 msgstr "exemplo@email.com"
 
+#: src/constants/playerPosition.ts:11
+msgid "player.position.attacking-midfielder"
+msgstr "Meia Atacante"
+
+#: src/constants/playerPosition.ts:6
+msgid "player.position.center-back"
+msgstr "Zagueiro Central"
+
+#: src/constants/playerPosition.ts:10
+msgid "player.position.central-midfielder"
+msgstr "Meia Central"
+
+#: src/constants/playerPosition.ts:9
+msgid "player.position.defensive-midfielder"
+msgstr "Volante"
+
+#: src/constants/playerPosition.ts:20
+#: src/constants/playerPosition.ts:29
+msgid "player.position.fixo"
+msgstr "Fixo"
+
+#: src/constants/playerPosition.ts:5
+#: src/constants/playerPosition.ts:19
+#: src/constants/playerPosition.ts:28
+msgid "player.position.goalkeeper"
+msgstr "Goleiro"
+
+#: src/constants/playerPosition.ts:8
+msgid "player.position.left-back"
+msgstr "Lateral Esquerdo"
+
+#: src/constants/playerPosition.ts:22
+#: src/constants/playerPosition.ts:31
+msgid "player.position.left-wing"
+msgstr "Ponta Esquerda"
+
+#: src/constants/playerPosition.ts:13
+msgid "player.position.left-winger"
+msgstr "Ponta Esquerda"
+
+#: src/constants/playerPosition.ts:23
+#: src/constants/playerPosition.ts:32
+msgid "player.position.midfielder"
+msgstr "Meia"
+
+#: src/constants/playerPosition.ts:24
+#: src/constants/playerPosition.ts:33
+msgid "player.position.pivot"
+msgstr "Pivô"
+
+#: src/constants/playerPosition.ts:7
+msgid "player.position.right-back"
+msgstr "Lateral Direito"
+
+#: src/constants/playerPosition.ts:21
+#: src/constants/playerPosition.ts:30
+msgid "player.position.right-wing"
+msgstr "Ponta Direita"
+
+#: src/constants/playerPosition.ts:12
+msgid "player.position.right-winger"
+msgstr "Ponta Direita"
+
+#: src/constants/playerPosition.ts:15
+msgid "player.position.second-striker"
+msgstr "Segundo Atacante"
+
+#: src/constants/playerPosition.ts:14
+msgid "player.position.striker"
+msgstr "Centroavante"
+
 #: src/screens/home/HomeScreenHeader.tsx:8
 #: src/components/navigation/bottomTabNavigator.tsx:34
 msgid "screen.home.title"
@@ -129,12 +200,11 @@ msgstr "Bem-vindo"
 msgid "screen.signup.birthday"
 msgstr "Data de nascimento"
 
-#: src/screens/signup/SportScreen.tsx:95
 #: src/screens/signup/PersonScreen.tsx:80
 msgid "screen.signup.given-name"
 msgstr "Nome"
 
-#: src/screens/signup/SportScreen.tsx:124
+#: src/screens/signup/SportScreen.tsx:95
 #: src/screens/signup/PersonScreen.tsx:125
 msgid "screen.signup.next"
 msgstr "Continuar"
@@ -143,27 +213,26 @@ msgstr "Continuar"
 msgid "screen.signup.person.title"
 msgstr "Queremos te conhecer"
 
-#: src/screens/signup/SportScreen.tsx:27
+#: src/screens/signup/SportScreen.tsx:31
 msgid "screen.signup.sport.description.beginner"
 msgstr "Começando agora, mas já tentando fazer bonito — mesmo que a bola escape às vezes!"
 
-#: src/screens/signup/SportScreen.tsx:29
+#: src/screens/signup/SportScreen.tsx:33
 msgid "screen.signup.sport.description.intermediate"
 msgstr "Na pista há um tempo, com a técnica afiada e vontade de chegar no próximo nível."
 
-#: src/screens/signup/SportScreen.tsx:31
+#: src/screens/signup/SportScreen.tsx:35
 msgid "screen.signup.sport.description.intermediate-advanced"
 msgstr "Entre a raça de sempre e a sabedoria de quem já viveu muita bola."
 
-#: src/screens/signup/SportScreen.tsx:33
+#: src/screens/signup/SportScreen.tsx:37
 msgid "screen.signup.sport.description.veteran"
 msgstr "Talvez mais lento… mas cada passo é pensado. Tipo vinho: só melhora."
 
-#: src/screens/signup/SportScreen.tsx:77
+#: src/screens/signup/SportScreen.tsx:81
 msgid "screen.signup.sport.title"
 msgstr "Uau!"
 
-#: src/screens/signup/SportScreen.tsx:112
 #: src/screens/signup/PersonScreen.tsx:97
 msgid "screen.signup.surname"
 msgstr "Sobrenome"
