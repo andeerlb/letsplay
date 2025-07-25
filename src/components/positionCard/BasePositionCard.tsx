@@ -9,7 +9,6 @@ type PositionDetails = Record<
     {
         title: MessageDescriptor;
         description: MessageDescriptor;
-        background: string;
     }
 >;
 
@@ -32,7 +31,6 @@ export function BasePositionCard<T extends PositionDetails, K extends keyof T>({
                 styles.card,
                 {
                     borderColor: theme.colors.primary,
-                    backgroundColor: detail.background,
                 },
             ]}
         >
@@ -64,12 +62,8 @@ export function BasePositionCard<T extends PositionDetails, K extends keyof T>({
 
 const styles = StyleSheet.create({
     card: {
-        alignSelf: "center",
-        borderRadius: 5,
-        borderWidth: .5,
         paddingHorizontal: 20,
-        paddingVertical: 40,
-        gap: 10,
+        gap: 15,
         justifyContent: "center",
         alignItems: "center",
     },
@@ -77,7 +71,7 @@ const styles = StyleSheet.create({
         fontSize: 28,
     },
     description: {
-        fontSize: 16,
+        fontSize: 15,
         textAlign: "center",
     },
 });

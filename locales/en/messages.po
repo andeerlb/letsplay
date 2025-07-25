@@ -13,10 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/components/birthdate/Birthdate.tsx:59
-msgid "component.birthday.invalid.date"
-msgstr "Invalid date"
-
 #: src/components/positionCard/Fut11PositionCard.tsx:37
 msgid "component.fut11-position-card.attacking_midfielder"
 msgstr "Attacking Midfielder"
@@ -197,6 +193,10 @@ msgstr "Attacks quickly and crosses from the right side."
 msgid "component.input-email.placeholder"
 msgstr "example@email.com"
 
+#: src/components/select/Select.tsx:31
+msgid "component.select.placeholder"
+msgstr "Select an option"
+
 #: src/constants/playerPosition.ts:11
 msgid "player.position.attacking-midfielder"
 msgstr "Attacking Midfielder"
@@ -372,40 +372,44 @@ msgstr "Username"
 msgid "screen.signin.welcome"
 msgstr "Welcome"
 
-#: src/screens/signup/PersonScreen.tsx:115
+#: src/screens/signup/PersonScreen.tsx:147
 msgid "screen.signup.birthday"
 msgstr "Birthdate"
 
-#: src/screens/signup/PersonScreen.tsx:80
+#: src/screens/signup/PersonScreen.tsx:113
 msgid "screen.signup.given-name"
 msgstr "First Name"
 
-#: src/screens/signup/SportScreen.tsx:95
-#: src/screens/signup/PersonScreen.tsx:125
+#: src/screens/signup/header/SportScreenHeader.tsx:18
+#: src/screens/signup/header/PersonScreenHeader.tsx:18
 msgid "screen.signup.next"
 msgstr "Next"
 
-#: src/screens/signup/PersonScreen.tsx:62
+#: src/screens/signup/PersonScreen.tsx:95
 msgid "screen.signup.person.title"
 msgstr "We want to know you"
 
-#: src/screens/signup/SportScreen.tsx:31
+#: src/screens/signup/SportScreen.tsx:28
 msgid "screen.signup.sport.description.beginner"
 msgstr "Just starting out, trying to look good — even when the ball gets away!"
 
-#: src/screens/signup/SportScreen.tsx:32
+#: src/screens/signup/SportScreen.tsx:29
 msgid "screen.signup.sport.description.intermediate"
 msgstr "Been in the game for a while, with sharp skills and hungry for the next level."
 
-#: src/screens/signup/SportScreen.tsx:33
+#: src/screens/signup/SportScreen.tsx:30
 msgid "screen.signup.sport.description.intermediate-advanced"
 msgstr "Somewhere between hustle and wisdom — I've seen some ball!"
 
-#: src/screens/signup/SportScreen.tsx:34
+#: src/screens/signup/SportScreen.tsx:31
 msgid "screen.signup.sport.description.veteran"
 msgstr "Maybe slower... but every move counts. Like fine wine — only better with time."
 
-#: src/screens/signup/PersonScreen.tsx:97
+#: src/screens/signup/SportScreen.tsx:101
+msgid "screen.signup.sport.select-your-position"
+msgstr "Select your position"
+
+#: src/screens/signup/PersonScreen.tsx:130
 msgid "screen.signup.surname"
 msgstr "Last Name"
 
@@ -449,21 +453,9 @@ msgstr "Schedule practices and matches"
 msgid "screen.welcome.team.title"
 msgstr "Manage Team"
 
-#: src/screens/signup/PersonScreen.tsx:70
+#: src/screens/signup/PersonScreen.tsx:103
 msgid "screens.signup.person.description"
 msgstr "We're glad you're here! Let's get to know you — your position, your player name, and more. Ready?"
-
-#: src/screens/signin/SignInScreen.tsx:19
-msgid "validation.email.invalid"
-msgstr ""
-
-#: src/screens/signin/SignInScreen.tsx:19
-msgid "validation.email.required"
-msgstr ""
-
-#: src/screens/signin/SignInScreen.tsx:20
-msgid "validation.password.required"
-msgstr ""
 
 #: src/screens/welcome/WelcomeScreen.tsx:93
 msgid "welcome.screen.schedule.desc"

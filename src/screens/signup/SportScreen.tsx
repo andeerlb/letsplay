@@ -7,7 +7,7 @@ import {
 import ScreenWrapper from '@wrapper/ScreenWrapper';
 import { useTheme } from '@context/ThemeProvider';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useLingui } from '@lingui/react/macro';
@@ -20,7 +20,9 @@ import Animations from '@constants/animations';
 import { FUT7_POSITIONS, Fut7PositionCard } from '@components/positionCard/Fut7PositionCard';
 import Select from '@components/select/Select';
 
-const schema = yup.object({});
+const schema = yup.object({
+    position: yup.string().required(),
+});
 
 const getPlayerExperience = (age: number): MessageDescriptor => {
     if (age <= 25) return msg`screen.signup.sport.description.beginner`;
@@ -45,9 +47,12 @@ const SportScreen = forwardRef<SportScreenRef, { navigation: SportScreenNavigati
             control,
             handleSubmit,
             formState: { errors },
+            watch,
         } = useForm({ resolver: yupResolver(schema) });
+
+        const selectedPosition = watch('position');
+
         const [positions, setPositions] = useState<{ label: string; value: string }[]>([]);
-        const [selectedPosition, setSelectedPosition] = useState('');
 
         useEffect(() => {
             const options = Object.entries(FUT7_POSITIONS).map(([key, value]) => ({
@@ -87,15 +92,20 @@ const SportScreen = forwardRef<SportScreenRef, { navigation: SportScreenNavigati
                             {description}
                         </Text>
                     </View>
-                    <View style={styles.content}>
-                        <Select
-                            label='Qual posição você joga?'
-                            options={positions}
-                            onChange={value => setSelectedPosition(value)}
-                            value={selectedPosition}
-                        />
-                        {selectedPosition && <Fut7PositionCard position={selectedPosition} />}
-                    </View>
+                    <Controller
+                        control={control}
+                        name="position"
+                        render={({ field: { onChange, value } }) => (
+                            <Select
+                                label={t`screen.signup.sport.select-your-position`}
+                                options={positions}
+                                value={value}
+                                error={errors.position?.message}
+                                onChange={onChange}
+                            />
+                        )}
+                    />
+                    {selectedPosition && <Fut7PositionCard position={selectedPosition} />}
                 </View>
             </ScreenWrapper>
         );
@@ -103,17 +113,13 @@ const SportScreen = forwardRef<SportScreenRef, { navigation: SportScreenNavigati
 );
 
 const styles = StyleSheet.create({
-    header: {
-    },
+    header: {},
     title: {
         textAlign: 'center',
         fontSize: 30,
     },
     description: {
         textAlign: 'center',
-    },
-    content: {
-        gap: 10,
     }
 });
 
