@@ -5,7 +5,6 @@ import {
     View,
     Animated,
 } from 'react-native';
-import ScreenWrapper from '@wrapper/ScreenWrapper';
 import { useTheme } from '@context/ThemeProvider';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Controller, useForm } from 'react-hook-form';
@@ -20,6 +19,7 @@ import { Animation } from '@components/animation/Animation';
 import Animations from '@constants/animations';
 import { FUT7_POSITIONS, Fut7PositionCard } from '@components/positionCard/Fut7PositionCard';
 import Select from '@components/select/Select';
+import ScreenScrollWrapper from '@wrapper/ScreenScrollWrapper';
 
 const schema = yup.object({
     position: yup.string().required(),
@@ -136,7 +136,7 @@ const SportScreen = forwardRef<SportScreenRef, { navigation: SportScreenNavigati
         }));
 
         return (
-            <ScreenWrapper>
+            <ScreenScrollWrapper>
                 <Animation source={Animations.SPORT_SPLASH} />
                 <View
                     style={[styles.container, { paddingBottom: safeAreaInsets.bottom }]}
@@ -199,7 +199,7 @@ const SportScreen = forwardRef<SportScreenRef, { navigation: SportScreenNavigati
                         )}
                     </View>
                 </View>
-            </ScreenWrapper>
+            </ScreenScrollWrapper>
         );
     }
 );

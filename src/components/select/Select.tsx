@@ -1,9 +1,9 @@
-import React from 'react';
-import { View, StyleSheet, Text, Platform } from 'react-native';
+import React, { use } from 'react';
+import { View, StyleSheet, Text, Platform, ActionSheetIOS, TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { useTheme } from "@context/ThemeProvider";
 import { Theme } from '@constants/theme';
-import { t } from '@lingui/core/macro';
+import { useLingui } from '@lingui/react/macro';
 
 type Option = {
     label: string;
@@ -19,17 +19,19 @@ type SelectProps = {
     fullWidth?: boolean;
     width?: number;
     error?: string;
+    placeholder: string;
 };
 
 function renderPickerItems(
     theme: Theme,
-    options: Option[]
+    options: Option[],
+    placeholder: string
 ) {
 
     return [
         <Picker.Item
             key="placeholder"
-            label={t`component.select.placeholder`}
+            label={placeholder}
             value=""
             style={{
                 color: theme.colors.text,
@@ -55,10 +57,35 @@ function ios(
     value: string,
     onChange: (value: any) => void,
     options: Option[],
+    placeholder: string,
+    cancel: string,
     mode?: 'dialog' | 'dropdown',
     label?: string,
     error?: string,
 ) {
+    const selectedOption = options.find(option => option.value === value);
+    const displayValue = selectedOption ? selectedOption.label : placeholder;
+
+    const showActionSheet = () => {
+        const actionOptions = [
+            ...options.map(option => option.label),
+            cancel
+        ];
+
+        ActionSheetIOS.showActionSheetWithOptions(
+            {
+                options: actionOptions,
+                cancelButtonIndex: actionOptions.length - 1,
+                title: label,
+            },
+            (buttonIndex) => {
+                if (buttonIndex < actionOptions.length - 1) {
+                    onChange(options[buttonIndex].value);
+                }
+            }
+        );
+    };
+
     return (
         <View style={styles.container}>
             {label && (
@@ -71,31 +98,29 @@ function ios(
                     {label}
                 </Text>
             )}
-            <View
+            <TouchableOpacity
                 style={[
                     styles.pickerWrapper,
                     {
                         borderColor: error ? theme.colors.formError : theme.colors.border,
                         backgroundColor: theme.secondaryColors.background,
                         width: 'auto',
+                        height: 50,
+                        justifyContent: 'center',
+                        paddingHorizontal: 15,
                     },
                 ]}
+                onPress={showActionSheet}
             >
-                <Picker
-                    selectedValue={value}
-                    onValueChange={onChange}
-                    style={[
-                        styles.picker,
-                        {
-                            color: theme.colors.text,
-                            fontSize: 18,
-                        },
-                    ]}
-                    mode={mode}
+                <Text
+                    style={{
+                        color: theme.colors.text,
+                        fontSize: 18,
+                    }}
                 >
-                    {renderPickerItems(theme, options)}
-                </Picker>
-            </View>
+                    {displayValue}
+                </Text>
+            </TouchableOpacity>
         </View>
     );
 }
@@ -105,6 +130,7 @@ function android(
     value: string,
     onChange: (value: any) => void,
     options: Option[],
+    placeholder: string,
     mode?: 'dialog' | 'dropdown',
     label?: string,
     error?: string,
@@ -137,7 +163,7 @@ function android(
                     style={[styles.picker, { color: theme.colors.text }]}
                     mode={mode}
                 >
-                    {renderPickerItems(theme, options)}
+                    {renderPickerItems(theme, options, placeholder)}
                 </Picker>
             </View>
         </View>
@@ -153,9 +179,12 @@ export default function Select({
     error,
 }: SelectProps) {
     const { theme } = useTheme();
+    const { t } = useLingui();
+    const placeholder = tcomponent.select.placeholder;
+
     return Platform.OS === 'ios'
-        ? ios(theme, value, onChange, options, mode, label, error)
-        : android(theme, value, onChange, options, mode, label, error);
+        ? ios(theme, value, onChange, options, placeholder, tcomponent.select.cancel, mode, label, error)
+        : android(theme, value, onChange, options, placeholder, mode, label, error);
 }
 
 const styles = StyleSheet.create({
