@@ -43,9 +43,19 @@ type PositionOption = { label: string; value: string };
 const GAME_TYPE_VALUES = ['fut11', 'fut7', 'futsal'] as const;
 type GameType = typeof GAME_TYPE_VALUES[number];
 
-type FormValues = {
-    position: string;
-    gameTypes: GameType;
+type Fut11PositionKey = keyof typeof FUT11_POSITIONS;
+type Fut7PositionKey = keyof typeof FUT7_POSITIONS;
+type FutsalPositionKey = keyof typeof FUTSAL_POSITIONS;
+
+type PositionKeyByGameType<T extends GameType> =
+    T extends 'fut11' ? Fut11PositionKey :
+    T extends 'fut7' ? Fut7PositionKey :
+    T extends 'futsal' ? FutsalPositionKey :
+    never;
+
+type FormValues<T extends GameType = GameType> = {
+    gameTypes: T;
+    position: PositionKeyByGameType<T>;
 };
 
 const schema: yup.ObjectSchema<FormValues> = yup.object({
@@ -56,7 +66,6 @@ const schema: yup.ObjectSchema<FormValues> = yup.object({
         .required(),
 });
 
-// Map do tipo para as posições e o componente correto
 const POSITION_MAP: Record<GameType, {
     positions: Record<string, { title: MessageDescriptor }>;
     card: React.FC<{ position: string }>;
@@ -95,8 +104,8 @@ const SportScreen = forwardRef<SportScreenRef, SportScreenProps>(({ navigation }
         setValue
     } = useForm<FormValues>({ resolver: yupResolver(schema) });
 
-    const selectedPosition = watch('position');
-    const selectedGameType = watch('gameTypes');
+    const selectedPosition = watch('position') as PositionKeyByGameType<GameType>;
+    const selectedGameType = watch('gameTypes') as GameType;
 
     const [positions, setPositions] = useState<PositionOption[]>([]);
     const [gameTypes, setGameTypes] = useState<PositionOption[]>([]);
@@ -114,7 +123,6 @@ const SportScreen = forwardRef<SportScreenRef, SportScreenProps>(({ navigation }
     }, [i18n]);
 
     useEffect(() => {
-        setValue('position', '');
 
         if (selectedGameType) {
             Animated.sequence([
@@ -125,15 +133,13 @@ const SportScreen = forwardRef<SportScreenRef, SportScreenProps>(({ navigation }
                 Animated.timing(shakeAnim, { toValue: 0, duration: 50, useNativeDriver: true }),
             ]).start();
 
-            // Atualiza as opções de posição para o tipo selecionado
             const mappedPositions = Object.entries(POSITION_MAP[selectedGameType].positions).map(([key, val]) => ({
                 label: i18n._(val.title),
                 value: key
             }));
 
+            setValue('position', mappedPositions[0]?.value);
             setPositions(mappedPositions);
-
-            // Atualiza o componente do cartão conforme o gameType selecionado
             setPositionCard(() => POSITION_MAP[selectedGameType].card);
         } else {
             setPositions([]);
@@ -214,7 +220,7 @@ const SportScreen = forwardRef<SportScreenRef, SportScreenProps>(({ navigation }
 
                     {selectedPosition && selectedGameType && PositionCard && (
                         <Animated.View style={{ opacity: cardOpacity, transform: [{ translateY: cardTranslateY }] }}>
-                            <PositionCard position={selectedPosition} />
+                            <PositionCard position={selectedPosition as any} />
                         </Animated.View>
                     )}
                 </View>
