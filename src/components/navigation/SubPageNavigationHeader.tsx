@@ -9,10 +9,11 @@ interface SubPageNavigationHeaderProps extends NativeStackHeaderProps {
   title?: string;
   RightAction?: () => JSX.Element;
   rightIconAction?: () => void;
-  transparent?: boolean
+  transparent?: boolean;
+  position?: string;
 }
 
-export const SubPageNavigationHeader = function ({ navigation, title = '', RightAction, rightIconAction, transparent = false }: SubPageNavigationHeaderProps) {
+export const SubPageNavigationHeader = function ({ navigation, title = '', RightAction, rightIconAction, transparent = false, position }: SubPageNavigationHeaderProps) {
   const { theme } = useTheme();
   const insets = useSafeAreaInsets();
 
@@ -21,7 +22,8 @@ export const SubPageNavigationHeader = function ({ navigation, title = '', Right
       paddingTop: insets.top + 15,
       paddingBottom: 15,
       paddingHorizontal: 15,
-      backgroundColor: transparent ? 'transparent' : theme.secondaryColors.background
+      backgroundColor: transparent ? 'transparent' : theme.secondaryColors.background,
+      position: position ? position : null
     }]}>
       {navigation && navigation.canGoBack() ? (
         <Pressable

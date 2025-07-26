@@ -26,6 +26,7 @@ export default function ScreenScrollWrapper({ children }: { children: React.Reac
 
 const styles = StyleSheet.create({
   container: {
+    flexGrow: 1,
     paddingHorizontal: 15,
     paddingTop: 15,
   },

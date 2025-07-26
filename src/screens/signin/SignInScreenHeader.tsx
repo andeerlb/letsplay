@@ -2,7 +2,7 @@ import SubPageNavigationHeader from "@components/navigation/SubPageNavigationHea
 import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 
 export const SignInScreenHeader = (props: NativeStackHeaderProps) => {
-  return <SubPageNavigationHeader {...props} transparent={true} />;
+  return <SubPageNavigationHeader {...props} transparent={true} position="absolute" />;
 }
 
 const SignInScreenHeaderWrapper = (props: NativeStackHeaderProps) => {
