@@ -195,7 +195,7 @@ msgstr "example@email.com"
 
 #: src/components/select/Select.tsx:186
 msgid "component.select.cancel"
-msgstr ""
+msgstr "Cancel"
 
 #: src/components/select/Select.tsx:183
 msgid "component.select.placeholder"
@@ -344,43 +344,43 @@ msgstr "System"
 msgid "screen.setting.title"
 msgstr "Settings"
 
-#: src/screens/signin/SignInScreen.tsx:97
+#: src/screens/signin/SignInScreen.tsx:137
 msgid "screen.signin.btn-sigin"
 msgstr "Sign In"
 
-#: src/screens/signin/SignInScreen.tsx:56
+#: src/screens/signin/SignInScreen.tsx:81
 msgid "screen.signin.description"
 msgstr "Sign in to your account to continue"
 
-#: src/screens/signin/SignInScreen.tsx:95
+#: src/screens/signin/SignInScreen.tsx:134
 msgid "screen.signin.forgot"
 msgstr "Forgot password?"
 
-#: src/screens/signin/SignInScreen.tsx:103
+#: src/screens/signin/SignInScreen.tsx:153
 msgid "screen.signin.noaccount"
 msgstr "Don't have an account?"
 
-#: src/screens/signin/SignInScreen.tsx:81
+#: src/screens/signin/SignInScreen.tsx:114
 msgid "screen.signin.password"
 msgstr "Password"
 
-#: src/screens/signin/SignInScreen.tsx:106
+#: src/screens/signin/SignInScreen.tsx:165
 msgid "screen.signin.signup"
 msgstr "Create Account"
 
-#: src/screens/signin/SignInScreen.tsx:66
+#: src/screens/signin/SignInScreen.tsx:99
 msgid "screen.signin.user"
 msgstr "Username"
 
-#: src/screens/signin/SignInScreen.tsx:53
+#: src/screens/signin/SignInScreen.tsx:70
 msgid "screen.signin.welcome"
 msgstr "Welcome"
 
-#: src/screens/signup/PersonScreen.tsx:147
+#: src/screens/signup/PersonScreen.tsx:148
 msgid "screen.signup.birthday"
 msgstr "Birthdate"
 
-#: src/screens/signup/PersonScreen.tsx:113
+#: src/screens/signup/PersonScreen.tsx:114
 msgid "screen.signup.given-name"
 msgstr "First Name"
 
@@ -389,7 +389,7 @@ msgstr "First Name"
 msgid "screen.signup.next"
 msgstr "Next"
 
-#: src/screens/signup/PersonScreen.tsx:95
+#: src/screens/signup/PersonScreen.tsx:96
 msgid "screen.signup.person.title"
 msgstr "We want to know you"
 
@@ -411,25 +411,25 @@ msgstr "Maybe slower... but every move counts. Like fine wine — only better wi
 
 #: src/screens/signup/SportScreen.tsx:44
 msgid "screen.signup.sport.game-type.fut11"
-msgstr ""
+msgstr "11-a-side Football"
 
 #: src/screens/signup/SportScreen.tsx:48
 msgid "screen.signup.sport.game-type.fut7"
-msgstr ""
+msgstr "7-a-side Football"
 
 #: src/screens/signup/SportScreen.tsx:52
 msgid "screen.signup.sport.game-type.futsal"
-msgstr ""
+msgstr "Futsal"
 
 #: src/screens/signup/SportScreen.tsx:163
 msgid "screen.signup.sport.game-types"
-msgstr ""
+msgstr "Choose the game type"
 
 #: src/screens/signup/SportScreen.tsx:179
 msgid "screen.signup.sport.select-your-position"
 msgstr "Select your position"
 
-#: src/screens/signup/PersonScreen.tsx:130
+#: src/screens/signup/PersonScreen.tsx:131
 msgid "screen.signup.surname"
 msgstr "Last Name"
 
@@ -445,50 +445,50 @@ msgstr "My teams..."
 msgid "screen.team.title"
 msgstr "Teams"
 
-#: src/screens/welcome/WelcomeScreen.tsx:62
+#: src/screens/welcome/WelcomeScreen.tsx:61
 msgid "screen.welcome.description"
 msgstr "Manage your team, track matches, and chase victories."
 
-#: src/screens/welcome/WelcomeScreen.tsx:71
+#: src/screens/welcome/WelcomeScreen.tsx:70
 msgid "screen.welcome.manage.desc"
 msgstr "Organize players and positions"
 
-#: src/screens/welcome/WelcomeScreen.tsx:70
+#: src/screens/welcome/WelcomeScreen.tsx:69
 msgid "screen.welcome.manage.title"
 msgstr "Team Management"
 
-#: src/screens/welcome/WelcomeScreen.tsx:85
+#: src/screens/welcome/WelcomeScreen.tsx:84
 msgid "screen.welcome.stats.desc"
 msgstr "Track your stats"
 
-#: src/screens/welcome/WelcomeScreen.tsx:84
+#: src/screens/welcome/WelcomeScreen.tsx:83
 msgid "screen.welcome.stats.title"
 msgstr "Stats"
 
-#: src/screens/welcome/WelcomeScreen.tsx:78
+#: src/screens/welcome/WelcomeScreen.tsx:77
 msgid "screen.welcome.team.desc"
 msgstr "Schedule practices and matches"
 
-#: src/screens/welcome/WelcomeScreen.tsx:77
+#: src/screens/welcome/WelcomeScreen.tsx:76
 msgid "screen.welcome.team.title"
 msgstr "Manage Team"
 
-#: src/screens/signup/PersonScreen.tsx:103
+#: src/screens/signup/PersonScreen.tsx:104
 msgid "screens.signup.person.description"
 msgstr "We're glad you're here! Let's get to know you — your position, your player name, and more. Ready?"
 
-#: src/screens/welcome/WelcomeScreen.tsx:93
+#: src/screens/welcome/WelcomeScreen.tsx:92
 msgid "welcome.screen.schedule.desc"
 msgstr "Schedule practices and matches"
 
-#: src/screens/welcome/WelcomeScreen.tsx:91
+#: src/screens/welcome/WelcomeScreen.tsx:90
 msgid "welcome.screen.schedule.title"
 msgstr "Schedule"
 
-#: src/screens/welcome/WelcomeScreen.tsx:99
+#: src/screens/welcome/WelcomeScreen.tsx:98
 msgid "welcome.screen.signin"
 msgstr "I already have an account"
 
-#: src/screens/welcome/WelcomeScreen.tsx:98
+#: src/screens/welcome/WelcomeScreen.tsx:97
 msgid "welcome.screen.signup"
 msgstr "Get Started"
