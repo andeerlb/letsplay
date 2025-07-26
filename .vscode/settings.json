@@ -15,5 +15,8 @@
         "editor.defaultFormatter": "redhat.vscode-xml"
     },
     "emulator.emulatorPathWindows": "C:\\Users\\andee\\AppData\\Local\\Android\\Sdk\\emulator",
-    "files.autoSave": "off"
+    "files.autoSave": "off",
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    }
 }
