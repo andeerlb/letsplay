@@ -180,10 +180,10 @@ export default function Select({
 }: SelectProps) {
     const { theme } = useTheme();
     const { t } = useLingui();
-    const placeholder = tcomponent.select.placeholder;
+    const placeholder = t`component.select.placeholder`;
 
     return Platform.OS === 'ios'
-        ? ios(theme, value, onChange, options, placeholder, tcomponent.select.cancel, mode, label, error)
+        ? ios(theme, value, onChange, options, placeholder, t`component.select.cancel`, mode, label, error)
         : android(theme, value, onChange, options, placeholder, mode, label, error);
 }
 
