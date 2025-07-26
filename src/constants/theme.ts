@@ -80,7 +80,7 @@ export const LightTheme: ThemeDefinition = {
     background: '#ffffff',
     card: '#ffffff',
     text: '#000000',
-    button: '#646F7B',
+    button: '#256b35',
     border: '#c7c7ccff',
     notification: '#256b35',
     formError: 'red'
@@ -103,7 +103,7 @@ export const DarkTheme: ThemeDefinition = {
     background: '#141b22',
     card: '#84a9d3ff',
     text: '#ffffff',
-    button: '#ccc',
+    button: '#256b35',
     border: '#3B4C67',
     notification: '#256b35',
     formError: '#db1818ff'

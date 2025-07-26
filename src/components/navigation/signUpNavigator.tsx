@@ -1,3 +1,4 @@
+import { SignUpProvider } from '@context/SignUpProvider';
 import { useTheme } from '@context/ThemeProvider';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import CredentialsScreen from '@screens/signup/CredentialsScreen';
@@ -23,57 +24,59 @@ function SignUpStackNavigator() {
   const { theme } = useTheme();
 
   return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Person"
-        options={{
-          header: (props) => (
-            <SignUpScreenHeaderWrapper
-              {...props}
-              onNext={() => personScreenRef.current?.submitForm()}
-            />
-          ),
-        }}
-      >
-        {(props) => <PersonScreen {...props} ref={personScreenRef} />}
-      </Stack.Screen>
-      <Stack.Screen
-        name="Sport"
-        options={{
-          header: (props) => (
-            <SignUpScreenHeaderWrapper
-              {...props}
-              onNext={() => sportScreenRef.current?.submitForm()}
-            />
-          ),
-        }}
-      >
-        {(props) => <SportScreen {...props} ref={sportScreenRef} />}
-      </Stack.Screen>
-      <Stack.Screen
-        name="MoreSports"
-        options={{
-          header: (props) => (
-            <SignUpScreenHeaderWrapper
-              {...props}
-              onNext={() => moreSportsScreenRef.current?.submitForm()}
-            />
-          ),
-        }}
-      >
-        {(props) => <MoreSportsScreen {...props} ref={moreSportsScreenRef} />}
-      </Stack.Screen>
-      <Stack.Screen name="Credentials" component={CredentialsScreen}
-        options={{
-          headerShown: true,
-          headerShadowVisible: false,
-          headerTitle: '',
-          headerStyle: {
-            backgroundColor: theme.colors.background,
-          },
-        }}
-      />
-    </Stack.Navigator>
+    <SignUpProvider>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Person"
+          options={{
+            header: (props) => (
+              <SignUpScreenHeaderWrapper
+                {...props}
+                onNext={() => personScreenRef.current?.submitForm()}
+              />
+            ),
+          }}
+        >
+          {(props) => <PersonScreen {...props} ref={personScreenRef} />}
+        </Stack.Screen>
+        <Stack.Screen
+          name="Sport"
+          options={{
+            header: (props) => (
+              <SignUpScreenHeaderWrapper
+                {...props}
+                onNext={() => sportScreenRef.current?.submitForm()}
+              />
+            ),
+          }}
+        >
+          {(props) => <SportScreen {...props} ref={sportScreenRef} />}
+        </Stack.Screen>
+        <Stack.Screen
+          name="MoreSports"
+          options={{
+            header: (props) => (
+              <SignUpScreenHeaderWrapper
+                {...props}
+                onNext={() => moreSportsScreenRef.current?.submitForm()}
+              />
+            ),
+          }}
+        >
+          {(props) => <MoreSportsScreen {...props} ref={moreSportsScreenRef} />}
+        </Stack.Screen>
+        <Stack.Screen name="Credentials" component={CredentialsScreen}
+          options={{
+            headerShown: true,
+            headerShadowVisible: false,
+            headerTitle: '',
+            headerStyle: {
+              backgroundColor: theme.colors.background,
+            },
+          }}
+        />
+      </Stack.Navigator>
+    </SignUpProvider>
   );
 }
 
