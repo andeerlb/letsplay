@@ -5,6 +5,7 @@ import {
 import SignInScreen from '@screens/signin/SignInScreen';
 import WelcomeScreen from '@screens/welcome/WelcomeScreen';
 import SignUpStackNavigator from './signUpNavigator';
+import SignInScreenHeaderWrapper from '@screens/signin/SignInScreenHeader';
 
 export type NoAuthStackParamList = {
   SignIn: undefined;
@@ -30,7 +31,9 @@ const NoAuthStackNavigator = () => {
       <Stack.Screen
         name="SignIn"
         component={SignInScreen}
-        options={{ headerShown: false }}
+        options={{
+          header: SignInScreenHeaderWrapper
+        }}
       />
     </Stack.Navigator>
   );

@@ -193,7 +193,11 @@ msgstr "Attacks quickly and crosses from the right side."
 msgid "component.input-email.placeholder"
 msgstr "example@email.com"
 
-#: src/components/select/Select.tsx:31
+#: src/components/select/Select.tsx:186
+msgid "component.select.cancel"
+msgstr ""
+
+#: src/components/select/Select.tsx:183
 msgid "component.select.placeholder"
 msgstr "Select an option"
 
@@ -389,23 +393,39 @@ msgstr "Next"
 msgid "screen.signup.person.title"
 msgstr "We want to know you"
 
-#: src/screens/signup/SportScreen.tsx:28
+#: src/screens/signup/SportScreen.tsx:30
 msgid "screen.signup.sport.description.beginner"
 msgstr "Just starting out, trying to look good — even when the ball gets away!"
 
-#: src/screens/signup/SportScreen.tsx:29
+#: src/screens/signup/SportScreen.tsx:31
 msgid "screen.signup.sport.description.intermediate"
 msgstr "Been in the game for a while, with sharp skills and hungry for the next level."
 
-#: src/screens/signup/SportScreen.tsx:30
+#: src/screens/signup/SportScreen.tsx:32
 msgid "screen.signup.sport.description.intermediate-advanced"
 msgstr "Somewhere between hustle and wisdom — I've seen some ball!"
 
-#: src/screens/signup/SportScreen.tsx:31
+#: src/screens/signup/SportScreen.tsx:33
 msgid "screen.signup.sport.description.veteran"
 msgstr "Maybe slower... but every move counts. Like fine wine — only better with time."
 
-#: src/screens/signup/SportScreen.tsx:100
+#: src/screens/signup/SportScreen.tsx:44
+msgid "screen.signup.sport.game-type.fut11"
+msgstr ""
+
+#: src/screens/signup/SportScreen.tsx:48
+msgid "screen.signup.sport.game-type.fut7"
+msgstr ""
+
+#: src/screens/signup/SportScreen.tsx:52
+msgid "screen.signup.sport.game-type.futsal"
+msgstr ""
+
+#: src/screens/signup/SportScreen.tsx:163
+msgid "screen.signup.sport.game-types"
+msgstr ""
+
+#: src/screens/signup/SportScreen.tsx:179
 msgid "screen.signup.sport.select-your-position"
 msgstr "Select your position"
 

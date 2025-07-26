@@ -7,7 +7,7 @@ type SportScreenHeaderProps = NativeStackHeaderProps & {
   onNext: () => void;
 };
 
-const PersonScreenHeader = ({ onNext, ...props }: SportScreenHeaderProps) => {
+const SportScreenHeader = ({ onNext, ...props }: SportScreenHeaderProps) => {
   const { t } = useLingui();
 
   return (
@@ -22,7 +22,7 @@ const PersonScreenHeader = ({ onNext, ...props }: SportScreenHeaderProps) => {
 };
 
 const SportScreenHeaderWrapper = (props: SportScreenHeaderProps) => {
-  return <PersonScreenHeader {...props} />;
+  return <SportScreenHeader {...props} />;
 };
 
 export default SportScreenHeaderWrapper;

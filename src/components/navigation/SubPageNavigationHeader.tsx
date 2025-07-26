@@ -6,12 +6,13 @@ import BackArrowIcon from '@assets/icons/back-arrow.svg';
 import { JSX } from "react";
 
 interface SubPageNavigationHeaderProps extends NativeStackHeaderProps {
-  title: string;
+  title?: string;
   RightAction?: () => JSX.Element;
   rightIconAction?: () => void;
+  transparent?: boolean
 }
 
-export const SubPageNavigationHeader = function ({ navigation, title, RightAction, rightIconAction }: SubPageNavigationHeaderProps) {
+export const SubPageNavigationHeader = function ({ navigation, title = '', RightAction, rightIconAction, transparent = false }: SubPageNavigationHeaderProps) {
   const { theme } = useTheme();
   const insets = useSafeAreaInsets();
 
@@ -20,7 +21,7 @@ export const SubPageNavigationHeader = function ({ navigation, title, RightActio
       paddingTop: insets.top + 15,
       paddingBottom: 15,
       paddingHorizontal: 15,
-      backgroundColor: theme.secondaryColors.background
+      backgroundColor: transparent ? 'transparent' : theme.secondaryColors.background
     }]}>
       {navigation && navigation.canGoBack() ? (
         <Pressable
