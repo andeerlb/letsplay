@@ -68,12 +68,7 @@ function SignUpStackNavigator() {
         </Stack.Screen>
         <Stack.Screen name="Credentials" component={CredentialsScreen}
           options={{
-            headerShown: true,
-            headerShadowVisible: false,
-            headerTitle: '',
-            headerStyle: {
-              backgroundColor: theme.colors.background,
-            },
+            header: (props) => <SignUpScreenHeaderWrapper {...props} position='absolute' transparent={true} />
           }}
         />
       </Stack.Navigator>

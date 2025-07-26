@@ -360,6 +360,7 @@ msgstr "Forgot password?"
 msgid "screen.signin.noaccount"
 msgstr "Don't have an account?"
 
+#: src/screens/signup/CredentialsScreen.tsx:102
 #: src/screens/signin/SignInScreen.tsx:114
 msgid "screen.signin.password"
 msgstr "Password"
@@ -368,6 +369,7 @@ msgstr "Password"
 msgid "screen.signin.signup"
 msgstr "Create Account"
 
+#: src/screens/signup/CredentialsScreen.tsx:86
 #: src/screens/signin/SignInScreen.tsx:99
 msgid "screen.signin.user"
 msgstr "Username"
@@ -376,60 +378,75 @@ msgstr "Username"
 msgid "screen.signin.welcome"
 msgstr "Welcome"
 
-#: src/screens/signup/PersonScreen.tsx:148
+#: src/screens/signup/PersonScreen.tsx:150
 msgid "screen.signup.birthday"
 msgstr "Birthdate"
 
-#: src/screens/signup/PersonScreen.tsx:114
+#: src/screens/signup/CredentialsScreen.tsx:119
+msgid "screen.signup.credentials.confirm-password"
+msgstr "Confirm your password"
+
+#: src/screens/signup/CredentialsScreen.tsx:74
+msgid "screen.signup.credentials.description"
+msgstr "Create your username and password to secure your spot on the team"
+
+#: src/screens/signup/CredentialsScreen.tsx:133
+msgid "screen.signup.credentials.register"
+msgstr "Let’s play!"
+
+#: src/screens/signup/CredentialsScreen.tsx:70
+msgid "screen.signup.credentials.title"
+msgstr "Final step, champ!"
+
+#: src/screens/signup/PersonScreen.tsx:116
 msgid "screen.signup.given-name"
 msgstr "First Name"
 
-#: src/screens/signup/header/SportScreenHeader.tsx:18
-#: src/screens/signup/header/PersonScreenHeader.tsx:19
+#: src/screens/signup/ScreenHeader.tsx:15
 msgid "screen.signup.next"
 msgstr "Next"
 
-#: src/screens/signup/PersonScreen.tsx:96
+#: src/screens/signup/PersonScreen.tsx:98
 msgid "screen.signup.person.title"
 msgstr "We want to know you"
 
-#: src/screens/signup/SportScreen.tsx:27
+#: src/screens/signup/SportScreen.tsx:28
 msgid "screen.signup.sport.description.beginner"
 msgstr "Just starting out, trying to look good — even when the ball gets away!"
 
-#: src/screens/signup/SportScreen.tsx:28
+#: src/screens/signup/SportScreen.tsx:29
 msgid "screen.signup.sport.description.intermediate"
 msgstr "Been in the game for a while, with sharp skills and hungry for the next level."
 
-#: src/screens/signup/SportScreen.tsx:29
+#: src/screens/signup/SportScreen.tsx:30
 msgid "screen.signup.sport.description.intermediate-advanced"
 msgstr "Somewhere between hustle and wisdom — I've seen some ball!"
 
-#: src/screens/signup/SportScreen.tsx:30
+#: src/screens/signup/SportScreen.tsx:31
 msgid "screen.signup.sport.description.veteran"
 msgstr "Maybe slower... but every move counts. Like fine wine — only better with time."
 
-#: src/screens/signup/SportScreen.tsx:88
+#: src/screens/signup/SportScreen.tsx:89
 msgid "screen.signup.sport.game-type.fut11"
 msgstr "11-a-side Football"
 
-#: src/screens/signup/SportScreen.tsx:89
+#: src/screens/signup/SportScreen.tsx:90
 msgid "screen.signup.sport.game-type.fut7"
 msgstr "7-a-side Football"
 
-#: src/screens/signup/SportScreen.tsx:90
+#: src/screens/signup/SportScreen.tsx:91
 msgid "screen.signup.sport.game-type.futsal"
 msgstr "Futsal"
 
-#: src/screens/signup/SportScreen.tsx:194
+#: src/screens/signup/SportScreen.tsx:197
 msgid "screen.signup.sport.game-types"
 msgstr "Choose the game type"
 
-#: src/screens/signup/SportScreen.tsx:210
+#: src/screens/signup/SportScreen.tsx:213
 msgid "screen.signup.sport.select-your-position"
 msgstr "Select your position"
 
-#: src/screens/signup/PersonScreen.tsx:131
+#: src/screens/signup/PersonScreen.tsx:133
 msgid "screen.signup.surname"
 msgstr "Last Name"
 
@@ -473,7 +490,7 @@ msgstr "Schedule practices and matches"
 msgid "screen.welcome.team.title"
 msgstr "Manage Team"
 
-#: src/screens/signup/PersonScreen.tsx:104
+#: src/screens/signup/PersonScreen.tsx:106
 msgid "screens.signup.person.description"
 msgstr "We're glad you're here! Let's get to know you — your position, your player name, and more. Ready?"
 

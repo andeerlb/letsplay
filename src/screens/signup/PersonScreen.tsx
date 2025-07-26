@@ -86,7 +86,6 @@ const PersonScreen = forwardRef<PersonScreenRef, { navigation: PersonScreenNavig
                         paddingTop: 10,
                         paddingBottom: safeAreaInsets.bottom,
                         gap: 30,
-                        paddingHorizontal: 16,
                     }}
                 >
                     <View style={styles.header}>

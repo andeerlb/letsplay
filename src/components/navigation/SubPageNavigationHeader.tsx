@@ -1,22 +1,21 @@
 /* eslint-disable react-native/no-inline-styles */
-import { View, StyleSheet, Text, Pressable } from "react-native";
-import { useTheme } from "@context/ThemeProvider";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import BackArrowIcon from '@assets/icons/back-arrow.svg';
+import { useTheme } from "@context/ThemeProvider";
+import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import { JSX } from "react";
+import { Pressable, StyleSheet, Text, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 interface SubPageNavigationHeaderProps extends NativeStackHeaderProps {
   title?: string;
-  RightAction?: () => JSX.Element;
-  rightIconAction?: () => void;
+  RightAction?: () => JSX.Element | null;
   transparent?: boolean;
   position?: string;
 }
 
 type ValidPosition = 'absolute' | 'relative' | 'static';
 
-export const SubPageNavigationHeader = function ({ navigation, title = '', RightAction, rightIconAction, transparent = false, position }: SubPageNavigationHeaderProps) {
+export const SubPageNavigationHeader = function ({ navigation, title = '', RightAction, transparent = false, position }: SubPageNavigationHeaderProps) {
   const { theme } = useTheme();
   const insets = useSafeAreaInsets();
 
@@ -30,6 +29,7 @@ export const SubPageNavigationHeader = function ({ navigation, title = '', Right
       paddingTop: insets.top + 15,
       paddingBottom: 15,
       paddingHorizontal: 15,
+      width: '100%',
       backgroundColor: transparent ? 'transparent' : theme.secondaryColors.background,
       ...positionStyle,
     }]}>
@@ -42,9 +42,7 @@ export const SubPageNavigationHeader = function ({ navigation, title = '', Right
       ) : null}
       <Text style={[styles.title, { color: theme.colors.text, fontFamily: theme.fonts.logoBold.fontFamily }]}>{title.toUpperCase()}</Text>
       {RightAction ? (
-        <Pressable
-          onPress={rightIconAction ? rightIconAction : () => { }}
-        >
+        <Pressable>
           <RightAction />
         </Pressable>
       ) : null}

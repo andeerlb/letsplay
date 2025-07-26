@@ -5,7 +5,9 @@ import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import React, { useCallback } from "react";
 
 type SignUpScreenHeaderProps = NativeStackHeaderProps & {
-  onNext: () => void;
+  onNext?: () => void;
+  position?: string;
+  transparent?: boolean
 };
 
 const RightActionButton = ({ onNext }: { onNext: () => void }) => {
@@ -14,7 +16,10 @@ const RightActionButton = ({ onNext }: { onNext: () => void }) => {
 };
 
 const SignUpScreenHeader = ({ onNext, ...props }: SignUpScreenHeaderProps) => {
-  const rightAction = useCallback(() => <RightActionButton onNext={onNext} />, [onNext]);
+  const rightAction = useCallback(() => {
+    if (!onNext) return null;
+    return <RightActionButton onNext={onNext} />;
+  }, [onNext]);
 
   return (
     <SubPageNavigationHeader

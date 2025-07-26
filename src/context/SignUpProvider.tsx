@@ -12,40 +12,30 @@ type SignUpSportContextType = {
     position: Fut11PositionKey | Fut7PositionKey | FutsalPositionKey | null;
 };
 
-type SignUpCredentialsContextType = {
-    username: string;
-    password: string;
-};
-
 export type SignUpMoreSportsContextType = SignUpSportContextType[];
 
 export type SignUpContextType = {
     person?: SignUpPersonContextType;
     sport?: SignUpSportContextType;
     moreSports?: SignUpMoreSportsContextType;
-    credentials?: SignUpCredentialsContextType;
     setPerson: (person: SignUpPersonContextType) => void;
     setSport: (sport: SignUpSportContextType) => void;
     setMoreSports: (sports: SignUpMoreSportsContextType) => void;
-    setCredentials: (credentials: SignUpCredentialsContextType) => void;
 };
 
 export const SignUpContext = createContext<SignUpContextType>({
     person: undefined,
     sport: undefined,
     moreSports: undefined,
-    credentials: undefined,
     setPerson: () => { },
     setSport: () => { },
     setMoreSports: () => { },
-    setCredentials: () => { },
 });
 
 export const SignUpProvider = ({ children }: { children: React.ReactNode }) => {
     const [person, setPerson] = useState<SignUpPersonContextType | undefined>();
     const [sport, setSport] = useState<SignUpSportContextType | undefined>();
     const [moreSports, setMoreSports] = useState<SignUpMoreSportsContextType | undefined>();
-    const [credentials, setCredentials] = useState<SignUpCredentialsContextType | undefined>();
 
     return (
         <SignUpContext.Provider
@@ -53,11 +43,9 @@ export const SignUpProvider = ({ children }: { children: React.ReactNode }) => {
                 person,
                 sport,
                 moreSports,
-                credentials,
                 setPerson,
                 setSport,
                 setMoreSports,
-                setCredentials,
             }}
         >
             {children}
