@@ -13,6 +13,7 @@ import { t } from '@lingui/core/macro';
 import Birthdate from '@components/birthdate/Birthdate';
 import { SignUpStackParamList } from '@components/navigation/signUpNavigator';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import ScreenScrollWrapper from '@wrapper/ScreenScrollWrapper';
 
 const schema = yup.object({
     givenName: yup.string().required(),
@@ -76,12 +77,12 @@ const PersonScreen = forwardRef<PersonScreenRef, { navigation: PersonScreenNavig
         }));
 
         return (
-            <ScreenWrapper>
+            <ScreenScrollWrapper>
                 <View
                     style={{
                         paddingTop: 10,
                         paddingBottom: safeAreaInsets.bottom,
-                        gap: 60,
+                        gap: 30,
                         paddingHorizontal: 16,
                     }}
                 >
@@ -155,7 +156,7 @@ const PersonScreen = forwardRef<PersonScreenRef, { navigation: PersonScreenNavig
                         />
                     </View>
                 </View>
-            </ScreenWrapper>
+            </ScreenScrollWrapper>
         );
     }
 );
