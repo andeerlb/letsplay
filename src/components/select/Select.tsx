@@ -13,7 +13,7 @@ type Option = {
 type SelectProps = {
     value: string;
     onChange: (value: any) => void;
-    options: Option[];
+    options: Option[]
     label?: string;
     mode?: 'dialog' | 'dropdown';
     fullWidth?: boolean;
@@ -25,6 +25,7 @@ function renderPickerItems(
     theme: Theme,
     options: Option[]
 ) {
+
     return [
         <Picker.Item
             key="placeholder"

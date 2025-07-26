@@ -13,43 +13,43 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/components/positionCard/Fut11PositionCard.tsx:37
+#: src/components/positionCard/Fut11PositionCard.tsx:31
 msgid "component.fut11-position-card.attacking_midfielder"
 msgstr "Attacking Midfielder"
 
-#: src/components/positionCard/Fut11PositionCard.tsx:38
+#: src/components/positionCard/Fut11PositionCard.tsx:32
 msgid "component.fut11-position-card.attacking_midfielder.description"
 msgstr "Creates plays and pushes the attack with creativity."
 
-#: src/components/positionCard/Fut11PositionCard.tsx:22
+#: src/components/positionCard/Fut11PositionCard.tsx:19
 msgid "component.fut11-position-card.center_back"
 msgstr "Center Back"
 
-#: src/components/positionCard/Fut11PositionCard.tsx:23
+#: src/components/positionCard/Fut11PositionCard.tsx:20
 msgid "component.fut11-position-card.center_back.description"
 msgstr "Defends with strength and positioning. Pillar of defense."
 
-#: src/components/positionCard/Fut11PositionCard.tsx:57
+#: src/components/positionCard/Fut11PositionCard.tsx:47
 msgid "component.fut11-position-card.center_forward"
 msgstr "Center Forward"
 
-#: src/components/positionCard/Fut11PositionCard.tsx:58
+#: src/components/positionCard/Fut11PositionCard.tsx:48
 msgid "component.fut11-position-card.center_forward.description"
 msgstr "Offensive reference, plays with back to goal and finishes."
 
-#: src/components/positionCard/Fut11PositionCard.tsx:32
+#: src/components/positionCard/Fut11PositionCard.tsx:27
 msgid "component.fut11-position-card.central_midfielder"
 msgstr "Central Midfielder"
 
-#: src/components/positionCard/Fut11PositionCard.tsx:33
+#: src/components/positionCard/Fut11PositionCard.tsx:28
 msgid "component.fut11-position-card.central_midfielder.description"
 msgstr "Controls midfield, organizes the game and sets the rhythm."
 
-#: src/components/positionCard/Fut11PositionCard.tsx:27
+#: src/components/positionCard/Fut11PositionCard.tsx:23
 msgid "component.fut11-position-card.defensive_midfielder"
 msgstr "Defensive Midfielder"
 
-#: src/components/positionCard/Fut11PositionCard.tsx:28
+#: src/components/positionCard/Fut11PositionCard.tsx:24
 msgid "component.fut11-position-card.defensive_midfielder.description"
 msgstr "Protects defense and distributes the ball intelligently."
 
@@ -61,51 +61,51 @@ msgstr "Goalkeeper"
 msgid "component.fut11-position-card.goalkeeper.description"
 msgstr "Guards the goal with quick reflexes and defensive leadership."
 
-#: src/components/positionCard/Fut11PositionCard.tsx:17
+#: src/components/positionCard/Fut11PositionCard.tsx:15
 msgid "component.fut11-position-card.left_back"
 msgstr "Left Back"
 
-#: src/components/positionCard/Fut11PositionCard.tsx:18
+#: src/components/positionCard/Fut11PositionCard.tsx:16
 msgid "component.fut11-position-card.left_back.description"
 msgstr "Advances quickly on the left and defends firmly."
 
-#: src/components/positionCard/Fut11PositionCard.tsx:47
+#: src/components/positionCard/Fut11PositionCard.tsx:39
 msgid "component.fut11-position-card.left_winger"
 msgstr "Left Winger"
 
-#: src/components/positionCard/Fut11PositionCard.tsx:48
+#: src/components/positionCard/Fut11PositionCard.tsx:40
 msgid "component.fut11-position-card.left_winger.description"
 msgstr "Dribbles and shoots cutting in from the left."
 
-#: src/components/positionCard/Fut11PositionCard.tsx:12
+#: src/components/positionCard/Fut11PositionCard.tsx:11
 msgid "component.fut11-position-card.right_back"
 msgstr "Right Back"
 
-#: src/components/positionCard/Fut11PositionCard.tsx:13
+#: src/components/positionCard/Fut11PositionCard.tsx:12
 msgid "component.fut11-position-card.right_back.description"
 msgstr "Supports the attack and recovers defense on the right side."
 
-#: src/components/positionCard/Fut11PositionCard.tsx:42
+#: src/components/positionCard/Fut11PositionCard.tsx:35
 msgid "component.fut11-position-card.right_winger"
 msgstr "Right Winger"
 
-#: src/components/positionCard/Fut11PositionCard.tsx:43
+#: src/components/positionCard/Fut11PositionCard.tsx:36
 msgid "component.fut11-position-card.right_winger.description"
 msgstr "Attacks with speed and delivers dangerous crosses."
 
-#: src/components/positionCard/Fut11PositionCard.tsx:52
+#: src/components/positionCard/Fut11PositionCard.tsx:43
 msgid "component.fut11-position-card.striker"
 msgstr "Striker"
 
-#: src/components/positionCard/Fut11PositionCard.tsx:53
+#: src/components/positionCard/Fut11PositionCard.tsx:44
 msgid "component.fut11-position-card.striker.description"
 msgstr "Main goal scorer, leads the attack and finishes chances."
 
-#: src/components/positionCard/Fut7PositionCard.tsx:12
+#: src/components/positionCard/Fut7PositionCard.tsx:11
 msgid "component.fut7-position-card.fixo"
 msgstr "Fix"
 
-#: src/components/positionCard/Fut7PositionCard.tsx:13
+#: src/components/positionCard/Fut7PositionCard.tsx:12
 msgid "component.fut7-position-card.fixo.description"
 msgstr "Defensive anchor who organizes the back line."
 
@@ -117,43 +117,43 @@ msgstr "Goalkeeper"
 msgid "component.fut7-position-card.goalkeeper.description"
 msgstr "Protects the goal with quick reflexes and leadership."
 
-#: src/components/positionCard/Fut7PositionCard.tsx:22
+#: src/components/positionCard/Fut7PositionCard.tsx:19
 msgid "component.fut7-position-card.left-wing"
 msgstr "Left Wing"
 
-#: src/components/positionCard/Fut7PositionCard.tsx:23
+#: src/components/positionCard/Fut7PositionCard.tsx:20
 msgid "component.fut7-position-card.left-wing.description"
 msgstr "Attacks down the left flank with speed and skill."
 
-#: src/components/positionCard/Fut7PositionCard.tsx:27
+#: src/components/positionCard/Fut7PositionCard.tsx:23
 msgid "component.fut7-position-card.midfielder"
 msgstr "Midfielder"
 
-#: src/components/positionCard/Fut7PositionCard.tsx:28
+#: src/components/positionCard/Fut7PositionCard.tsx:24
 msgid "component.fut7-position-card.midfielder.description"
 msgstr "Controls the midfield and links defense and attack."
 
-#: src/components/positionCard/Fut7PositionCard.tsx:32
+#: src/components/positionCard/Fut7PositionCard.tsx:27
 msgid "component.fut7-position-card.pivot"
 msgstr "Pivot"
 
-#: src/components/positionCard/Fut7PositionCard.tsx:33
+#: src/components/positionCard/Fut7PositionCard.tsx:28
 msgid "component.fut7-position-card.pivot.description"
 msgstr "Central attacker who holds the ball and creates chances."
 
-#: src/components/positionCard/Fut7PositionCard.tsx:17
+#: src/components/positionCard/Fut7PositionCard.tsx:15
 msgid "component.fut7-position-card.right-wing"
 msgstr "Right Wing"
 
-#: src/components/positionCard/Fut7PositionCard.tsx:18
+#: src/components/positionCard/Fut7PositionCard.tsx:16
 msgid "component.fut7-position-card.right-wing.description"
 msgstr "Attacks down the right flank with speed and skill."
 
-#: src/components/positionCard/FutsalPositionCard.tsx:12
+#: src/components/positionCard/FutsalPositionCard.tsx:11
 msgid "component.futsal-position-card.fixo"
 msgstr "Fix"
 
-#: src/components/positionCard/FutsalPositionCard.tsx:13
+#: src/components/positionCard/FutsalPositionCard.tsx:12
 msgid "component.futsal-position-card.fixo.description"
 msgstr "Defensive player who organizes the defense."
 
@@ -165,27 +165,27 @@ msgstr "Goalkeeper"
 msgid "component.futsal-position-card.goalkeeper.description"
 msgstr "Guards the goal with quick reflexes."
 
-#: src/components/positionCard/FutsalPositionCard.tsx:22
+#: src/components/positionCard/FutsalPositionCard.tsx:19
 msgid "component.futsal-position-card.left_wing"
 msgstr "Left Wing"
 
-#: src/components/positionCard/FutsalPositionCard.tsx:23
+#: src/components/positionCard/FutsalPositionCard.tsx:20
 msgid "component.futsal-position-card.left_wing.description"
 msgstr "Attacks quickly and crosses from the left side."
 
-#: src/components/positionCard/FutsalPositionCard.tsx:27
+#: src/components/positionCard/FutsalPositionCard.tsx:23
 msgid "component.futsal-position-card.pivot"
 msgstr "Pivot"
 
-#: src/components/positionCard/FutsalPositionCard.tsx:28
+#: src/components/positionCard/FutsalPositionCard.tsx:24
 msgid "component.futsal-position-card.pivot.description"
 msgstr "Central attacker who holds the ball and creates scoring chances."
 
-#: src/components/positionCard/FutsalPositionCard.tsx:17
+#: src/components/positionCard/FutsalPositionCard.tsx:15
 msgid "component.futsal-position-card.right_wing"
 msgstr "Right Wing"
 
-#: src/components/positionCard/FutsalPositionCard.tsx:18
+#: src/components/positionCard/FutsalPositionCard.tsx:16
 msgid "component.futsal-position-card.right_wing.description"
 msgstr "Attacks quickly and crosses from the right side."
 
@@ -405,7 +405,7 @@ msgstr "Somewhere between hustle and wisdom — I've seen some ball!"
 msgid "screen.signup.sport.description.veteran"
 msgstr "Maybe slower... but every move counts. Like fine wine — only better with time."
 
-#: src/screens/signup/SportScreen.tsx:101
+#: src/screens/signup/SportScreen.tsx:100
 msgid "screen.signup.sport.select-your-position"
 msgstr "Select your position"
 
