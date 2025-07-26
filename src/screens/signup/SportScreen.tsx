@@ -5,6 +5,7 @@ import { FUT7_POSITIONS, Fut7PositionCard } from '@components/positionCard/Fut7P
 import { FUTSAL_POSITIONS, FutsalPositionCard } from '@components/positionCard/FutsalPositionCard';
 import Select from '@components/select/Select';
 import Animations from '@constants/animations';
+import { useSignUp } from '@context/SignUpProvider';
 import { useTheme } from '@context/ThemeProvider';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { MessageDescriptor } from '@lingui/core';
@@ -41,26 +42,26 @@ type SportScreenProps = {
 type PositionOption = { label: string; value: string };
 
 const GAME_TYPE_VALUES = ['fut11', 'fut7', 'futsal'] as const;
-type GameType = typeof GAME_TYPE_VALUES[number];
+export type GameType = typeof GAME_TYPE_VALUES[number];
 
-type Fut11PositionKey = keyof typeof FUT11_POSITIONS;
-type Fut7PositionKey = keyof typeof FUT7_POSITIONS;
-type FutsalPositionKey = keyof typeof FUTSAL_POSITIONS;
+export type Fut11PositionKey = keyof typeof FUT11_POSITIONS;
+export type Fut7PositionKey = keyof typeof FUT7_POSITIONS;
+export type FutsalPositionKey = keyof typeof FUTSAL_POSITIONS;
 
-type PositionKeyByGameType<T extends GameType> =
+export type PositionKeyByGameType<T extends GameType> =
     T extends 'fut11' ? Fut11PositionKey :
     T extends 'fut7' ? Fut7PositionKey :
     T extends 'futsal' ? FutsalPositionKey :
     never;
 
 type FormValues<T extends GameType = GameType> = {
-    gameTypes: T;
+    game: T;
     position: PositionKeyByGameType<T> | null;
 };
 
 const schema: yup.ObjectSchema<FormValues> = yup.object({
     position: yup.string().required(),
-    gameTypes: yup
+    game: yup
         .mixed<GameType>()
         .oneOf(GAME_TYPE_VALUES)
         .required(),
@@ -104,8 +105,9 @@ const SportScreen = forwardRef<SportScreenRef, SportScreenProps>(({ navigation }
         setValue
     } = useForm<FormValues>({ resolver: yupResolver(schema) });
 
+    const { setSport } = useSignUp();
     const selectedPosition = watch('position') as PositionKeyByGameType<GameType>;
-    const selectedGameType = watch('gameTypes') as GameType;
+    const selectedGameType = watch('game') as GameType;
 
     const [positions, setPositions] = useState<PositionOption[]>([]);
     const [gameTypes, setGameTypes] = useState<PositionOption[]>([]);
@@ -169,7 +171,8 @@ const SportScreen = forwardRef<SportScreenRef, SportScreenProps>(({ navigation }
 
     useImperativeHandle(ref, () => ({
         submitForm: () => {
-            handleSubmit(() => {
+            handleSubmit((data) => {
+                setSport(data);
                 navigation.navigate('MoreSports');
             })();
         },
@@ -188,13 +191,13 @@ const SportScreen = forwardRef<SportScreenRef, SportScreenProps>(({ navigation }
                 <View style={styles.content}>
                     <Controller
                         control={control}
-                        name="gameTypes"
+                        name="game"
                         render={({ field: { onChange, value } }) => (
                             <Select
                                 label={t`screen.signup.sport.game-types`}
                                 options={gameTypes}
                                 value={value}
-                                error={errors.gameTypes?.message}
+                                error={errors.game?.message}
                                 onChange={onChange}
                             />
                         )}

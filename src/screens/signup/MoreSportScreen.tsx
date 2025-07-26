@@ -1,9 +1,10 @@
 import Button from '@components/button/Button';
 import { SignUpStackParamList } from '@components/navigation/signUpNavigator';
+import { SignUpMoreSportsContextType, useSignUp } from '@context/SignUpProvider';
 import { useTheme } from '@context/ThemeProvider';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import ScreenScrollWrapper from '@wrapper/ScreenScrollWrapper';
+import ScreenWrapper from '@wrapper/ScreenWrapper';
 import React, { forwardRef, useImperativeHandle, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import {
@@ -41,41 +42,43 @@ const allGames = [
         label: 'Futsal 🏃‍♂️',
         positions: ['Goleiro', 'Fixo', 'Ala', 'Pivô'],
     },
-];
+] as const;
+
+type GameId = (typeof allGames)[number]['id'];
 
 const MoreSportsScreen = forwardRef<MoreSportsScreenRef, MoreSportsScreenProps>(
     ({ navigation }, ref) => {
+        const { setMoreSports } = useSignUp();
         const { theme } = useTheme();
         const { handleSubmit } = useForm({ resolver: yupResolver(schema) });
 
-        const name = 'Anderson';
-        const selectedGameName = 'FUT 11';
-
         const [step, setStep] = useState<'game' | 'position' | 'another'>('game');
-        const [remainingGames, setRemainingGames] = useState(allGames);
-        const [selectedGame, setSelectedGame] = useState<any>(null);
-        const [selectedGamesWithPositions, setSelectedGamesWithPositions] = useState<
-            { game: string; position: string }[]
-        >([]);
+        const [remainingGames, setRemainingGames] = useState([...allGames]);
+        const [selectedGame, setSelectedGame] = useState<(typeof allGames)[number] | null>(null);
+        const [selectedGamesWithPositions, setSelectedGamesWithPositions] = useState<SignUpMoreSportsContextType>([]);
 
         useImperativeHandle(ref, () => ({
             submitForm: () => {
                 handleSubmit(() => {
+                    setMoreSports(selectedGamesWithPositions);
                     navigation.navigate('Credentials');
                 })();
             },
         }));
 
-        const handleSelectGame = (game: any) => {
+        const handleSelectGame = (game: (typeof allGames)[number]) => {
             setSelectedGame(game);
             setStep('position');
         };
 
         const handleSelectPosition = (position: string) => {
+            if (!selectedGame) return;
+
             setSelectedGamesWithPositions(prev => [
                 ...prev,
-                { game: selectedGame.label, position },
+                { game: selectedGame.id as GameId, position },
             ]);
+
             setRemainingGames(prev => prev.filter(g => g.id !== selectedGame.id));
             setSelectedGame(null);
             setStep('another');
@@ -86,73 +89,39 @@ const MoreSportsScreen = forwardRef<MoreSportsScreenRef, MoreSportsScreenProps>(
                 const removedItem = prev[indexToRemove];
                 if (!removedItem) return prev;
 
-                const removedGame = allGames.find(g => g.label === removedItem.game);
+                const removedGame = allGames.find(g => g.id === removedItem.game);
                 if (removedGame) {
-                    if (selectedGamesWithPositions.length === 1) {
-                        setStep('game');
-                    }
                     setRemainingGames(rg => [...rg, removedGame].sort((a, b) => a.label.localeCompare(b.label)));
                 }
 
-                return prev.filter((_, index) => index !== indexToRemove);
+                const updated = prev.filter((_, index) => index !== indexToRemove);
+                if (updated.length === 0) {
+                    setStep('game');
+                }
+
+                return updated;
             });
         };
 
-
         return (
-            <ScreenScrollWrapper>
-                <View
-                    style={[
-                        styles.container,
-                        { backgroundColor: theme.colors.background },
-                    ]}
-                >
+            <ScreenWrapper>
+                <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
                     <View style={styles.header}>
-                        <Text
-                            style={[
-                                styles.descriptionPart1,
-                                {
-                                    color: theme.colors.text,
-                                    fontFamily: theme.fonts.logoBold.fontFamily,
-                                },
-                            ]}
-                        >
-                            Top demais,{' '}
-                            <Text
-                                style={[styles.playerName, { color: theme.colors.secondary }]}
-                            >
-                                {name}
-                            </Text>
-                            !
+                        <Text style={[styles.descriptionPart1, { color: theme.colors.text, fontFamily: theme.fonts.logoBold.fontFamily }]}>
+                            Top demais, <Text style={[styles.playerName, { color: theme.colors.secondary }]}>Anderson</Text>!
                         </Text>
 
                         {step === 'game' && (
-                            <Text
-                                style={[
-                                    styles.descriptionPart2,
-                                    {
-                                        color: theme.colors.text,
-                                        fontFamily: theme.fonts.regular.fontFamily,
-                                    },
-                                ]}
-                            >
+                            <Text style={[styles.descriptionPart2, { color: theme.colors.text, fontFamily: theme.fonts.regular.fontFamily }]}>
                                 <Text style={{ fontFamily: theme.fonts.bold.fontFamily }}>
                                     Agora conta aí:
                                 </Text>{' '}
-                                encara outro jogo também ou é só {selectedGameName} na veia?
+                                encara outro jogo também ou é só FUT 11 na veia?
                             </Text>
                         )}
 
-                        {step === 'position' && (
-                            <Text
-                                style={[
-                                    styles.descriptionPart2,
-                                    {
-                                        color: theme.colors.text,
-                                        fontFamily: theme.fonts.regular.fontFamily,
-                                    },
-                                ]}
-                            >
+                        {step === 'position' && selectedGame && (
+                            <Text style={[styles.descriptionPart2, { color: theme.colors.text, fontFamily: theme.fonts.regular.fontFamily }]}>
                                 Show! E no{' '}
                                 <Text style={{ fontFamily: theme.fonts.bold.fontFamily }}>
                                     {selectedGame.label}
@@ -162,15 +131,7 @@ const MoreSportsScreen = forwardRef<MoreSportsScreenRef, MoreSportsScreenProps>(
                         )}
 
                         {step === 'another' && (
-                            <Text
-                                style={[
-                                    styles.descriptionPart2,
-                                    {
-                                        color: theme.colors.text,
-                                        fontFamily: theme.fonts.regular.fontFamily,
-                                    },
-                                ]}
-                            >
+                            <Text style={[styles.descriptionPart2, { color: theme.colors.text, fontFamily: theme.fonts.regular.fontFamily }]}>
                                 {remainingGames.length ? 'Quer escolher mais um jogo ou bora pro próximo passo?' : 'Você tá voando, craque! Todos os jogos já selecionados! 🚀⚽'}
                             </Text>
                         )}
@@ -178,30 +139,19 @@ const MoreSportsScreen = forwardRef<MoreSportsScreenRef, MoreSportsScreenProps>(
 
                     {step === 'another' && selectedGamesWithPositions.length > 0 && (
                         <View style={styles.selectedSummary}>
-                            {selectedGamesWithPositions.map((item, index) => (
-                                <View
-                                    key={`${item.game}-${index}`}
-                                    style={[
-                                        styles.summaryItem,
-                                        { backgroundColor: theme.secondaryColors.background },
-                                    ]}
-                                >
-                                    <Text
-                                        style={[
-                                            styles.summaryText,
-                                            {
-                                                color: theme.secondaryColors.text,
-                                                fontFamily: theme.fonts.medium.fontFamily,
-                                            },
-                                        ]}
-                                    >
-                                        {item.game} → {item.position}
-                                    </Text>
-                                    <TouchableOpacity onPress={() => handleDeleteSelected(index)}>
-                                        <Text style={[styles.deleteBtn, { color: theme.secondaryColors.text }]}>✕</Text>
-                                    </TouchableOpacity>
-                                </View>
-                            ))}
+                            {selectedGamesWithPositions.map((item, index) => {
+                                const gameLabel = allGames.find(g => g.id === item.game)?.label ?? item.game;
+                                return (
+                                    <View key={`${item.game}-${index}`} style={[styles.summaryItem, { backgroundColor: theme.secondaryColors.background }]}>
+                                        <Text style={[styles.summaryText, { color: theme.secondaryColors.text, fontFamily: theme.fonts.medium.fontFamily }]}>
+                                            {gameLabel} → {item.position}
+                                        </Text>
+                                        <TouchableOpacity onPress={() => handleDeleteSelected(index)}>
+                                            <Text style={[styles.deleteBtn, { color: theme.secondaryColors.text }]}>✕</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                );
+                            })}
                         </View>
                     )}
 
@@ -222,15 +172,7 @@ const MoreSportsScreen = forwardRef<MoreSportsScreenRef, MoreSportsScreenProps>(
                                     onPress={() => handleSelectGame(item)}
                                     activeOpacity={0.8}
                                 >
-                                    <Text
-                                        style={[
-                                            styles.optionText,
-                                            {
-                                                color: theme.colors.text,
-                                                fontFamily: theme.fonts.medium.fontFamily,
-                                            },
-                                        ]}
-                                    >
+                                    <Text style={[styles.optionText, { color: theme.colors.text, fontFamily: theme.fonts.medium.fontFamily }]}>
                                         {item.label}
                                     </Text>
                                 </TouchableOpacity>
@@ -238,9 +180,9 @@ const MoreSportsScreen = forwardRef<MoreSportsScreenRef, MoreSportsScreenProps>(
                         />
                     )}
 
-                    {step === 'position' && (
+                    {step === 'position' && selectedGame && (
                         <FlatList
-                            data={selectedGame?.positions || []}
+                            data={selectedGame.positions}
                             keyExtractor={(item, index) => `${selectedGame.id}-${index}`}
                             contentContainerStyle={styles.optionsContainer}
                             renderItem={({ item }) => (
@@ -255,15 +197,7 @@ const MoreSportsScreen = forwardRef<MoreSportsScreenRef, MoreSportsScreenProps>(
                                     onPress={() => handleSelectPosition(item)}
                                     activeOpacity={0.8}
                                 >
-                                    <Text
-                                        style={[
-                                            styles.optionText,
-                                            {
-                                                color: theme.colors.text,
-                                                fontFamily: theme.fonts.medium.fontFamily,
-                                            },
-                                        ]}
-                                    >
+                                    <Text style={[styles.optionText, { color: theme.colors.text, fontFamily: theme.fonts.medium.fontFamily }]}>
                                         {item}
                                     </Text>
                                 </TouchableOpacity>
@@ -271,11 +205,11 @@ const MoreSportsScreen = forwardRef<MoreSportsScreenRef, MoreSportsScreenProps>(
                         />
                     )}
 
-                    {step === 'another' && remainingGames.length
-                        && <Button label='Bora escolher outro!' onPress={() => setStep('game')} />
-                    }
+                    {step === 'another' && remainingGames.length > 0 && (
+                        <Button label='Bora escolher outro!' onPress={() => setStep('game')} />
+                    )}
                 </View>
-            </ScreenScrollWrapper>
+            </ScreenWrapper>
         );
     }
 );
@@ -284,7 +218,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingTop: 30,
-        gap: 50
+        gap: 50,
     },
     header: {
         gap: 20,
@@ -314,9 +248,6 @@ const styles = StyleSheet.create({
     },
     selectedSummary: {
         gap: 8,
-    },
-    summaryTitle: {
-        fontSize: 16,
     },
     summaryItem: {
         flexDirection: 'row',

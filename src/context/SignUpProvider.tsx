@@ -1,14 +1,15 @@
+import { Fut11PositionKey, Fut7PositionKey, FutsalPositionKey, GameType } from '@screens/signup/SportScreen';
 import React, { createContext, useContext, useState } from 'react';
 
 type SignUpPersonContextType = {
     givenName: string;
     surname: string;
-    birthDate: string;
+    birthdate: string;
 };
 
 type SignUpSportContextType = {
-    gameType: string;
-    position: string;
+    game: GameType;
+    position: Fut11PositionKey | Fut7PositionKey | FutsalPositionKey | null;
 };
 
 type SignUpCredentialsContextType = {
@@ -16,7 +17,7 @@ type SignUpCredentialsContextType = {
     password: string;
 };
 
-type SignUpMoreSportsContextType = SignUpSportContextType[];
+export type SignUpMoreSportsContextType = SignUpSportContextType[];
 
 export type SignUpContextType = {
     person?: SignUpPersonContextType;

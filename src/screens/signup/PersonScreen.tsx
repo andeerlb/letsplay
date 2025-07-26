@@ -1,16 +1,17 @@
-import React, { useRef, forwardRef, useImperativeHandle } from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
 import { useTheme } from '@context/ThemeProvider';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useForm, Controller } from 'react-hook-form';
-import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import React, { forwardRef, useImperativeHandle, useRef } from 'react';
+import { Controller, useForm } from 'react-hook-form';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import * as yup from 'yup';
 
-import Input from '@components/input/Input';
-import { Trans } from '@lingui/react/macro';
-import { t } from '@lingui/core/macro';
 import Birthdate from '@components/birthdate/Birthdate';
+import Input from '@components/input/Input';
 import { SignUpStackParamList } from '@components/navigation/signUpNavigator';
+import { useSignUp } from '@context/SignUpProvider';
+import { t } from '@lingui/core/macro';
+import { Trans } from '@lingui/react/macro';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import ScreenScrollWrapper from '@wrapper/ScreenScrollWrapper';
 
@@ -53,6 +54,7 @@ export type PersonScreenRef = {
 
 const PersonScreen = forwardRef<PersonScreenRef, { navigation: PersonScreenNavigationProp }>(
     ({ navigation }, ref) => {
+        const { setPerson } = useSignUp();
         const { theme } = useTheme();
         const safeAreaInsets = useSafeAreaInsets();
 
@@ -69,7 +71,8 @@ const PersonScreen = forwardRef<PersonScreenRef, { navigation: PersonScreenNavig
 
         useImperativeHandle(ref, () => ({
             submitForm: () => {
-                handleSubmit(() => {
+                handleSubmit((data) => {
+                    setPerson(data);
                     navigation.navigate('Sport');
                 })();
             },
