@@ -1,4 +1,4 @@
-import { ScrollView, StatusBar, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { NoAuthStackParamList } from "@components/navigation/noAuthNavigator";
@@ -8,7 +8,6 @@ import Svg, { Defs, LinearGradient, Stop, Rect } from 'react-native-svg';
 import StatsIcon from '@assets/icons/stats.svg';
 import TeamIcon from '@assets/icons/team.svg';
 import CalendarIcon from '@assets/icons/calendar.svg';
-import TrophyIcon from '@assets/icons/trophy.svg';
 import Button from "@components/button/Button";
 import { Trans } from "@lingui/react/macro";
 import { t } from "@lingui/core/macro";

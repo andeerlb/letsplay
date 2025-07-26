@@ -21,7 +21,7 @@ export default function ScreenScrollWrapper({ children }: { children: React.Reac
     >
       {children}
 
-      {showBottomSpace && <View style={{ height: 40 }} />}
+      {showBottomSpace && <View style={{ height: 30 }} />}
     </ScrollView>
   );
 }
