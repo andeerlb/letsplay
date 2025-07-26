@@ -1,6 +1,5 @@
 import React, { useRef, forwardRef, useImperativeHandle } from 'react';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
-import ScreenWrapper from '@wrapper/ScreenWrapper';
 import { useTheme } from '@context/ThemeProvider';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useForm, Controller } from 'react-hook-form';

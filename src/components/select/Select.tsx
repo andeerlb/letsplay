@@ -19,7 +19,6 @@ type SelectProps = {
     fullWidth?: boolean;
     width?: number;
     error?: string;
-    placeholder: string;
 };
 
 function renderPickerItems(
