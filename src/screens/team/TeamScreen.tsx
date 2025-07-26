@@ -13,8 +13,7 @@ export default function TeamScreen({ }: { navigation: TeamScreenNavigationProps 
         <ScreenWrapper>
             <Search
                 placeholder={t`screen.team.search-placeholder`}
-                onSearch={(query) => {
-                }}
+                onSearch={() => { }}
             />
         </ScreenWrapper>
     );

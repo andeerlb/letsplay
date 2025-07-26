@@ -49,6 +49,6 @@ export function useHideTabBar(navigation: NavigationProp<any>) {
                     tabBarStyle: getTabBarStyle(theme, safeAreaInsets),
                 });
             };
-        }, [navigation, theme])
+        }, [navigation, safeAreaInsets, theme])
     );
 }

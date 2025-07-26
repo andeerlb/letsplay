@@ -22,11 +22,11 @@ export default function WelcomeScreen({ navigation }: { navigation: WelcomeScree
     }
 
     const goToSignUp = () => {
-        navigation.navigate('SignUp', { screen: 'Sport' });
+        navigation.navigate('SignUp');
     }
 
     return (
-        <View style={{ flex: 1 }}>
+        <View style={styles.rootContainer}>
             <Svg style={StyleSheet.absoluteFill}>
                 <Defs>
                     <LinearGradient id="grad" x1="0" y1="0" x2="0.8" y2="1">
@@ -178,5 +178,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(0,0,0,.3)',
         borderWidth: .2,
         borderColor: "#fff"
+    },
+    rootContainer: {
+        flex: 1
     }
 });

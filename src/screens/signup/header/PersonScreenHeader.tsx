@@ -14,6 +14,7 @@ const PersonScreenHeader = ({ onNext, ...props }: PersonScreenHeaderProps) => {
     <SubPageNavigationHeader
       {...props}
       title=""
+      // eslint-disable-next-line react/no-unstable-nested-components
       RightAction={() => (
         <Button label={t`screen.signup.next`} onPress={onNext} />
       )}

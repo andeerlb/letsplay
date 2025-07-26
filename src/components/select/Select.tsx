@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React from 'react';
 import { View, StyleSheet, Text, Platform, ActionSheetIOS, TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { useTheme } from "@context/ThemeProvider";
@@ -100,6 +100,7 @@ function ios(
             <TouchableOpacity
                 style={[
                     styles.pickerWrapper,
+                    // eslint-disable-next-line react-native/no-inline-styles
                     {
                         borderColor: error ? theme.colors.formError : theme.colors.border,
                         backgroundColor: theme.secondaryColors.background,
@@ -112,6 +113,7 @@ function ios(
                 onPress={showActionSheet}
             >
                 <Text
+                    // eslint-disable-next-line react-native/no-inline-styles
                     style={{
                         color: theme.colors.text,
                         fontSize: 18,
@@ -149,6 +151,7 @@ function android(
             <View
                 style={[
                     styles.pickerWrapper,
+                    // eslint-disable-next-line react-native/no-inline-styles
                     {
                         borderColor: error ? theme.colors.formError : theme.colors.border,
                         backgroundColor: theme.secondaryColors.background,

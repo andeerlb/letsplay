@@ -42,7 +42,7 @@ function Root() {
       const lang = await getDeviceLanguage();
       changeLanguage(lang);
     })();
-  }, []);
+  }, [changeLanguage]);
 
   return (
     <>

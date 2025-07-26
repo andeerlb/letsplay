@@ -31,7 +31,7 @@ const AuthStackNavigator = () => {
     changeLanguage(settingQuery.data.language);
     changeTheme(settingQuery.data.theme);
     dispatch(setUser(userQuery.data));
-  }, [settingQuery.data, settingQuery.isLoading]);
+  }, [changeLanguage, changeTheme, dispatch, settingQuery.data, settingQuery.isLoading, userQuery.data]);
 
   if (settingQuery.isLoading || userQuery.isLoading) {
     return;

@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import { View, StyleSheet, Text, Pressable } from "react-native";
 import { useTheme } from "@context/ThemeProvider";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -13,9 +14,16 @@ interface SubPageNavigationHeaderProps extends NativeStackHeaderProps {
   position?: string;
 }
 
+type ValidPosition = 'absolute' | 'relative' | 'static';
+
 export const SubPageNavigationHeader = function ({ navigation, title = '', RightAction, rightIconAction, transparent = false, position }: SubPageNavigationHeaderProps) {
   const { theme } = useTheme();
   const insets = useSafeAreaInsets();
+
+  const isValidPosition = (pos: any): pos is ValidPosition =>
+    pos === 'absolute' || pos === 'relative' || pos === 'static';
+
+  const positionStyle = isValidPosition(position) ? { position } : {};
 
   return (
     <View style={[styles.header, {
@@ -23,7 +31,7 @@ export const SubPageNavigationHeader = function ({ navigation, title = '', Right
       paddingBottom: 15,
       paddingHorizontal: 15,
       backgroundColor: transparent ? 'transparent' : theme.secondaryColors.background,
-      position: position ? position : null
+      ...positionStyle,
     }]}>
       {navigation && navigation.canGoBack() ? (
         <Pressable

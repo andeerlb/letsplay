@@ -69,7 +69,7 @@ const PersonScreen = forwardRef<PersonScreenRef, { navigation: PersonScreenNavig
 
         useImperativeHandle(ref, () => ({
             submitForm: () => {
-                handleSubmit((data) => {
+                handleSubmit(() => {
                     navigation.navigate('Sport');
                 })();
             },
@@ -78,6 +78,7 @@ const PersonScreen = forwardRef<PersonScreenRef, { navigation: PersonScreenNavig
         return (
             <ScreenScrollWrapper>
                 <View
+                    // eslint-disable-next-line react-native/no-inline-styles
                     style={{
                         paddingTop: 10,
                         paddingBottom: safeAreaInsets.bottom,

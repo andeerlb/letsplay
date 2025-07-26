@@ -1,10 +1,10 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, { useRef } from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { NoAuthStackParamList } from "@components/navigation/noAuthNavigator";
 import { useTheme } from "@context/ThemeProvider";
 import { Trans, useLingui } from "@lingui/react/macro";
-import { t } from "@lingui/core/macro";
 import InputEmail from "@components/input/inputEmail";
 import InputPassword from "@components/input/inputPassword";
 import Button from "@components/button/Button";

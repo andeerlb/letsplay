@@ -10,7 +10,7 @@ export default function ScreenScrollWrapper({ children }: { children: React.Reac
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : undefined}
-      style={{ flex: 1 }}
+      style={styles.rootContainer}
     >
       <ScrollView
         contentContainerStyle={[
@@ -30,6 +30,9 @@ export default function ScreenScrollWrapper({ children }: { children: React.Reac
 }
 
 const styles = StyleSheet.create({
+  rootContainer: {
+    flex: 1
+  },
   container: {
     flexGrow: 1,
     paddingHorizontal: 15,
