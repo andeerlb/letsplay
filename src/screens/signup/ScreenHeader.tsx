@@ -3,18 +3,17 @@ import SubPageNavigationHeader from "@components/navigation/SubPageNavigationHea
 import { useLingui } from "@lingui/react/macro";
 import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 
-type PersonScreenHeaderProps = NativeStackHeaderProps & {
+type SignUpScreenHeaderProps = NativeStackHeaderProps & {
   onNext: () => void;
 };
 
-const PersonScreenHeader = ({ onNext, ...props }: PersonScreenHeaderProps) => {
+const SignUpScreenHeader = ({ onNext, ...props }: SignUpScreenHeaderProps) => {
   const { t } = useLingui();
 
   return (
     <SubPageNavigationHeader
       {...props}
       title=""
-      // eslint-disable-next-line react/no-unstable-nested-components
       RightAction={() => (
         <Button label={t`screen.signup.next`} onPress={onNext} />
       )}
@@ -22,8 +21,8 @@ const PersonScreenHeader = ({ onNext, ...props }: PersonScreenHeaderProps) => {
   );
 };
 
-const PersonScreenHeaderWrapper = (props: PersonScreenHeaderProps) => {
-  return <PersonScreenHeader {...props} />;
+const SignUpScreenHeaderWrapper = (props: SignUpScreenHeaderProps) => {
+  return <SignUpScreenHeader {...props} />;
 };
 
-export default PersonScreenHeaderWrapper;
+export default SignUpScreenHeaderWrapper;

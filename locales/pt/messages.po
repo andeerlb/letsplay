@@ -193,11 +193,11 @@ msgstr "Rápido e habilidoso, atua pelo lado direito em ataque e defesa."
 msgid "component.input-email.placeholder"
 msgstr "exemplo@email.com"
 
-#: src/components/select/Select.tsx:186
+#: src/components/select/Select.tsx:188
 msgid "component.select.cancel"
 msgstr "Cancelar"
 
-#: src/components/select/Select.tsx:183
+#: src/components/select/Select.tsx:185
 msgid "component.select.placeholder"
 msgstr "Selecione uma opção"
 
@@ -385,7 +385,7 @@ msgid "screen.signup.given-name"
 msgstr "Nome"
 
 #: src/screens/signup/header/SportScreenHeader.tsx:18
-#: src/screens/signup/header/PersonScreenHeader.tsx:18
+#: src/screens/signup/header/PersonScreenHeader.tsx:19
 msgid "screen.signup.next"
 msgstr "Continuar"
 
@@ -393,39 +393,39 @@ msgstr "Continuar"
 msgid "screen.signup.person.title"
 msgstr "Queremos te conhecer"
 
-#: src/screens/signup/SportScreen.tsx:30
+#: src/screens/signup/SportScreen.tsx:27
 msgid "screen.signup.sport.description.beginner"
 msgstr "Começando agora, mas já tentando fazer bonito — mesmo que a bola escape às vezes!"
 
-#: src/screens/signup/SportScreen.tsx:31
+#: src/screens/signup/SportScreen.tsx:28
 msgid "screen.signup.sport.description.intermediate"
 msgstr "Na pista há um tempo, com a técnica afiada e vontade de chegar no próximo nível."
 
-#: src/screens/signup/SportScreen.tsx:32
+#: src/screens/signup/SportScreen.tsx:29
 msgid "screen.signup.sport.description.intermediate-advanced"
 msgstr "Entre a raça de sempre e a sabedoria de quem já viveu muita bola."
 
-#: src/screens/signup/SportScreen.tsx:33
+#: src/screens/signup/SportScreen.tsx:30
 msgid "screen.signup.sport.description.veteran"
 msgstr "Talvez mais lento… mas cada passo é pensado. Tipo vinho: só melhora."
 
-#: src/screens/signup/SportScreen.tsx:44
+#: src/screens/signup/SportScreen.tsx:88
 msgid "screen.signup.sport.game-type.fut11"
 msgstr "Futebol 11"
 
-#: src/screens/signup/SportScreen.tsx:48
+#: src/screens/signup/SportScreen.tsx:89
 msgid "screen.signup.sport.game-type.fut7"
 msgstr "Futebol 7"
 
-#: src/screens/signup/SportScreen.tsx:52
+#: src/screens/signup/SportScreen.tsx:90
 msgid "screen.signup.sport.game-type.futsal"
 msgstr "Futsal"
 
-#: src/screens/signup/SportScreen.tsx:163
+#: src/screens/signup/SportScreen.tsx:194
 msgid "screen.signup.sport.game-types"
 msgstr "Escolha o tipo de jogo"
 
-#: src/screens/signup/SportScreen.tsx:179
+#: src/screens/signup/SportScreen.tsx:210
 msgid "screen.signup.sport.select-your-position"
 msgstr "Qual posição você joga?"
 

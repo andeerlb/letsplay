@@ -170,7 +170,7 @@ const SportScreen = forwardRef<SportScreenRef, SportScreenProps>(({ navigation }
     useImperativeHandle(ref, () => ({
         submitForm: () => {
             handleSubmit(() => {
-                navigation.navigate('Credentials');
+                navigation.navigate('MoreSports');
             })();
         },
     }));
