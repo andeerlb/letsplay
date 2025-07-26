@@ -93,7 +93,7 @@ export default function WelcomeScreen({ navigation }: { navigation: WelcomeScree
                             </Text>
                         </View>
                     </View>
-                    <View style={{ gap: 10 }}>
+                    <View style={styles.containerBtn}>
                         <Button label={t`welcome.screen.signup`} style={styles.buttonStart} onPress={goToSignUp} />
                         <Button label={t`welcome.screen.signin`} style={styles.buttonHasAccount} onPress={goToSignIn} />
                     </View>
@@ -181,5 +181,8 @@ const styles = StyleSheet.create({
     },
     rootContainer: {
         flex: 1
+    },
+    containerBtn: {
+        gap: 10
     }
 });

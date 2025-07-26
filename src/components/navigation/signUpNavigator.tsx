@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unstable-nested-components */
 import { SignUpProvider } from '@context/SignUpProvider';
 import { useTheme } from '@context/ThemeProvider';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
