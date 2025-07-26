@@ -1,27 +1,25 @@
 import { useTheme } from '@context/ThemeProvider';
-import React, { useState } from 'react';
-import { ScrollView, View, StyleSheet, useWindowDimensions } from 'react-native';
+import React from 'react';
+import { ScrollView, StyleSheet } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function ScreenScrollWrapper({ children }: { children: React.ReactNode }) {
   const { theme } = useTheme();
-  const [contentHeight, setContentHeight] = useState(0);
-  const { height: screenHeight } = useWindowDimensions();
-
-  const showBottomSpace = contentHeight > screenHeight;
+  const safeAreaInsets = useSafeAreaInsets();
 
   return (
     <ScrollView
-      onContentSizeChange={(_, h) => setContentHeight(h)}
       contentContainerStyle={[
         styles.container,
-        { backgroundColor: theme.colors.background }
+        {
+          backgroundColor: theme.colors.background,
+          paddingBottom: safeAreaInsets.bottom
+        }
       ]}
       keyboardShouldPersistTaps="handled"
       showsVerticalScrollIndicator={false}
     >
       {children}
-
-      {showBottomSpace && <View style={{ height: 30 }} />}
     </ScrollView>
   );
 }
