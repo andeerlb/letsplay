@@ -1,16 +1,16 @@
-import { ScrollView, StyleSheet, Text, View } from "react-native";
-import React from "react";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { NoAuthStackParamList } from "@components/navigation/noAuthNavigator";
+import CalendarIcon from '@assets/icons/calendar.svg';
 import LetsplayIcon from '@assets/icons/letsplay-round.svg';
-import { useTheme } from "@context/ThemeProvider";
-import Svg, { Defs, LinearGradient, Stop, Rect } from 'react-native-svg';
 import StatsIcon from '@assets/icons/stats.svg';
 import TeamIcon from '@assets/icons/team.svg';
-import CalendarIcon from '@assets/icons/calendar.svg';
 import Button from "@components/button/Button";
-import { Trans } from "@lingui/react/macro";
+import { NoAuthStackParamList } from "@components/navigation/noAuthNavigator";
+import { useTheme } from "@context/ThemeProvider";
 import { t } from "@lingui/core/macro";
+import { Trans } from "@lingui/react/macro";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import React from "react";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
+import Svg, { Defs, LinearGradient, Rect, Stop } from 'react-native-svg';
 
 type WelcomeScreenNavigationProp = NativeStackNavigationProp<NoAuthStackParamList, 'Welcome'>;
 

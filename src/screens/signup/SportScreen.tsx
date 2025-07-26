@@ -1,27 +1,27 @@
+import { Animation } from '@components/animation/Animation';
+import { SignUpStackParamList } from '@components/navigation/signUpNavigator';
+import { FUT11_POSITIONS, Fut11PositionCard } from '@components/positionCard/Fut11PositionCard';
+import { FUT7_POSITIONS, Fut7PositionCard } from '@components/positionCard/Fut7PositionCard';
+import { FUTSAL_POSITIONS, FutsalPositionCard } from '@components/positionCard/FutsalPositionCard';
+import Select from '@components/select/Select';
+import Animations from '@constants/animations';
+import { useTheme } from '@context/ThemeProvider';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { MessageDescriptor } from '@lingui/core';
+import { msg } from '@lingui/core/macro';
+import { useLingui } from '@lingui/react/macro';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import ScreenScrollWrapper from '@wrapper/ScreenScrollWrapper';
 import React, { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
+import { Controller, useForm } from 'react-hook-form';
 import {
+    Animated,
     StyleSheet,
     Text,
     View,
-    Animated,
 } from 'react-native';
-import { useTheme } from '@context/ThemeProvider';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Controller, useForm } from 'react-hook-form';
 import * as yup from 'yup';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { useLingui } from '@lingui/react/macro';
-import { SignUpStackParamList } from '@components/navigation/signUpNavigator';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { MessageDescriptor } from '@lingui/core';
-import { Animation } from '@components/animation/Animation';
-import Animations from '@constants/animations';
-import { FUT7_POSITIONS, Fut7PositionCard } from '@components/positionCard/Fut7PositionCard';
-import Select from '@components/select/Select';
-import ScreenScrollWrapper from '@wrapper/ScreenScrollWrapper';
-import { FUT11_POSITIONS, Fut11PositionCard } from '@components/positionCard/Fut11PositionCard';
-import { FUTSAL_POSITIONS, FutsalPositionCard } from '@components/positionCard/FutsalPositionCard';
-import { msg } from '@lingui/core/macro';
 
 const getPlayerExperience = (age: number): MessageDescriptor => {
     if (age <= 25) return msg`screen.signup.sport.description.beginner`;
@@ -55,7 +55,7 @@ type PositionKeyByGameType<T extends GameType> =
 
 type FormValues<T extends GameType = GameType> = {
     gameTypes: T;
-    position: PositionKeyByGameType<T>;
+    position: PositionKeyByGameType<T> | null;
 };
 
 const schema: yup.ObjectSchema<FormValues> = yup.object({
@@ -138,7 +138,7 @@ const SportScreen = forwardRef<SportScreenRef, SportScreenProps>(({ navigation }
                 value: key
             }));
 
-            setValue('position', mappedPositions[0]?.value);
+            setValue('position', null);
             setPositions(mappedPositions);
             setPositionCard(() => POSITION_MAP[selectedGameType].card);
         } else {
