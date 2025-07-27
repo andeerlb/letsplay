@@ -416,7 +416,7 @@ msgstr "You crushed it, legend! All sports selected! 🚀⚽"
 
 #: src/screens/signup/MoreSportScreen.tsx:119
 msgid "screen.signup.more-sports.step-game"
-msgstr "Tell us—are you into any other games or is it all about FUT 11?"
+msgstr "Tell us—are you into any other games"
 
 #: src/screens/signup/MoreSportScreen.tsx:113
 msgid "screen.signup.more-sports.title"
@@ -518,7 +518,7 @@ msgstr "We're glad you're here! Let's get to know you — your position, your pl
 #. placeholder {0}: selectedGame.label
 #: src/screens/signup/MoreSportScreen.tsx:125
 msgid "screen.signup.more-sports.step-position"
-msgstr ""
+msgstr "Nice! And in {selectedGame}, which position do you play?"
 
 #: src/screens/welcome/WelcomeScreen.tsx:92
 msgid "welcome.screen.schedule.desc"

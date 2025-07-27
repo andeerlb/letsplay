@@ -50,7 +50,7 @@ type GameId = (typeof allGames)[number]['id'];
 
 const MoreSportsScreen = forwardRef<MoreSportsScreenRef, MoreSportsScreenProps>(
     ({ navigation }, ref) => {
-        const { person, setMoreSports } = useSignUp();
+        const { person, sport, setMoreSports } = useSignUp();
         const { theme } = useTheme();
         const { handleSubmit } = useForm({ resolver: yupResolver(schema) });
 
@@ -58,7 +58,7 @@ const MoreSportsScreen = forwardRef<MoreSportsScreenRef, MoreSportsScreenProps>(
         const [remainingGames, setRemainingGames] = useState([...allGames]);
         const [selectedGame, setSelectedGame] = useState<(typeof allGames)[number] | null>(null);
         const [selectedGamesWithPositions, setSelectedGamesWithPositions] = useState<SignUpMoreSportsContextType>([]);
-        const { t } = useLingui();
+        const { t, i18n } = useLingui();
 
         useImperativeHandle(ref, () => ({
             submitForm: () => {
@@ -123,8 +123,8 @@ const MoreSportsScreen = forwardRef<MoreSportsScreenRef, MoreSportsScreenProps>(
 
                         {step === 'position' && selectedGame && (
                             <Text style={[styles.descriptionPart2, { color: theme.colors.text, fontFamily: theme.fonts.regular.fontFamily }]}>
-                                <Trans id="screen.signup.more-sports.step-position" values={{ game: selectedGame.label }}>
-                                    Show! E no <Text style={{ fontFamily: theme.fonts.bold.fontFamily }}>{selectedGame.label}</Text>, você joga em qual posição?
+                                <Trans id="screen.signup.more-sports.step-position">
+                                    {selectedGame.label}
                                 </Trans>
                             </Text>
                         )}

@@ -416,7 +416,7 @@ msgstr "Você tá voando, craque! Todos os jogos já selecionados! 🚀⚽"
 
 #: src/screens/signup/MoreSportScreen.tsx:119
 msgid "screen.signup.more-sports.step-game"
-msgstr "Agora conta aí: encara outro jogo também ou é só FUT 11 na veia?"
+msgstr "Agora conta aí: encara outro jogo também?"
 
 #: src/screens/signup/MoreSportScreen.tsx:113
 msgid "screen.signup.more-sports.title"
