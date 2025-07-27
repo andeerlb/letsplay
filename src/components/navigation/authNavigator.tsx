@@ -1,21 +1,17 @@
-import React, { useEffect } from 'react';
-import BottomTabNavigator from './bottomTabNavigator';
-import { SettingScreen } from '@screens/setting/SettingScreen';
+import { useTheme } from '@context/ThemeProvider';
+import { useLanguage } from '@hooks/useLanguage';
+import { useSetting } from '@query/settings';
+import { useUser } from '@query/user';
 import {
   createNativeStackNavigator,
 } from '@react-navigation/native-stack';
+import { SettingScreen } from '@screens/setting/SettingScreen';
 import SettingScreenHeader from '@screens/setting/SettingScreenHeader';
-import { useDispatch } from 'react-redux';
-import { useTheme } from '@context/ThemeProvider';
-import { useSetting } from '@query/settings';
-import { useUser } from '@query/user';
-import { useLanguage } from '@hooks/useLanguage';
 import { setUser } from '@store/slices/userSlice';
-
-export type AuthStackParamList = {
-  Bottom: undefined;
-  Setting: undefined;
-};
+import type { AuthStackParamList } from '@types/navigation';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import BottomTabNavigator from './bottomTabNavigator';
 
 const Stack = createNativeStackNavigator<AuthStackParamList>();
 

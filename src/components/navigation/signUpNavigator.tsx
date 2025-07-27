@@ -1,20 +1,13 @@
 /* eslint-disable react/no-unstable-nested-components */
 import { SignUpProvider } from '@context/SignUpProvider';
-import { useTheme } from '@context/ThemeProvider';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import CredentialsScreen from '@screens/signup/CredentialsScreen';
 import MoreSportsScreen, { MoreSportsScreenRef } from '@screens/signup/MoreSportScreen';
 import PersonScreen, { PersonScreenRef } from '@screens/signup/PersonScreen';
 import SignUpScreenHeaderWrapper from '@screens/signup/ScreenHeader';
 import SportScreen, { SportScreenRef } from '@screens/signup/SportScreen';
+import { SignUpStackParamList } from '@types/navigation';
 import React, { useRef } from 'react';
-
-export type SignUpStackParamList = {
-  Person: undefined,
-  Sport: undefined;
-  MoreSports: undefined;
-  Credentials: undefined;
-};
 
 const Stack = createNativeStackNavigator<SignUpStackParamList>();
 
@@ -22,7 +15,6 @@ function SignUpStackNavigator() {
   const personScreenRef = useRef<PersonScreenRef>(null);
   const sportScreenRef = useRef<SportScreenRef>(null);
   const moreSportsScreenRef = useRef<MoreSportsScreenRef>(null);
-  const { theme } = useTheme();
 
   return (
     <SignUpProvider>

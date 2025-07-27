@@ -1,22 +1,16 @@
+import { useTheme } from '@context/ThemeProvider';
+import { useLingui } from "@lingui/react/macro";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '@screens/home/HomeScreen';
-import ProfileScreen from '@screens/profile/ProfileScreen';
-import MatchScreen from '@screens/match/MatchScreen';
-import { useLingui } from "@lingui/react/macro";
 import HomeScreenHeader from '@screens/home/HomeScreenHeader';
+import MatchScreen from '@screens/match/MatchScreen';
 import MatchScreenHeader from '@screens/match/MatchScreenHeader';
+import ProfileScreen from '@screens/profile/ProfileScreen';
 import ProfileScreenHeader from '@screens/profile/ProfileScreenHeader';
-import TeamStackNavigator from './teamNavigator';
+import { BottomTabParamList } from '@types/navigation';
 import { getBottomNavigatorBarStyle } from '@utils/theme';
-import { useTheme } from '@context/ThemeProvider';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-
-export type BottomTabParamList = {
-  Home: undefined;
-  Match: undefined;
-  Team: undefined;
-  Profile: undefined;
-};
+import TeamStackNavigator from './teamNavigator';
 
 const Tab = createBottomTabNavigator<BottomTabParamList>();
 

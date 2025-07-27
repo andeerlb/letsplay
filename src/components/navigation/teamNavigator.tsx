@@ -4,11 +4,6 @@ import AddTeamHeader from "@screens/team/AddTeamScreenHeader";
 import TeamScreen from "@screens/team/TeamScreen";
 import TeamScreenHeader from "@screens/team/TeamScreenHeader";
 
-export type TeamStackParamList = {
-  Main: undefined,
-  Add: undefined;
-};
-
 const Stack = createNativeStackNavigator<TeamStackParamList>();
 
 function TeamStackNavigator() {

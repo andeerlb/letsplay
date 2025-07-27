@@ -1,17 +1,12 @@
-import React from 'react';
 import {
   createNativeStackNavigator,
 } from '@react-navigation/native-stack';
 import SignInScreen from '@screens/signin/SignInScreen';
-import WelcomeScreen from '@screens/welcome/WelcomeScreen';
-import SignUpStackNavigator from './signUpNavigator';
 import SignInScreenHeaderWrapper from '@screens/signin/SignInScreenHeader';
-
-export type NoAuthStackParamList = {
-  SignIn: undefined;
-  Welcome: undefined;
-  SignUp: undefined;
-};
+import WelcomeScreen from '@screens/welcome/WelcomeScreen';
+import { NoAuthStackParamList } from '@types/navigation';
+import React from 'react';
+import SignUpStackNavigator from './signUpNavigator';
 
 const Stack = createNativeStackNavigator<NoAuthStackParamList>();
 

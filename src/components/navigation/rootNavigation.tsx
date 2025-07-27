@@ -1,14 +1,10 @@
-import React from 'react';
+import AuthStackNavigator from '@components/navigation/authNavigator';
 import {
   createNativeStackNavigator,
 } from '@react-navigation/native-stack';
-import AuthStackNavigator from '@components/navigation/authNavigator';
+import { RootStackParamList } from '@types/navigation';
+import React from 'react';
 import NoAuthStackNavigator from './noAuthNavigator';
-
-export type RootStackParamList = {
-  Auth: undefined;
-  NoAuth: undefined;
-};
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
