@@ -360,7 +360,7 @@ msgstr "Forgot password?"
 msgid "screen.signin.noaccount"
 msgstr "Don't have an account?"
 
-#: src/screens/signup/CredentialsScreen.tsx:102
+#: src/screens/signup/CredentialsScreen.tsx:100
 #: src/screens/signin/SignInScreen.tsx:114
 msgid "screen.signin.password"
 msgstr "Password"
@@ -369,7 +369,7 @@ msgstr "Password"
 msgid "screen.signin.signup"
 msgstr "Create Account"
 
-#: src/screens/signup/CredentialsScreen.tsx:86
+#: src/screens/signup/CredentialsScreen.tsx:84
 #: src/screens/signin/SignInScreen.tsx:99
 msgid "screen.signin.user"
 msgstr "Username"
@@ -382,25 +382,45 @@ msgstr "Welcome"
 msgid "screen.signup.birthday"
 msgstr "Birthdate"
 
-#: src/screens/signup/CredentialsScreen.tsx:119
+#: src/screens/signup/CredentialsScreen.tsx:117
 msgid "screen.signup.credentials.confirm-password"
 msgstr "Confirm your password"
 
-#: src/screens/signup/CredentialsScreen.tsx:74
+#: src/screens/signup/CredentialsScreen.tsx:72
 msgid "screen.signup.credentials.description"
 msgstr "Create your username and password to secure your spot on the team"
 
-#: src/screens/signup/CredentialsScreen.tsx:133
+#: src/screens/signup/CredentialsScreen.tsx:131
 msgid "screen.signup.credentials.register"
 msgstr "Let’s play!"
 
-#: src/screens/signup/CredentialsScreen.tsx:70
+#: src/screens/signup/CredentialsScreen.tsx:69
 msgid "screen.signup.credentials.title"
 msgstr "Final step, champ!"
 
 #: src/screens/signup/PersonScreen.tsx:116
 msgid "screen.signup.given-name"
 msgstr "First Name"
+
+#: src/screens/signup/MoreSportScreen.tsx:208
+msgid "screen.signup.more-sports.choose-another-button"
+msgstr "Pick another one!"
+
+#: src/screens/signup/MoreSportScreen.tsx:133
+msgid "screen.signup.more-sports.step-another-ask"
+msgstr "Wanna pick another sport or move on to the next step?"
+
+#: src/screens/signup/MoreSportScreen.tsx:134
+msgid "screen.signup.more-sports.step-another-end"
+msgstr "You crushed it, legend! All sports selected! 🚀⚽"
+
+#: src/screens/signup/MoreSportScreen.tsx:119
+msgid "screen.signup.more-sports.step-game"
+msgstr "Tell us—are you into any other games or is it all about FUT 11?"
+
+#: src/screens/signup/MoreSportScreen.tsx:113
+msgid "screen.signup.more-sports.title"
+msgstr "You’re on fire"
 
 #: src/screens/signup/ScreenHeader.tsx:15
 msgid "screen.signup.next"
@@ -493,6 +513,12 @@ msgstr "Manage Team"
 #: src/screens/signup/PersonScreen.tsx:106
 msgid "screens.signup.person.description"
 msgstr "We're glad you're here! Let's get to know you — your position, your player name, and more. Ready?"
+
+#. js-lingui-explicit-id
+#. placeholder {0}: selectedGame.label
+#: src/screens/signup/MoreSportScreen.tsx:125
+msgid "screen.signup.more-sports.step-position"
+msgstr ""
 
 #: src/screens/welcome/WelcomeScreen.tsx:92
 msgid "welcome.screen.schedule.desc"

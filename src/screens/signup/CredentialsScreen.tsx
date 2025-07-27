@@ -66,11 +66,9 @@ export default function CredentialsScreen({ navigation }: CredentialsScreenProps
             <View style={styles.centeredContainer}>
                 <View style={{ gap: 10 }}>
                     <Text style={[styles.title, { fontFamily: theme.fonts.logoBold.fontFamily, color: theme.colors.secondary }]}>
-                        {/* <Trans>Última etapa, campeão!</Trans> */}
                         <Trans>screen.signup.credentials.title</Trans>
                     </Text>
                     <Text style={[styles.description, { fontFamily: theme.fonts.regular.fontFamily, color: theme.secondaryColors.text }]}>
-                        {/* <Trans>Crie seu usuário e senha para garantir seu lugar no time</Trans>{' '} */}
                         <Trans>screen.signup.credentials.description</Trans>{' '}
                         <Text style={[styles.playerName, {
                             fontFamily: theme.fonts.bold.fontFamily

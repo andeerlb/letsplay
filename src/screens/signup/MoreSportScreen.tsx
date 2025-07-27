@@ -3,6 +3,7 @@ import { SignUpStackParamList } from '@components/navigation/signUpNavigator';
 import { SignUpMoreSportsContextType, useSignUp } from '@context/SignUpProvider';
 import { useTheme } from '@context/ThemeProvider';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { Trans, useLingui } from '@lingui/react/macro';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import ScreenWrapper from '@wrapper/ScreenWrapper';
 import React, { forwardRef, useImperativeHandle, useState } from 'react';
@@ -48,7 +49,7 @@ type GameId = (typeof allGames)[number]['id'];
 
 const MoreSportsScreen = forwardRef<MoreSportsScreenRef, MoreSportsScreenProps>(
     ({ navigation }, ref) => {
-        const { setMoreSports } = useSignUp();
+        const { person, sport, setMoreSports } = useSignUp();
         const { theme } = useTheme();
         const { handleSubmit } = useForm({ resolver: yupResolver(schema) });
 
@@ -56,6 +57,7 @@ const MoreSportsScreen = forwardRef<MoreSportsScreenRef, MoreSportsScreenProps>(
         const [remainingGames, setRemainingGames] = useState([...allGames]);
         const [selectedGame, setSelectedGame] = useState<(typeof allGames)[number] | null>(null);
         const [selectedGamesWithPositions, setSelectedGamesWithPositions] = useState<SignUpMoreSportsContextType>([]);
+        const { t } = useLingui();
 
         useImperativeHandle(ref, () => ({
             submitForm: () => {
@@ -108,31 +110,28 @@ const MoreSportsScreen = forwardRef<MoreSportsScreenRef, MoreSportsScreenProps>(
                 <View style={[styles.container, { backgroundColor: theme.colors.background }]}>
                     <View style={styles.header}>
                         <Text style={[styles.descriptionPart1, { color: theme.colors.text, fontFamily: theme.fonts.logoBold.fontFamily }]}>
-                            Top demais, <Text style={[styles.playerName, { color: theme.colors.secondary }]}>Anderson</Text>!
+                            <Trans>screen.signup.more-sports.title</Trans>{', '}
+                            <Text>{person?.givenName}</Text>!
                         </Text>
 
                         {step === 'game' && (
                             <Text style={[styles.descriptionPart2, { color: theme.colors.text, fontFamily: theme.fonts.regular.fontFamily }]}>
-                                <Text style={{ fontFamily: theme.fonts.bold.fontFamily }}>
-                                    Agora conta aí:
-                                </Text>{' '}
-                                encara outro jogo também ou é só FUT 11 na veia?
+                                <Trans>screen.signup.more-sports.step-game</Trans>
                             </Text>
                         )}
 
                         {step === 'position' && selectedGame && (
                             <Text style={[styles.descriptionPart2, { color: theme.colors.text, fontFamily: theme.fonts.regular.fontFamily }]}>
-                                Show! E no{' '}
-                                <Text style={{ fontFamily: theme.fonts.bold.fontFamily }}>
-                                    {selectedGame.label}
-                                </Text>
-                                , você joga em qual posição?
+                                <Trans id="screen.signup.more-sports.step-position" values={{ game: selectedGame.label }}>
+                                    Show! E no <Text style={{ fontFamily: theme.fonts.bold.fontFamily }}>{selectedGame.label}</Text>, você joga em qual posição?
+                                </Trans>
                             </Text>
                         )}
 
                         {step === 'another' && (
                             <Text style={[styles.descriptionPart2, { color: theme.colors.text, fontFamily: theme.fonts.regular.fontFamily }]}>
-                                {remainingGames.length ? 'Quer escolher mais um jogo ou bora pro próximo passo?' : 'Você tá voando, craque! Todos os jogos já selecionados! 🚀⚽'}
+                                {remainingGames.length ? <Trans>screen.signup.more-sports.step-another-ask</Trans> :
+                                    <Trans>screen.signup.more-sports.step-another-end</Trans>}
                             </Text>
                         )}
                     </View>
@@ -206,7 +205,7 @@ const MoreSportsScreen = forwardRef<MoreSportsScreenRef, MoreSportsScreenProps>(
                     )}
 
                     {step === 'another' && remainingGames.length > 0 && (
-                        <Button label='Bora escolher outro!' onPress={() => setStep('game')} />
+                        <Button label={t`screen.signup.more-sports.choose-another-button`} onPress={() => setStep('game')} />
                     )}
                 </View>
             </ScreenWrapper>

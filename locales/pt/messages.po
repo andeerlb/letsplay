@@ -360,7 +360,7 @@ msgstr "Esqueceu a senha?"
 msgid "screen.signin.noaccount"
 msgstr "Não tem uma conta?"
 
-#: src/screens/signup/CredentialsScreen.tsx:102
+#: src/screens/signup/CredentialsScreen.tsx:100
 #: src/screens/signin/SignInScreen.tsx:114
 msgid "screen.signin.password"
 msgstr "Senha"
@@ -369,7 +369,7 @@ msgstr "Senha"
 msgid "screen.signin.signup"
 msgstr "Criar conta"
 
-#: src/screens/signup/CredentialsScreen.tsx:86
+#: src/screens/signup/CredentialsScreen.tsx:84
 #: src/screens/signin/SignInScreen.tsx:99
 msgid "screen.signin.user"
 msgstr "Usuário"
@@ -382,25 +382,45 @@ msgstr "Bem-vindo"
 msgid "screen.signup.birthday"
 msgstr "Data de nascimento"
 
-#: src/screens/signup/CredentialsScreen.tsx:119
+#: src/screens/signup/CredentialsScreen.tsx:117
 msgid "screen.signup.credentials.confirm-password"
 msgstr "Confirma tua senha"
 
-#: src/screens/signup/CredentialsScreen.tsx:74
+#: src/screens/signup/CredentialsScreen.tsx:72
 msgid "screen.signup.credentials.description"
 msgstr "Crie seu usuário e senha para garantir seu lugar no time"
 
-#: src/screens/signup/CredentialsScreen.tsx:133
+#: src/screens/signup/CredentialsScreen.tsx:131
 msgid "screen.signup.credentials.register"
 msgstr "Bora jogar!"
 
-#: src/screens/signup/CredentialsScreen.tsx:70
+#: src/screens/signup/CredentialsScreen.tsx:69
 msgid "screen.signup.credentials.title"
 msgstr "Última etapa, campeão!"
 
 #: src/screens/signup/PersonScreen.tsx:116
 msgid "screen.signup.given-name"
 msgstr "Nome"
+
+#: src/screens/signup/MoreSportScreen.tsx:208
+msgid "screen.signup.more-sports.choose-another-button"
+msgstr "Bora escolher outro!"
+
+#: src/screens/signup/MoreSportScreen.tsx:133
+msgid "screen.signup.more-sports.step-another-ask"
+msgstr "Quer escolher mais um jogo ou bora pro próximo passo?"
+
+#: src/screens/signup/MoreSportScreen.tsx:134
+msgid "screen.signup.more-sports.step-another-end"
+msgstr "Você tá voando, craque! Todos os jogos já selecionados! 🚀⚽"
+
+#: src/screens/signup/MoreSportScreen.tsx:119
+msgid "screen.signup.more-sports.step-game"
+msgstr "Agora conta aí: encara outro jogo também ou é só FUT 11 na veia?"
+
+#: src/screens/signup/MoreSportScreen.tsx:113
+msgid "screen.signup.more-sports.title"
+msgstr "Top demais"
 
 #: src/screens/signup/ScreenHeader.tsx:15
 msgid "screen.signup.next"
@@ -493,6 +513,12 @@ msgstr "Gerir equipe"
 #: src/screens/signup/PersonScreen.tsx:106
 msgid "screens.signup.person.description"
 msgstr "Que bom que você chegou aqui, queremos te conhecer, saber qual posição joga, qual seu nome de jogador e outras coisas, vamos lá?"
+
+#. js-lingui-explicit-id
+#. placeholder {0}: selectedGame.label
+#: src/screens/signup/MoreSportScreen.tsx:125
+msgid "screen.signup.more-sports.step-position"
+msgstr "Show! E no <0>{0}</0>, você joga em qual posição?"
 
 #: src/screens/welcome/WelcomeScreen.tsx:92
 msgid "welcome.screen.schedule.desc"
