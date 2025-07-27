@@ -1,10 +1,10 @@
 import { Animation } from '@components/animation/Animation';
-import { SignUpStackParamList } from '@components/navigation/signUpNavigator';
 import { FUT11_POSITIONS, Fut11PositionCard } from '@components/positionCard/Fut11PositionCard';
 import { FUT7_POSITIONS, Fut7PositionCard } from '@components/positionCard/Fut7PositionCard';
 import { FUTSAL_POSITIONS, FutsalPositionCard } from '@components/positionCard/FutsalPositionCard';
 import Select from '@components/select/Select';
 import Animations from '@constants/animations';
+import { GAME_TYPE_VALUES } from '@constants/game';
 import { useSignUp } from '@context/SignUpProvider';
 import { useTheme } from '@context/ThemeProvider';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -12,6 +12,8 @@ import { MessageDescriptor } from '@lingui/core';
 import { msg } from '@lingui/core/macro';
 import { useLingui } from '@lingui/react/macro';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import type { GameType, PositionKeyByGameType } from '@types/game';
+import type { SignUpStackParamList } from '@types/navigation';
 import ScreenScrollWrapper from '@wrapper/ScreenScrollWrapper';
 import React, { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
@@ -40,19 +42,6 @@ type SportScreenProps = {
 };
 
 type PositionOption = { label: string; value: string };
-
-const GAME_TYPE_VALUES = ['fut11', 'fut7', 'futsal'] as const;
-export type GameType = typeof GAME_TYPE_VALUES[number];
-
-export type Fut11PositionKey = keyof typeof FUT11_POSITIONS;
-export type Fut7PositionKey = keyof typeof FUT7_POSITIONS;
-export type FutsalPositionKey = keyof typeof FUTSAL_POSITIONS;
-
-export type PositionKeyByGameType<T extends GameType> =
-    T extends 'fut11' ? Fut11PositionKey :
-    T extends 'fut7' ? Fut7PositionKey :
-    T extends 'futsal' ? FutsalPositionKey :
-    never;
 
 type FormValues<T extends GameType = GameType> = {
     game: T;

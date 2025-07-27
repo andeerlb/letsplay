@@ -1,6 +1,8 @@
 import { MessageDescriptor } from "@lingui/core";
 import { msg } from "@lingui/core/macro";
 
+export const GAME_TYPE_VALUES = ['fut11', 'fut7', 'futsal'] as const;
+
 export const PLAYER_POSITIONS_FUT11: MessageDescriptor[] = [
     msg`player.position.goalkeeper`,
     msg`player.position.center-back`,

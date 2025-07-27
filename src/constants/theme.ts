@@ -1,45 +1,5 @@
 import { msg } from "@lingui/core/macro";
-import * as ReactNavigation from '@react-navigation/native';
-
-type FontWeight =
-  | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900"
-  | "normal"
-  | "bold";
-
-type FontDefinition = {
-  fontFamily: string;
-  fontWeight: FontWeight;
-};
-
-type ThemeDefinition = {
-  colors: {
-    primary: string;
-    secondary: string;
-    background: string;
-    card: string;
-    text: string;
-    button: string;
-    border: string;
-    notification: string;
-    formError: string;
-  };
-  secondaryColors: {
-    background: string;
-    card: string;
-    text: string;
-    button: string;
-    border: string;
-  },
-  fonts: {
-    regular: FontDefinition;
-    medium: FontDefinition;
-    semiBold: FontDefinition;
-    bold: FontDefinition;
-    heavy: FontDefinition;
-    logoRegular: FontDefinition;
-    logoBold: FontDefinition;
-  };
-} & ReactNavigation.Theme;
+import type { ThemeDefinition } from "@types/theme";
 
 const FONTS: ThemeDefinition["fonts"] = {
   regular: {
@@ -117,8 +77,6 @@ export const DarkTheme: ThemeDefinition = {
   },
   fonts: FONTS
 };
-
-export type Theme = typeof LightTheme | typeof DarkTheme;
 
 export const THEME_OPTIONS = [
   { label: msg`screen.setting.theme.dark`, value: 'dark' },

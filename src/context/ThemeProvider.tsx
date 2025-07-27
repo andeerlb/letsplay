@@ -1,23 +1,15 @@
-import { DarkTheme, LightTheme, Theme } from '@constants/theme';
+import { DarkTheme, LightTheme } from '@constants/theme';
 import { RootState } from '@store/index';
-import { Layout, setLayout } from '@store/slices/settingSlice';
+import { setLayout } from '@store/slices/settingSlice';
+import type { ThemeContextType, UseThemeProps } from '@types/context';
+import type { Layout, Theme } from '@types/theme';
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { useColorScheme } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 
-export type ThemeContextType = {
-    theme: Theme;
-};
-
 export const ThemeContext = createContext<ThemeContextType>({
     theme: DarkTheme
 });
-
-type UseThemeProps = {
-    theme: Theme;
-    layout: Layout,
-    changeTheme: (layout: Layout) => void;
-};
 
 const getThemeBaseOnScheme = (scheme: Layout) => {
     return scheme === 'dark' ? DarkTheme : LightTheme;

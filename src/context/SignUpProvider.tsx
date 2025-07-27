@@ -1,27 +1,7 @@
-import { Fut11PositionKey, Fut7PositionKey, FutsalPositionKey, GameType } from '@screens/signup/SportScreen';
+
+import type { SignUpContextType, SignUpMoreSportsContextType, SignUpPersonContextType, SignUpSportContextType } from '@types/context';
 import React, { createContext, useContext, useState } from 'react';
 
-type SignUpPersonContextType = {
-    givenName: string;
-    surname: string;
-    birthdate: string;
-};
-
-type SignUpSportContextType = {
-    game: GameType;
-    position: Fut11PositionKey | Fut7PositionKey | FutsalPositionKey | null;
-};
-
-export type SignUpMoreSportsContextType = SignUpSportContextType[];
-
-export type SignUpContextType = {
-    person?: SignUpPersonContextType;
-    sport?: SignUpSportContextType;
-    moreSports?: SignUpMoreSportsContextType;
-    setPerson: (person: SignUpPersonContextType) => void;
-    setSport: (sport: SignUpSportContextType) => void;
-    setMoreSports: (sports: SignUpMoreSportsContextType) => void;
-};
 
 export const SignUpContext = createContext<SignUpContextType>({
     person: undefined,

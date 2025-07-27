@@ -1,7 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-export type Layout = 'light' | 'dark' | 'system';
-export type Language = 'pt' | 'en';
+import type { Language, Layout } from '@types/theme';
 
 export type SettingState = {
   layout: Layout;
