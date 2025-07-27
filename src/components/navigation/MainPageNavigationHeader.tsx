@@ -1,10 +1,10 @@
-import { View, StyleSheet, Pressable, Text } from "react-native";
-import SettingIcon from '@assets/icons/settings.svg';
 import LetsPlayIcon from '@assets/icons/letsplay.svg';
-import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { useNavigation, NavigationProp } from "@react-navigation/native";
-import { AuthStackParamList } from "./authNavigator";
+import SettingIcon from '@assets/icons/settings.svg';
 import { useTheme } from "@context/ThemeProvider";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
+import type { AuthStackParamList } from "@types/navigation";
+import { Pressable, StyleSheet, Text, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 type Props = {
   children?: React.ReactNode;

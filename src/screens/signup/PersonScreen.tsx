@@ -8,11 +8,11 @@ import * as yup from 'yup';
 
 import Birthdate from '@components/birthdate/Birthdate';
 import Input from '@components/input/Input';
-import { SignUpStackParamList } from '@components/navigation/signUpNavigator';
 import { useSignUp } from '@context/SignUpProvider';
 import { t } from '@lingui/core/macro';
 import { Trans } from '@lingui/react/macro';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { SignUpStackParamList } from '@types/navigation';
 import ScreenScrollWrapper from '@wrapper/ScreenScrollWrapper';
 
 const schema = yup.object({

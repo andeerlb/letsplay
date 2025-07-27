@@ -1,11 +1,11 @@
-import { Trans } from "@lingui/react/macro";
-import ScreenWrapper from "@wrapper/ScreenWrapper";
-import { StyleSheet, Text } from "react-native";
 import { useTheme } from "@context/ThemeProvider";
-import { BottomTabParamList } from "@components/navigation/bottomTabNavigator";
+import { Trans } from "@lingui/react/macro";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
-import React from "react";
 import { RootState } from "@store/index";
+import { BottomTabParamList } from "@types/navigation";
+import ScreenWrapper from "@wrapper/ScreenWrapper";
+import React from "react";
+import { StyleSheet, Text } from "react-native";
 import { useSelector } from "react-redux";
 
 type HomeScreenNavigationProp = BottomTabNavigationProp<BottomTabParamList, 'Home'>;

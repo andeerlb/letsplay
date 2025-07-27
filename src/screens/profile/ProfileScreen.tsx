@@ -1,12 +1,12 @@
-import { StyleSheet, View } from "react-native";
-import ScreenWrapper from "@wrapper/ScreenWrapper";
-import { BottomTabParamList } from "@components/navigation/bottomTabNavigator";
-import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
-import React from "react";
 import Input from "@components/input/Input";
 import { useLingui } from "@lingui/react/macro";
-import { useSelector } from "react-redux";
+import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { RootState } from "@store/index";
+import { BottomTabParamList } from "@types/navigation";
+import ScreenWrapper from "@wrapper/ScreenWrapper";
+import React from "react";
+import { StyleSheet, View } from "react-native";
+import { useSelector } from "react-redux";
 
 type ProfileScreenNavigationProp = BottomTabNavigationProp<BottomTabParamList, 'Profile'>;
 

@@ -1,10 +1,11 @@
 import Button from '@components/button/Button';
-import { SignUpStackParamList } from '@components/navigation/signUpNavigator';
-import { SignUpMoreSportsContextType, useSignUp } from '@context/SignUpProvider';
+import { useSignUp } from '@context/SignUpProvider';
 import { useTheme } from '@context/ThemeProvider';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Trans, useLingui } from '@lingui/react/macro';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { SignUpMoreSportsContextType } from '@types/context';
+import { SignUpStackParamList } from '@types/navigation';
 import ScreenWrapper from '@wrapper/ScreenWrapper';
 import React, { forwardRef, useImperativeHandle, useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -49,7 +50,7 @@ type GameId = (typeof allGames)[number]['id'];
 
 const MoreSportsScreen = forwardRef<MoreSportsScreenRef, MoreSportsScreenProps>(
     ({ navigation }, ref) => {
-        const { person, sport, setMoreSports } = useSignUp();
+        const { person, setMoreSports } = useSignUp();
         const { theme } = useTheme();
         const { handleSubmit } = useForm({ resolver: yupResolver(schema) });
 

@@ -1,5 +1,5 @@
-import { TeamStackParamList } from "@components/navigation/teamNavigator";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { TeamStackParamList } from "@types/navigation";
 import ScreenWrapper from "@wrapper/ScreenWrapper";
 import React from "react";
 import { Text } from "react-native";

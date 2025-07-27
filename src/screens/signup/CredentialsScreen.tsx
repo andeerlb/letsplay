@@ -1,6 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
 import Button from "@components/button/Button";
-import { SignUpStackParamList } from "@components/navigation/signUpNavigator";
 import { useTheme } from "@context/ThemeProvider";
 import { Trans, useLingui } from "@lingui/react/macro";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -11,6 +10,7 @@ import InputEmail from "@components/input/inputEmail";
 import InputPassword from "@components/input/inputPassword";
 import { useSignUp } from "@context/SignUpProvider";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { SignUpStackParamList } from "@types/navigation";
 import ScreenScrollWrapper from "@wrapper/ScreenScrollWrapper";
 import { Controller, useForm } from "react-hook-form";
 import * as yup from "yup";
@@ -37,7 +37,7 @@ type CredentialsFormData = {
     confirmPassword: string;
 };
 
-export default function CredentialsScreen({ navigation }: CredentialsScreenProps) {
+export default function CredentialsScreen({ }: CredentialsScreenProps) {
     const { person } = useSignUp();
     const { theme } = useTheme();
     const { t } = useLingui();

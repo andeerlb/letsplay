@@ -1,8 +1,8 @@
-import { useFocusEffect, NavigationProp } from '@react-navigation/native';
-import { useCallback } from 'react';
 import { useTheme } from '@context/ThemeProvider';
+import { NavigationProp, useFocusEffect } from '@react-navigation/native';
+import type { BottomTabParamList } from '@types/navigation';
 import { getTabBarStyle } from '@utils/theme';
-import { BottomTabParamList } from '@components/navigation/bottomTabNavigator';
+import { useCallback } from 'react';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const expectedTabs = Object.keys({

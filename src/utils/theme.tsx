@@ -1,10 +1,10 @@
-import { Theme } from "@constants/theme";
-import { BottomTabNavigationOptions } from "@react-navigation/bottom-tabs";
-import SoccerBallIcon from '@assets/icons/soccer_ball.svg';
-import ProfileIcon from '@assets/icons/profile.svg';
 import HomeIcon from '@assets/icons/home.svg';
+import ProfileIcon from '@assets/icons/profile.svg';
+import SoccerBallIcon from '@assets/icons/soccer_ball.svg';
 import TeamIcon from '@assets/icons/team.svg';
-import { BottomTabParamList } from "@components/navigation/bottomTabNavigator";
+import { BottomTabNavigationOptions } from "@react-navigation/bottom-tabs";
+import { BottomTabParamList } from "@types/navigation";
+import { Theme } from '@types/theme';
 import { StyleProp, ViewStyle } from "react-native";
 import { EdgeInsets } from "react-native-safe-area-context";
 

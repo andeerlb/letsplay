@@ -1,15 +1,10 @@
-import { useQuery, UseQueryResult } from '@tanstack/react-query';
 import { fetchSettings } from '@fetch/settings';
-import { Language, Layout } from '@store/slices/settingSlice';
-
-type Settings = {
-  theme: Layout;
-  language: Language;
-};
+import { useQuery, UseQueryResult } from '@tanstack/react-query';
+import type { Settings } from '@types/api';
 
 export function useSetting(): UseQueryResult<Settings> {
   return useQuery<Settings>({
-      queryKey: ['settings'],
-      queryFn: fetchSettings,
-    });
+    queryKey: ['settings'],
+    queryFn: fetchSettings,
+  });
 }

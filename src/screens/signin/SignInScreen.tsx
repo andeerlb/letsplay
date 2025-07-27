@@ -2,7 +2,6 @@
 import Button from "@components/button/Button";
 import InputEmail from "@components/input/inputEmail";
 import InputPassword from "@components/input/inputPassword";
-import { NoAuthStackParamList } from "@components/navigation/noAuthNavigator";
 import { useTheme } from "@context/ThemeProvider";
 import { Trans, useLingui } from "@lingui/react/macro";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -10,6 +9,7 @@ import React, { useRef } from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
 
 import { yupResolver } from "@hookform/resolvers/yup";
+import { NoAuthStackParamList } from "@types/navigation";
 import ScreenScrollWrapper from "@wrapper/ScreenScrollWrapper";
 import { Controller, useForm } from "react-hook-form";
 import * as yup from "yup";

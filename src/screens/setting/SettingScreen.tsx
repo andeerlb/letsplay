@@ -1,12 +1,12 @@
+import Select from "@components/select/Select";
 import { LANGUAGE_OPTIONS, THEME_OPTIONS } from "@constants/theme";
 import { useTheme } from "@context/ThemeProvider";
+import { useLanguage } from "@hooks/useLanguage";
 import { Trans, useLingui } from "@lingui/react/macro";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { AuthStackParamList } from "@types/navigation";
 import ScreenWrapper from "@wrapper/ScreenWrapper";
 import { StyleSheet, Text, View } from "react-native";
-import Select from "@components/select/Select";
-import { useLanguage } from "@hooks/useLanguage";
-import { AuthStackParamList } from "@components/navigation/authNavigator";
 
 type SettingScreenNavigationProp = NativeStackNavigationProp<AuthStackParamList, 'Setting'>;
 

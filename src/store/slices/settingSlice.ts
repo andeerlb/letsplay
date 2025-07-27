@@ -1,12 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import type { Settings } from '@types/api';
 import type { Language, Layout } from '@types/theme';
 
-export type SettingState = {
-  layout: Layout;
-  language: Language | null;
-};
-
-const initialState: SettingState = {
+const initialState: Settings = {
   language: null,
   layout: 'system',
 };
