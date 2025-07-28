@@ -1,14 +1,15 @@
+import RootStackNavigator from '@components/navigation/rootNavigation';
+import { LANGUAGE_OPTIONS } from '@constants/theme';
+import { useTheme } from '@context/ThemeProvider';
+import { ToastProvider } from '@context/ToastProvider';
+import { useLanguage } from '@hooks/useLanguage';
+import { i18n } from '@lingui/core';
+import { I18nProvider, TransRenderProps } from '@lingui/react';
+import { NavigationContainer } from '@react-navigation/native';
+import { Language } from '@store/slices/settingSlice';
 import React, { useEffect } from 'react';
 import { NativeModules, Platform, Text } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import RootStackNavigator from '@components/navigation/rootNavigation';
-import { useLanguage } from '@hooks/useLanguage';
-import { I18nProvider, TransRenderProps } from '@lingui/react';
-import { i18n } from '@lingui/core';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { useTheme } from '@context/ThemeProvider';
-import { Language } from '@store/slices/settingSlice';
-import { LANGUAGE_OPTIONS } from '@constants/theme';
 
 const DefaultComponent = (props: TransRenderProps) => <Text>{props.children}</Text>;
 
@@ -49,7 +50,9 @@ function Root() {
       <SafeAreaProvider>
         <NavigationContainer theme={theme}>
           <I18nProvider i18n={i18n} defaultComponent={DefaultComponent}>
-            <RootStackNavigator />
+            <ToastProvider>
+              <RootStackNavigator />
+            </ToastProvider>
           </I18nProvider>
         </NavigationContainer>
       </SafeAreaProvider>

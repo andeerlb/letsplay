@@ -1,12 +1,12 @@
-import React from 'react';
-import Root from './src/Root';
-import { Provider } from 'react-redux';
-import { store } from '@store/index';
-import Config from 'react-native-config';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ThemeProvider } from '@context/ThemeProvider';
+import { store } from '@store/index';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import React from 'react';
+import Config from 'react-native-config';
+import { Provider } from 'react-redux';
+import Root from './src/Root';
 
-if (Config.ENABLE_MIRAGE) {
+if (Config.ENABLE_MIRAGE === "true") {
   console.warn("Mirage was enabled");
   const { makeServer } = require('./mirage/server');
   makeServer();

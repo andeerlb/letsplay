@@ -32,3 +32,18 @@ export type UseThemeProps = {
     layout: Layout,
     changeTheme: (layout: Layout) => void;
 };
+
+export type ToastType = 'info' | 'success' | 'error' | 'warn';
+
+export type Toast = {
+    id: string;
+    message: string;
+    type: ToastType;
+    autoClose?: boolean
+};
+
+export type ToastContextType = {
+    toasts: Toast[];
+    showToast: (message: string, type?: ToastType, autoClose?: boolean) => void;
+    removeToast: (id: string) => void;
+};

@@ -1,10 +1,13 @@
-import { fetchSettings } from '@fetch/settings';
+import { fetcher } from '@hooks/apiClient';
 import { useQuery, UseQueryResult } from '@tanstack/react-query';
-import type { Settings } from '@types/api';
+import type { ApiError, Settings } from '@types/api';
+import { Config } from 'react-native-config';
 
-export function useSetting(): UseQueryResult<Settings> {
-  return useQuery<Settings>({
+const SETTINGS_URL = `${Config.API}/settings`;
+
+export function useSetting(): UseQueryResult<Settings, ApiError> {
+  return useQuery<Settings, ApiError>({
     queryKey: ['settings'],
-    queryFn: fetchSettings,
+    queryFn: () => fetcher<Settings>(SETTINGS_URL),
   });
 }

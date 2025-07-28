@@ -10,6 +10,9 @@ import InputEmail from "@components/input/inputEmail";
 import InputPassword from "@components/input/inputPassword";
 import { useSignUp } from "@context/SignUpProvider";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useToast } from "@hooks/useToast";
+import { useCreateUser } from "@mutation/user";
+import { UserCredentials } from "@types/api";
 import { SignUpStackParamList } from "@types/navigation";
 import ScreenScrollWrapper from "@wrapper/ScreenScrollWrapper";
 import { Controller, useForm } from "react-hook-form";
@@ -20,7 +23,7 @@ type CredentialsScreenProps = {
 };
 
 const schema = yup.object({
-    username: yup.string().required(),
+    email: yup.string().required(),
     password: yup
         .string()
         .required()
@@ -32,7 +35,7 @@ const schema = yup.object({
 });
 
 type CredentialsFormData = {
-    username: string;
+    email: string;
     password: string;
     confirmPassword: string;
 };
@@ -41,8 +44,10 @@ export default function CredentialsScreen({ }: CredentialsScreenProps) {
     const { person } = useSignUp();
     const { theme } = useTheme();
     const { t } = useLingui();
+    const createUser = useCreateUser();
     const passwordRef = useRef<TextInput>(null);
     const confirmPasswordRef = useRef<TextInput>(null);
+    const toast = useToast();
 
     const {
         control,
@@ -51,14 +56,22 @@ export default function CredentialsScreen({ }: CredentialsScreenProps) {
     } = useForm<CredentialsFormData>({
         resolver: yupResolver(schema),
         defaultValues: {
-            username: "",
+            email: "",
             password: "",
             confirmPassword: "",
         },
     });
 
-    const onSubmit = (data: CredentialsFormData) => {
-        console.log("Dados validados:", data);
+    const onSubmit = (data: UserCredentials) => {
+        createUser.mutate({ email: data.email, password: data.password }, {
+            onSuccess: data => {
+                console.log(data);
+            },
+            onError: err => {
+                console.log(err);
+            }
+        });
+        toast('Informação básica' + new Date().getTime(), 'info')
     };
 
     return (
@@ -78,14 +91,14 @@ export default function CredentialsScreen({ }: CredentialsScreenProps) {
                 <View style={[styles.wrapper, { backgroundColor: theme.secondaryColors.background, borderColor: theme.colors.border }]}>
                     <Controller
                         control={control}
-                        name="username"
+                        name="email"
                         render={({ field: { onChange, onBlur, value } }) => (
                             <InputEmail
                                 label={t`screen.signin.user`}
                                 value={value}
                                 onChangeText={onChange}
                                 onBlur={onBlur}
-                                error={errors.username?.message}
+                                error={errors.email?.message}
                                 autoCapitalize="none"
                                 returnKeyType="next"
                                 onSubmitEditing={() => passwordRef.current?.focus()}

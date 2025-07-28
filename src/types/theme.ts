@@ -1,6 +1,6 @@
 import { DarkTheme, LightTheme } from "@constants/theme";
 
-export type Layout = 'light' | 'dark' | 'system';
+export type Layout = 'light' | 'dark' | 'system' | null;
 export type Language = 'pt' | 'en';
 
 export type FontWeight =
@@ -11,6 +11,15 @@ export type FontWeight =
 export type FontDefinition = {
     fontFamily: string;
     fontWeight: FontWeight;
+};
+
+export type Toast = {
+    warn: string;
+    info: string;
+    error: string;
+    success: string;
+    background: string,
+    text: string,
 };
 
 export type ThemeDefinition = {
@@ -31,7 +40,8 @@ export type ThemeDefinition = {
         text: string;
         button: string;
         border: string;
-    },
+    };
+    toast: Toast;
     fonts: {
         regular: FontDefinition;
         medium: FontDefinition;

@@ -19,7 +19,8 @@ module.exports = {
           '@wrapper': './src/wrapper',
           '@store': './src/store',
           '@fetch': './src/api/fetch',
-          '@query': './src/api/query'
+          '@query': './src/api/query',
+          '@mutation': './src/api/mutation',
         }
       }
     ]

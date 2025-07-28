@@ -16,6 +16,7 @@
       "@store/*": ["src/store/*"],
       "@fetch/*": ["src/api/fetch/*"],
       "@query/*": ["src/api/query/*"],
+      "@mutation/*": ["src/api/mutation/*"],
     }
   }
 }

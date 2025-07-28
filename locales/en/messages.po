@@ -13,6 +13,12 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#. js-lingui-explicit-id
+#. placeholder {0}: selectedGame.label
+#: src/screens/signup/MoreSportScreen.tsx:126
+msgid "screen.signup.more-sports.step-position"
+msgstr "Nice! And in {selectedGame}, which position do you play?"
+
 #: src/components/positionCard/Fut11PositionCard.tsx:31
 msgid "component.fut11-position-card.attacking_midfielder"
 msgstr "Attacking Midfielder"
@@ -201,79 +207,79 @@ msgstr "Cancel"
 msgid "component.select.placeholder"
 msgstr "Select an option"
 
-#: src/constants/playerPosition.ts:11
+#: src/constants/game.ts:13
 msgid "player.position.attacking-midfielder"
 msgstr "Attacking Midfielder"
 
-#: src/constants/playerPosition.ts:6
+#: src/constants/game.ts:8
 msgid "player.position.center-back"
 msgstr "Center Back"
 
-#: src/constants/playerPosition.ts:10
+#: src/constants/game.ts:12
 msgid "player.position.central-midfielder"
 msgstr "Central Midfielder"
 
-#: src/constants/playerPosition.ts:9
+#: src/constants/game.ts:11
 msgid "player.position.defensive-midfielder"
 msgstr "Defensive Midfielder"
 
-#: src/constants/playerPosition.ts:20
-#: src/constants/playerPosition.ts:29
+#: src/constants/game.ts:22
+#: src/constants/game.ts:31
 msgid "player.position.fixo"
 msgstr "Fixo"
 
-#: src/constants/playerPosition.ts:5
-#: src/constants/playerPosition.ts:19
-#: src/constants/playerPosition.ts:28
+#: src/constants/game.ts:7
+#: src/constants/game.ts:21
+#: src/constants/game.ts:30
 msgid "player.position.goalkeeper"
 msgstr "Goalkeeper"
 
-#: src/constants/playerPosition.ts:8
+#: src/constants/game.ts:10
 msgid "player.position.left-back"
 msgstr "Left Back"
 
-#: src/constants/playerPosition.ts:22
-#: src/constants/playerPosition.ts:31
+#: src/constants/game.ts:24
+#: src/constants/game.ts:33
 msgid "player.position.left-wing"
 msgstr "Left Wing"
 
-#: src/constants/playerPosition.ts:13
+#: src/constants/game.ts:15
 msgid "player.position.left-winger"
 msgstr "Left Winger"
 
-#: src/constants/playerPosition.ts:23
-#: src/constants/playerPosition.ts:32
+#: src/constants/game.ts:25
+#: src/constants/game.ts:34
 msgid "player.position.midfielder"
 msgstr "Midfielder"
 
-#: src/constants/playerPosition.ts:24
-#: src/constants/playerPosition.ts:33
+#: src/constants/game.ts:26
+#: src/constants/game.ts:35
 msgid "player.position.pivot"
 msgstr "Pivot"
 
-#: src/constants/playerPosition.ts:7
+#: src/constants/game.ts:9
 msgid "player.position.right-back"
 msgstr "Right Back"
 
-#: src/constants/playerPosition.ts:21
-#: src/constants/playerPosition.ts:30
+#: src/constants/game.ts:23
+#: src/constants/game.ts:32
 msgid "player.position.right-wing"
 msgstr "Right Wing"
 
-#: src/constants/playerPosition.ts:12
+#: src/constants/game.ts:14
 msgid "player.position.right-winger"
 msgstr "Right Winger"
 
-#: src/constants/playerPosition.ts:15
+#: src/constants/game.ts:17
 msgid "player.position.second-striker"
 msgstr "Second Striker"
 
-#: src/constants/playerPosition.ts:14
+#: src/constants/game.ts:16
 msgid "player.position.striker"
 msgstr "Striker"
 
 #: src/screens/home/HomeScreenHeader.tsx:8
-#: src/components/navigation/bottomTabNavigator.tsx:34
+#: src/components/navigation/bottomTabNavigator.tsx:28
 msgid "screen.home.title"
 msgstr "Home"
 
@@ -282,7 +288,7 @@ msgid "screen.home.welcome"
 msgstr "Welcome"
 
 #: src/screens/match/MatchScreenHeader.tsx:9
-#: src/components/navigation/bottomTabNavigator.tsx:42
+#: src/components/navigation/bottomTabNavigator.tsx:36
 msgid "screen.match.title"
 msgstr "Search"
 
@@ -303,8 +309,8 @@ msgid "screen.profile.surname"
 msgstr "Last Name"
 
 #: src/screens/profile/ProfileScreenHeader.tsx:8
-#: src/components/navigation/bottomTabNavigator.tsx:50
-#: src/components/navigation/bottomTabNavigator.tsx:58
+#: src/components/navigation/bottomTabNavigator.tsx:44
+#: src/components/navigation/bottomTabNavigator.tsx:52
 msgid "screen.profile.title"
 msgstr "Account"
 
@@ -316,11 +322,11 @@ msgstr "Appearance"
 msgid "screen.setting.language"
 msgstr "Language"
 
-#: src/constants/theme.ts:131
+#: src/constants/theme.ts:89
 msgid "screen.setting.language.english"
 msgstr "English"
 
-#: src/constants/theme.ts:130
+#: src/constants/theme.ts:88
 msgid "screen.setting.language.portuguese"
 msgstr "Portuguese"
 
@@ -328,15 +334,15 @@ msgstr "Portuguese"
 msgid "screen.setting.theme"
 msgstr "Theme"
 
-#: src/constants/theme.ts:124
+#: src/constants/theme.ts:82
 msgid "screen.setting.theme.dark"
 msgstr "Dark"
 
-#: src/constants/theme.ts:125
+#: src/constants/theme.ts:83
 msgid "screen.setting.theme.light"
 msgstr "Light"
 
-#: src/constants/theme.ts:126
+#: src/constants/theme.ts:84
 msgid "screen.setting.theme.system"
 msgstr "System"
 
@@ -360,7 +366,7 @@ msgstr "Forgot password?"
 msgid "screen.signin.noaccount"
 msgstr "Don't have an account?"
 
-#: src/screens/signup/CredentialsScreen.tsx:100
+#: src/screens/signup/CredentialsScreen.tsx:120
 #: src/screens/signin/SignInScreen.tsx:114
 msgid "screen.signin.password"
 msgstr "Password"
@@ -369,7 +375,7 @@ msgstr "Password"
 msgid "screen.signin.signup"
 msgstr "Create Account"
 
-#: src/screens/signup/CredentialsScreen.tsx:84
+#: src/screens/signup/CredentialsScreen.tsx:104
 #: src/screens/signin/SignInScreen.tsx:99
 msgid "screen.signin.user"
 msgstr "Username"
@@ -382,19 +388,19 @@ msgstr "Welcome"
 msgid "screen.signup.birthday"
 msgstr "Birthdate"
 
-#: src/screens/signup/CredentialsScreen.tsx:117
+#: src/screens/signup/CredentialsScreen.tsx:137
 msgid "screen.signup.credentials.confirm-password"
 msgstr "Confirm your password"
 
-#: src/screens/signup/CredentialsScreen.tsx:72
+#: src/screens/signup/CredentialsScreen.tsx:92
 msgid "screen.signup.credentials.description"
 msgstr "Create your username and password to secure your spot on the team"
 
-#: src/screens/signup/CredentialsScreen.tsx:131
+#: src/screens/signup/CredentialsScreen.tsx:151
 msgid "screen.signup.credentials.register"
 msgstr "Let’s play!"
 
-#: src/screens/signup/CredentialsScreen.tsx:69
+#: src/screens/signup/CredentialsScreen.tsx:89
 msgid "screen.signup.credentials.title"
 msgstr "Final step, champ!"
 
@@ -402,23 +408,23 @@ msgstr "Final step, champ!"
 msgid "screen.signup.given-name"
 msgstr "First Name"
 
-#: src/screens/signup/MoreSportScreen.tsx:208
+#: src/screens/signup/MoreSportScreen.tsx:209
 msgid "screen.signup.more-sports.choose-another-button"
 msgstr "Pick another one!"
 
-#: src/screens/signup/MoreSportScreen.tsx:133
+#: src/screens/signup/MoreSportScreen.tsx:134
 msgid "screen.signup.more-sports.step-another-ask"
 msgstr "Wanna pick another sport or move on to the next step?"
 
-#: src/screens/signup/MoreSportScreen.tsx:134
+#: src/screens/signup/MoreSportScreen.tsx:135
 msgid "screen.signup.more-sports.step-another-end"
 msgstr "You crushed it, legend! All sports selected! 🚀⚽"
 
-#: src/screens/signup/MoreSportScreen.tsx:119
+#: src/screens/signup/MoreSportScreen.tsx:120
 msgid "screen.signup.more-sports.step-game"
 msgstr "Tell us—are you into any other games"
 
-#: src/screens/signup/MoreSportScreen.tsx:113
+#: src/screens/signup/MoreSportScreen.tsx:114
 msgid "screen.signup.more-sports.title"
 msgstr "You’re on fire"
 
@@ -430,39 +436,39 @@ msgstr "Next"
 msgid "screen.signup.person.title"
 msgstr "We want to know you"
 
-#: src/screens/signup/SportScreen.tsx:28
+#: src/screens/signup/SportScreen.tsx:30
 msgid "screen.signup.sport.description.beginner"
 msgstr "Just starting out, trying to look good — even when the ball gets away!"
 
-#: src/screens/signup/SportScreen.tsx:29
+#: src/screens/signup/SportScreen.tsx:31
 msgid "screen.signup.sport.description.intermediate"
 msgstr "Been in the game for a while, with sharp skills and hungry for the next level."
 
-#: src/screens/signup/SportScreen.tsx:30
+#: src/screens/signup/SportScreen.tsx:32
 msgid "screen.signup.sport.description.intermediate-advanced"
 msgstr "Somewhere between hustle and wisdom — I've seen some ball!"
 
-#: src/screens/signup/SportScreen.tsx:31
+#: src/screens/signup/SportScreen.tsx:33
 msgid "screen.signup.sport.description.veteran"
 msgstr "Maybe slower... but every move counts. Like fine wine — only better with time."
 
-#: src/screens/signup/SportScreen.tsx:89
+#: src/screens/signup/SportScreen.tsx:78
 msgid "screen.signup.sport.game-type.fut11"
 msgstr "11-a-side Football"
 
-#: src/screens/signup/SportScreen.tsx:90
+#: src/screens/signup/SportScreen.tsx:79
 msgid "screen.signup.sport.game-type.fut7"
 msgstr "7-a-side Football"
 
-#: src/screens/signup/SportScreen.tsx:91
+#: src/screens/signup/SportScreen.tsx:80
 msgid "screen.signup.sport.game-type.futsal"
 msgstr "Futsal"
 
-#: src/screens/signup/SportScreen.tsx:197
+#: src/screens/signup/SportScreen.tsx:186
 msgid "screen.signup.sport.game-types"
 msgstr "Choose the game type"
 
-#: src/screens/signup/SportScreen.tsx:213
+#: src/screens/signup/SportScreen.tsx:202
 msgid "screen.signup.sport.select-your-position"
 msgstr "Select your position"
 
@@ -513,12 +519,6 @@ msgstr "Manage Team"
 #: src/screens/signup/PersonScreen.tsx:106
 msgid "screens.signup.person.description"
 msgstr "We're glad you're here! Let's get to know you — your position, your player name, and more. Ready?"
-
-#. js-lingui-explicit-id
-#. placeholder {0}: selectedGame.label
-#: src/screens/signup/MoreSportScreen.tsx:125
-msgid "screen.signup.more-sports.step-position"
-msgstr "Nice! And in {selectedGame}, which position do you play?"
 
 #: src/screens/welcome/WelcomeScreen.tsx:92
 msgid "welcome.screen.schedule.desc"
