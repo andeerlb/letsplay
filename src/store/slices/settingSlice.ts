@@ -16,7 +16,6 @@ const settingSlice = createSlice({
     },
     setLayout: (state, action: PayloadAction<Layout>) => {
       state.layout = action.payload;
-      console.log('state', state);
     },
   },
 });

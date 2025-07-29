@@ -71,11 +71,9 @@ export default function CredentialsScreen({ navigation }: CredentialsScreenProps
         createUser.mutate({ email: data.email, password: data.password }, {
             onSuccess: data => {
                 dispatch(persistToken(data));
-                navigation.navigate('Auth', { screen: 'Bottom' });
                 toast.success('screen.signup.credentials.success', false);
             },
             onError: err => {
-                console.log(err);
                 toast.error(err.data.msg, false);
             }
         });

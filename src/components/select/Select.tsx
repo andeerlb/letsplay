@@ -184,8 +184,6 @@ export default function Select({
     const { t } = useLingui();
     const placeholder = t`component.select.placeholder`;
 
-    console.log(value);
-
     return Platform.OS === 'ios'
         ? ios(theme, onChange, options, placeholder, t`component.select.cancel`, value, mode, label, error)
         : android(theme, onChange, options, placeholder, value, mode, label, error);
