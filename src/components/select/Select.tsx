@@ -53,11 +53,11 @@ function renderPickerItems(
 
 function ios(
     theme: Theme,
-    value: string,
     onChange: (value: any) => void,
     options: Option[],
     placeholder: string,
     cancel: string,
+    value?: string,
     mode?: 'dialog' | 'dropdown',
     label?: string,
     error?: string,
@@ -128,10 +128,10 @@ function ios(
 
 function android(
     theme: Theme,
-    value: string,
     onChange: (value: any) => void,
     options: Option[],
     placeholder: string,
+    value?: string,
     mode?: 'dialog' | 'dropdown',
     label?: string,
     error?: string,
@@ -184,9 +184,11 @@ export default function Select({
     const { t } = useLingui();
     const placeholder = t`component.select.placeholder`;
 
+    console.log(value);
+
     return Platform.OS === 'ios'
-        ? ios(theme, value, onChange, options, placeholder, t`component.select.cancel`, mode, label, error)
-        : android(theme, value, onChange, options, placeholder, mode, label, error);
+        ? ios(theme, onChange, options, placeholder, t`component.select.cancel`, value, mode, label, error)
+        : android(theme, onChange, options, placeholder, value, mode, label, error);
 }
 
 const styles = StyleSheet.create({
