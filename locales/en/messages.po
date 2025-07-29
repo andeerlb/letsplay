@@ -350,37 +350,45 @@ msgstr "System"
 msgid "screen.setting.title"
 msgstr "Settings"
 
-#: src/screens/signin/SignInScreen.tsx:153
+#: src/screens/signin/SignInScreen.tsx:150
 msgid "screen.signin.btn-sigin"
 msgstr "Sign In"
 
-#: src/screens/signin/SignInScreen.tsx:97
+#: src/screens/signin/SignInScreen.tsx:94
 msgid "screen.signin.description"
 msgstr "Sign in to your account to continue"
 
-#: src/screens/signin/SignInScreen.tsx:150
+#: src/screens/signin/SignInScreen.tsx:147
 msgid "screen.signin.forgot"
 msgstr "Forgot password?"
 
-#: src/screens/signin/SignInScreen.tsx:169
+#: src/screens/signin/SignInScreen.tsx:64
+msgid "screen.signin.invalid-grant"
+msgstr "Invalid username or password"
+
+#: src/screens/signin/SignInScreen.tsx:166
 msgid "screen.signin.noaccount"
 msgstr "Don't have an account?"
 
 #: src/screens/signup/CredentialsScreen.tsx:120
-#: src/screens/signin/SignInScreen.tsx:130
+#: src/screens/signin/SignInScreen.tsx:127
 msgid "screen.signin.password"
 msgstr "Password"
 
-#: src/screens/signin/SignInScreen.tsx:181
+#: src/screens/signin/SignInScreen.tsx:178
 msgid "screen.signin.signup"
 msgstr "Create Account"
 
+#: src/screens/signin/SignInScreen.tsx:62
+#~ msgid "screen.signin.success"
+#~ msgstr ""
+
 #: src/screens/signup/CredentialsScreen.tsx:104
-#: src/screens/signin/SignInScreen.tsx:115
+#: src/screens/signin/SignInScreen.tsx:112
 msgid "screen.signin.user"
 msgstr "Username"
 
-#: src/screens/signin/SignInScreen.tsx:86
+#: src/screens/signin/SignInScreen.tsx:83
 msgid "screen.signin.welcome"
 msgstr "Welcome"
 

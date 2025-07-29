@@ -42,7 +42,7 @@ export default function SignInScreen({
     const {
         control,
         handleSubmit,
-        formState: { errors },
+        formState: { errors }
     } = useForm({
         resolver: yupResolver(schema),
         defaultValues: {
@@ -59,10 +59,9 @@ export default function SignInScreen({
         getToken.mutate(data, {
             onSuccess: data => {
                 dispatch(persistToken(data));
-                toast.success('screen.signin.success');
             },
-            onError: err => {
-                toast.error(err.data.error, false);
+            onError: () => {
+                toast.error(t`screen.signin.invalid-grant`, false);
             }
         })
     };
