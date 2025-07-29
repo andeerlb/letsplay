@@ -41,6 +41,10 @@ export type ThemeDefinition = {
         border: string;
     };
     toast: Toast;
+    navigation: {
+        active: string;
+        inactive: string;
+    };
     fonts: {
         regular: FontDefinition;
         medium: FontDefinition;

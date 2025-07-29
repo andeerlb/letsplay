@@ -29,8 +29,8 @@ export const getBottomNavigatorBarStyle = (
 ): BottomTabNavigationOptions => ({
     tabBarIcon: ({ color, size }) => getTabBarIcon(routeName, color, size),
     tabBarShowLabel: true,
-    tabBarActiveTintColor: theme.secondaryColors.button,
-    tabBarInactiveTintColor: theme.colors.button,
+    tabBarActiveTintColor: theme.navigation.active,
+    tabBarInactiveTintColor: theme.navigation.inactive,
     tabBarLabelStyle: {
         fontFamily: theme.fonts.regular.fontFamily,
         fontSize: 10,

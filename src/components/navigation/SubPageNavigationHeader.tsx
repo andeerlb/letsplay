@@ -37,10 +37,10 @@ export const SubPageNavigationHeader = function ({ navigation, title = '', Right
         <Pressable
           onPress={() => navigation.goBack()}
         >
-          <BackArrowIcon width={24} height={24} color={theme.colors.text} />
+          <BackArrowIcon width={24} height={24} color={theme.navigation.inactive} />
         </Pressable>
       ) : null}
-      <Text style={[styles.title, { color: theme.colors.text, fontFamily: theme.fonts.logoBold.fontFamily }]}>{title.toUpperCase()}</Text>
+      <Text style={[styles.title, { color: theme.navigation.inactive, fontFamily: theme.fonts.logoBold.fontFamily }]}>{title.toUpperCase()}</Text>
       {RightAction ? (
         <Pressable>
           <RightAction />

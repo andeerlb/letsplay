@@ -59,6 +59,10 @@ export const LightTheme: ThemeDefinition = {
     success: '#256b35',
     text: '#fff',
   },
+  navigation: {
+    active: '#1e2833',
+    inactive: '#646F7B',
+  },
   fonts: FONTS,
 };
 
@@ -88,6 +92,10 @@ export const DarkTheme: ThemeDefinition = {
     error: '#db1818ff',
     success: '#256b35',
     text: '#fff',
+  },
+  navigation: {
+    active: '#84a9d3ff',
+    inactive: '#fff',
   },
   fonts: FONTS
 };
