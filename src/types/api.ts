@@ -6,8 +6,8 @@ export type ApiError = {
 };
 
 export type Settings = {
-    layout: Layout | null;
-    language: Language | null;
+    layout: Layout;
+    language: Language;
 };
 
 export type User = {

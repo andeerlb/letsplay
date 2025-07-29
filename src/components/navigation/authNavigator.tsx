@@ -25,7 +25,7 @@ const AuthStackNavigator = () => {
   useEffect(() => {
     if (settingQuery.isLoading || !settingQuery.data || !userQuery.data) return;
     changeLanguage(settingQuery.data.language);
-    changeTheme(settingQuery.data.theme);
+    changeTheme(settingQuery.data.layout);
     dispatch(setUser(userQuery.data));
   }, [changeLanguage, changeTheme, dispatch, settingQuery.data, settingQuery.isLoading, userQuery.data]);
 
