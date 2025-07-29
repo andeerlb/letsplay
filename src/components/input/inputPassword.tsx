@@ -1,8 +1,8 @@
-import React, { useState, forwardRef } from "react";
-import { View, TextInput, TouchableOpacity, StyleSheet, Text, TextInputProps } from "react-native";
-import { useTheme } from "@context/ThemeProvider";
-import EyeOpen from "@assets/icons/eye-open.svg";
 import EyeClosed from "@assets/icons/eye-close.svg";
+import EyeOpen from "@assets/icons/eye-open.svg";
+import { useTheme } from "@context/ThemeProvider";
+import React, { forwardRef, useState } from "react";
+import { StyleSheet, Text, TextInput, TextInputProps, TouchableOpacity, View } from "react-native";
 
 type InputPasswordProps = TextInputProps & {
     label?: string;
@@ -53,7 +53,11 @@ const InputPassword = forwardRef<TextInput, InputPasswordProps>(({
                     onSubmitEditing={onSubmitEditing}
                     blurOnSubmit={blurOnSubmit}
                 />
-                <TouchableOpacity onPress={() => setShowPassword(!showPassword)} style={styles.iconContainer}>
+                <TouchableOpacity onPress={() => setShowPassword(!showPassword)}
+                    accessible={false}
+                    importantForAccessibility="no"
+                    focusable={false}
+                    style={styles.iconContainer}>
                     {showPassword ? (
                         <EyeOpen color={theme.secondaryColors.text} height={20} width={20} />
                     ) : (

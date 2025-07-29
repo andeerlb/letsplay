@@ -1,7 +1,7 @@
 import { NavigatorScreenParams } from "@react-navigation/native";
 
 export type AuthStackParamList = {
-    Bottom: undefined;
+    Bottom: NavigatorScreenParams<BottomTabParamList>;
     Setting: undefined;
 };
 

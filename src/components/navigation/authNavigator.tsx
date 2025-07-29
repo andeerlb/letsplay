@@ -2,29 +2,27 @@ import { useTheme } from '@context/ThemeProvider';
 import { useLanguage } from '@hooks/useLanguage';
 import { useSetting } from '@query/settings';
 import { useUser } from '@query/user';
-import { useNavigation } from '@react-navigation/native';
 import {
-  createNativeStackNavigator,
-  NativeStackNavigationProp
+  createNativeStackNavigator
 } from '@react-navigation/native-stack';
 import { SettingScreen } from '@screens/setting/SettingScreen';
 import SettingScreenHeader from '@screens/setting/SettingScreenHeader';
+import { AppDispatch } from '@store/index';
+import { removeToken } from '@store/slices/tokenSlice';
 import { setUser } from '@store/slices/userSlice';
-import type { AuthStackParamList, RootStackParamList } from '@tps/navigation';
+import type { AuthStackParamList } from '@tps/navigation';
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import BottomTabNavigator from './bottomTabNavigator';
 
 const Stack = createNativeStackNavigator<AuthStackParamList>();
-type AuthNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Auth'>;
 
 const AuthStackNavigator = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const { changeTheme } = useTheme();
   const settingQuery = useSetting();
   const userQuery = useUser();
   const { changeLanguage } = useLanguage();
-  const navigation = useNavigation<AuthNavigationProp>();
 
   useEffect(() => {
     if (settingQuery.isLoading || userQuery.isLoading) return;
@@ -33,11 +31,22 @@ const AuthStackNavigator = () => {
       changeTheme(settingQuery.data.layout);
       dispatch(setUser(userQuery.data));
     } else {
-      navigation.navigate('NoAuth', { screen: 'SignIn' });
+      dispatch(removeToken());
     }
-  }, [changeLanguage, changeTheme, dispatch, navigation, settingQuery.data, settingQuery.isLoading, userQuery.data, userQuery.isLoading]);
+  }, [
+    changeLanguage,
+    changeTheme,
+    dispatch,
+    settingQuery.data,
+    settingQuery.isLoading,
+    userQuery.data,
+    userQuery.isLoading
+  ]);
 
-  if (settingQuery.isLoading || userQuery.isLoading) {
+  if (settingQuery.isLoading
+    || userQuery.isLoading
+    || (!settingQuery.isLoading && !settingQuery.data)
+    || (!userQuery.isLoading && !userQuery.data)) {
     return;
   }
 

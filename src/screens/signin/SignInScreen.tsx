@@ -56,12 +56,10 @@ export default function SignInScreen({
     };
 
     const onSubmit = (data: UserCredentials) => {
-        console.log("Dados enviados:", data);
         getToken.mutate(data, {
             onSuccess: data => {
                 dispatch(persistToken(data));
-                navigation.navigate('Auth', { screen: 'Bottom' });
-                toast.success('screen.signin.success', false);
+                toast.success('screen.signin.success');
             },
             onError: err => {
                 toast.error(err.data.error, false);

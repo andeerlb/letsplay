@@ -14,7 +14,7 @@ export const removeToken = createAsyncThunk(
   'token/remove',
   async () => {
     await EncryptedStorage.removeItem('access_token');
-    return null; // importante retornar algo para o fulfilled
+    return null;
   }
 );
 
