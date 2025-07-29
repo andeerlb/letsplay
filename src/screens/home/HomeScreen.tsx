@@ -2,7 +2,7 @@ import { useTheme } from "@context/ThemeProvider";
 import { Trans } from "@lingui/react/macro";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { RootState } from "@store/index";
-import { BottomTabParamList } from "@types/navigation";
+import { BottomTabParamList } from "@tps/navigation";
 import ScreenWrapper from "@wrapper/ScreenWrapper";
 import React from "react";
 import { StyleSheet, Text } from "react-native";

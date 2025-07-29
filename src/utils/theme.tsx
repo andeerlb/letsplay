@@ -3,8 +3,8 @@ import ProfileIcon from '@assets/icons/profile.svg';
 import SoccerBallIcon from '@assets/icons/soccer_ball.svg';
 import TeamIcon from '@assets/icons/team.svg';
 import { BottomTabNavigationOptions } from "@react-navigation/bottom-tabs";
-import { BottomTabParamList } from "@types/navigation";
-import { Theme } from '@types/theme';
+import { BottomTabParamList } from "@tps/navigation";
+import { Theme } from '@tps/theme';
 import { StyleProp, ViewStyle } from "react-native";
 import { EdgeInsets } from "react-native-safe-area-context";
 

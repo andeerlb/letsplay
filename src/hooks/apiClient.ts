@@ -1,4 +1,4 @@
-import { ApiError } from "@types/api";
+import { ApiError } from "@tps/api";
 
 export const fetcher = async <TResponse>(
     url: string,

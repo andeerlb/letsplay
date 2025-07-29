@@ -8,7 +8,7 @@ import {
 import { SettingScreen } from '@screens/setting/SettingScreen';
 import SettingScreenHeader from '@screens/setting/SettingScreenHeader';
 import { setUser } from '@store/slices/userSlice';
-import type { AuthStackParamList } from '@types/navigation';
+import type { AuthStackParamList } from '@tps/navigation';
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import BottomTabNavigator from './bottomTabNavigator';

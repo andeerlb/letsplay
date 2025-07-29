@@ -1,6 +1,6 @@
 import { fetcher } from '@hooks/apiClient';
 import { useQuery, UseQueryResult } from '@tanstack/react-query';
-import type { ApiError, User } from '@types/api';
+import type { ApiError, User } from '@tps/api';
 import { Config } from 'react-native-config';
 
 const USER_URL = `${Config.API}/user`;

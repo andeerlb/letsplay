@@ -9,7 +9,7 @@ import React, { useRef } from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
 
 import { yupResolver } from "@hookform/resolvers/yup";
-import { NoAuthStackParamList } from "@types/navigation";
+import { NoAuthStackParamList } from "@tps/navigation";
 import ScreenScrollWrapper from "@wrapper/ScreenScrollWrapper";
 import { Controller, useForm } from "react-hook-form";
 import * as yup from "yup";

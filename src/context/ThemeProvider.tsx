@@ -1,8 +1,8 @@
 import { DarkTheme, LightTheme } from '@constants/theme';
 import { RootState } from '@store/index';
 import { setLayout } from '@store/slices/settingSlice';
-import type { ThemeContextType, UseThemeProps } from '@types/context';
-import type { Layout, Theme } from '@types/theme';
+import type { ThemeContextType, UseThemeProps } from '@tps/context';
+import type { Layout, Theme } from '@tps/theme';
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { useColorScheme } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';

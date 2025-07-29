@@ -1,5 +1,5 @@
 import { msg } from "@lingui/core/macro";
-import type { ThemeDefinition } from "@types/theme";
+import type { ThemeDefinition } from "@tps/theme";
 
 const FONTS: ThemeDefinition["fonts"] = {
   regular: {

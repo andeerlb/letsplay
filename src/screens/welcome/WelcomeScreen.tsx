@@ -7,7 +7,7 @@ import { useTheme } from "@context/ThemeProvider";
 import { t } from "@lingui/core/macro";
 import { Trans } from "@lingui/react/macro";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { NoAuthStackParamList } from '@types/navigation';
+import { NoAuthStackParamList } from '@tps/navigation';
 import React from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import Svg, { Defs, LinearGradient, Rect, Stop } from 'react-native-svg';

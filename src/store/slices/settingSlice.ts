@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import type { Settings } from '@types/api';
-import type { Language, Layout } from '@types/theme';
+import type { Settings } from '@tps/api';
+import type { Language, Layout } from '@tps/theme';
 
 const initialState: Settings = {
   language: null,

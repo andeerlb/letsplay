@@ -1,4 +1,4 @@
-import type { Language, Layout } from "@types/theme";
+import type { Language, Layout } from "@tps/theme";
 
 export type ApiError = {
     status: number;

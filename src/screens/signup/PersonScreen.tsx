@@ -12,7 +12,7 @@ import { useSignUp } from '@context/SignUpProvider';
 import { t } from '@lingui/core/macro';
 import { Trans } from '@lingui/react/macro';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { SignUpStackParamList } from '@types/navigation';
+import { SignUpStackParamList } from '@tps/navigation';
 import ScreenScrollWrapper from '@wrapper/ScreenScrollWrapper';
 
 const schema = yup.object({

@@ -3,7 +3,7 @@ import { messages as enMessages } from '@locales/en/messages';
 import { messages as ptMessages } from '@locales/pt/messages';
 import { RootState } from '@store/index';
 import { setLanguage } from '@store/slices/settingSlice';
-import { Language } from '@types/theme';
+import { Language } from '@tps/theme';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 

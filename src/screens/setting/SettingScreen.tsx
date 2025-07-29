@@ -4,7 +4,7 @@ import { useTheme } from "@context/ThemeProvider";
 import { useLanguage } from "@hooks/useLanguage";
 import { Trans, useLingui } from "@lingui/react/macro";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { AuthStackParamList } from "@types/navigation";
+import { AuthStackParamList } from "@tps/navigation";
 import ScreenWrapper from "@wrapper/ScreenWrapper";
 import { StyleSheet, Text, View } from "react-native";
 

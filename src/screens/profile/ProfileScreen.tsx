@@ -2,7 +2,7 @@ import Input from "@components/input/Input";
 import { useLingui } from "@lingui/react/macro";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { RootState } from "@store/index";
-import { BottomTabParamList } from "@types/navigation";
+import { BottomTabParamList } from "@tps/navigation";
 import ScreenWrapper from "@wrapper/ScreenWrapper";
 import React from "react";
 import { StyleSheet, View } from "react-native";

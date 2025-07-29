@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import type { Token } from '@types/api';
+import type { Token } from '@tps/api';
 import EncryptedStorage from 'react-native-encrypted-storage';
 
 export const persistToken = createAsyncThunk(

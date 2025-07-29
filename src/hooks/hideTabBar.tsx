@@ -1,6 +1,6 @@
 import { useTheme } from '@context/ThemeProvider';
 import { NavigationProp, useFocusEffect } from '@react-navigation/native';
-import type { BottomTabParamList } from '@types/navigation';
+import type { BottomTabParamList } from '@tps/navigation';
 import { getTabBarStyle } from '@utils/theme';
 import { useCallback } from 'react';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';

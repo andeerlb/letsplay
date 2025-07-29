@@ -1,5 +1,5 @@
-import type { Fut11PositionKey, Fut7PositionKey, FutsalPositionKey, GameType } from "@types/game";
-import type { Layout, Theme } from "@types/theme";
+import type { Fut11PositionKey, Fut7PositionKey, FutsalPositionKey, GameType } from "@tps/game";
+import type { Layout, Theme } from "@tps/theme";
 
 export type SignUpPersonContextType = {
     givenName: string;

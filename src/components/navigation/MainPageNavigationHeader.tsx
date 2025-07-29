@@ -2,7 +2,7 @@ import LetsPlayIcon from '@assets/icons/letsplay.svg';
 import SettingIcon from '@assets/icons/settings.svg';
 import { useTheme } from "@context/ThemeProvider";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
-import type { AuthStackParamList } from "@types/navigation";
+import type { AuthStackParamList } from "@tps/navigation";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 

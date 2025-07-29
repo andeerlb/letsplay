@@ -3,7 +3,7 @@ import {
   createNativeStackNavigator,
 } from '@react-navigation/native-stack';
 import { RootState } from '@store/index';
-import { RootStackParamList } from '@types/navigation';
+import type { RootStackParamList } from '@tps/navigation';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import NoAuthStackNavigator from './noAuthNavigator';

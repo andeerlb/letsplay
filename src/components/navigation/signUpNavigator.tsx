@@ -6,7 +6,7 @@ import MoreSportsScreen, { MoreSportsScreenRef } from '@screens/signup/MoreSport
 import PersonScreen, { PersonScreenRef } from '@screens/signup/PersonScreen';
 import SignUpScreenHeaderWrapper from '@screens/signup/ScreenHeader';
 import SportScreen, { SportScreenRef } from '@screens/signup/SportScreen';
-import { SignUpStackParamList } from '@types/navigation';
+import { SignUpStackParamList } from '@tps/navigation';
 import React, { useRef } from 'react';
 
 const Stack = createNativeStackNavigator<SignUpStackParamList>();

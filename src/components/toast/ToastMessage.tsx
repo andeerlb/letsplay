@@ -1,5 +1,5 @@
 import { useTheme } from '@context/ThemeProvider';
-import { Toast } from '@types/context';
+import { Toast } from '@tps/context';
 import React, { useEffect, useRef } from 'react';
 import { Animated, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 

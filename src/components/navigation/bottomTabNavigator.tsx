@@ -7,7 +7,7 @@ import MatchScreen from '@screens/match/MatchScreen';
 import MatchScreenHeader from '@screens/match/MatchScreenHeader';
 import ProfileScreen from '@screens/profile/ProfileScreen';
 import ProfileScreenHeader from '@screens/profile/ProfileScreenHeader';
-import { BottomTabParamList } from '@types/navigation';
+import { BottomTabParamList } from '@tps/navigation';
 import { getBottomNavigatorBarStyle } from '@utils/theme';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import TeamStackNavigator from './teamNavigator';

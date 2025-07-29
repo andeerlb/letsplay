@@ -1,5 +1,5 @@
 import ToastMessage from '@components/toast/ToastMessage';
-import { Toast, ToastContextType, ToastType } from '@types/context';
+import { Toast, ToastContextType, ToastType } from '@tps/context';
 import React, { createContext, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';

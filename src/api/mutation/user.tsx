@@ -1,6 +1,6 @@
 // mutations/useCreateUser.ts
 import { useApiPost } from '@hooks/useApiPost';
-import { UserCredentials } from '@types/api';
+import { UserCredentials } from '@tps/api';
 import { Config } from 'react-native-config';
 
 const USER_URL = Config.AUTH_API + "/signup";

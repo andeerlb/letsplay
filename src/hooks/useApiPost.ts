@@ -1,6 +1,6 @@
 import { fetcher } from '@hooks/apiClient';
 import { useMutation, UseMutationOptions } from '@tanstack/react-query';
-import { ApiError } from '@types/api';
+import { ApiError } from '@tps/api';
 
 export const useApiPost = <TPayload, TResponse>(
     url: string,

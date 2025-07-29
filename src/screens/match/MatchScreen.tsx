@@ -1,5 +1,5 @@
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
-import { BottomTabParamList } from "@types/navigation";
+import { BottomTabParamList } from "@tps/navigation";
 import ScreenWrapper from "@wrapper/ScreenWrapper";
 import { Text } from "react-native";
 

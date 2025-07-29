@@ -1,7 +1,7 @@
 import Search from "@components/search/Search";
 import { useLingui } from "@lingui/react/macro";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import type { TeamStackParamList } from "@types/navigation";
+import type { TeamStackParamList } from "@tps/navigation";
 import ScreenWrapper from "@wrapper/ScreenWrapper";
 
 type TeamScreenNavigationProps = NativeStackNavigationProp<TeamStackParamList, 'Main'>;

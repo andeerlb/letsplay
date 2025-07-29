@@ -1,5 +1,5 @@
 
-import type { SignUpContextType, SignUpMoreSportsContextType, SignUpPersonContextType, SignUpSportContextType } from '@types/context';
+import type { SignUpContextType, SignUpMoreSportsContextType, SignUpPersonContextType, SignUpSportContextType } from '@tps/context';
 import React, { createContext, useContext, useState } from 'react';
 
 

@@ -4,7 +4,7 @@ import {
 import SignInScreen from '@screens/signin/SignInScreen';
 import SignInScreenHeaderWrapper from '@screens/signin/SignInScreenHeader';
 import WelcomeScreen from '@screens/welcome/WelcomeScreen';
-import { NoAuthStackParamList } from '@types/navigation';
+import { NoAuthStackParamList } from '@tps/navigation';
 import React from 'react';
 import SignUpStackNavigator from './signUpNavigator';
 
