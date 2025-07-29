@@ -18,11 +18,29 @@ export const removeToken = createAsyncThunk(
   }
 );
 
-export const getToken = createAsyncThunk(
+export const getToken = createAsyncThunk<Token | null>(
   'token/get',
-  async () => {
+  async (_, thunkAPI) => {
     const token = await EncryptedStorage.getItem('access_token');
-    return token && token.length > 0 ? JSON.parse(token) : null;
+
+    if (!token || token.length === 0) {
+      return null;
+    }
+
+    try {
+      const parsed: Token = JSON.parse(token);
+
+      const nowInSeconds = Math.floor(Date.now() / 1000);
+      if (parsed.expires_at <= nowInSeconds) {
+        thunkAPI.dispatch(removeToken());
+        return null;
+      }
+
+      return parsed;
+    } catch (e) {
+      thunkAPI.dispatch(removeToken());
+      return null;
+    }
   }
 );
 
