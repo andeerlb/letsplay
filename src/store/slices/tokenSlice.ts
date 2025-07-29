@@ -7,14 +7,23 @@ export const persistToken = createAsyncThunk(
   async (token: Token) => {
     await EncryptedStorage.setItem('access_token', JSON.stringify(token));
     return token;
-  },
+  }
 );
 
 export const removeToken = createAsyncThunk(
   'token/remove',
   async () => {
     await EncryptedStorage.removeItem('access_token');
-  },
+    return null; // importante retornar algo para o fulfilled
+  }
+);
+
+export const getToken = createAsyncThunk(
+  'token/get',
+  async () => {
+    const token = await EncryptedStorage.getItem('access_token');
+    return token && token.length > 0 ? JSON.parse(token) : null;
+  }
 );
 
 const tokenSlice = createSlice({
@@ -23,7 +32,8 @@ const tokenSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(persistToken.fulfilled, (state, action) => action.payload)
+      .addCase(persistToken.fulfilled, (_, action) => action.payload)
+      .addCase(getToken.fulfilled, (_, action) => action.payload)
       .addCase(removeToken.fulfilled, () => null);
   },
 });

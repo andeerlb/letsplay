@@ -3,7 +3,7 @@ import type { Settings } from '@tps/api';
 import type { Language, Layout } from '@tps/theme';
 
 const initialState: Settings = {
-  language: null,
+  language: 'pt',
   layout: 'system',
 };
 

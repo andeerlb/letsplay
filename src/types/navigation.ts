@@ -1,3 +1,5 @@
+import { NavigatorScreenParams } from "@react-navigation/native";
+
 export type AuthStackParamList = {
     Bottom: undefined;
     Setting: undefined;
@@ -17,8 +19,8 @@ export type NoAuthStackParamList = {
 };
 
 export type RootStackParamList = {
-    Auth: undefined;
-    NoAuth: undefined;
+    Auth: NavigatorScreenParams<AuthStackParamList>;
+    NoAuth: NavigatorScreenParams<NoAuthStackParamList>;
 };
 
 export type SignUpStackParamList = {

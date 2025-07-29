@@ -9,15 +9,18 @@ import React, { useRef } from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
 
 import { yupResolver } from "@hookform/resolvers/yup";
-import { NoAuthStackParamList } from "@tps/navigation";
+import { useToast } from "@hooks/useToast";
+import { useGetToken } from "@mutation/user";
+import { AppDispatch } from "@store/index";
+import { persistToken } from "@store/slices/tokenSlice";
+import { UserCredentials } from "@tps/api";
+import { RootStackParamList } from "@tps/navigation";
 import ScreenScrollWrapper from "@wrapper/ScreenScrollWrapper";
 import { Controller, useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 import * as yup from "yup";
 
-type SignInScreenNavigationProp = NativeStackNavigationProp<
-    NoAuthStackParamList,
-    "SignIn"
->;
+type SignInScreenNavigationProp = NativeStackNavigationProp<RootStackParamList>;
 
 const schema = yup.object({
     email: yup.string().email().required(),
@@ -32,6 +35,9 @@ export default function SignInScreen({
     const { theme } = useTheme();
     const { t } = useLingui();
     const passwordRef = useRef<TextInput>(null);
+    const getToken = useGetToken();
+    const dispatch = useDispatch<AppDispatch>();
+    const toast = useToast();
 
     const {
         control,
@@ -46,11 +52,21 @@ export default function SignInScreen({
     });
 
     const goToSignUp = () => {
-        navigation.navigate("SignUp");
+        navigation.navigate('NoAuth', { screen: 'SignUp' });
     };
 
-    const onSubmit = (data: { email: string; password: string }) => {
+    const onSubmit = (data: UserCredentials) => {
         console.log("Dados enviados:", data);
+        getToken.mutate(data, {
+            onSuccess: data => {
+                dispatch(persistToken(data));
+                navigation.navigate('Auth', { screen: 'Bottom' });
+                toast.success('screen.signin.success', false);
+            },
+            onError: err => {
+                toast.error(err.data.error, false);
+            }
+        })
     };
 
     return (

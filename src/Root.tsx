@@ -6,10 +6,13 @@ import { useLanguage } from '@hooks/useLanguage';
 import { i18n } from '@lingui/core';
 import { I18nProvider, TransRenderProps } from '@lingui/react';
 import { NavigationContainer } from '@react-navigation/native';
+import { getToken } from '@store/slices/tokenSlice';
 import { Language } from '@tps/theme';
 import React, { useEffect } from 'react';
 import { NativeModules, Platform, Text } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from './store';
 
 const DefaultComponent = (props: TransRenderProps) => <Text>{props.children}</Text>;
 
@@ -37,13 +40,15 @@ const getDeviceLanguage = async (): Promise<Language> => {
 function Root() {
   const { theme } = useTheme();
   const { changeLanguage } = useLanguage();
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     (async () => {
       const lang = await getDeviceLanguage();
       changeLanguage(lang);
+      dispatch(getToken());
     })();
-  }, [changeLanguage]);
+  }, [changeLanguage, dispatch]);
 
   return (
     <>
