@@ -1,9 +1,9 @@
-import React from 'react';
-import { View, StyleSheet, Text, Platform, ActionSheetIOS, TouchableOpacity } from 'react-native';
-import { Picker } from '@react-native-picker/picker';
-import { useTheme } from "@context/ThemeProvider";
 import { Theme } from '@constants/theme';
+import { useTheme } from "@context/ThemeProvider";
 import { useLingui } from '@lingui/react/macro';
+import { Picker } from '@react-native-picker/picker';
+import React from 'react';
+import { ActionSheetIOS, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 type Option = {
     label: string;
@@ -11,7 +11,7 @@ type Option = {
 };
 
 type SelectProps = {
-    value: string;
+    value?: string;
     onChange: (value: any) => void;
     options: Option[]
     label?: string;

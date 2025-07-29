@@ -44,6 +44,7 @@ function Root() {
 
   useEffect(() => {
     (async () => {
+      console.log("maybe passing here")
       const lang = await getDeviceLanguage();
       changeLanguage(lang);
       dispatch(getToken());

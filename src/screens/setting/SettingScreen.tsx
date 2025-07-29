@@ -38,13 +38,13 @@ export function SettingScreen({ }: Props) {
         <View style={styles.appearanceContainer}>
           <Select
             label={t`screen.setting.theme`}
-            defaultValue={layout}
+            value={layout?.toString()}
             onChange={changeTheme}
             options={translatedThemeOptions}
           />
           <Select
             label={t`screen.setting.language`}
-            defaultValue={language}
+            value={language}
             onChange={changeLanguage}
             options={translatedLanguageOptions}
           />

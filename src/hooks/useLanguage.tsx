@@ -4,7 +4,7 @@ import { messages as ptMessages } from '@locales/pt/messages';
 import { RootState } from '@store/index';
 import { setLanguage } from '@store/slices/settingSlice';
 import { Language } from '@tps/theme';
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 export const LANGUAGE_MAP: Record<Language, Messages> = {
@@ -24,10 +24,10 @@ export const useLanguage = () => {
     });
   }, [language]);
 
-  const changeLanguage = (languageParam: Language) => {
+  const changeLanguage = useCallback((languageParam: Language) => {
     dispatch(setLanguage(languageParam));
+  }, [dispatch]);
 
-  }
 
   return {
     language,
