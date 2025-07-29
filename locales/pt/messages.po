@@ -350,37 +350,37 @@ msgstr "Sistema"
 msgid "screen.setting.title"
 msgstr "Configurações"
 
-#: src/screens/signin/SignInScreen.tsx:137
+#: src/screens/signin/SignInScreen.tsx:153
 msgid "screen.signin.btn-sigin"
 msgstr "Entrar"
 
-#: src/screens/signin/SignInScreen.tsx:81
+#: src/screens/signin/SignInScreen.tsx:97
 msgid "screen.signin.description"
 msgstr "Entre na sua conta para continuar"
 
-#: src/screens/signin/SignInScreen.tsx:134
+#: src/screens/signin/SignInScreen.tsx:150
 msgid "screen.signin.forgot"
 msgstr "Esqueceu a senha?"
 
-#: src/screens/signin/SignInScreen.tsx:153
+#: src/screens/signin/SignInScreen.tsx:169
 msgid "screen.signin.noaccount"
 msgstr "Não tem uma conta?"
 
 #: src/screens/signup/CredentialsScreen.tsx:120
-#: src/screens/signin/SignInScreen.tsx:114
+#: src/screens/signin/SignInScreen.tsx:130
 msgid "screen.signin.password"
 msgstr "Senha"
 
-#: src/screens/signin/SignInScreen.tsx:165
+#: src/screens/signin/SignInScreen.tsx:181
 msgid "screen.signin.signup"
 msgstr "Criar conta"
 
 #: src/screens/signup/CredentialsScreen.tsx:104
-#: src/screens/signin/SignInScreen.tsx:99
+#: src/screens/signin/SignInScreen.tsx:115
 msgid "screen.signin.user"
 msgstr "Usuário"
 
-#: src/screens/signin/SignInScreen.tsx:70
+#: src/screens/signin/SignInScreen.tsx:86
 msgid "screen.signin.welcome"
 msgstr "Bem-vindo"
 
