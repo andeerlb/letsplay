@@ -9,7 +9,7 @@ export const useApiPost = <TPayload, TResponse>(
     return useMutation<TResponse, ApiError, TPayload>({
         mutationFn: (payload) => {
             console.log(url, payload, options);
-            return fetcher<TResponse>(url, {
+            return fetcher<TResponse>(url, null, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload),

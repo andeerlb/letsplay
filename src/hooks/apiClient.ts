@@ -1,10 +1,21 @@
-import { ApiError } from "@tps/api";
+import { ApiError, Token } from "@tps/api";
 
 export const fetcher = async <TResponse>(
     url: string,
+    token?: Token | null,
     options?: RequestInit
 ): Promise<TResponse> => {
-    const response = await fetch(url, options);
+    const headers = {
+        'Content-Type': 'application/json',
+        ...(options?.headers || {}),
+        ...(token ? { Authorization: `Bearer ${token.access_token}` } : {}),
+    };
+
+    const response = await fetch(url, {
+        ...options,
+        headers,
+    });
+
     const content = await response.json().catch(() => ({}));
 
     if (!response.ok) {

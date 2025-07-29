@@ -47,6 +47,8 @@ const AuthStackNavigator = () => {
     || userQuery.isLoading
     || (!settingQuery.isLoading && !settingQuery.data)
     || (!userQuery.isLoading && !userQuery.data)) {
+    console.log(settingQuery);
+    console.log(userQuery);
     return;
   }
 
