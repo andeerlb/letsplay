@@ -322,11 +322,11 @@ msgstr "Appearance"
 msgid "screen.setting.language"
 msgstr "Language"
 
-#: src/constants/theme.ts:89
+#: src/constants/theme.ts:103
 msgid "screen.setting.language.english"
 msgstr "English"
 
-#: src/constants/theme.ts:88
+#: src/constants/theme.ts:102
 msgid "screen.setting.language.portuguese"
 msgstr "Portuguese"
 
@@ -334,15 +334,15 @@ msgstr "Portuguese"
 msgid "screen.setting.theme"
 msgstr "Theme"
 
-#: src/constants/theme.ts:82
+#: src/constants/theme.ts:96
 msgid "screen.setting.theme.dark"
 msgstr "Dark"
 
-#: src/constants/theme.ts:83
+#: src/constants/theme.ts:97
 msgid "screen.setting.theme.light"
 msgstr "Light"
 
-#: src/constants/theme.ts:84
+#: src/constants/theme.ts:98
 msgid "screen.setting.theme.system"
 msgstr "System"
 

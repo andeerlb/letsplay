@@ -1,16 +1,15 @@
 import { useTheme } from '@context/ThemeProvider';
 import { Toast } from '@types/context';
 import React, { useEffect, useRef } from 'react';
-import { Animated, StyleSheet, Text } from 'react-native';
+import { Animated, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 type Props = {
     toast: Toast;
-    onClose?: () => void;
+    clear: (id: string) => void;
 };
 
-export default function ToastMessage({ toast, onClose }: Props) {
+export default function ToastMessage({ toast, clear }: Props) {
     const { theme } = useTheme();
-
     const opacity = useRef(new Animated.Value(0)).current;
 
     useEffect(() => {
@@ -20,53 +19,75 @@ export default function ToastMessage({ toast, onClose }: Props) {
             useNativeDriver: true,
         }).start();
 
-        // eslint-disable-next-line no-undef-init
-        let timeout = undefined;
-        if (onClose) {
+        let timeout: NodeJS.Timeout | undefined;
+        if (toast.autoClose) {
             timeout = setTimeout(() => {
                 Animated.timing(opacity, {
                     toValue: 0,
                     duration: 300,
                     useNativeDriver: true,
-                }).start();
+                }).start(({ finished }) => {
+                    if (finished) {
+                        clear(toast.id);
+                    }
+                });
             }, 2000);
         }
 
-        return () => clearTimeout(timeout);
-    }, [opacity, onClose]);
+        return () => timeout && clearTimeout(timeout);
+    }, [opacity, clear, toast.id, toast.autoClose]);
 
     return (
         <Animated.View
             style={[
                 styles.toast,
-                {
-                    backgroundColor: theme.toast.background,
-                    opacity,
-                },
+                { backgroundColor: theme.toast[toast.type], opacity },
             ]}
         >
-            <Text style={[styles.text, { color: theme.toast.text }]}>
-                {toast.message}
-            </Text>
+            <View style={styles.textContainer}>
+                <Text style={[styles.text, { color: theme.toast.text }]}>
+                    {toast.message}
+                </Text>
+            </View>
+            {!toast.autoClose && <TouchableOpacity onPress={() => clear(toast.id)}>
+                <Text style={styles.close}>x</Text>
+            </TouchableOpacity>}
         </Animated.View>
     );
 }
 
 const styles = StyleSheet.create({
     toast: {
-        paddingVertical: 10,
-        paddingHorizontal: 20,
+        position: 'relative',
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+        padding: 20,
         borderRadius: 8,
-        minWidth: '70%',
+        maxWidth: '90%',
         shadowColor: '#000',
         shadowOpacity: 0.3,
         shadowOffset: { width: 0, height: 2 },
         shadowRadius: 5,
         elevation: 6,
     },
+    textContainer: {
+        flex: 1,
+        justifyContent: 'center',
+    },
     text: {
         fontSize: 15,
-        fontWeight: '600',
-        textAlign: 'center',
+        textAlign: 'left',
+        flexWrap: 'wrap',
+    },
+    closeWrapper: {
+        position: 'absolute',
+        top: 4,
+        right: 6,
+    },
+    close: {
+        fontFamily: 'Armavir01-Bold',
+        color: '#ccc',
+        fontSize: 18,
     },
 });
+

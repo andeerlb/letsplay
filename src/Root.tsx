@@ -6,7 +6,7 @@ import { useLanguage } from '@hooks/useLanguage';
 import { i18n } from '@lingui/core';
 import { I18nProvider, TransRenderProps } from '@lingui/react';
 import { NavigationContainer } from '@react-navigation/native';
-import { Language } from '@store/slices/settingSlice';
+import { Language } from '@types/theme';
 import React, { useEffect } from 'react';
 import { NativeModules, Platform, Text } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';

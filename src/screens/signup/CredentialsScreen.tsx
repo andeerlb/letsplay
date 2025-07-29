@@ -12,14 +12,17 @@ import { useSignUp } from "@context/SignUpProvider";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useToast } from "@hooks/useToast";
 import { useCreateUser } from "@mutation/user";
+import { AppDispatch } from "@store/index";
+import { persistToken } from "@store/slices/tokenSlice";
 import { UserCredentials } from "@types/api";
-import { SignUpStackParamList } from "@types/navigation";
+import { RootStackParamList } from "@types/navigation";
 import ScreenScrollWrapper from "@wrapper/ScreenScrollWrapper";
 import { Controller, useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 import * as yup from "yup";
 
 type CredentialsScreenProps = {
-    navigation: NativeStackNavigationProp<SignUpStackParamList, "Credentials">;
+    navigation: NativeStackNavigationProp<RootStackParamList>;
 };
 
 const schema = yup.object({
@@ -40,9 +43,11 @@ type CredentialsFormData = {
     confirmPassword: string;
 };
 
-export default function CredentialsScreen({ }: CredentialsScreenProps) {
+export default function CredentialsScreen({ navigation }: CredentialsScreenProps) {
     const { person } = useSignUp();
     const { theme } = useTheme();
+    const dispatch = useDispatch<AppDispatch>();
+
     const { t } = useLingui();
     const createUser = useCreateUser();
     const passwordRef = useRef<TextInput>(null);
@@ -65,13 +70,15 @@ export default function CredentialsScreen({ }: CredentialsScreenProps) {
     const onSubmit = (data: UserCredentials) => {
         createUser.mutate({ email: data.email, password: data.password }, {
             onSuccess: data => {
-                console.log(data);
+                dispatch(persistToken(data));
+                navigation.navigate('Auth');
+                toast.success('screen.signup.credentials.success', false);
             },
             onError: err => {
                 console.log(err);
+                toast.error(err.data.msg, false);
             }
         });
-        toast('Informação básica' + new Date().getTime(), 'info')
     };
 
     return (

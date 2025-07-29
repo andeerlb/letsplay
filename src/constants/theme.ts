@@ -53,12 +53,11 @@ export const LightTheme: ThemeDefinition = {
     border: '#D3DCE9',
   },
   toast: {
-    warn: '#FFA500',
-    info: '#2196F3',
-    error: '#F44336',
-    success: '#F44336',
-    background: '#4CAF50',
-    text: '#4CAF50',
+    warn: '#fa4700ff',
+    info: '#84a9d3ff',
+    error: '#db1818ff',
+    success: '#256b35',
+    text: '#fff',
   },
   fonts: FONTS,
 };
@@ -84,11 +83,10 @@ export const DarkTheme: ThemeDefinition = {
     border: 'rgb(199, 199, 204)',
   },
   toast: {
-    warn: '#FFA500',
-    info: '#2196F3',
-    error: '#F44336',
-    success: '#F44336',
-    background: '#4CAF50',
+    warn: '#fa4700ff',
+    info: '#141b22',
+    error: '#db1818ff',
+    success: '#256b35',
     text: '#fff',
   },
   fonts: FONTS

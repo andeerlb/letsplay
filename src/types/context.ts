@@ -43,7 +43,10 @@ export type Toast = {
 };
 
 export type ToastContextType = {
-    toasts: Toast[];
-    showToast: (message: string, type?: ToastType, autoClose?: boolean) => void;
-    removeToast: (id: string) => void;
+    error: (message: string, autoClose?: boolean) => string;
+    success: (message: string, autoClose?: boolean) => string;
+    warn: (message: string, autoClose?: boolean) => string;
+    info: (message: string, autoClose?: boolean) => string;
+    clear: (id: string) => void;
+    clearAll: () => void;
 };

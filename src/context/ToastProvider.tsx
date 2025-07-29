@@ -10,28 +10,45 @@ export const ToastProvider = ({ children }: { children: React.ReactNode }) => {
     const [toasts, setToasts] = useState<Toast[]>([]);
     const insets = useSafeAreaInsets();
 
-    const removeToast = (id: string) => {
+    const clear = (id: string) => {
         setToasts((prev) => prev.filter((t) => t.id !== id));
     };
 
-    const showToast = (message: string, type: ToastType = 'info', autoClose = true) => {
-        if (toasts.length > 5) return;
-        const id = Math.random().toString(36).substring(2, 10)
-        setToasts((prev) => [...prev, { id, message, type, autoClose }]);
+    const clearAll = () => {
 
-        if (autoClose) {
-            setTimeout(() => {
-                removeToast(id);
-            }, 2000);
+    }
+
+    const showToast = (message: string, type: ToastType, autoClose = true): string => {
+        if (toasts && toasts.length > 5) {
+            clear(toasts[toasts.length - 1].id);
         }
+        const id = Math.random().toString(36).substring(2, 10) + 'type';
+        setToasts((prev) => [...prev, { id, message, type, autoClose }]);
+        return id;
     };
 
+    const info = (message: string, autoclose = true): string => {
+        return showToast(message, 'info', autoclose);
+    }
+
+    const warn = (message: string, autoclose = true): string => {
+        return showToast(message, 'warn', autoclose);
+    }
+
+    const success = (message: string, autoclose = true): string => {
+        return showToast(message, 'success', autoclose);
+    }
+
+    const error = (message: string, autoclose = true): string => {
+        return showToast(message, 'error', autoclose);
+    }
+
     return (
-        <ToastContext.Provider value={{ toasts, showToast, removeToast }}>
+        <ToastContext.Provider value={{ info, warn, success, error, clear, clearAll }}>
             {children}
             <View pointerEvents="box-none" style={[styles.toastContainer, { marginTop: insets.top + 5 }]}>
                 {toasts.slice().reverse().map((toast) => (
-                    <ToastMessage key={toast.id} toast={toast} onClose={toast.autoClose ? () => removeToast(toast.id) : undefined} />
+                    <ToastMessage key={toast.id} toast={toast} clear={clear} />
                 ))}
             </View>
         </ToastContext.Provider>

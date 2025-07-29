@@ -21,3 +21,11 @@ export type UserCredentials = {
     email: string;
     password: string;
 }
+
+export type Token = {
+    access_token: string;
+    token_type: string;
+    refresh_token: string;
+    expires_in: number;
+    expires_at: number;
+}

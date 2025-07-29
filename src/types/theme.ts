@@ -18,7 +18,6 @@ export type Toast = {
     info: string;
     error: string;
     success: string;
-    background: string,
     text: string,
 };
 

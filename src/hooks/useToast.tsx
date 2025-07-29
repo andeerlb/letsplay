@@ -3,6 +3,6 @@ import { useContext } from 'react';
 
 export function useToast() {
     const ctx = useContext(ToastContext);
-    if (!ctx) throw new Error('useToast deve ser usado dentro de <ToastProvider>');
-    return ctx.showToast;
+    if (!ctx) throw new Error('useToast should be used inside of <ToastProvider>');
+    return ctx;
 }
