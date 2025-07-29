@@ -10,7 +10,7 @@ const config = {
     babelTransformerPath: require.resolve('./metro.transformer.js'),
   },
   resolver: {
-    sourceExts: [...sourceExts, "svg", "po", "pot"],
+    sourceExts: [...sourceExts, "svg", "po", "pot", "lottie"],
   },
 };
 
