@@ -43,8 +43,8 @@ type CredentialsFormData = {
     confirmPassword: string;
 };
 
-export default function CredentialsScreen({ navigation }: CredentialsScreenProps) {
-    const { person } = useSignUp();
+export default function CredentialsScreen({ }: CredentialsScreenProps) {
+    const { person, sport, moreSports } = useSignUp();
     const { theme } = useTheme();
     const dispatch = useDispatch<AppDispatch>();
 
@@ -68,7 +68,12 @@ export default function CredentialsScreen({ navigation }: CredentialsScreenProps
     });
 
     const onSubmit = (data: UserCredentials) => {
-        createUser.mutate({ email: data.email, password: data.password }, {
+        createUser.mutate({
+            ...data,
+            ...person,
+            preferredSport: sport,
+            otherSports: moreSports,
+        }, {
             onSuccess: data => {
                 dispatch(persistToken(data));
                 toast.success('screen.signup.credentials.success');
