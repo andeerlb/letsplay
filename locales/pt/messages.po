@@ -370,7 +370,7 @@ msgstr "Usuário ou senha inválido(s)"
 msgid "screen.signin.noaccount"
 msgstr "Não tem uma conta?"
 
-#: src/screens/signup/CredentialsScreen.tsx:118
+#: src/screens/signup/CredentialsScreen.tsx:123
 #: src/screens/signin/SignInScreen.tsx:127
 msgid "screen.signin.password"
 msgstr "Senha"
@@ -379,7 +379,7 @@ msgstr "Senha"
 msgid "screen.signin.signup"
 msgstr "Criar conta"
 
-#: src/screens/signup/CredentialsScreen.tsx:102
+#: src/screens/signup/CredentialsScreen.tsx:107
 #: src/screens/signin/SignInScreen.tsx:112
 msgid "screen.signin.user"
 msgstr "Usuário"
@@ -392,19 +392,19 @@ msgstr "Bem-vindo"
 msgid "screen.signup.birthday"
 msgstr "Data de nascimento"
 
-#: src/screens/signup/CredentialsScreen.tsx:135
+#: src/screens/signup/CredentialsScreen.tsx:140
 msgid "screen.signup.credentials.confirm-password"
 msgstr "Confirma tua senha"
 
-#: src/screens/signup/CredentialsScreen.tsx:90
+#: src/screens/signup/CredentialsScreen.tsx:95
 msgid "screen.signup.credentials.description"
 msgstr "Crie seu usuário e senha para garantir seu lugar no time"
 
-#: src/screens/signup/CredentialsScreen.tsx:149
+#: src/screens/signup/CredentialsScreen.tsx:154
 msgid "screen.signup.credentials.register"
 msgstr "Bora jogar!"
 
-#: src/screens/signup/CredentialsScreen.tsx:87
+#: src/screens/signup/CredentialsScreen.tsx:92
 msgid "screen.signup.credentials.title"
 msgstr "Última etapa, campeão!"
 

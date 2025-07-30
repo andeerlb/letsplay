@@ -8,7 +8,7 @@ export const useApiPatch = <TPayload, TResponse>(
 ) => {
     return useMutation<TResponse, ApiError, TPayload>({
         mutationFn: (payload) =>
-            fetcher<TResponse>(url, {
+            fetcher<TResponse>(url, null, {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload),

@@ -61,7 +61,7 @@ export default function SignInScreen({
                 dispatch(persistToken(data));
             },
             onError: () => {
-                toast.error(t`screen.signin.invalid-grant`, false);
+                toast.error(t`screen.signin.invalid-grant`);
             }
         })
     };

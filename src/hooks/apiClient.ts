@@ -11,10 +11,19 @@ export const fetcher = async <TResponse>(
         ...(token ? { Authorization: `Bearer ${token.access_token}` } : {}),
     };
 
-    const response = await fetch(url, {
-        ...options,
-        headers,
-    });
+    let response;
+    try {
+        response = await fetch(url, {
+            ...options,
+            headers,
+        });
+    } catch (err) {
+        const error: ApiError = {
+            status: -1,
+            data: err,
+        };
+        throw error;
+    }
 
     const content = await response.json().catch(() => ({}));
 

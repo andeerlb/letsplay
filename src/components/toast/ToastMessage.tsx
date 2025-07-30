@@ -44,15 +44,14 @@ export default function ToastMessage({ toast, clear }: Props) {
                 { backgroundColor: theme.toast[toast.type], opacity },
             ]}
         >
-            <View style={styles.textContainer}>
-                <Text style={[styles.text, { color: theme.toast.text }]}>
-                    {toast.message}
-                </Text>
-            </View>
-            {!toast.autoClose && <TouchableOpacity onPress={() => clear(toast.id)}>
-                <Text style={styles.close}>x</Text>
-            </TouchableOpacity>}
-        </Animated.View>
+            <TouchableOpacity activeOpacity={1} onPress={() => clear(toast.id)}>
+                <View style={styles.textContainer}>
+                    <Text style={[styles.text, { color: theme.toast.text }]}>
+                        {toast.message}
+                    </Text>
+                </View>
+            </TouchableOpacity>
+        </Animated.View >
     );
 }
 
@@ -61,7 +60,6 @@ const styles = StyleSheet.create({
         position: 'relative',
         flexDirection: 'row',
         alignItems: 'flex-start',
-        padding: 20,
         borderRadius: 8,
         maxWidth: '90%',
         shadowColor: '#000',
@@ -72,22 +70,14 @@ const styles = StyleSheet.create({
     },
     textContainer: {
         flex: 1,
+        padding: 20,
         justifyContent: 'center',
+
     },
     text: {
         fontSize: 15,
         textAlign: 'left',
         flexWrap: 'wrap',
-    },
-    closeWrapper: {
-        position: 'absolute',
-        top: 4,
-        right: 6,
-    },
-    close: {
-        fontFamily: 'Armavir01-Bold',
-        color: '#ccc',
-        fontSize: 18,
-    },
+    }
 });
 

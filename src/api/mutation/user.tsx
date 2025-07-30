@@ -1,4 +1,3 @@
-// mutations/useCreateUser.ts
 import { useApiPost } from '@hooks/useApiPost';
 import { UserCredentials } from '@tps/api';
 import { Config } from 'react-native-config';

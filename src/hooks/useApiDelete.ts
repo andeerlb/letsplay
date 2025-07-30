@@ -8,7 +8,7 @@ export const useApiDelete = <TPayload = void, TResponse = void>(
 ) => {
     return useMutation<TResponse, ApiError, TPayload>({
         mutationFn: (payload) =>
-            fetcher<TResponse>(url, {
+            fetcher<TResponse>(url, null, {
                 method: 'DELETE',
                 headers: { 'Content-Type': 'application/json' },
                 body: payload ? JSON.stringify(payload) : undefined,
