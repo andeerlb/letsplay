@@ -71,10 +71,10 @@ export default function CredentialsScreen({ navigation }: CredentialsScreenProps
         createUser.mutate({ email: data.email, password: data.password }, {
             onSuccess: data => {
                 dispatch(persistToken(data));
-                toast.success('screen.signup.credentials.success', false);
+                toast.success('screen.signup.credentials.success');
             },
             onError: () => {
-                toast.error(`screen.signup.credentials.error`, false);
+                toast.error(`screen.signup.credentials.error`,);
             }
         });
     };
