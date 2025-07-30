@@ -322,11 +322,11 @@ msgstr "Appearance"
 msgid "screen.setting.language"
 msgstr "Language"
 
-#: src/constants/theme.ts:103
+#: src/constants/theme.ts:111
 msgid "screen.setting.language.english"
 msgstr "English"
 
-#: src/constants/theme.ts:102
+#: src/constants/theme.ts:110
 msgid "screen.setting.language.portuguese"
 msgstr "Portuguese"
 
@@ -334,15 +334,15 @@ msgstr "Portuguese"
 msgid "screen.setting.theme"
 msgstr "Theme"
 
-#: src/constants/theme.ts:96
+#: src/constants/theme.ts:104
 msgid "screen.setting.theme.dark"
 msgstr "Dark"
 
-#: src/constants/theme.ts:97
+#: src/constants/theme.ts:105
 msgid "screen.setting.theme.light"
 msgstr "Light"
 
-#: src/constants/theme.ts:98
+#: src/constants/theme.ts:106
 msgid "screen.setting.theme.system"
 msgstr "System"
 
@@ -370,7 +370,7 @@ msgstr "Invalid username or password"
 msgid "screen.signin.noaccount"
 msgstr "Don't have an account?"
 
-#: src/screens/signup/CredentialsScreen.tsx:120
+#: src/screens/signup/CredentialsScreen.tsx:118
 #: src/screens/signin/SignInScreen.tsx:127
 msgid "screen.signin.password"
 msgstr "Password"
@@ -383,7 +383,7 @@ msgstr "Create Account"
 #~ msgid "screen.signin.success"
 #~ msgstr ""
 
-#: src/screens/signup/CredentialsScreen.tsx:104
+#: src/screens/signup/CredentialsScreen.tsx:102
 #: src/screens/signin/SignInScreen.tsx:112
 msgid "screen.signin.user"
 msgstr "Username"
@@ -396,19 +396,19 @@ msgstr "Welcome"
 msgid "screen.signup.birthday"
 msgstr "Birthdate"
 
-#: src/screens/signup/CredentialsScreen.tsx:137
+#: src/screens/signup/CredentialsScreen.tsx:135
 msgid "screen.signup.credentials.confirm-password"
 msgstr "Confirm your password"
 
-#: src/screens/signup/CredentialsScreen.tsx:92
+#: src/screens/signup/CredentialsScreen.tsx:90
 msgid "screen.signup.credentials.description"
 msgstr "Create your username and password to secure your spot on the team"
 
-#: src/screens/signup/CredentialsScreen.tsx:151
+#: src/screens/signup/CredentialsScreen.tsx:149
 msgid "screen.signup.credentials.register"
 msgstr "Let’s play!"
 
-#: src/screens/signup/CredentialsScreen.tsx:89
+#: src/screens/signup/CredentialsScreen.tsx:87
 msgid "screen.signup.credentials.title"
 msgstr "Final step, champ!"
 

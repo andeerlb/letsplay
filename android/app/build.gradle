@@ -7,7 +7,6 @@ react {
     nodeExecutableAndArgs = ["node"]
 }
 
-// o resto do seu arquivo permanece igual
 def enableProguardInReleaseBuilds = false
 def jscFlavor = 'io.github.react-native-community:jsc-android:2026004.+'
 
@@ -52,5 +51,11 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+
+    debugImplementation('com.facebook.flipper:flipper:0.273.0') {
+        exclude group:'com.facebook.fbjni'
+    }
+
+    debugImplementation("com.facebook.flipper:flipper-network-plugin:0.273.0")
 }
 apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
