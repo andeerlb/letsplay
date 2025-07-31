@@ -4,10 +4,10 @@ import { ToastProvider } from '@context/ToastProvider';
 import { i18n } from '@lingui/core';
 import { I18nProvider, TransRenderProps } from '@lingui/react';
 import { NavigationContainer } from '@react-navigation/native';
-import { loadSettings } from '@store/slices/settingSlice';
+import { loadSettings, setTheme } from '@store/slices/settingSlice';
 import { getToken } from '@store/slices/tokenSlice';
 import React, { useEffect, useState } from 'react';
-import { Text } from 'react-native';
+import { Text, useColorScheme } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from './store';
@@ -18,6 +18,7 @@ function Root() {
   const dispatch = useDispatch<AppDispatch>();
   const settings = useSelector((state: RootState) => state.setting);
   const [ready, setReady] = useState(false);
+  const systemSchemeColor = useColorScheme();
 
   useEffect(() => {
     dispatch(loadSettings());
@@ -25,13 +26,18 @@ function Root() {
   }, [dispatch]);
 
   useEffect(() => {
-    if (!settings || !settings.language) return;
+    if (!settings || !settings.language || !settings.theme) return;
     i18n.loadAndActivate({
       locale: settings.language,
       messages: LANGUAGE_MAP[settings.language],
     });
     setReady(true);
   }, [settings]);
+
+  useEffect(() => {
+    if (!ready || settings.layout !== 'system') return;
+    dispatch(setTheme(systemSchemeColor || 'dark'));
+  }, [dispatch, ready, settings, settings.layout, systemSchemeColor])
 
   if (!ready) return;
 

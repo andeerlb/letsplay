@@ -7,19 +7,15 @@ import { useTheme } from "@hooks/useTheme";
 import { t } from "@lingui/core/macro";
 import { Trans } from "@lingui/react/macro";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { RootState } from '@store/index';
 import { NoAuthStackParamList } from '@tps/navigation';
 import React from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import Svg, { Defs, LinearGradient, Rect, Stop } from 'react-native-svg';
-import { useSelector } from 'react-redux';
 
 type WelcomeScreenNavigationProp = NativeStackNavigationProp<NoAuthStackParamList, 'Welcome'>;
 
 export default function WelcomeScreen({ navigation }: { navigation: WelcomeScreenNavigationProp }) {
     const { theme } = useTheme();
-    const settings = useSelector((state: RootState) => state.setting);
-    console.log('settings welcome', settings);
 
     const goToSignIn = () => {
         navigation.navigate('SignIn');

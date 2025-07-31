@@ -35,12 +35,11 @@ export const loadSettings = createAsyncThunk(
       return stored;
     }
 
-    const layout = useColorScheme() || 'dark';
-    const theme = getThemeBaseOnScheme(layout);
+    const theme = getThemeBaseOnScheme(useColorScheme() || 'dark');
     const language = await getDeviceLanguage();
 
     return {
-      layout: layout,
+      layout: 'system',
       language: language,
       theme: theme
     };
@@ -62,6 +61,11 @@ const settingSlice = createSlice({
     setLanguage: (state, action: PayloadAction<Language>) => {
       if (!action.payload) return;
       state.language = action.payload;
+      settingsStorage.set(state);
+    },
+    setTheme: (state, action: PayloadAction<Layout>) => {
+      if (!action.payload) return;
+      state.theme = getThemeBaseOnScheme(action.payload)
       settingsStorage.set(state);
     },
     setLayout: (state, action: PayloadAction<Layout>) => {
@@ -86,5 +90,5 @@ const settingSlice = createSlice({
   },
 });
 
-export const { setLanguage, setLayout, setSettings } = settingSlice.actions;
+export const { setLanguage, setLayout, setSettings, setTheme } = settingSlice.actions;
 export default settingSlice.reducer;
