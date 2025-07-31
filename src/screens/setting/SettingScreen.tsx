@@ -1,8 +1,11 @@
+import Button from "@components/button/Button";
 import Select from "@components/select/Select";
 import { LANGUAGE_OPTIONS, THEME_OPTIONS } from "@constants/theme";
 import { useTheme } from "@context/ThemeProvider";
 import { useLanguage } from "@hooks/useLanguage";
+import { useToast } from "@hooks/useToast";
 import { Trans, useLingui } from "@lingui/react/macro";
+import { useUpdateSettings } from "@mutation/settings";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { AuthStackParamList } from "@tps/navigation";
 import ScreenWrapper from "@wrapper/ScreenWrapper";
@@ -18,6 +21,8 @@ export function SettingScreen({ }: Props) {
   const { theme, layout, changeTheme } = useTheme();
   const { changeLanguage, language } = useLanguage();
   const { i18n, t } = useLingui();
+  const updateSettings = useUpdateSettings();
+  const toast = useToast();
 
   const translatedThemeOptions = THEME_OPTIONS.map(opt => ({
     label: i18n._(opt.label),
@@ -29,28 +34,42 @@ export function SettingScreen({ }: Props) {
     value: opt.value,
   }));
 
+  const save = () => {
+    updateSettings.mutate({ layout, language }, {
+      onSuccess: () => {
+        toast.error(t`screen.setting.success`,);
+      },
+      onError: () => {
+        toast.error(t`screen.setting.error`,);
+      }
+    })
+  }
+
   return (
     <ScreenWrapper>
-      <View style={styles.section}>
-        <Text style={[styles.title, { color: theme.colors.text, fontFamily: theme.fonts.heavy.fontFamily }]}>
-          <Trans>screen.setting.appearance</Trans>
-        </Text>
-        <View style={styles.appearanceContainer}>
-          <Select
-            label={t`screen.setting.theme`}
-            value={layout?.toString()}
-            onChange={changeTheme}
-            options={translatedThemeOptions}
-            required={true}
-          />
-          <Select
-            label={t`screen.setting.language`}
-            value={language}
-            onChange={changeLanguage}
-            options={translatedLanguageOptions}
-            required={true}
-          />
+      <View style={styles.container}>
+        <View style={styles.section}>
+          <Text style={[styles.title, { color: theme.colors.text, fontFamily: theme.fonts.heavy.fontFamily }]}>
+            <Trans>screen.setting.appearance</Trans>
+          </Text>
+          <View style={styles.body}>
+            <Select
+              label={t`screen.setting.theme`}
+              value={layout?.toString()}
+              onChange={changeTheme}
+              options={translatedThemeOptions}
+              required={true}
+            />
+            <Select
+              label={t`screen.setting.language`}
+              value={language}
+              onChange={changeLanguage}
+              options={translatedLanguageOptions}
+              required={true}
+            />
+          </View>
         </View>
+        <Button label={t`screen.setting.save`} onPress={save} />
       </View>
     </ScreenWrapper>
   )
@@ -64,11 +83,14 @@ const styles = StyleSheet.create({
     marginTop: 20,
     fontSize: 20,
   },
-  appearanceContainer: {
+  body: {
     display: "flex",
     gap: 10
   },
   section: {
     gap: 10
+  },
+  container: {
+    gap: 20
   }
 });

@@ -76,10 +76,9 @@ export default function CredentialsScreen({ }: CredentialsScreenProps) {
         }, {
             onSuccess: dataParam => {
                 dispatch(persistToken(dataParam));
-                toast.success('screen.signup.credentials.success');
             },
             onError: () => {
-                toast.error(`screen.signup.credentials.error`,);
+                toast.error(t`screen.signup.credentials.error`,);
             }
         });
     };
