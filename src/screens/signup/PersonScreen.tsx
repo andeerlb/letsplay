@@ -18,6 +18,7 @@ import ScreenScrollWrapper from '@wrapper/ScreenScrollWrapper';
 const schema = yup.object({
     givenName: yup.string().required(),
     surname: yup.string().required(),
+    nickname: yup.string().required(),
     birthdate: yup
         .string()
         .required()
@@ -60,6 +61,7 @@ const PersonScreen = forwardRef<PersonScreenRef, { navigation: PersonScreenNavig
 
         const surnameRef = useRef<TextInput>(null);
         const birthdateRef = useRef<TextInput>(null);
+        const nicknameRef = useRef<TextInput>(null);
 
         const {
             control,
@@ -151,7 +153,30 @@ const PersonScreen = forwardRef<PersonScreenRef, { navigation: PersonScreenNavig
                                     value={value}
                                     onChangeText={onChange}
                                     error={error?.message}
-                                    returnKeyType="done"
+                                    returnKeyType="next"
+                                    onSubmitEditing={() => nicknameRef.current?.focus?.()}
+                                />
+                            )}
+                        />
+                        <Text style={[styles.nickname, {
+                            fontFamily: theme.fonts.logoBold.fontFamily,
+                            color: theme.colors.text
+                        }]}>
+                            <Trans>screen.signup.nickname.title</Trans>
+                        </Text>
+                        <Controller
+                            name="nickname"
+                            control={control}
+                            defaultValue=""
+                            render={({ field: { onChange, onBlur, value } }) => (
+                                <Input
+                                    ref={nicknameRef}
+                                    label={t`screen.signup.nickname.label`}
+                                    value={value}
+                                    onChangeText={onChange}
+                                    onBlur={onBlur}
+                                    error={errors.nickname?.message}
+                                    returnKeyType="next"
                                     onSubmitEditing={() => handleSubmit(() => navigation.navigate('Sport'))()}
                                 />
                             )}
@@ -177,6 +202,11 @@ const styles = StyleSheet.create({
     content: {
         gap: 20,
     },
+    nickname: {
+        marginVertical: 20,
+        textAlign: 'center',
+        fontSize: 20
+    }
 });
 
 export default PersonScreen;

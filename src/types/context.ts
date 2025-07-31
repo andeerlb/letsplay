@@ -4,6 +4,7 @@ export type SignUpPersonContextType = {
     givenName: string;
     surname: string;
     birthdate: string;
+    nickname: string;
 };
 
 export type SignUpPositionsContextType = Fut11PositionKey | Fut7PositionKey | FutsalPositionKey | null;
