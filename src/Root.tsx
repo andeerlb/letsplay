@@ -6,6 +6,7 @@ import { useLanguage } from '@hooks/useLanguage';
 import { i18n } from '@lingui/core';
 import { I18nProvider, TransRenderProps } from '@lingui/react';
 import { NavigationContainer } from '@react-navigation/native';
+import { settingsStorage } from '@storage/storage';
 import { getToken } from '@store/slices/tokenSlice';
 import { Language } from '@tps/theme';
 import React, { useEffect } from 'react';
@@ -43,11 +44,17 @@ function Root() {
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
-    (async () => {
-      const lang = await getDeviceLanguage();
-      changeLanguage(lang);
+    const settingStorage = settingsStorage.get();
+    if (settingStorage && settingStorage.language) {
+      changeLanguage(settingStorage.language);
       dispatch(getToken());
-    })();
+    } else {
+      (async () => {
+        const lang = await getDeviceLanguage();
+        changeLanguage(lang);
+        dispatch(getToken());
+      })();
+    }
   }, [changeLanguage, dispatch]);
 
   return (

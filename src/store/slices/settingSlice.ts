@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { settingsStorage } from '@storage/storage';
 import type { Settings } from '@tps/api';
 import type { Language, Layout } from '@tps/theme';
 
@@ -14,10 +15,17 @@ const settingSlice = createSlice({
     setLanguage: (state, action: PayloadAction<Language>) => {
       if (!action.payload) return;
       state.language = action.payload;
+      settingsStorage.set(state);
     },
     setLayout: (state, action: PayloadAction<Layout>) => {
       if (!action.payload) return;
       state.layout = action.payload;
+      settingsStorage.set(state);
+    },
+    setSettings: (state, action: PayloadAction<Settings>) => {
+      if (!action.payload) return;
+      state = action.payload;
+      settingsStorage.set(state);
     },
   },
 });

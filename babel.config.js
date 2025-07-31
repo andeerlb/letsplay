@@ -21,6 +21,7 @@ module.exports = {
           '@fetch': './src/api/fetch',
           '@query': './src/api/query',
           '@mutation': './src/api/mutation',
+          '@storage': './src/storage'
         }
       }
     ]

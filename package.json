@@ -36,6 +36,7 @@
     "react-native-config": "^1.5.5",
     "react-native-encrypted-storage": "^4.0.3",
     "react-native-masked-text": "^1.13.0",
+    "react-native-mmkv": "^3.3.0",
     "react-native-safe-area-context": "^5.5.2",
     "react-native-screens": "^4.13.0",
     "react-native-svg": "^15.12.0",

@@ -199,30 +199,30 @@ msgstr "Attacks quickly and crosses from the right side."
 msgid "component.input-email.placeholder"
 msgstr "example@email.com"
 
-#: src/components/select/Select.tsx:188
+#: src/components/select/Select.tsx:208
 msgid "component.select.cancel"
 msgstr "Cancel"
 
-#: src/components/select/Select.tsx:185
+#: src/components/select/Select.tsx:205
 msgid "component.select.placeholder"
 msgstr "Select an option"
 
-#: src/hooks/useApiPost.ts:27
+#: src/hooks/useApiPost.ts:31
 msgid "guard.connection.api.offline"
 msgstr ""
 
-#: src/hooks/useApiPost.ts:33
+#: src/hooks/useApiPost.ts:37
 msgid "guard.connection.network.offline"
 msgstr ""
 
-#: src/hooks/useApiPut.ts:27
-#: src/hooks/useApiPut.ts:33
-#: src/hooks/useApiPatch.ts:27
-#: src/hooks/useApiPatch.ts:33
-#: src/hooks/useApiGet.ts:24
-#: src/hooks/useApiGet.ts:30
-#: src/hooks/useApiDelete.ts:27
-#: src/hooks/useApiDelete.ts:33
+#: src/hooks/useApiPut.ts:31
+#: src/hooks/useApiPut.ts:37
+#: src/hooks/useApiPatch.ts:31
+#: src/hooks/useApiPatch.ts:37
+#: src/hooks/useApiGet.ts:28
+#: src/hooks/useApiGet.ts:34
+#: src/hooks/useApiDelete.ts:28
+#: src/hooks/useApiDelete.ts:34
 msgid "guard.connection.offline"
 msgstr ""
 
@@ -333,11 +333,15 @@ msgstr "Last Name"
 msgid "screen.profile.title"
 msgstr "Account"
 
-#: src/screens/setting/SettingScreen.tsx:36
+#: src/screens/setting/SettingScreen.tsx:53
 msgid "screen.setting.appearance"
 msgstr "Appearance"
 
-#: src/screens/setting/SettingScreen.tsx:46
+#: src/screens/setting/SettingScreen.tsx:43
+msgid "screen.setting.error"
+msgstr ""
+
+#: src/screens/setting/SettingScreen.tsx:64
 msgid "screen.setting.language"
 msgstr "Language"
 
@@ -349,7 +353,15 @@ msgstr "English"
 msgid "screen.setting.language.portuguese"
 msgstr "Portuguese"
 
+#: src/screens/setting/SettingScreen.tsx:72
+msgid "screen.setting.save"
+msgstr ""
+
 #: src/screens/setting/SettingScreen.tsx:40
+msgid "screen.setting.success"
+msgstr ""
+
+#: src/screens/setting/SettingScreen.tsx:57
 msgid "screen.setting.theme"
 msgstr "Theme"
 
@@ -389,7 +401,7 @@ msgstr "Invalid username or password"
 msgid "screen.signin.noaccount"
 msgstr "Don't have an account?"
 
-#: src/screens/signup/CredentialsScreen.tsx:123
+#: src/screens/signup/CredentialsScreen.tsx:122
 #: src/screens/signin/SignInScreen.tsx:127
 msgid "screen.signin.password"
 msgstr "Password"
@@ -402,7 +414,7 @@ msgstr "Create Account"
 #~ msgid "screen.signin.success"
 #~ msgstr ""
 
-#: src/screens/signup/CredentialsScreen.tsx:107
+#: src/screens/signup/CredentialsScreen.tsx:106
 #: src/screens/signin/SignInScreen.tsx:112
 msgid "screen.signin.user"
 msgstr "Username"
@@ -415,19 +427,23 @@ msgstr "Welcome"
 msgid "screen.signup.birthday"
 msgstr "Birthdate"
 
-#: src/screens/signup/CredentialsScreen.tsx:140
+#: src/screens/signup/CredentialsScreen.tsx:139
 msgid "screen.signup.credentials.confirm-password"
 msgstr "Confirm your password"
 
-#: src/screens/signup/CredentialsScreen.tsx:95
+#: src/screens/signup/CredentialsScreen.tsx:94
 msgid "screen.signup.credentials.description"
 msgstr "Create your username and password to secure your spot on the team"
 
-#: src/screens/signup/CredentialsScreen.tsx:154
+#: src/screens/signup/CredentialsScreen.tsx:81
+msgid "screen.signup.credentials.error"
+msgstr ""
+
+#: src/screens/signup/CredentialsScreen.tsx:153
 msgid "screen.signup.credentials.register"
 msgstr "Let’s play!"
 
-#: src/screens/signup/CredentialsScreen.tsx:92
+#: src/screens/signup/CredentialsScreen.tsx:91
 msgid "screen.signup.credentials.title"
 msgstr "Final step, champ!"
 
