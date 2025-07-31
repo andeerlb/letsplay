@@ -6,8 +6,9 @@ import { useToast } from "@hooks/useToast";
 import { Trans, useLingui } from "@lingui/react/macro";
 import { useUpdateSettings } from "@mutation/settings";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { settingsStorage } from "@storage/storage";
 import { RootState } from "@store/index";
-import { setLayout, setSettings } from "@store/slices/settingSlice";
+import { setLanguage, setLayout } from "@store/slices/settingSlice";
 import { AuthStackParamList } from "@tps/navigation";
 import ScreenWrapper from "@wrapper/ScreenWrapper";
 import { StyleSheet, Text, View } from "react-native";
@@ -24,7 +25,8 @@ export function SettingScreen({ }: Props) {
   const updateSettings = useUpdateSettings();
   const toast = useToast();
   const settings = useSelector((state: RootState) => state.setting);
-  const theme = useTheme();
+  const { theme } = useTheme();
+
 
   const dispatch = useDispatch();
 
@@ -43,13 +45,14 @@ export function SettingScreen({ }: Props) {
   }
 
   const changeLanguage = (newValue) => {
-    dispatch(setSettings(newValue));
+    dispatch(setLanguage(newValue));
   }
 
   const save = () => {
     updateSettings.mutate({ layout: settings.layout, language: settings.language }, {
       onSuccess: () => {
         toast.error(t`screen.setting.success`,);
+        settingsStorage.set(settings);
       },
       onError: () => {
         toast.error(t`screen.setting.error`,);

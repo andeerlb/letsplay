@@ -61,18 +61,15 @@ const settingSlice = createSlice({
     setLanguage: (state, action: PayloadAction<Language>) => {
       if (!action.payload) return;
       state.language = action.payload;
-      settingsStorage.set(state);
     },
     setTheme: (state, action: PayloadAction<Layout>) => {
       if (!action.payload) return;
       state.theme = getThemeBaseOnScheme(action.payload)
-      settingsStorage.set(state);
     },
     setLayout: (state, action: PayloadAction<Layout>) => {
       if (!action.payload) return;
       state.layout = action.payload;
-      state.theme = getThemeBaseOnScheme(action.payload)
-      settingsStorage.set(state);
+      state.theme = getThemeBaseOnScheme(action.payload);
     },
     setSettings: (state, action: PayloadAction<Settings>) => {
       if (!action.payload) return;
