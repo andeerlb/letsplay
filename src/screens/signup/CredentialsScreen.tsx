@@ -74,8 +74,8 @@ export default function CredentialsScreen({ }: CredentialsScreenProps) {
             preferredSport: sport,
             otherSports: moreSports,
         }, {
-            onSuccess: data => {
-                dispatch(persistToken(data));
+            onSuccess: dataParam => {
+                dispatch(persistToken(dataParam));
                 toast.success('screen.signup.credentials.success');
             },
             onError: () => {

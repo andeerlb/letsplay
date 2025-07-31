@@ -57,8 +57,8 @@ export default function SignInScreen({
 
     const onSubmit = (data: UserCredentials) => {
         getToken.mutate(data, {
-            onSuccess: data => {
-                dispatch(persistToken(data));
+            onSuccess: dataParam => {
+                dispatch(persistToken(dataParam));
             },
             onError: () => {
                 toast.error(t`screen.signin.invalid-grant`);

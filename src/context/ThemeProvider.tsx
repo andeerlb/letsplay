@@ -44,8 +44,8 @@ export const useTheme = (): UseThemeProps => {
     const layout = useSelector((state: RootState) => state.setting.layout);
 
 
-    const changeTheme = useCallback((layout: Layout) => {
-        dispatch(setLayout(layout));
+    const changeTheme = useCallback((layoutParm: Layout) => {
+        dispatch(setLayout(layoutParm));
     }, [dispatch]);
 
     return {

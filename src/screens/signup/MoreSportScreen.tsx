@@ -50,7 +50,7 @@ type GameId = (typeof allGames)[number]['id'];
 
 const MoreSportsScreen = forwardRef<MoreSportsScreenRef, MoreSportsScreenProps>(
     ({ navigation }, ref) => {
-        const { person, sport, setMoreSports } = useSignUp();
+        const { person, setMoreSports } = useSignUp();
         const { theme } = useTheme();
         const { handleSubmit } = useForm({ resolver: yupResolver(schema) });
 
@@ -58,7 +58,7 @@ const MoreSportsScreen = forwardRef<MoreSportsScreenRef, MoreSportsScreenProps>(
         const [remainingGames, setRemainingGames] = useState([...allGames]);
         const [selectedGame, setSelectedGame] = useState<(typeof allGames)[number] | null>(null);
         const [selectedGamesWithPositions, setSelectedGamesWithPositions] = useState<SignUpMoreSportsContextType>([]);
-        const { t, i18n } = useLingui();
+        const { t } = useLingui();
 
         useImperativeHandle(ref, () => ({
             submitForm: () => {
