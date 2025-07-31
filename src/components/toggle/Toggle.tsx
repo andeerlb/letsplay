@@ -1,6 +1,6 @@
-import { useTheme } from "@context/ThemeProvider";
+import { useTheme } from "@hooks/useTheme";
 import React, { useState } from 'react';
-import { View, Text, Switch, StyleSheet } from 'react-native';
+import { StyleSheet, Switch, Text, View } from 'react-native';
 
 export default function Toggle({ label }) {
   const { theme } = useTheme();

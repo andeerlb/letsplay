@@ -1,8 +1,8 @@
-import { useTheme } from "@context/ThemeProvider";
+import { useTheme } from "@hooks/useTheme";
 import { MessageDescriptor } from "@lingui/core";
 import { useLingui } from "@lingui/react/macro";
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 type PositionDetails = Record<
     string,

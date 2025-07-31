@@ -1,4 +1,4 @@
-import { useTheme } from '@context/ThemeProvider';
+import { useTheme } from '@hooks/useTheme';
 import { useLingui } from "@lingui/react/macro";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '@screens/home/HomeScreen';

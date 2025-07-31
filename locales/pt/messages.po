@@ -333,47 +333,47 @@ msgstr "Sobrenome"
 msgid "screen.profile.title"
 msgstr "Conta"
 
-#: src/screens/setting/SettingScreen.tsx:53
+#: src/screens/setting/SettingScreen.tsx:65
 msgid "screen.setting.appearance"
 msgstr "Visual"
 
-#: src/screens/setting/SettingScreen.tsx:43
+#: src/screens/setting/SettingScreen.tsx:55
 msgid "screen.setting.error"
 msgstr "screen.setting.error"
 
-#: src/screens/setting/SettingScreen.tsx:64
+#: src/screens/setting/SettingScreen.tsx:76
 msgid "screen.setting.language"
 msgstr "Idioma"
 
-#: src/constants/theme.ts:111
+#: src/constants/theme.ts:114
 msgid "screen.setting.language.english"
 msgstr "Inglês"
 
-#: src/constants/theme.ts:110
+#: src/constants/theme.ts:113
 msgid "screen.setting.language.portuguese"
 msgstr "Português"
 
-#: src/screens/setting/SettingScreen.tsx:72
+#: src/screens/setting/SettingScreen.tsx:84
 msgid "screen.setting.save"
 msgstr "screen.setting.save"
 
-#: src/screens/setting/SettingScreen.tsx:40
+#: src/screens/setting/SettingScreen.tsx:52
 msgid "screen.setting.success"
 msgstr "screen.setting.success"
 
-#: src/screens/setting/SettingScreen.tsx:57
+#: src/screens/setting/SettingScreen.tsx:69
 msgid "screen.setting.theme"
 msgstr "Tema"
 
-#: src/constants/theme.ts:104
+#: src/constants/theme.ts:107
 msgid "screen.setting.theme.dark"
 msgstr "Escuro"
 
-#: src/constants/theme.ts:105
+#: src/constants/theme.ts:108
 msgid "screen.setting.theme.light"
 msgstr "Claro"
 
-#: src/constants/theme.ts:106
+#: src/constants/theme.ts:109
 msgid "screen.setting.theme.system"
 msgstr "Sistema"
 
@@ -527,31 +527,31 @@ msgstr "Meus times..."
 msgid "screen.team.title"
 msgstr "Times"
 
-#: src/screens/welcome/WelcomeScreen.tsx:61
+#: src/screens/welcome/WelcomeScreen.tsx:65
 msgid "screen.welcome.description"
 msgstr "Gerencie seu time, acompanhe partidas e conquiste vitórias."
 
-#: src/screens/welcome/WelcomeScreen.tsx:70
+#: src/screens/welcome/WelcomeScreen.tsx:74
 msgid "screen.welcome.manage.desc"
 msgstr "Organize jogadores e posições"
 
-#: src/screens/welcome/WelcomeScreen.tsx:69
+#: src/screens/welcome/WelcomeScreen.tsx:73
 msgid "screen.welcome.manage.title"
 msgstr "Gerir Equipe"
 
-#: src/screens/welcome/WelcomeScreen.tsx:84
+#: src/screens/welcome/WelcomeScreen.tsx:88
 msgid "screen.welcome.stats.desc"
 msgstr "Acompanhe estatísticas"
 
-#: src/screens/welcome/WelcomeScreen.tsx:83
+#: src/screens/welcome/WelcomeScreen.tsx:87
 msgid "screen.welcome.stats.title"
 msgstr "Estatísticas"
 
-#: src/screens/welcome/WelcomeScreen.tsx:77
+#: src/screens/welcome/WelcomeScreen.tsx:81
 msgid "screen.welcome.team.desc"
 msgstr "Marque treinos e jogos"
 
-#: src/screens/welcome/WelcomeScreen.tsx:76
+#: src/screens/welcome/WelcomeScreen.tsx:80
 msgid "screen.welcome.team.title"
 msgstr "Gerir equipe"
 
@@ -559,18 +559,18 @@ msgstr "Gerir equipe"
 msgid "screens.signup.person.description"
 msgstr "Que bom que você chegou aqui, queremos te conhecer, saber qual posição joga, qual seu nome de jogador e outras coisas, vamos lá?"
 
-#: src/screens/welcome/WelcomeScreen.tsx:92
+#: src/screens/welcome/WelcomeScreen.tsx:96
 msgid "welcome.screen.schedule.desc"
 msgstr "Marque treinos e jogos"
 
-#: src/screens/welcome/WelcomeScreen.tsx:90
+#: src/screens/welcome/WelcomeScreen.tsx:94
 msgid "welcome.screen.schedule.title"
 msgstr "Agendar"
 
-#: src/screens/welcome/WelcomeScreen.tsx:98
+#: src/screens/welcome/WelcomeScreen.tsx:102
 msgid "welcome.screen.signin"
 msgstr "Já tenho uma conta"
 
-#: src/screens/welcome/WelcomeScreen.tsx:97
+#: src/screens/welcome/WelcomeScreen.tsx:101
 msgid "welcome.screen.signup"
 msgstr "Começar agora"

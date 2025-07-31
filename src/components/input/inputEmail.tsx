@@ -1,7 +1,7 @@
-import { useTheme } from '@context/ThemeProvider';
+import { useTheme } from '@hooks/useTheme';
 import { t } from '@lingui/core/macro';
 import React, { forwardRef } from 'react';
-import { View, TextInput, StyleSheet, Text, TextInputProps } from 'react-native';
+import { StyleSheet, Text, TextInput, TextInputProps, View } from 'react-native';
 
 type InputEmailProps = TextInputProps & {
     label?: string;

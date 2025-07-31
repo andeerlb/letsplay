@@ -2,9 +2,10 @@ import HomeIcon from '@assets/icons/home.svg';
 import ProfileIcon from '@assets/icons/profile.svg';
 import SoccerBallIcon from '@assets/icons/soccer_ball.svg';
 import TeamIcon from '@assets/icons/team.svg';
+import { DarkTheme, LightTheme } from '@constants/theme';
 import { BottomTabNavigationOptions } from "@react-navigation/bottom-tabs";
 import { BottomTabParamList } from "@tps/navigation";
-import { Theme } from '@tps/theme';
+import { Layout, Theme } from '@tps/theme';
 import { StyleProp, ViewStyle } from "react-native";
 import { EdgeInsets } from "react-native-safe-area-context";
 
@@ -49,3 +50,7 @@ export const getTabBarStyle = (
     backgroundColor: theme.secondaryColors.background,
     ...((animatedStyle as object) || {}),
 });
+
+export const getThemeBaseOnScheme = (scheme: Layout) => {
+    return scheme === 'dark' ? DarkTheme : LightTheme;
+}

@@ -1,5 +1,5 @@
 import { Theme } from '@constants/theme';
-import { useTheme } from "@context/ThemeProvider";
+import { useTheme } from "@hooks/useTheme";
 import { useLingui } from '@lingui/react/macro';
 import { Picker } from '@react-native-picker/picker';
 import React from 'react';

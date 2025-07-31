@@ -1,15 +1,17 @@
 import Button from "@components/button/Button";
 import Select from "@components/select/Select";
 import { LANGUAGE_OPTIONS, THEME_OPTIONS } from "@constants/theme";
-import { useTheme } from "@context/ThemeProvider";
-import { useLanguage } from "@hooks/useLanguage";
+import { useTheme } from "@hooks/useTheme";
 import { useToast } from "@hooks/useToast";
 import { Trans, useLingui } from "@lingui/react/macro";
 import { useUpdateSettings } from "@mutation/settings";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { RootState } from "@store/index";
+import { setLayout, setSettings } from "@store/slices/settingSlice";
 import { AuthStackParamList } from "@tps/navigation";
 import ScreenWrapper from "@wrapper/ScreenWrapper";
 import { StyleSheet, Text, View } from "react-native";
+import { useDispatch, useSelector } from "react-redux";
 
 type SettingScreenNavigationProp = NativeStackNavigationProp<AuthStackParamList, 'Setting'>;
 
@@ -18,11 +20,13 @@ type Props = {
 };
 
 export function SettingScreen({ }: Props) {
-  const { theme, layout, changeTheme } = useTheme();
-  const { changeLanguage, language } = useLanguage();
   const { i18n, t } = useLingui();
   const updateSettings = useUpdateSettings();
   const toast = useToast();
+  const settings = useSelector((state: RootState) => state.setting);
+  const theme = useTheme();
+
+  const dispatch = useDispatch();
 
   const translatedThemeOptions = THEME_OPTIONS.map(opt => ({
     label: i18n._(opt.label),
@@ -34,8 +38,16 @@ export function SettingScreen({ }: Props) {
     value: opt.value,
   }));
 
+  const changeTheme = (newValue) => {
+    dispatch(setLayout(newValue));
+  }
+
+  const changeLanguage = (newValue) => {
+    dispatch(setSettings(newValue));
+  }
+
   const save = () => {
-    updateSettings.mutate({ layout, language }, {
+    updateSettings.mutate({ layout: settings.layout, language: settings.language }, {
       onSuccess: () => {
         toast.error(t`screen.setting.success`,);
       },
@@ -55,14 +67,14 @@ export function SettingScreen({ }: Props) {
           <View style={styles.body}>
             <Select
               label={t`screen.setting.theme`}
-              value={layout?.toString()}
+              value={settings.layout}
               onChange={changeTheme}
               options={translatedThemeOptions}
               required={true}
             />
             <Select
               label={t`screen.setting.language`}
-              value={language}
+              value={settings.language}
               onChange={changeLanguage}
               options={translatedLanguageOptions}
               required={true}

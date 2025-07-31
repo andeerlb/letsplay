@@ -1,4 +1,3 @@
-import { ThemeProvider } from '@context/ThemeProvider';
 import { store } from '@store/index';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
@@ -18,9 +17,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Provider store={store}>
-        <ThemeProvider>
-          <Root />
-        </ThemeProvider>
+        <Root />
       </Provider>
     </QueryClientProvider>
   );

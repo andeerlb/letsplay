@@ -1,4 +1,4 @@
-import { useTheme } from '@context/ThemeProvider';
+import { useTheme } from '@hooks/useTheme';
 import React from 'react';
 import { KeyboardAvoidingView, Platform, ScrollView, StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';

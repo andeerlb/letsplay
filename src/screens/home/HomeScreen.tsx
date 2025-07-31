@@ -1,4 +1,4 @@
-import { useTheme } from "@context/ThemeProvider";
+import { useTheme } from "@hooks/useTheme";
 import { Trans } from "@lingui/react/macro";
 import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { RootState } from "@store/index";

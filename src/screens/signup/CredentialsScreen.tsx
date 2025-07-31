@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import Button from "@components/button/Button";
-import { useTheme } from "@context/ThemeProvider";
+import { useTheme } from "@hooks/useTheme";
 import { Trans, useLingui } from "@lingui/react/macro";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import React, { useRef } from "react";

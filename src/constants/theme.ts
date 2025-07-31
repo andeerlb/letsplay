@@ -1,5 +1,8 @@
+import { Messages } from "@lingui/core";
 import { msg } from "@lingui/core/macro";
-import type { ThemeDefinition } from "@tps/theme";
+import { messages as enMessages } from '@locales/en/messages';
+import { messages as ptMessages } from '@locales/pt/messages';
+import type { Language, ThemeDefinition } from "@tps/theme";
 
 const FONTS: ThemeDefinition["fonts"] = {
   regular: {
@@ -110,3 +113,10 @@ export const LANGUAGE_OPTIONS = [
   { label: msg`screen.setting.language.portuguese`, value: 'pt' },
   { label: msg`screen.setting.language.english`, value: 'en' },
 ];
+
+export const DEFAULT_LANGUAGE = 'pt';
+
+export const LANGUAGE_MAP: Record<Language, Messages> = {
+  pt: ptMessages,
+  en: enMessages,
+};

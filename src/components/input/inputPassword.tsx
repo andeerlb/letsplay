@@ -1,6 +1,6 @@
 import EyeClosed from "@assets/icons/eye-close.svg";
 import EyeOpen from "@assets/icons/eye-open.svg";
-import { useTheme } from "@context/ThemeProvider";
+import { useTheme } from "@hooks/useTheme";
 import React, { forwardRef, useState } from "react";
 import { StyleSheet, Text, TextInput, TextInputProps, TouchableOpacity, View } from "react-native";
 

@@ -8,7 +8,6 @@ export function createStorage<T>(key: string) {
 
         get(): T | null {
             const json = storage.getString(key);
-            console.log(key, json);
             return json ? (JSON.parse(json) as T) : null;
         },
 

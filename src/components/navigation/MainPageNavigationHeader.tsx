@@ -1,6 +1,6 @@
 import LetsPlayIcon from '@assets/icons/letsplay.svg';
 import SettingIcon from '@assets/icons/settings.svg';
-import { useTheme } from "@context/ThemeProvider";
+import { useTheme } from "@hooks/useTheme";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import type { AuthStackParamList } from "@tps/navigation";
 import { Pressable, StyleSheet, Text, View } from "react-native";

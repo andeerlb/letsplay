@@ -1,10 +1,10 @@
-import { useTheme } from '@context/ThemeProvider';
+import { useTheme } from '@hooks/useTheme';
 import React, {
-    useRef,
     forwardRef,
-    useImperativeHandle
+    useImperativeHandle,
+    useRef
 } from 'react';
-import { View, Text, StyleSheet, TextInput, TextInputProps } from 'react-native';
+import { StyleSheet, Text, TextInput, TextInputProps, View } from 'react-native';
 import { TextInputMask } from 'react-native-masked-text';
 
 type Props = TextInputProps & {

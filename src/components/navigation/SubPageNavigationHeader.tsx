@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import BackArrowIcon from '@assets/icons/back-arrow.svg';
-import { useTheme } from "@context/ThemeProvider";
+import { useTheme } from "@hooks/useTheme";
 import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import { JSX } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";

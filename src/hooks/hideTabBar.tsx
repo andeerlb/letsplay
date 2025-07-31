@@ -1,4 +1,4 @@
-import { useTheme } from '@context/ThemeProvider';
+import { useTheme } from '@hooks/useTheme';
 import { NavigationProp, useFocusEffect } from '@react-navigation/native';
 import type { BottomTabParamList } from '@tps/navigation';
 import { getTabBarStyle } from '@utils/theme';

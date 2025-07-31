@@ -1,5 +1,3 @@
-import { useTheme } from '@context/ThemeProvider';
-import { useLanguage } from '@hooks/useLanguage';
 import { useSetting } from '@query/settings';
 import { useUser } from '@query/user';
 import {
@@ -8,6 +6,7 @@ import {
 import { SettingScreen } from '@screens/setting/SettingScreen';
 import SettingScreenHeader from '@screens/setting/SettingScreenHeader';
 import { AppDispatch } from '@store/index';
+import { setSettings } from '@store/slices/settingSlice';
 import { removeToken } from '@store/slices/tokenSlice';
 import { setUser } from '@store/slices/userSlice';
 import type { AuthStackParamList } from '@tps/navigation';
@@ -19,29 +18,18 @@ const Stack = createNativeStackNavigator<AuthStackParamList>();
 
 const AuthStackNavigator = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const { changeTheme } = useTheme();
   const settingQuery = useSetting();
   const userQuery = useUser();
-  const { changeLanguage } = useLanguage();
 
   useEffect(() => {
     if (settingQuery.isLoading || userQuery.isLoading) return;
     if (settingQuery.data && userQuery.data) {
-      changeLanguage(settingQuery.data.language);
-      changeTheme(settingQuery.data.layout);
+      dispatch(setSettings(settingQuery.data));
       dispatch(setUser(userQuery.data));
     } else {
       dispatch(removeToken());
     }
-  }, [
-    changeLanguage,
-    changeTheme,
-    dispatch,
-    settingQuery.data,
-    settingQuery.isLoading,
-    userQuery.data,
-    userQuery.isLoading
-  ]);
+  }, [dispatch, settingQuery.data, settingQuery.isLoading, userQuery.data, userQuery.isLoading]);
 
   if (settingQuery.isLoading
     || userQuery.isLoading
