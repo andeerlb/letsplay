@@ -1,10 +1,11 @@
 import { fetcher } from '@hooks/apiClient';
+import { useSafeMutation } from '@hooks/safeMutation';
 import { useToast } from '@hooks/useToast';
 import { withApiErrorGuard } from '@hooks/withApiErrorGuard';
 import { withConnectionGuard } from '@hooks/withConnectionGuard';
 import { useLingui } from '@lingui/react/macro';
 import { RootState } from '@store/index';
-import { useMutation, UseMutationOptions } from '@tanstack/react-query';
+import { UseMutationOptions } from '@tanstack/react-query';
 import { ApiError } from '@tps/api';
 import { useSelector } from 'react-redux';
 
@@ -38,7 +39,7 @@ export const useApiPut = <TPayload, TResponse>(
         }
     );
 
-    return useMutation<TResponse | undefined, ApiError, TPayload>({
+    return useSafeMutation<TResponse | undefined, ApiError, TPayload>({
         mutationFn: guardedMutationFn,
         ...options,
     });

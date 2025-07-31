@@ -1,4 +1,5 @@
 import NetInfo from '@react-native-community/netinfo';
+import { SilentHandledError } from '@tps/errors';
 
 type ConnectionGuardOptions = {
     onOffline?: () => void;
@@ -13,7 +14,7 @@ export function withConnectionGuard<TPayload, TResult>(
 
         if (!netState.isConnected || !netState.isInternetReachable) {
             options?.onOffline?.();
-            return undefined;
+            throw new SilentHandledError();
         }
 
         return fn(payload);

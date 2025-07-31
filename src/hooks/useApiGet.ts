@@ -1,10 +1,11 @@
 import { fetcher } from '@hooks/apiClient';
+import { useSafeQuery } from '@hooks/safeQuery';
 import { useToast } from '@hooks/useToast';
 import { withApiErrorGuard } from '@hooks/withApiErrorGuard';
 import { withConnectionGuard } from '@hooks/withConnectionGuard';
 import { useLingui } from '@lingui/react/macro';
 import { RootState } from '@store/index';
-import { useQuery, UseQueryOptions } from '@tanstack/react-query';
+import { UseQueryOptions } from '@tanstack/react-query';
 import { ApiError } from '@tps/api';
 import { useSelector } from 'react-redux';
 
@@ -35,7 +36,7 @@ export const useApiGet = <TResponse>(
         }
     );
 
-    return useQuery<TResponse | undefined, ApiError>({
+    return useSafeQuery<TResponse | undefined, ApiError>({
         queryKey: key,
         queryFn: guardedQueryFn,
         ...options,

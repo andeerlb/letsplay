@@ -1,4 +1,5 @@
 import { ApiError } from '@tps/api';
+import { SilentHandledError } from '@tps/errors';
 
 type ApiErrorGuardOptions = {
     onApiError?: (error: ApiError) => void;
@@ -15,7 +16,7 @@ export function withApiErrorGuard<TPayload, TResult>(
             console.log(error);
             if (error?.status === -1) {
                 options?.onApiError?.(error);
-                return undefined;
+                throw new SilentHandledError();
             }
             throw error;
         }

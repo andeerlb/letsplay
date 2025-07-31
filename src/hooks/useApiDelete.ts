@@ -1,9 +1,10 @@
 import { fetcher } from '@hooks/apiClient';
+import { useSafeMutation } from '@hooks/safeMutation';
 import { useToast } from '@hooks/useToast';
 import { withApiErrorGuard } from '@hooks/withApiErrorGuard';
 import { withConnectionGuard } from '@hooks/withConnectionGuard';
 import { useLingui } from '@lingui/react/macro';
-import { useMutation, UseMutationOptions } from '@tanstack/react-query';
+import { UseMutationOptions } from '@tanstack/react-query';
 import { ApiError } from '@tps/api';
 
 export const useApiDelete = <TPayload = void, TResponse = void>(
@@ -35,7 +36,7 @@ export const useApiDelete = <TPayload = void, TResponse = void>(
         }
     );
 
-    return useMutation<TResponse | undefined, ApiError, TPayload>({
+    return useSafeMutation<TResponse | undefined, ApiError, TPayload>({
         mutationFn: guardedMutationFn,
         ...options,
     });
