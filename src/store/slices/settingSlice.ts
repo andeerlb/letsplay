@@ -12,9 +12,11 @@ const settingSlice = createSlice({
   initialState,
   reducers: {
     setLanguage: (state, action: PayloadAction<Language>) => {
+      if (!action.payload) return;
       state.language = action.payload;
     },
     setLayout: (state, action: PayloadAction<Layout>) => {
+      if (!action.payload) return;
       state.layout = action.payload;
     },
   },

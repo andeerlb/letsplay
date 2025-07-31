@@ -19,13 +19,30 @@ type SelectProps = {
     fullWidth?: boolean;
     width?: number;
     error?: string;
+    required?: boolean
 };
 
 function renderPickerItems(
     theme: Theme,
     options: Option[],
-    placeholder: string
+    placeholder: string,
+    required: boolean = false
 ) {
+
+    if (required) {
+        return [...options.map(({ label, value }) => (
+            <Picker.Item
+                key={value}
+                label={label}
+                value={value}
+                style={{
+                    color: theme.colors.text,
+                    backgroundColor: theme.secondaryColors.background,
+                }}
+            />
+        ))
+        ]
+    }
 
     return [
         <Picker.Item
@@ -57,6 +74,7 @@ function ios(
     options: Option[],
     placeholder: string,
     cancel: string,
+    required?: boolean,
     value?: string,
     mode?: 'dialog' | 'dropdown',
     label?: string,
@@ -131,6 +149,7 @@ function android(
     onChange: (value: any) => void,
     options: Option[],
     placeholder: string,
+    required: boolean,
     value?: string,
     mode?: 'dialog' | 'dropdown',
     label?: string,
@@ -165,7 +184,7 @@ function android(
                     style={[styles.picker, { color: theme.colors.text }]}
                     mode={mode}
                 >
-                    {renderPickerItems(theme, options, placeholder)}
+                    {renderPickerItems(theme, options, placeholder, required)}
                 </Picker>
             </View>
         </View>
@@ -179,14 +198,15 @@ export default function Select({
     options = [],
     mode = 'dropdown',
     error,
+    required = false,
 }: SelectProps) {
     const { theme } = useTheme();
     const { t } = useLingui();
     const placeholder = t`component.select.placeholder`;
 
     return Platform.OS === 'ios'
-        ? ios(theme, onChange, options, placeholder, t`component.select.cancel`, value, mode, label, error)
-        : android(theme, onChange, options, placeholder, value, mode, label, error);
+        ? ios(theme, onChange, options, placeholder, t`component.select.cancel`, required, value, mode, label, error)
+        : android(theme, onChange, options, placeholder, required, value, mode, label, error);
 }
 
 const styles = StyleSheet.create({

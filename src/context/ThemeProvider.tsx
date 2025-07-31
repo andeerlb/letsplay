@@ -17,16 +17,20 @@ const getThemeBaseOnScheme = (scheme: Layout) => {
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     const systemScheme = useColorScheme();
-    const [theme, updateTheme] = useState<Theme>(getThemeBaseOnScheme(systemScheme || "dark"));
+    const [theme, updateTheme] = useState<Theme>(DarkTheme);
     const layout = useSelector((state: RootState) => state.setting.layout);
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        if (layout === "system") {
+        if (!layout || layout === "system") {
             updateTheme(getThemeBaseOnScheme(systemScheme || "dark"));
+            if (!layout) {
+                dispatch(setLayout("system"));
+            }
         } else {
             updateTheme(getThemeBaseOnScheme(layout));
         }
-    }, [layout, systemScheme]);
+    }, [dispatch, layout, systemScheme]);
 
     const contextValue = React.useMemo(() => ({ theme }), [theme]);
 
@@ -42,7 +46,6 @@ export const useTheme = (): UseThemeProps => {
     const { theme } = useContext(ThemeContext);
 
     const layout = useSelector((state: RootState) => state.setting.layout);
-
 
     const changeTheme = useCallback((layoutParm: Layout) => {
         dispatch(setLayout(layoutParm));
