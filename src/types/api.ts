@@ -36,7 +36,7 @@ export type SignUpRequestType = {
     surname: string;
     email: string;
     password: string;
-    birthDate: string;
+    birthdate: Date;
     preferredSport: SignUpSportContextType;
     otherSports?: SignUpSportContextType[]
 }

@@ -68,13 +68,18 @@ export default function CredentialsScreen({ }: CredentialsScreenProps) {
     });
 
     const onSubmit = (data: SignUpRequestType) => {
-        if (!preferredSport) {
+        if (!preferredSport || !person || !person.birthdate) {
             return;
         }
 
+        const [day, month, year] = person?.birthdate.split("/").map(Number);
+        const birthdate = new Date(year, month - 1, day);
+
         createUser.mutate({
-            ...data,
             ...person,
+            email: data.email,
+            password: data.password,
+            birthdate,
             preferredSport,
             otherSports,
         }, {
