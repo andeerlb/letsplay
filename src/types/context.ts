@@ -6,20 +6,22 @@ export type SignUpPersonContextType = {
     birthdate: string;
 };
 
+export type SignUpPositionsContextType = Fut11PositionKey | Fut7PositionKey | FutsalPositionKey | null;
+
 export type SignUpSportContextType = {
-    game: GameType;
-    position: Fut11PositionKey | Fut7PositionKey | FutsalPositionKey | null;
+    type: GameType;
+    position: SignUpPositionsContextType
 };
 
 export type SignUpMoreSportsContextType = SignUpSportContextType[];
 
 export type SignUpContextType = {
     person?: SignUpPersonContextType;
-    sport?: SignUpSportContextType;
-    moreSports?: SignUpMoreSportsContextType;
+    preferredSport?: SignUpSportContextType;
+    otherSports?: SignUpMoreSportsContextType;
     setPerson: (person: SignUpPersonContextType) => void;
-    setSport: (sport: SignUpSportContextType) => void;
-    setMoreSports: (sports: SignUpMoreSportsContextType) => void;
+    setPreferredSport: (sport: SignUpSportContextType) => void;
+    setOtherSports: (sports: SignUpMoreSportsContextType) => void;
 };
 
 export type ToastType = 'info' | 'success' | 'error' | 'warn';

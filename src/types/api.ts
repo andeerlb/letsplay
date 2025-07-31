@@ -1,4 +1,5 @@
 import type { Language, Layout } from "@tps/theme";
+import { SignUpSportContextType } from "./context";
 
 export type ApiError = {
     status: number;
@@ -28,4 +29,14 @@ export type Token = {
     refresh_token: string;
     expires_in: number;
     expires_at: number;
+}
+
+export type SignUpRequestType = {
+    givenName: string;
+    surname: string;
+    email: string;
+    password: string;
+    birthDate: string;
+    preferredSport: SignUpSportContextType;
+    otherSports?: SignUpSportContextType[]
 }

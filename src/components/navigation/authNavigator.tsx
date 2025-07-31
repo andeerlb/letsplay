@@ -6,7 +6,6 @@ import {
 import { SettingScreen } from '@screens/setting/SettingScreen';
 import SettingScreenHeader from '@screens/setting/SettingScreenHeader';
 import { AppDispatch } from '@store/index';
-import { setSettings } from '@store/slices/settingSlice';
 import { removeToken } from '@store/slices/tokenSlice';
 import { setUser } from '@store/slices/userSlice';
 import type { AuthStackParamList } from '@tps/navigation';
@@ -24,7 +23,7 @@ const AuthStackNavigator = () => {
   useEffect(() => {
     if (settingQuery.isLoading || userQuery.isLoading) return;
     if (settingQuery.data && userQuery.data) {
-      dispatch(setSettings(settingQuery.data));
+      // dispatch(setSettings(settingQuery.data));
       dispatch(setUser(userQuery.data));
     } else {
       dispatch(removeToken());

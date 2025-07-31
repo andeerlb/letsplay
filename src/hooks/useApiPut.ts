@@ -20,6 +20,7 @@ export const useApiPut = <TPayload, TResponse>(
     const guardedMutationFn = withConnectionGuard(
         withApiErrorGuard(
             async (payload) => {
+                console.log(payload);
                 return fetcher<TResponse>(url, token, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },

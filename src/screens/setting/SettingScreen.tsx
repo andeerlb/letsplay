@@ -49,6 +49,7 @@ export function SettingScreen({ }: Props) {
   }
 
   const save = () => {
+    console.log('layout', settings.layout);
     updateSettings.mutate({ layout: settings.layout, language: settings.language }, {
       onSuccess: () => {
         toast.error(t`screen.setting.success`,);
@@ -70,7 +71,7 @@ export function SettingScreen({ }: Props) {
           <View style={styles.body}>
             <Select
               label={t`screen.setting.theme`}
-              value={settings.layout}
+              value={settings.layout as string}
               onChange={changeTheme}
               options={translatedThemeOptions}
               required={true}

@@ -14,7 +14,7 @@ import { useToast } from "@hooks/useToast";
 import { useCreateUser } from "@mutation/user";
 import { AppDispatch } from "@store/index";
 import { persistToken } from "@store/slices/tokenSlice";
-import { UserCredentials } from "@tps/api";
+import { SignUpRequestType } from "@tps/api";
 import { RootStackParamList } from "@tps/navigation";
 import ScreenScrollWrapper from "@wrapper/ScreenScrollWrapper";
 import { Controller, useForm } from "react-hook-form";
@@ -44,7 +44,7 @@ type CredentialsFormData = {
 };
 
 export default function CredentialsScreen({ }: CredentialsScreenProps) {
-    const { person, sport, moreSports } = useSignUp();
+    const { person, preferredSport, otherSports } = useSignUp();
     const { theme } = useTheme();
     const dispatch = useDispatch<AppDispatch>();
 
@@ -67,12 +67,16 @@ export default function CredentialsScreen({ }: CredentialsScreenProps) {
         },
     });
 
-    const onSubmit = (data: UserCredentials) => {
+    const onSubmit = (data: SignUpRequestType) => {
+        if (!preferredSport) {
+            return;
+        }
+
         createUser.mutate({
             ...data,
             ...person,
-            preferredSport: sport,
-            otherSports: moreSports,
+            preferredSport,
+            otherSports,
         }, {
             onSuccess: dataParam => {
                 dispatch(persistToken(dataParam));

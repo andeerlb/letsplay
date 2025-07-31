@@ -1,9 +1,9 @@
 import { useApiPost } from '@hooks/useApiPost';
-import { UserCredentials } from '@tps/api';
+import { SignUpRequestType, UserCredentials } from '@tps/api';
 import { Config } from 'react-native-config';
 
 export const useCreateUser = () => {
-    return useApiPost<UserCredentials, any>(`${Config.API}/public/signup`);
+    return useApiPost<SignUpRequestType, any>(`${Config.API}/public/signup`);
 };
 
 export const useGetToken = () => {

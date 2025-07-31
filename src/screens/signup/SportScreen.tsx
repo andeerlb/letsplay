@@ -44,13 +44,13 @@ type SportScreenProps = {
 type PositionOption = { label: string; value: string };
 
 type FormValues<T extends GameType = GameType> = {
-    game: T;
+    type: T;
     position: PositionKeyByGameType<T> | null;
 };
 
 const schema: yup.ObjectSchema<FormValues> = yup.object({
     position: yup.string().required(),
-    game: yup
+    type: yup
         .mixed<GameType>()
         .oneOf(GAME_TYPE_VALUES)
         .required(),
@@ -94,9 +94,9 @@ const SportScreen = forwardRef<SportScreenRef, SportScreenProps>(({ navigation }
         setValue
     } = useForm<FormValues>({ resolver: yupResolver(schema) });
 
-    const { setSport } = useSignUp();
+    const { setPreferredSport } = useSignUp();
     const selectedPosition = watch('position') as PositionKeyByGameType<GameType>;
-    const selectedGameType = watch('game') as GameType;
+    const selectedGameType = watch('type') as GameType;
 
     const [positions, setPositions] = useState<PositionOption[]>([]);
     const [gameTypes, setGameTypes] = useState<PositionOption[]>([]);
@@ -161,7 +161,7 @@ const SportScreen = forwardRef<SportScreenRef, SportScreenProps>(({ navigation }
     useImperativeHandle(ref, () => ({
         submitForm: () => {
             handleSubmit((data) => {
-                setSport(data);
+                setPreferredSport(data);
                 navigation.navigate('MoreSports');
             })();
         },
@@ -180,13 +180,13 @@ const SportScreen = forwardRef<SportScreenRef, SportScreenProps>(({ navigation }
                 <View style={styles.content}>
                     <Controller
                         control={control}
-                        name="game"
+                        name="type"
                         render={({ field: { onChange, value } }) => (
                             <Select
                                 label={t`screen.signup.sport.game-types`}
                                 options={gameTypes}
                                 value={value}
-                                error={errors.game?.message}
+                                error={errors.type?.message}
                                 onChange={onChange}
                             />
                         )}
@@ -201,7 +201,7 @@ const SportScreen = forwardRef<SportScreenRef, SportScreenProps>(({ navigation }
                                     <Select
                                         label={t`screen.signup.sport.select-your-position`}
                                         options={positions}
-                                        value={value}
+                                        value={value as string}
                                         error={errors.position?.message}
                                         onChange={onChange}
                                     />

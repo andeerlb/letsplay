@@ -4,7 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useTheme } from '@hooks/useTheme';
 import { Trans, useLingui } from '@lingui/react/macro';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { SignUpMoreSportsContextType } from '@tps/context';
+import { SignUpMoreSportsContextType, SignUpPositionsContextType } from '@tps/context';
 import { SignUpStackParamList } from '@tps/navigation';
 import ScreenWrapper from '@wrapper/ScreenWrapper';
 import React, { forwardRef, useImperativeHandle, useState } from 'react';
@@ -50,7 +50,7 @@ type GameId = (typeof allGames)[number]['id'];
 
 const MoreSportsScreen = forwardRef<MoreSportsScreenRef, MoreSportsScreenProps>(
     ({ navigation }, ref) => {
-        const { person, setMoreSports } = useSignUp();
+        const { person, setOtherSports } = useSignUp();
         const { theme } = useTheme();
         const { handleSubmit } = useForm({ resolver: yupResolver(schema) });
 
@@ -63,7 +63,7 @@ const MoreSportsScreen = forwardRef<MoreSportsScreenRef, MoreSportsScreenProps>(
         useImperativeHandle(ref, () => ({
             submitForm: () => {
                 handleSubmit(() => {
-                    setMoreSports(selectedGamesWithPositions);
+                    setOtherSports(selectedGamesWithPositions);
                     navigation.navigate('Credentials');
                 })();
             },
@@ -74,12 +74,12 @@ const MoreSportsScreen = forwardRef<MoreSportsScreenRef, MoreSportsScreenProps>(
             setStep('position');
         };
 
-        const handleSelectPosition = (position: string) => {
+        const handleSelectPosition = (position: SignUpPositionsContextType) => {
             if (!selectedGame) return;
 
             setSelectedGamesWithPositions(prev => [
                 ...prev,
-                { game: selectedGame.id as GameId, position },
+                { type: selectedGame.id as GameId, position },
             ]);
 
             setRemainingGames(prev => prev.filter(g => g.id !== selectedGame.id));
