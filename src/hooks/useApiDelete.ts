@@ -9,7 +9,8 @@ import { ApiError } from '@tps/api';
 
 export const useApiDelete = <TPayload = void, TResponse = void>(
     url: string,
-    options?: UseMutationOptions<TResponse | undefined, ApiError, TPayload>
+    options?: UseMutationOptions<TResponse | undefined, ApiError, TPayload>,
+    useAuthApi?: boolean
 ) => {
     const toast = useToast();
     const { t } = useLingui();
@@ -21,7 +22,7 @@ export const useApiDelete = <TPayload = void, TResponse = void>(
                     method: 'DELETE',
                     headers: { 'Content-Type': 'application/json' },
                     body: payload ? JSON.stringify(payload) : undefined,
-                });
+                }, useAuthApi);
             },
             {
                 onApiError: () => {

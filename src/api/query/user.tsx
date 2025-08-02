@@ -1,16 +1,6 @@
-import { fetcher } from '@hooks/apiClient';
-import { RootState } from '@store/index';
-import { useQuery, UseQueryResult } from '@tanstack/react-query';
-import type { ApiError, User } from '@tps/api';
-import { Config } from 'react-native-config';
-import { useSelector } from 'react-redux';
+import { useApiGet } from '@hooks/useApiGet';
+import type { User } from '@tps/api';
 
-const USER_URL = `${Config.API}/user`;
-
-export function useUser(): UseQueryResult<User, ApiError> {
-  const token = useSelector((state: RootState) => state.token);
-  return useQuery<User, ApiError>({
-    queryKey: ['user'],
-    queryFn: () => fetcher<User>(USER_URL, token),
-  });
+export function useUser() {
+  return useApiGet<User>(['user'], '/user');
 }

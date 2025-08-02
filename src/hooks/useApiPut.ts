@@ -11,7 +11,8 @@ import { useSelector } from 'react-redux';
 
 export const useApiPut = <TPayload, TResponse>(
     url: string,
-    options?: UseMutationOptions<TResponse | undefined, ApiError, TPayload>
+    options?: UseMutationOptions<TResponse | undefined, ApiError, TPayload>,
+    useAuthApi?: boolean
 ) => {
     const token = useSelector((state: RootState) => state.token);
     const toast = useToast();
@@ -20,12 +21,11 @@ export const useApiPut = <TPayload, TResponse>(
     const guardedMutationFn = withConnectionGuard(
         withApiErrorGuard(
             async (payload) => {
-                console.log(payload);
                 return fetcher<TResponse>(url, token, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload),
-                });
+                }, useAuthApi);
             },
             {
                 onApiError: () => {

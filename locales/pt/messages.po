@@ -207,22 +207,22 @@ msgstr "Cancelar"
 msgid "component.select.placeholder"
 msgstr "Selecione uma opção"
 
-#: src/hooks/useApiPost.ts:31
+#: src/hooks/useApiPost.ts:32
 msgid "guard.connection.api.offline"
 msgstr "guard.connection.api.offline"
 
-#: src/hooks/useApiPost.ts:37
+#: src/hooks/useApiPost.ts:38
 msgid "guard.connection.network.offline"
 msgstr "guard.connection.network.offline"
 
-#: src/hooks/useApiPut.ts:32
-#: src/hooks/useApiPut.ts:38
-#: src/hooks/useApiPatch.ts:31
-#: src/hooks/useApiPatch.ts:37
-#: src/hooks/useApiGet.ts:28
-#: src/hooks/useApiGet.ts:34
-#: src/hooks/useApiDelete.ts:28
-#: src/hooks/useApiDelete.ts:34
+#: src/hooks/useApiPut.ts:33
+#: src/hooks/useApiPut.ts:39
+#: src/hooks/useApiPatch.ts:32
+#: src/hooks/useApiPatch.ts:38
+#: src/hooks/useApiGet.ts:29
+#: src/hooks/useApiGet.ts:35
+#: src/hooks/useApiDelete.ts:29
+#: src/hooks/useApiDelete.ts:35
 msgid "guard.connection.offline"
 msgstr "guard.connection.offline"
 
@@ -381,41 +381,41 @@ msgstr "Sistema"
 msgid "screen.setting.title"
 msgstr "Configurações"
 
-#: src/screens/signin/SignInScreen.tsx:150
+#: src/screens/signin/SignInScreen.tsx:151
 msgid "screen.signin.btn-sigin"
 msgstr "Entrar"
 
-#: src/screens/signin/SignInScreen.tsx:94
+#: src/screens/signin/SignInScreen.tsx:95
 msgid "screen.signin.description"
 msgstr "Entre na sua conta para continuar"
 
-#: src/screens/signin/SignInScreen.tsx:147
+#: src/screens/signin/SignInScreen.tsx:148
 msgid "screen.signin.forgot"
 msgstr "Esqueceu a senha?"
 
-#: src/screens/signin/SignInScreen.tsx:64
+#: src/screens/signin/SignInScreen.tsx:65
 msgid "screen.signin.invalid-grant"
 msgstr "Usuário ou senha inválido(s)"
 
-#: src/screens/signin/SignInScreen.tsx:166
+#: src/screens/signin/SignInScreen.tsx:167
 msgid "screen.signin.noaccount"
 msgstr "Não tem uma conta?"
 
 #: src/screens/signup/CredentialsScreen.tsx:131
-#: src/screens/signin/SignInScreen.tsx:127
+#: src/screens/signin/SignInScreen.tsx:128
 msgid "screen.signin.password"
 msgstr "Senha"
 
-#: src/screens/signin/SignInScreen.tsx:178
+#: src/screens/signin/SignInScreen.tsx:179
 msgid "screen.signin.signup"
 msgstr "Criar conta"
 
 #: src/screens/signup/CredentialsScreen.tsx:115
-#: src/screens/signin/SignInScreen.tsx:112
+#: src/screens/signin/SignInScreen.tsx:113
 msgid "screen.signin.user"
 msgstr "Usuário"
 
-#: src/screens/signin/SignInScreen.tsx:83
+#: src/screens/signin/SignInScreen.tsx:84
 msgid "screen.signin.welcome"
 msgstr "Bem-vindo"
 

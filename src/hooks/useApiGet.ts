@@ -12,7 +12,8 @@ import { useSelector } from 'react-redux';
 export const useApiGet = <TResponse>(
     key: string[],
     url: string,
-    options?: UseQueryOptions<TResponse | undefined, ApiError>
+    options?: UseQueryOptions<TResponse | undefined, ApiError>,
+    useAuthApi?: boolean
 ) => {
     const token = useSelector((state: RootState) => state.token);
     const toast = useToast();
@@ -21,7 +22,7 @@ export const useApiGet = <TResponse>(
     const guardedQueryFn = withConnectionGuard(
         withApiErrorGuard(
             async () => {
-                return fetcher<TResponse>(url, token);
+                return fetcher<TResponse>(url, token, undefined, useAuthApi);
             },
             {
                 onApiError: () => {
