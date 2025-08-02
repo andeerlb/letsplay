@@ -52,7 +52,7 @@ export function SettingScreen({ }: Props) {
     console.log('layout', settings.layout);
     updateSettings.mutate({ layout: settings.layout, language: settings.language }, {
       onSuccess: () => {
-        toast.error(t`screen.setting.success`,);
+        toast.success(t`screen.setting.success`,);
         settingsStorage.set(settings);
       },
       onError: () => {
