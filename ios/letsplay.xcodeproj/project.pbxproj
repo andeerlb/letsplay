@@ -313,6 +313,8 @@
 				DEVELOPMENT_TEAM = SH7629F6XP;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = letsplay/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = letsplay;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -340,7 +342,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SH7629F6XP;
 				INFOPLIST_FILE = letsplay/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = letsplay;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

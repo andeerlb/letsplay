@@ -215,8 +215,8 @@ msgstr "guard.connection.api.offline"
 msgid "guard.connection.network.offline"
 msgstr "guard.connection.network.offline"
 
-#: src/hooks/useApiPut.ts:31
-#: src/hooks/useApiPut.ts:37
+#: src/hooks/useApiPut.ts:32
+#: src/hooks/useApiPut.ts:38
 #: src/hooks/useApiPatch.ts:31
 #: src/hooks/useApiPatch.ts:37
 #: src/hooks/useApiGet.ts:28
@@ -333,15 +333,15 @@ msgstr "Sobrenome"
 msgid "screen.profile.title"
 msgstr "Conta"
 
-#: src/screens/setting/SettingScreen.tsx:65
+#: src/screens/setting/SettingScreen.tsx:69
 msgid "screen.setting.appearance"
 msgstr "Visual"
 
-#: src/screens/setting/SettingScreen.tsx:55
+#: src/screens/setting/SettingScreen.tsx:59
 msgid "screen.setting.error"
 msgstr "screen.setting.error"
 
-#: src/screens/setting/SettingScreen.tsx:76
+#: src/screens/setting/SettingScreen.tsx:80
 msgid "screen.setting.language"
 msgstr "Idioma"
 
@@ -353,15 +353,15 @@ msgstr "Inglês"
 msgid "screen.setting.language.portuguese"
 msgstr "Português"
 
-#: src/screens/setting/SettingScreen.tsx:84
+#: src/screens/setting/SettingScreen.tsx:88
 msgid "screen.setting.save"
 msgstr "screen.setting.save"
 
-#: src/screens/setting/SettingScreen.tsx:52
+#: src/screens/setting/SettingScreen.tsx:55
 msgid "screen.setting.success"
 msgstr "screen.setting.success"
 
-#: src/screens/setting/SettingScreen.tsx:69
+#: src/screens/setting/SettingScreen.tsx:73
 msgid "screen.setting.theme"
 msgstr "Tema"
 
@@ -401,7 +401,7 @@ msgstr "Usuário ou senha inválido(s)"
 msgid "screen.signin.noaccount"
 msgstr "Não tem uma conta?"
 
-#: src/screens/signup/CredentialsScreen.tsx:122
+#: src/screens/signup/CredentialsScreen.tsx:131
 #: src/screens/signin/SignInScreen.tsx:127
 msgid "screen.signin.password"
 msgstr "Senha"
@@ -410,7 +410,7 @@ msgstr "Senha"
 msgid "screen.signin.signup"
 msgstr "Criar conta"
 
-#: src/screens/signup/CredentialsScreen.tsx:106
+#: src/screens/signup/CredentialsScreen.tsx:115
 #: src/screens/signin/SignInScreen.tsx:112
 msgid "screen.signin.user"
 msgstr "Usuário"
@@ -419,31 +419,31 @@ msgstr "Usuário"
 msgid "screen.signin.welcome"
 msgstr "Bem-vindo"
 
-#: src/screens/signup/PersonScreen.tsx:150
+#: src/screens/signup/PersonScreen.tsx:152
 msgid "screen.signup.birthday"
 msgstr "Data de nascimento"
 
-#: src/screens/signup/CredentialsScreen.tsx:139
+#: src/screens/signup/CredentialsScreen.tsx:148
 msgid "screen.signup.credentials.confirm-password"
 msgstr "Confirma tua senha"
 
-#: src/screens/signup/CredentialsScreen.tsx:94
+#: src/screens/signup/CredentialsScreen.tsx:103
 msgid "screen.signup.credentials.description"
 msgstr "Crie seu usuário e senha para garantir seu lugar no time"
 
-#: src/screens/signup/CredentialsScreen.tsx:81
+#: src/screens/signup/CredentialsScreen.tsx:90
 msgid "screen.signup.credentials.error"
 msgstr "screen.signup.credentials.error"
 
-#: src/screens/signup/CredentialsScreen.tsx:153
+#: src/screens/signup/CredentialsScreen.tsx:162
 msgid "screen.signup.credentials.register"
 msgstr "Bora jogar!"
 
-#: src/screens/signup/CredentialsScreen.tsx:91
+#: src/screens/signup/CredentialsScreen.tsx:100
 msgid "screen.signup.credentials.title"
 msgstr "Última etapa, campeão!"
 
-#: src/screens/signup/PersonScreen.tsx:116
+#: src/screens/signup/PersonScreen.tsx:118
 msgid "screen.signup.given-name"
 msgstr "Nome"
 
@@ -471,7 +471,15 @@ msgstr "Top demais"
 msgid "screen.signup.next"
 msgstr "Continuar"
 
-#: src/screens/signup/PersonScreen.tsx:98
+#: src/screens/signup/PersonScreen.tsx:174
+msgid "screen.signup.nickname.label"
+msgstr "screen.signup.nickname.label"
+
+#: src/screens/signup/PersonScreen.tsx:165
+msgid "screen.signup.nickname.title"
+msgstr "screen.signup.nickname.title"
+
+#: src/screens/signup/PersonScreen.tsx:100
 msgid "screen.signup.person.title"
 msgstr "Queremos te conhecer"
 
@@ -511,7 +519,7 @@ msgstr "Escolha o tipo de jogo"
 msgid "screen.signup.sport.select-your-position"
 msgstr "Qual posição você joga?"
 
-#: src/screens/signup/PersonScreen.tsx:133
+#: src/screens/signup/PersonScreen.tsx:135
 msgid "screen.signup.surname"
 msgstr "Sobrenome"
 
@@ -527,50 +535,50 @@ msgstr "Meus times..."
 msgid "screen.team.title"
 msgstr "Times"
 
-#: src/screens/welcome/WelcomeScreen.tsx:65
+#: src/screens/welcome/WelcomeScreen.tsx:61
 msgid "screen.welcome.description"
 msgstr "Gerencie seu time, acompanhe partidas e conquiste vitórias."
 
-#: src/screens/welcome/WelcomeScreen.tsx:74
+#: src/screens/welcome/WelcomeScreen.tsx:70
 msgid "screen.welcome.manage.desc"
 msgstr "Organize jogadores e posições"
 
-#: src/screens/welcome/WelcomeScreen.tsx:73
+#: src/screens/welcome/WelcomeScreen.tsx:69
 msgid "screen.welcome.manage.title"
 msgstr "Gerir Equipe"
 
-#: src/screens/welcome/WelcomeScreen.tsx:88
+#: src/screens/welcome/WelcomeScreen.tsx:84
 msgid "screen.welcome.stats.desc"
 msgstr "Acompanhe estatísticas"
 
-#: src/screens/welcome/WelcomeScreen.tsx:87
+#: src/screens/welcome/WelcomeScreen.tsx:83
 msgid "screen.welcome.stats.title"
 msgstr "Estatísticas"
 
-#: src/screens/welcome/WelcomeScreen.tsx:81
+#: src/screens/welcome/WelcomeScreen.tsx:77
 msgid "screen.welcome.team.desc"
 msgstr "Marque treinos e jogos"
 
-#: src/screens/welcome/WelcomeScreen.tsx:80
+#: src/screens/welcome/WelcomeScreen.tsx:76
 msgid "screen.welcome.team.title"
 msgstr "Gerir equipe"
 
-#: src/screens/signup/PersonScreen.tsx:106
+#: src/screens/signup/PersonScreen.tsx:108
 msgid "screens.signup.person.description"
 msgstr "Que bom que você chegou aqui, queremos te conhecer, saber qual posição joga, qual seu nome de jogador e outras coisas, vamos lá?"
 
-#: src/screens/welcome/WelcomeScreen.tsx:96
+#: src/screens/welcome/WelcomeScreen.tsx:92
 msgid "welcome.screen.schedule.desc"
 msgstr "Marque treinos e jogos"
 
-#: src/screens/welcome/WelcomeScreen.tsx:94
+#: src/screens/welcome/WelcomeScreen.tsx:90
 msgid "welcome.screen.schedule.title"
 msgstr "Agendar"
 
-#: src/screens/welcome/WelcomeScreen.tsx:102
+#: src/screens/welcome/WelcomeScreen.tsx:98
 msgid "welcome.screen.signin"
 msgstr "Já tenho uma conta"
 
-#: src/screens/welcome/WelcomeScreen.tsx:101
+#: src/screens/welcome/WelcomeScreen.tsx:97
 msgid "welcome.screen.signup"
 msgstr "Começar agora"
