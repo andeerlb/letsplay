@@ -231,13 +231,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-letsplay/Pods-letsplay-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-letsplay/Pods-letsplay-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -274,13 +270,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-letsplay/Pods-letsplay-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-letsplay/Pods-letsplay-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -326,6 +318,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -Xcc -fmodule-map-file=\"${PODS_CONFIGURATION_BUILD_DIR}/lottie-ios/Lottie.modulemap\" -Xcc -fmodule-map-file=\"${PODS_CONFIGURATION_BUILD_DIR}/lottie-react-native/lottie_react_native.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/DoubleConversion/DoubleConversion.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/RCTDeprecation/RCTDeprecation.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/RCTFabric/React-RCTFabric.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/RCTRuntime/React-RCTRuntime.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/RCTTypeSafety/RCTTypeSafety.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/React/React-Core.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/ReactAppDependencyProvider/ReactAppDependencyProvider.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/ReactCodegen/ReactCodegen.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/ReactCommon/ReactCommon.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/React_Fabric/React-Fabric.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/React_FabricComponents/React-FabricComponents.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/React_NativeModulesApple/React-NativeModulesApple.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/React_RCTAppDelegate/React-RCTAppDelegate.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/SocketRocket/SocketRocket.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/fmt/fmt.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/folly/RCT-Folly.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/glog/glog.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/jsi/React-jsi.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/jsinspector_modern/React-jsinspector.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/jsinspector_modern_cdp/React-jsinspectorcdp.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/jsinspector_modern_network/React-jsinspectornetwork.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/jsinspector_modern_tracing/React-jsinspectortracing.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/react_debug/React-debug.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/react_featureflags/React-featureflags.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/react_nativemodule_defaults/React-defaultsnativemodule.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/react_nativemodule_dom/React-domnativemodule.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/react_nativemodule_featureflags/React-featureflagsnativemodule.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/react_nativemodule_idlecallbacks/React-idlecallbacksnativemodule.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/react_nativemodule_microtasks/React-microtasksnativemodule.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/react_renderer_css/React-renderercss.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/react_renderer_debug/React-rendererdebug.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/react_renderer_graphics/React-graphics.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/react_renderer_imagemanager/React-ImageManager.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/react_runtime/React-jsitooling.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/react_utils/React-utils.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/reacthermes/React-hermes.modulemap\" -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/yoga/Yoga.modulemap\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.letsplay.com;
 				PRODUCT_NAME = letsplay;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -434,7 +427,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -504,7 +500,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
