@@ -473,11 +473,11 @@ msgstr "Continuar"
 
 #: src/screens/signup/PersonScreen.tsx:174
 msgid "screen.signup.nickname.label"
-msgstr "screen.signup.nickname.label"
+msgstr "Nome na camisa"
 
 #: src/screens/signup/PersonScreen.tsx:165
 msgid "screen.signup.nickname.title"
-msgstr "screen.signup.nickname.title"
+msgstr "Como você é conhecido no campo?"
 
 #: src/screens/signup/PersonScreen.tsx:100
 msgid "screen.signup.person.title"

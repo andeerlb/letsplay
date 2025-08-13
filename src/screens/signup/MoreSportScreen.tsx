@@ -31,17 +31,17 @@ const schema = yup.object({});
 const allGames = [
     {
         id: 'fut11',
-        label: 'FUT 11 ⚽',
+        label: 'FUT 11',
         positions: ['Goleiro', 'Zagueiro', 'Lateral', 'Meio-campo', 'Atacante'],
     },
     {
         id: 'fut7',
-        label: 'FUT 7 🥅',
+        label: 'FUT 7',
         positions: ['Goleiro', 'Fixo', 'Ala', 'Atacante'],
     },
     {
         id: 'futsal',
-        label: 'Futsal 🏃‍♂️',
+        label: 'Futsal',
         positions: ['Goleiro', 'Fixo', 'Ala', 'Pivô'],
     },
 ] as const;
@@ -92,7 +92,7 @@ const MoreSportsScreen = forwardRef<MoreSportsScreenRef, MoreSportsScreenProps>(
                 const removedItem = prev[indexToRemove];
                 if (!removedItem) return prev;
 
-                const removedGame = allGames.find(g => g.id === removedItem.game);
+                const removedGame = allGames.find(g => g.id === removedItem.type);
                 if (removedGame) {
                     setRemainingGames(rg => [...rg, removedGame].sort((a, b) => a.label.localeCompare(b.label)));
                 }
@@ -140,15 +140,25 @@ const MoreSportsScreen = forwardRef<MoreSportsScreenRef, MoreSportsScreenProps>(
                     {step === 'another' && selectedGamesWithPositions.length > 0 && (
                         <View style={styles.selectedSummary}>
                             {selectedGamesWithPositions.map((item, index) => {
-                                const gameLabel = allGames.find(g => g.id === item.game)?.label ?? item.game;
+                                const gameLabel = allGames.find(g => g.id === item.type)?.label ?? item.type;
                                 return (
-                                    <View key={`${item.game}-${index}`} style={[styles.summaryItem, { backgroundColor: theme.secondaryColors.background }]}>
-                                        <Text style={[styles.summaryText, { color: theme.secondaryColors.text, fontFamily: theme.fonts.medium.fontFamily }]}>
-                                            {gameLabel} → {item.position}
-                                        </Text>
-                                        <TouchableOpacity onPress={() => handleDeleteSelected(index)}>
-                                            <Text style={[styles.deleteBtn, { color: theme.secondaryColors.text }]}>✕</Text>
-                                        </TouchableOpacity>
+                                    <View key={`${item.type}-${index}`} style={{ gap: 5 }}>
+                                        <View style={[styles.summaryItem, { backgroundColor: theme.secondaryColors.background }]}>
+                                            <Text style={[styles.summaryText, { color: theme.secondaryColors.text, fontFamily: theme.fonts.medium.fontFamily }]}>
+                                                {gameLabel}
+                                            </Text>
+                                            <TouchableOpacity onPress={() => handleDeleteSelected(index)}>
+                                                <Text style={[styles.deleteBtn, { color: theme.secondaryColors.text }]}>✕</Text>
+                                            </TouchableOpacity>
+                                        </View>
+                                        <View style={[styles.summaryItem, { backgroundColor: theme.secondaryColors.background, marginLeft: 40 }]}>
+                                            <Text style={[styles.summaryText, { color: theme.secondaryColors.text, fontFamily: theme.fonts.medium.fontFamily }]}>
+                                                {item.position}
+                                            </Text>
+                                        </View>
+                                        {selectedGamesWithPositions.length - 1 !== index && <View style={[styles.divisor, {
+                                            borderColor: theme.colors.border
+                                        }]} />}
                                     </View>
                                 );
                             })}
@@ -209,7 +219,7 @@ const MoreSportsScreen = forwardRef<MoreSportsScreenRef, MoreSportsScreenProps>(
                         <Button label={t`screen.signup.more-sports.choose-another-button`} onPress={() => setStep('game')} />
                     )}
                 </View>
-            </ScreenWrapper>
+            </ScreenWrapper >
         );
     }
 );
@@ -262,6 +272,10 @@ const styles = StyleSheet.create({
     deleteBtn: {
         fontSize: 18,
         paddingHorizontal: 8,
+    },
+    divisor: {
+        borderBottomWidth: .5,
+        marginVertical: 15
     },
 });
 
